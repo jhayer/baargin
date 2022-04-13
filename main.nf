@@ -76,7 +76,7 @@ workflow {
 
     // DATA INPUT ILLUMINA
     illumina_input_ch = Channel
-        .fromFilePairs( "${params.illumina}/*_{1,2}.fastq{,.gz}", checkIfExists: true)
+        .fromFilePairs( "${params.illumina}/*_R{1,2}_001.fastq{.gz}", checkIfExists: true)
         .view()
 
     // run fastp module
@@ -96,7 +96,7 @@ workflow {
     quast(contigs_ch,illumina_clean_ch)
 
     // BUSCO completeness - only available for IFB or try Singularity
-
+/*
     if (params.species == "Ecoli") || (params.species == "Kpneumoniae") ||
       (params.species == "Salmonella") || (params.species == "Ecloacae")
     {
@@ -117,7 +117,7 @@ workflow {
 
     }
     busco(contigs_ch, lineage)
-
+*/
     //*************************************************
     // STEP 3 - decontamination with Kraken2
     //*************************************************
@@ -154,6 +154,4 @@ workflow {
 
   //  PlasForest
   //  MOB-recon
-
-
 }

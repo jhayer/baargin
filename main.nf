@@ -76,7 +76,7 @@ workflow {
 
     // DATA INPUT ILLUMINA
     illumina_input_ch = Channel
-        .fromFilePairs( "${params.illumina}/*_R{1,2}_001.fastq{.gz}", checkIfExists: true)
+        .fromFilePairs( "${params.illumina}/*_R{1,2}*.fastq{,.gz}", checkIfExists: true)
         .view()
 
     // run fastp module

@@ -9,6 +9,6 @@ process spades {
     script:
         """
         spades.py -1 ${illumina[0]} -2 ${illumina[1]} \
-         -o spades -t ${task.cpus}
+         -o spades --isolate -t ${task.cpus}
         """
 }

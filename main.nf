@@ -71,6 +71,13 @@ workflow {
 
     // including Kraken2 - nucleotide level
     include {kraken2nt_contigs} from './modules/kraken2.nf' params(output: params.output)
+    include {extract_kraken} from './modules/kraken2.nf' params(output: params.output)
+
+    // include mash_screen
+    if (params.mash_dataset){
+      include {mash_screen} from './modules/mash.nf' params(output: params.output)
+    }
+
 
 
     //*************************************************
@@ -159,14 +166,20 @@ workflow {
     // STEP 4 - Find closest relative with Mash
     //*************************************************
     // using the mash dataset provided
-    // grep the sort output for "complete genome" and select top hit
-    //retrieve the fasta file from Antimicrobial
+    if(params.mash_dataset){
+      mash_screen(contigs_ch,params.species,params.mash_sketch)
+      // later, mash_screen will output fasta file of closest relative for mapping
+    }
 
     //*************************************************
     // STEP 5 - Map to the closest with Minimap2
     //*************************************************
     // minimap2 with PAF Output - use all contigs: contigs_ch
     // compare the number of contigs mapped with the number of deconta_contigs_ch
+
+    // mapping could be done on same ref for all... need to select from mash results
+    // might need a second pipeline for mappings and core/pan genomes analysis,
+    // after the assemblies and decontamination are done...
 
     //*************************************************
     // STEP 6 - ARGs search: CARD RGI and AMRFinderPlus
@@ -184,4 +197,5 @@ workflow {
 
   //  PlasForest
   //  MOB-recon
+  // on deconta_contigs_ch
 }

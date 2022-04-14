@@ -26,7 +26,7 @@ process extract_kraken {
     tuple val(id), path(contigs)
     path(kraken_res)
     path(kraken_report)
-    tuple(taxid)
+    val(taxid)
     path(krakentools)
   output:
     path("${id}_kraken_extract_contigs_${taxid}.fasta")

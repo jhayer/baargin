@@ -159,7 +159,7 @@ workflow {
       exit 1, "No species or species taxid specified for retrieving the species of interest"
     }
 
-    extract_kraken(contigs_ch,krak_res,sp_taxid,params.krakentools_extract)
+    extract_kraken(contigs_ch,krak_res,krak_report,sp_taxid,params.krakentools_extract)
     deconta_contigs_ch = extract_kraken.out[0]
 
     //*************************************************

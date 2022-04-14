@@ -4,7 +4,7 @@ process mash_screen {
 
     input:
         tuple val(id), path(contigs)
-        tuple(species)
+        val(species)
         path(mash_sketch)
     output:
         path("${id}_${species}_screen_sort_gr.tab")

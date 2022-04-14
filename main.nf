@@ -41,7 +41,14 @@ def helpMSG() {
     --species_taxid             NCBI TaxID of the bacterial species to assemble [default: $params.species_taxid]
     --mash_dataset              path to mash dataset prepared for the species [default: $params.mash_dataset]
     --busco_lineage             to specify according to the bacterial species. e.g. enterobacterales_odb10, bacillales_odb10... check BUSCO [default: $params.busco_lineage]
-
+    --amrfinder_organism        To specify for PointMutation detection if not Ecoli, Salmonella, Kpneumoniae or Saureus.
+                                Can be among these: Acinetobacter_baumannii, Campylobacter,
+                                Clostridioides_difficile, Enterococcus_faecalis, Enterococcus_faecium,
+                                Escherichia, Klebsiella, Neisseria, Pseudomonas_aeruginosa,
+                                Salmonella, Staphylococcus_aureus, Staphylococcus_pseudintermedius,
+                                Streptococcus_agalactiae, Streptococcus_pneumoniae, Streptococcus_pyogenes, Vibrio_cholerae.
+                                The amrfinderplus will be run if not specified, but no point mutations are detected.
+                                [default: $params.amrfinder_organism]
         Nextflow options:
     -profile                    change the profile of nextflow both the engine and executor more details on github README
     -resume                     resume the workflow where it stopped
@@ -77,6 +84,8 @@ workflow {
     if (params.mash_dataset){
       include {mash_screen} from './modules/mash.nf' params(output: params.output)
     }
+    // AMR analysis modules
+    include {amrfinderplus} from './modules/amrfinderplus.nf' params(output: params.output)
 
 
 
@@ -185,6 +194,29 @@ workflow {
     // STEP 6 - ARGs search: CARD RGI and AMRFinderPlus
     //*************************************************
 // on the deconta_contigs_ch
+    amrfinderplus(deconta_contigs_ch,params.species)
+    if(params.species == "Ecoli"){
+      organism = 'Escherichia'
+      amrfinderplus(deconta_contigs_ch,organism)
+    }
+    else if (params.species == "Kpneumoniae"){
+      organism = 'Klebsiella'
+      amrfinderplus(deconta_contigs_ch,organism)
+    }
+    else if (params.species == "Salmonella"){
+      organism = 'Salmonella'
+      amrfinderplus(deconta_contigs_ch,organism)
+    }
+    else if (params.species == "Saureus"){
+      organism = 'Staphylococcus_aureus'
+      amrfinderplus(deconta_contigs_ch,organism)
+    }
+    else if (params.amrfinder_organism){
+      amrfinderplus(deconta_contigs_ch,params.amrfinder_organism)
+    }
+    else {
+      amrfinderplus_no_species(deconta_contigs_ch)
+    }
 
     //*************************************************
     // STEP 7 - Bakta annotation

@@ -23,7 +23,7 @@ def helpMSG() {
     --illumina                  path to the directory containing the illumina read file (fastq) (default: $params.illumina)
         Optional input:
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. nt) [default: $params.k2nt_db]
-    --species                   bacterial species to assemble (e.g. Ecoli, Kpneumoniae, Salmonella, Ecloacae, Saureus) [default: $params.species]
+
       Output:
     --output                    path to the output directory (default: $params.output)
 
@@ -37,8 +37,11 @@ def helpMSG() {
     --memory                    80% of available RAM in GB [default: $params.memory]
 
         Workflow Options:
+    --species                   bacterial species to assemble (e.g. Ecoli, Kpneumoniae, Salmonella, Ecloacae, Saureus) [default: $params.species]
+    --species_taxid             NCBI TaxID of the bacterial species to assemble [default: $params.species_taxid]
     --mash_dataset              path to mash dataset prepared for the species [default: $params.mash_dataset]
-    --busco_lineage             to specify is species is not among: Ecoli, Kpneumoniae, Salmonella, Ecloacae, Saureus [default: $params.busco_lineage]
+    --busco_lineage             to specify according to the bacterial species. e.g. enterobacterales_odb10, bacillales_odb10... check BUSCO [default: $params.busco_lineage]
+
         Nextflow options:
     -profile                    change the profile of nextflow both the engine and executor more details on github README
     -resume                     resume the workflow where it stopped
@@ -123,8 +126,34 @@ workflow {
     //*************************************************
     //kraken2nt contigs
     kraken2nt_contigs(contigs_ch, params.k2nt_db)
+    krak_res = kraken2nt_contigs.out[0]
+    krak_report = kraken2nt_contigs.out[1]
     // KrakenTools
-//    deconta_contigs_ch = kraken_tools(contigs_ch, params.species)
+// Maybe I should treat all this with parameters
+    if(params.species_taxid){
+      sp_taxid = params.species_taxid
+    }
+    else if (params.species == "Ecoli") {
+      sp_taxid = '562'
+    }
+    else if (params.species == "Kpneumoniae"){
+      sp_taxid = '573'
+    }
+    else if (params.species == "Salmonella"){
+      sp_taxid = '590'
+    }
+    else if (params.species == "Ecloacae"){
+      sp_taxid = '550'
+    }
+    else if (params.species == "Saureus"){
+      sp_taxid = '1280'
+    }
+    else {
+      exit 1, "No species or species taxid specified for retrieving the species of interest"
+    }
+
+    extract_kraken(contigs_ch,krak_res,sp_taxid,params.krakentools_extract)
+    deconta_contigs_ch = extract_kraken.out[0]
 
     //*************************************************
     // STEP 4 - Find closest relative with Mash
@@ -142,6 +171,7 @@ workflow {
     //*************************************************
     // STEP 6 - ARGs search: CARD RGI and AMRFinderPlus
     //*************************************************
+// on the deconta_contigs_ch
 
     //*************************************************
     // STEP 7 - Bakta annotation

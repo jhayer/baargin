@@ -11,7 +11,7 @@ process mash_screen {
         path("${id}_3_mash_top_hits")
     script:
         """
-        mash screen -p 4 ${mash_sketch} ${contigs} > ${id}_${species}_screen.tab
+        mash screen -p ${task.cpus} ${mash_sketch} ${contigs} > ${id}_${species}_screen.tab
         sort -gr ${id}_${species}_screen.tab > ${id}_${species}_screen_sort_gr.tab
 
         # getting the 3 top hits of closest relative that are complete genomes

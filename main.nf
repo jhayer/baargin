@@ -23,6 +23,7 @@ def helpMSG() {
     --illumina                  path to the directory containing the illumina read file (fastq) (default: $params.illumina)
         Optional input:
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. nt) [default: $params.k2nt_db]
+    --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
 
       Output:
     --output                    path to the output directory (default: $params.output)
@@ -86,7 +87,7 @@ workflow {
     }
     // AMR analysis modules
     include {amrfinderplus} from './modules/amrfinderplus.nf' params(output: params.output)
-
+    include {card_rgi} from './modules/card.nf' params(output: params.output)
 
 
     //*************************************************
@@ -193,8 +194,9 @@ workflow {
     //*************************************************
     // STEP 6 - ARGs search: CARD RGI and AMRFinderPlus
     //*************************************************
-// on the deconta_contigs_ch
-    amrfinderplus(deconta_contigs_ch,params.species)
+    // on the deconta_contigs_ch
+    // AMRFinderPlus NCBI
+
     if(params.species == "Ecoli"){
       organism = 'Escherichia'
       amrfinderplus(deconta_contigs_ch,organism)
@@ -218,6 +220,10 @@ workflow {
       amrfinderplus_no_species(deconta_contigs_ch)
     }
 
+    // CARD Resistance Genes Identifier
+
+    card_rgi(deconta_contigs_ch,params.card_db)
+
     //*************************************************
     // STEP 7 - Bakta annotation
     //*************************************************
@@ -226,7 +232,7 @@ workflow {
     //*************************************************
     // STEP 8 - PlasmidFinder et al. Platon ? MGEFinder..
     //*************************************************
-
+  //Platon
   //  PlasForest
   //  MOB-recon
   // on deconta_contigs_ch

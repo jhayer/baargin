@@ -113,7 +113,7 @@ workflow {
     // STEP 2 - Assembly QC Quast, Busco
     //*************************************************
     // QUAST Assembly QC
-    quast(contigs_ch,illumina_clean_ch)
+    quast(contigs_ch, illumina_clean_ch)
 
     // BUSCO completeness - only available for IFB or try Singularity
 /*
@@ -145,6 +145,7 @@ workflow {
     kraken2nt_contigs(contigs_ch, params.k2nt_db)
     krak_res = kraken2nt_contigs.out[0]
     krak_report = kraken2nt_contigs.out[1]
+
     // KrakenTools
 // Maybe I should treat all this with parameters
     if(params.species_taxid){

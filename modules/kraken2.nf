@@ -29,7 +29,7 @@ process extract_kraken {
     val(taxid)
     path(krakentools)
   output:
-    path("${id}_kraken_extract_contigs_${taxid}.fasta")
+    tuple val(id), path("${id}_kraken_extract_contigs_${taxid}.fasta")
   script:
     """
     python ${krakentools} -k ${kraken_res} -r ${kraken_report} \

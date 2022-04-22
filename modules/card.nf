@@ -1,7 +1,8 @@
 process card_rgi {
     label 'card_rgi'
     publishDir "${params.output}/${id}/AMR/card_rgi", mode: 'copy'
-    conda "${params.conda_card}"
+    conda '/home/hayer/.conda/envs/rgi'
+//    conda "${params.conda_card_rgi}"
 
     input:
         tuple val(id), path(contigs)

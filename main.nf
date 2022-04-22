@@ -50,8 +50,7 @@ def helpMSG() {
                                 Streptococcus_agalactiae, Streptococcus_pneumoniae, Streptococcus_pyogenes, Vibrio_cholerae.
                                 The amrfinderplus will be run if not specified, but no point mutations are detected.
                                 [default: $params.amrfinder_organism]
-        Conda envs paths:
-    --conda_card                path to existing conda env for CARD RGI [default: $params.conda_card]
+    --conda_card_rgi            path to existing conda env for CARD RGI [default: $params.conda_card_rgi]
     --conda_amrfinder           path to existing conda env for AMRFinderPlus [default: $params.conda_amrfinder]
         Nextflow options:
     -profile                    change the profile of nextflow both the engine and executor more details on github README
@@ -225,7 +224,9 @@ workflow {
     }
 
     // CARD Resistance Genes Identifier
-
+/*    if (params.conda_card_rgi){
+      card_rgi(deconta_contigs_ch,params.card_db)
+    }*/
     card_rgi(deconta_contigs_ch,params.card_db)
 
     //*************************************************

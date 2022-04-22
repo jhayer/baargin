@@ -6,8 +6,8 @@ process kraken2nt_contigs {
         tuple val(id), path(contigs)
         path(db_k2nt)
     output:
-        path("${id}_kn2_nt-res.txt")
-        path("${id}_kn2_nt-report.txt")
+        tuple val(id), path("${id}_kn2_nt-res.txt")
+        tuple val(id), path("${id}_kn2_nt-report.txt")
     script:
         """
         kraken2 --db ${db_k2nt} --memory-mapping \
@@ -24,8 +24,8 @@ process extract_kraken {
 
   input:
     tuple val(id), path(contigs)
-    path(kraken_res)
-    path(kraken_report)
+    tuple val(id), path(kraken_res)
+    tuple val(id), path(kraken_report)
     val(taxid)
     path(krakentools)
   output:

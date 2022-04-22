@@ -78,7 +78,8 @@ workflow {
     // include quast, busco, checkm
     include {quast} from './modules/quast.nf' params(output: params.output)
     include {busco} from './modules/busco.nf' params(output: params.output)
-
+    include {busco_auto_prok} from './modules/busco.nf' params(output: params.output)
+    
     // including Kraken2 - nucleotide level
     include {kraken2nt_contigs} from './modules/kraken2.nf' params(output: params.output)
     include {extract_kraken} from './modules/kraken2.nf' params(output: params.output)
@@ -137,9 +138,16 @@ workflow {
         Please provide lineage with --busco_lineage (e.g. enterobacterales_odb10)"
       }
 
+    }*/
+
+    if(params.busco_lineage){
+      busco(contigs_ch, params.busco_lineage)
     }
-    busco(contigs_ch, lineage)
-*/
+    else {
+      busco_auto_prok(contigs_ch)
+    }
+
+
     //*************************************************
     // STEP 3 - decontamination with Kraken2
     //*************************************************

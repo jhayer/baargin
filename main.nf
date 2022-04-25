@@ -24,6 +24,7 @@ def helpMSG() {
         Optional input:
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. nt) [default: $params.k2nt_db]
     --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
+    --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
 
       Output:
     --output                    path to the output directory (default: $params.output)
@@ -79,7 +80,7 @@ workflow {
     include {quast} from './modules/quast.nf' params(output: params.output)
     include {busco} from './modules/busco.nf' params(output: params.output)
     include {busco_auto_prok} from './modules/busco.nf' params(output: params.output)
-    
+
     // including Kraken2 - nucleotide level
     include {kraken2nt_contigs} from './modules/kraken2.nf' params(output: params.output)
     include {extract_kraken} from './modules/kraken2.nf' params(output: params.output)
@@ -90,8 +91,10 @@ workflow {
     }
     // AMR analysis modules
     include {amrfinderplus} from './modules/amrfinderplus.nf' params(output: params.output)
+    include {amrfinderplus_no_species} from './modules/amrfinderplus.nf' params(output: params.output)
     include {card_rgi} from './modules/card.nf' params(output: params.output)
-
+    //plasmids
+    include {plasmidfinder} from './modules/plasmidfinder.nf' params(output: params.output)
 
     //*************************************************
     // STEP 1 QC with fastp
@@ -118,35 +121,13 @@ workflow {
     // QUAST Assembly QC
     quast(contigs_ch, illumina_clean_ch)
 
-    // BUSCO completeness - only available for IFB or try Singularity
-/*
-    if (params.species == "Ecoli") || (params.species == "Kpneumoniae") ||
-      (params.species == "Salmonella") || (params.species == "Ecloacae")
-    {
-      lineage = "enterobacterales_odb10"
-    }
-    else if (params.species == "Saureus"){
-      lineage = "bacillales_odb10"
-      //Bacteria; Terrabacteria group; Firmicutes; Bacilli; Bacillales; Staphylococcaceae; Staphylococcus
-    }
-    else {
-      if (params.busco_lineage){
-        lineage = params.busco_lineage
-      }
-      else {
-        exit 1, "unknow lineage for this bacterial species! \
-        Please provide lineage with --busco_lineage (e.g. enterobacterales_odb10)"
-      }
-
-    }*/
-
+    // BUSCO completeness - Singularity container
     if(params.busco_lineage){
       busco(contigs_ch, params.busco_lineage)
     }
     else {
       busco_auto_prok(contigs_ch)
     }
-
 
     //*************************************************
     // STEP 3 - decontamination with Kraken2
@@ -245,6 +226,10 @@ workflow {
     //*************************************************
     // STEP 8 - PlasmidFinder et al. Platon ? MGEFinder..
     //*************************************************
+    if(params.plasmidfinder_db){
+      plasmidfinder(deconta_contigs_ch, params.plasmidfinder_db)
+    }
+
   //Platon
   //  PlasForest
   //  MOB-recon

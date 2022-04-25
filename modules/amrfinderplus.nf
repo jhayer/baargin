@@ -1,7 +1,6 @@
 process amrfinderplus {
     label 'amrfinderplus'
     publishDir "${params.output}/${id}/AMR/amrfinderplus", mode: 'copy'
-    conda '/home/hayer/.conda/envs/amrfinderplus'
 
     input:
         tuple val(id), path(contigs)
@@ -19,7 +18,6 @@ process amrfinderplus {
 process amrfinderplus_no_species {
     label 'amrfinderplus_no_species'
     publishDir "${params.output}/${id}/AMR/amrfinderplus", mode: 'copy'
-    conda 'amrfinderplus'
 
     input:
         tuple val(id), path(contigs)

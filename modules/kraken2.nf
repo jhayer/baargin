@@ -1,6 +1,6 @@
 process kraken2nt_contigs {
     label 'kraken2nt_contigs'
-    publishDir "${params.output}/${id}/taxonomic_classif/contigs", mode: 'copy'
+    publishDir "${params.output}/${id}/assembly/taxonomic_deconta", mode: 'copy'
 
     input:
         tuple val(id), path(contigs)
@@ -8,6 +8,7 @@ process kraken2nt_contigs {
     output:
         tuple val(id), path("${id}_kn2_nt-res.txt")
         tuple val(id), path("${id}_kn2_nt-report.txt")
+        tuple val(id), path("${contigs}")
     script:
         """
         kraken2 --db ${db_k2nt} --memory-mapping \
@@ -20,7 +21,7 @@ process kraken2nt_contigs {
 //KrakenTools - retrieval of species of interest
 process extract_kraken {
   label 'extract_kraken'
-  publishDir "${params.output}/${id}/taxonomic_classif/contigs", mode: 'copy'
+  publishDir "${params.output}/${id}/assembly/taxonomic_deconta", mode: 'copy'
 
   input:
     tuple val(id), path(contigs)

@@ -28,6 +28,7 @@ def helpMSG() {
 
       Output:
     --output                    path to the output directory (default: $params.output)
+    --tmpdir                    path to the tmp directory (default: $params.tmpdir)
 
         Outputed directories:
     qc                          The reads file after qc, qc logs and host mapping logs
@@ -113,7 +114,7 @@ workflow {
     // STEP 2 - Assembly
     //*************************************************
     spades(illumina_clean_ch)
-    contigs_ch = spades.out[0]
+    contigs_ch = spades.out.assembly.view()
 
     //*************************************************
     // STEP 2 - Assembly QC Quast, Busco
@@ -136,6 +137,7 @@ workflow {
     kraken2nt_contigs(contigs_ch, params.k2nt_db)
     krak_res = kraken2nt_contigs.out[0]
     krak_report = kraken2nt_contigs.out[1]
+    contigs_kn2 = kraken2nt_contigs.out[2]
 
     // KrakenTools
 // Maybe I should treat all this with parameters
@@ -161,7 +163,7 @@ workflow {
       exit 1, "No species or species taxid specified for retrieving the species of interest"
     }
 
-    extract_kraken(contigs_ch,krak_res,krak_report,sp_taxid,params.krakentools_extract)
+    extract_kraken(contigs_kn2,krak_res,krak_report,sp_taxid,params.krakentools_extract)
     deconta_contigs_ch = extract_kraken.out[0]
 
     //*************************************************

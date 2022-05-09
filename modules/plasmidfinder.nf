@@ -5,13 +5,17 @@ process plasmidfinder {
     input:
         tuple val(id), path(contigs)
         path(pf_db)
+        val(deconta)
     output:
-        path("plasmidfinder")
+        path("plasmidfinder_${deconta}")
+        path("${id}_plasmidfinder_${deconta}_results.tsv"), emit: plasmidfinder_tab
     script:
         """
-        mkdir plasmidfinder
-        plasmidfinder.py -i ${contigs} -o plasmidfinder -p ${pf_db} -mp blastn -x
+        mkdir plasmidfinder_${deconta}
+        plasmidfinder.py -i ${contigs} -o plasmidfinder_${deconta} -p ${pf_db} -mp blastn -x
 
-        plasmidfinder.py -i ${contigs} -o plasmidfinder -p ${pf_db} -mp kma -x
+        plasmidfinder.py -i ${contigs} -o plasmidfinder_${deconta} -p ${pf_db} -mp kma -x
+
+        mv plasmidfinder_${deconta}/results_tab.tsv ${id}_plasmidfinder_${deconta}_results.tsv
         """
 }

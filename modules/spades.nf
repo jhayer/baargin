@@ -5,6 +5,7 @@ process spades {
         tuple val(id), path(illumina)
     output:
         tuple val(id), path("${id}_scaffolds.fasta"), emit: assembly
+        tuple val(id), path(illumina), path("${id}_scaffolds.fasta"), emit: quast
         path "${id}_spades.log"                    , emit: log
         path "${id}_contigs.fasta"                 , emit: contigs
         path "${id}_graph.gfa"                     , emit: graph

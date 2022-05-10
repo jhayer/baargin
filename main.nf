@@ -78,9 +78,9 @@ workflow {
     // including assembler module
     include {spades} from './modules/spades.nf' params(output: params.output)
     // include quast, busco, checkm
-    include {quast} from './modules/quast.nf' params(output: params.output)
-    include {busco} from './modules/busco.nf' params(output: params.output)
-    include {busco_auto_prok} from './modules/busco.nf' params(output: params.output)
+    include {quast; quast as quast2} from './modules/quast.nf' params(output: params.output)
+    include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
+    include {busco_auto_prok; busco_auto_prok as busco_auto_prok2} from './modules/busco.nf' params(output: params.output)
 
     // including Kraken2 - nucleotide level
     include {kraken2nt_contigs} from './modules/kraken2.nf' params(output: params.output)
@@ -95,7 +95,7 @@ workflow {
     include {amrfinderplus_no_species} from './modules/amrfinderplus.nf' params(output: params.output)
     include {card_rgi} from './modules/card.nf' params(output: params.output)
     //plasmids
-    include {plasmidfinder} from './modules/plasmidfinder.nf' params(output: params.output)
+    include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
 
     //*************************************************
     // STEP 1 QC with fastp
@@ -114,30 +114,39 @@ workflow {
     // STEP 2 - Assembly
     //*************************************************
     spades(illumina_clean_ch)
-    contigs_ch = spades.out.assembly.view()
+    contigs_ch = spades.out.assembly
+    contigs_w_reads = spades.out.quast
 
     //*************************************************
-    // STEP 2 - Assembly QC Quast, Busco
+    // STEP 2 - Assembly QC Quast, Busco on raw assembly
     //*************************************************
     // QUAST Assembly QC
-    quast(contigs_ch, illumina_clean_ch)
+    //no taxonomic decontamination of the contigs yet
+    //deconta= "raw"
+    quast(contigs_w_reads, "raw")
 
     // BUSCO completeness - Singularity container
     if(params.busco_lineage){
-      busco(contigs_ch, params.busco_lineage)
+      busco(contigs_ch, params.busco_lineage, "raw")
     }
     else {
-      busco_auto_prok(contigs_ch)
+      busco_auto_prok(contigs_ch, "raw")
     }
 
     //*************************************************
-    // STEP 3 - decontamination with Kraken2
+    // STEP 3 - plasmids prediction on all raw contigs
+    //*************************************************
+    if(params.plasmidfinder_db){
+      plasmidfinder(contigs_ch, params.plasmidfinder_db, "raw")
+    }
+    //*************************************************
+    // STEP 4 - decontamination with Kraken2
     //*************************************************
     //kraken2nt contigs
-    kraken2nt_contigs(contigs_ch, params.k2nt_db)
-    krak_res = kraken2nt_contigs.out[0]
-    krak_report = kraken2nt_contigs.out[1]
-    contigs_kn2 = kraken2nt_contigs.out[2]
+    kraken2nt_contigs(contigs_w_reads, params.k2nt_db)
+    krak_res = kraken2nt_contigs.out.kn_results
+    krak_report = kraken2nt_contigs.out.kn_report
+    contigs_kn2 = kraken2nt_contigs.out.kn_reads_contigs
 
     // KrakenTools
 // Maybe I should treat all this with parameters
@@ -164,26 +173,23 @@ workflow {
     }
 
     extract_kraken(contigs_kn2,krak_res,krak_report,sp_taxid,params.krakentools_extract)
-    deconta_contigs_ch = extract_kraken.out[0]
+    deconta_contigs_ch = extract_kraken.out.kn_contigs_deconta
+    deconta_for_quast = extract_kraken.out.kn_reads_contigs_deconta
 
     //*************************************************
-    // STEP 4 - Find closest relative with Mash
+    // STEP 5 -Assembly QC (bis) of decontaminated contigs
     //*************************************************
-    // using the mash dataset provided
-    if(params.mash_dataset){
-      mash_screen(contigs_ch,params.species,params.mash_sketch)
-      // later, mash_screen will output fasta file of closest relative for mapping
+    // QUAST Assembly QC
+
+    quast2(deconta_for_quast,"deconta")
+
+    // BUSCO completeness - Singularity container
+    if(params.busco_lineage){
+      busco2(deconta_contigs_ch, params.busco_lineage, "deconta")
     }
-
-    //*************************************************
-    // STEP 5 - Map to the closest with Minimap2
-    //*************************************************
-    // minimap2 with PAF Output - use all contigs: contigs_ch
-    // compare the number of contigs mapped with the number of deconta_contigs_ch
-
-    // mapping could be done on same ref for all... need to select from mash results
-    // might need a second pipeline for mappings and core/pan genomes analysis,
-    // after the assemblies and decontamination are done...
+    else {
+      busco_auto_prok2(deconta_contigs_ch, "deconta")
+    }
 
     //*************************************************
     // STEP 6 - ARGs search: CARD RGI and AMRFinderPlus
@@ -191,34 +197,35 @@ workflow {
     // on the deconta_contigs_ch
     // AMRFinderPlus NCBI
 
-    if(params.species == "Ecoli"){
-      organism = 'Escherichia'
-      amrfinderplus(deconta_contigs_ch,organism)
-    }
-    else if (params.species == "Kpneumoniae"){
-      organism = 'Klebsiella'
-      amrfinderplus(deconta_contigs_ch,organism)
-    }
-    else if (params.species == "Salmonella"){
-      organism = 'Salmonella'
-      amrfinderplus(deconta_contigs_ch,organism)
-    }
-    else if (params.species == "Saureus"){
-      organism = 'Staphylococcus_aureus'
-      amrfinderplus(deconta_contigs_ch,organism)
-    }
-    else if (params.amrfinder_organism){
+    if (params.amrfinder_organism){
       amrfinderplus(deconta_contigs_ch,params.amrfinder_organism)
     }
-    else {
-      amrfinderplus_no_species(deconta_contigs_ch)
+    else{
+      if(params.species){
+        if(params.species == "Ecoli"){
+          organism = 'Escherichia'
+        }
+        else if (params.species == "Kpneumoniae"){
+          organism = 'Klebsiella'
+        }
+        else if (params.species == "Salmonella"){
+          organism = 'Salmonella'
+        }
+        else if (params.species == "Saureus"){
+          organism = 'Staphylococcus_aureus'
+        }
+        amrfinderplus(deconta_contigs_ch,organism)
+      }
+      else{
+        amrfinderplus_no_species(deconta_contigs_ch)
+      }
     }
 
     // CARD Resistance Genes Identifier
-/*    if (params.conda_card_rgi){
+    if (params.conda_card_rgi){
       card_rgi(deconta_contigs_ch,params.card_db)
-    }*/
-    card_rgi(deconta_contigs_ch,params.card_db)
+    }
+//    card_rgi(dec_contigs_card,params.card_db)
 
     //*************************************************
     // STEP 7 - Bakta annotation
@@ -229,11 +236,30 @@ workflow {
     // STEP 8 - PlasmidFinder et al. Platon ? MGEFinder..
     //*************************************************
     if(params.plasmidfinder_db){
-      plasmidfinder(deconta_contigs_ch, params.plasmidfinder_db)
+      plasmidfinder2(deconta_contigs_ch, params.plasmidfinder_db, "deconta")
     }
 
-  //Platon
-  //  PlasForest
-  //  MOB-recon
-  // on deconta_contigs_ch
+    //Platon
+    //  PlasForest
+    //  MOB-recon
+    // on deconta_contigs_ch
+
+    //*************************************************
+    // STEP 10 - Find closest relative with Mash
+    //*************************************************
+    // using the mash dataset provided
+    if(params.mash_dataset){
+      mash_screen(deconta_contigs_ch,params.species,params.mash_sketch)
+      // later, mash_screen will output fasta file of closest relative for mapping
+    }
+
+    //*************************************************
+    // STEP 11 - Map to the closest with Minimap2
+    //*************************************************
+    // minimap2 with PAF Output - use all contigs: contigs_ch
+    // compare the number of contigs mapped with the number of deconta_contigs_ch
+
+    // mapping could be done on same ref for all... need to select from mash results
+    // might need a second pipeline for mappings and core/pan genomes analysis,
+    // after the assemblies and decontamination are done...
 }

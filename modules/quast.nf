@@ -2,8 +2,7 @@ process quast {
     label 'quast'
     publishDir "${params.output}/${id}/assembly", mode: 'copy'
     input:
-        tuple val(id), path(contigs)
-        tuple val(id), path(illumina)
+        tuple val(id), path(illumina), path(contigs)
         val(deconta)
     output:
         path("quast_${deconta}")

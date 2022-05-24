@@ -37,5 +37,7 @@ process extract_kraken {
     python ${krakentools} -k ${kraken_res} -r ${kraken_report} \
         -s ${contigs} --include-children -t ${taxid} \
         -o ${id}_kraken_extract_contigs_${taxid}.fasta
+
+    cp ${id}_kraken_extract_contigs_${taxid}.fasta ../
     """
 }

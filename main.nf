@@ -96,6 +96,9 @@ workflow {
     include {card_rgi} from './modules/card.nf' params(output: params.output)
     //plasmids
     include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
+    // MLST
+    include {mlst; mlst as mlst2} from './modules/mlst.nf' params(output: params.output)
+
 
     //*************************************************
     // STEP 1 QC with fastp
@@ -135,10 +138,14 @@ workflow {
 
     //*************************************************
     // STEP 3 - plasmids prediction on all raw contigs
+    // and MLST on raw contigs
     //*************************************************
     if(params.plasmidfinder_db){
       plasmidfinder(contigs_ch, params.plasmidfinder_db, "raw")
     }
+
+    mlst(contigs_ch, "raw")
+
     //*************************************************
     // STEP 4 - decontamination with Kraken2
     //*************************************************
@@ -243,6 +250,11 @@ workflow {
     //  PlasForest
     //  MOB-recon
     // on deconta_contigs_ch
+
+    //*************************************************
+    // STEP 9 - MLST - Sequence typing
+    //*************************************************
+    mlst2(deconta_contigs_ch, "deconta")
 
     //*************************************************
     // STEP 10 - Find closest relative with Mash

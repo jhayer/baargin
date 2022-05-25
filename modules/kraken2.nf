@@ -30,12 +30,18 @@ process extract_kraken {
     val(taxid)
     path(krakentools)
   output:
-    tuple val(id), path("${id}_kraken_extract_contigs_${taxid}.fasta"), emit: kn_contigs_deconta
-    tuple val(id), path (reads), path("${id}_kraken_extract_contigs_${taxid}.fasta"), emit: kn_reads_contigs_deconta
+    tuple val(id), path("${id}_kraken_extract_contigs_${taxid}.fasta") optional true
+    tuple val(id), path (reads), path("${id}_kraken_extract_contigs_${taxid}.fasta") optional true
   script:
     """
     python ${krakentools} -k ${kraken_res} -r ${kraken_report} \
         -s ${contigs} --include-children -t ${taxid} \
         -o ${id}_kraken_extract_contigs_${taxid}.fasta
+
+    if [ -s ${id}_kraken_extract_contigs_${taxid}.fasta ]; then
+      echo "not empty"
+    else
+      rm ${id}_kraken_extract_contigs_${taxid}.fasta
+    fi
     """
 }

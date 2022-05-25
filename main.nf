@@ -180,98 +180,107 @@ workflow {
     }
 
     extract_kraken(contigs_kn2,krak_res,krak_report,sp_taxid,params.krakentools_extract)
-    deconta_contigs_ch = extract_kraken.out.kn_contigs_deconta
-    deconta_for_quast = extract_kraken.out.kn_reads_contigs_deconta
+//    deconta_contigs_ch = extract_kraken.out.kn_contigs_deconta
+//    deconta_for_quast = extract_kraken.out.kn_reads_contigs_deconta
 
-    //*************************************************
-    // STEP 5 -Assembly QC (bis) of decontaminated contigs
-    //*************************************************
-    // QUAST Assembly QC
+    deconta_contigs_ch = extract_kraken.out[0]
+    deconta_for_quast = extract_kraken.out[1]
 
-    quast2(deconta_for_quast,"deconta")
+    if (deconta_contigs_ch) {
+      //*************************************************
+      // STEP 5 -Assembly QC (bis) of decontaminated contigs
+      //*************************************************
+      // QUAST Assembly QC
 
-    // BUSCO completeness - Singularity container
-    if(params.busco_lineage){
-      busco2(deconta_contigs_ch, params.busco_lineage, "deconta")
-    }
-    else {
-      busco_auto_prok2(deconta_contigs_ch, "deconta")
-    }
+      quast2(deconta_for_quast,"deconta")
 
-    //*************************************************
-    // STEP 6 - ARGs search: CARD RGI and AMRFinderPlus
-    //*************************************************
-    // on the deconta_contigs_ch
-    // AMRFinderPlus NCBI
+      // BUSCO completeness - Singularity container
+      if(params.busco_lineage){
+        busco2(deconta_contigs_ch, params.busco_lineage, "deconta")
+      }
+      else {
+        busco_auto_prok2(deconta_contigs_ch, "deconta")
+      }
 
-    if (params.amrfinder_organism){
-      amrfinderplus(deconta_contigs_ch,params.amrfinder_organism)
-    }
-    else{
-      if(params.species){
-        if(params.species == "Ecoli"){
-          organism = 'Escherichia'
-        }
-        else if (params.species == "Kpneumoniae"){
-          organism = 'Klebsiella'
-        }
-        else if (params.species == "Salmonella"){
-          organism = 'Salmonella'
-        }
-        else if (params.species == "Saureus"){
-          organism = 'Staphylococcus_aureus'
-        }
-        amrfinderplus(deconta_contigs_ch,organism)
+      //*************************************************
+      // STEP 6 - ARGs search: CARD RGI and AMRFinderPlus
+      //*************************************************
+      // on the deconta_contigs_ch
+      // AMRFinderPlus NCBI
+
+      if (params.amrfinder_organism){
+        amrfinderplus(deconta_contigs_ch,params.amrfinder_organism)
       }
       else{
-        amrfinderplus_no_species(deconta_contigs_ch)
+        if(params.species){
+          if(params.species == "Ecoli"){
+            organism = 'Escherichia'
+          }
+          else if (params.species == "Kpneumoniae"){
+            organism = 'Klebsiella'
+          }
+          else if (params.species == "Salmonella"){
+            organism = 'Salmonella'
+          }
+          else if (params.species == "Saureus"){
+            organism = 'Staphylococcus_aureus'
+          }
+          amrfinderplus(deconta_contigs_ch,organism)
+        }
+        else{
+          amrfinderplus_no_species(deconta_contigs_ch)
+        }
       }
+
+      // CARD Resistance Genes Identifier
+      if (params.conda_card_rgi){
+        card_rgi(deconta_contigs_ch,params.card_db)
+      }
+  //    card_rgi(dec_contigs_card,params.card_db)
+
+      //*************************************************
+      // STEP 7 - Bakta annotation
+      //*************************************************
+      // bakta annotation of deconta contigs (and mapped contigs)
+
+      //*************************************************
+      // STEP 8 - PlasmidFinder et al. Platon ? MGEFinder..
+      //*************************************************
+      if(params.plasmidfinder_db){
+        plasmidfinder2(deconta_contigs_ch, params.plasmidfinder_db, "deconta")
+      }
+
+      //Platon
+      //  PlasForest
+      //  MOB-recon
+      // on deconta_contigs_ch
+
+      //*************************************************
+      // STEP 9 - MLST - Sequence typing
+      //*************************************************
+      mlst2(deconta_contigs_ch, "deconta")
+
+      //*************************************************
+      // STEP 10 - Find closest relative with Mash
+      //*************************************************
+      // using the mash dataset provided
+      if(params.mash_dataset){
+        mash_screen(deconta_contigs_ch,params.species,params.mash_sketch)
+        // later, mash_screen will output fasta file of closest relative for mapping
+      }
+
+      //*************************************************
+      // STEP 11 - Map to the closest with Minimap2
+      //*************************************************
+      // minimap2 with PAF Output - use all contigs: contigs_ch
+      // compare the number of contigs mapped with the number of deconta_contigs_ch
+
+      // mapping could be done on same ref for all... need to select from mash results
+      // might need a second pipeline for mappings and core/pan genomes analysis,
+      // after the assemblies and decontamination are done...
+
+
     }
 
-    // CARD Resistance Genes Identifier
-    if (params.conda_card_rgi){
-      card_rgi(deconta_contigs_ch,params.card_db)
-    }
-//    card_rgi(dec_contigs_card,params.card_db)
 
-    //*************************************************
-    // STEP 7 - Bakta annotation
-    //*************************************************
-    // bakta annotation of deconta contigs (and mapped contigs)
-
-    //*************************************************
-    // STEP 8 - PlasmidFinder et al. Platon ? MGEFinder..
-    //*************************************************
-    if(params.plasmidfinder_db){
-      plasmidfinder2(deconta_contigs_ch, params.plasmidfinder_db, "deconta")
-    }
-
-    //Platon
-    //  PlasForest
-    //  MOB-recon
-    // on deconta_contigs_ch
-
-    //*************************************************
-    // STEP 9 - MLST - Sequence typing
-    //*************************************************
-    mlst2(deconta_contigs_ch, "deconta")
-
-    //*************************************************
-    // STEP 10 - Find closest relative with Mash
-    //*************************************************
-    // using the mash dataset provided
-    if(params.mash_dataset){
-      mash_screen(deconta_contigs_ch,params.species,params.mash_sketch)
-      // later, mash_screen will output fasta file of closest relative for mapping
-    }
-
-    //*************************************************
-    // STEP 11 - Map to the closest with Minimap2
-    //*************************************************
-    // minimap2 with PAF Output - use all contigs: contigs_ch
-    // compare the number of contigs mapped with the number of deconta_contigs_ch
-
-    // mapping could be done on same ref for all... need to select from mash results
-    // might need a second pipeline for mappings and core/pan genomes analysis,
-    // after the assemblies and decontamination are done...
 }

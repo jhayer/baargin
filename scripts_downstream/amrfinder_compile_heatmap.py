@@ -23,7 +23,7 @@ def main():
     args = parser.parse_args()
 
     # remove suffix in files names
-    suffix="_L002_AMRfinder.txt"
+    suffix="_AMRfinder.txt"
     if(args.files_suffix):
         suffix=args.files_suffix
 
@@ -41,7 +41,7 @@ def prep_gene_dic(in_dir, suf):
     with os.scandir(in_dir) as entries:
 
         for entry in entries:
-            print(entry.name)
+        #    print(entry.name)
             if entry.is_file() and entry.name.endswith('.txt'):
                 tsv_handle = open(entry, 'r')
 
@@ -54,7 +54,7 @@ def prep_gene_dic(in_dir, suf):
                     gene_symbol = lst_line[5]
                     # retrieving info about gene, type of AMR
                     gene_info_lst = lst_line[6:12]
-                    print(gene_info_lst)
+                    
                     # if the gene is already in the dic:
                     # add the sample with value 1 for presence
                     if gene_symbol in gene_dic.keys():

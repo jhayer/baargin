@@ -16,27 +16,35 @@ def main():
     parser.add_argument("-o", "--output_file",
                         help="output tabular file containing amr genes\
                         for all samples", required=True)
+    parser.add_argument("-s", "--files_suffix",
+                        help="Suffix of amrfinder ouput files to remove to get \
+                        sample_ids", required=False)
 
     args = parser.parse_args()
 
-    dic_genes, lst_samples = prep_gene_dic(args.input_dir)
+    # remove suffix in files names
+    suffix="_L002_AMRfinder.txt"
+    if(args.files_suffix):
+        suffix=args.files_suffix
 
-    write_output_tsv(dic_genes, lst_samples, args.output_file)
+    dic_genes, lst_samples, dic_info = prep_gene_dic(args.input_dir, suffix)
+
+    write_output_tsv(dic_genes, lst_samples, dic_info, args.output_file)
 
 
-def prep_gene_dic(in_dir):
+def prep_gene_dic(in_dir, suf):
 
     gene_dic = {}
     sample_list = []
+    gene_info = {}
 
     with os.scandir(in_dir) as entries:
+
         for entry in entries:
             print(entry.name)
             if entry.is_file() and entry.name.endswith('.txt'):
                 tsv_handle = open(entry, 'r')
-                # remove suffix in files names
-                # TODO put as options
-                suf="_L002_AMRfinder.txt"
+
                 sample=entry.name.rstrip(suf)
                 sample_list.append(sample)
                 next(tsv_handle)
@@ -44,6 +52,9 @@ def prep_gene_dic(in_dir):
                 for line in tsv_handle:
                     lst_line = line.split('\t')
                     gene_symbol = lst_line[5]
+                    # retrieving info about gene, type of AMR
+                    gene_info_lst = lst_line[6:12]
+                    print(gene_info_lst)
                     # if the gene is already in the dic:
                     # add the sample with value 1 for presence
                     if gene_symbol in gene_dic.keys():
@@ -52,25 +63,30 @@ def prep_gene_dic(in_dir):
                         # new gene, add it to the dic first
                         gene_dic[gene_symbol]=[]
                         gene_dic[gene_symbol].append(sample)
+                        # adding gene info to specific dic
+                        gene_info[gene_symbol]=gene_info_lst
 
                 tsv_handle.close()
 
-    return(gene_dic,sample_list)
+    return(gene_dic,sample_list,gene_info)
 
 
-def write_output_tsv(gene_dic, sample_lst, tsv_file):
+def write_output_tsv(gene_dic, sample_lst, gene_info_dic, tsv_file):
 
     save_handle = open(tsv_file, 'w')
     # sort the list of sample_ids to always keep the same order while writing values
     sorted_sample_lst=sorted(sample_lst)
-    line ="genes"
+    line ="Gene symbol"+"\t"+"Seq name"+"\t"+"Scope"+"\t"+"Element type"+"\t"+ \
+            "Element subtype"+"\t"+"Class"+"\t"+"Subclass"
     for sample_id in sorted_sample_lst:
         line=line+"\t"+sample_id
-
+    # write the tsv file header
     save_handle.write(line + os.linesep)
 
     for gene, samples in gene_dic.items():
-        line=gene
+        line=gene+"\t"+gene_info_dic[gene][0]+"\t"+gene_info_dic[gene][1] \
+            +"\t"+gene_info_dic[gene][2]+"\t"+gene_info_dic[gene][3]+"\t"+ \
+            gene_info_dic[gene][4]+"\t"+gene_info_dic[gene][5]
 
         for s_id in sorted_sample_lst:
             pres=0

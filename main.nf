@@ -25,6 +25,7 @@ def helpMSG() {
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. nt) [default: $params.k2nt_db]
     --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
     --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
+    --bakta_db                  path to the bakta annotation database [default: $params.bakta_db]
 
       Output:
     --output                    path to the output directory (default: $params.output)
@@ -40,8 +41,10 @@ def helpMSG() {
     --memory                    80% of available RAM in GB [default: $params.memory]
 
         Workflow Options:
-    --species                   bacterial species to assemble (e.g. Ecoli, Kpneumoniae, Salmonella, Ecloacae, Saureus) [default: $params.species]
+    --genus                     Bacterial genus (Escherichia, Salmonella, Enterobacter, Klebsiella, Staphylococcus)  [default: $params.genus]
+    --species                   bacterial species to assemble (e.g. coli, pneumoniae, cloacae, aureus) [default: $params.species]
     --species_taxid             NCBI TaxID of the bacterial species to assemble [default: $params.species_taxid]
+
     --mash_dataset              path to mash dataset prepared for the species [default: $params.mash_dataset]
     --busco_lineage             to specify according to the bacterial species. e.g. enterobacterales_odb10, bacillales_odb10... check BUSCO [default: $params.busco_lineage]
     --amrfinder_organism        To specify for PointMutation detection if not Ecoli, Salmonella, Kpneumoniae or Saureus.
@@ -98,6 +101,9 @@ workflow {
     include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
     // MLST
     include {mlst; mlst as mlst2} from './modules/mlst.nf' params(output: params.output)
+    // Annotation
+    include {prokka} from './modules/prokka.nf' params(output: params.output)
+    include {bakta} from './modules/bakta.nf' params(output: params.output)
 
 
     //*************************************************
@@ -160,19 +166,19 @@ workflow {
     if(params.species_taxid){
       sp_taxid = params.species_taxid
     }
-    else if (params.species == "Ecoli") {
+    else if (params.genus=="Escherichia" && params.species == "coli") {
       sp_taxid = '562'
     }
-    else if (params.species == "Kpneumoniae"){
+    else if (params.genus=="Klebsiella" && params.species == "pneumoniae"){
       sp_taxid = '573'
     }
-    else if (params.species == "Salmonella"){
+    else if (params.genus == "Salmonella"){
       sp_taxid = '590'
     }
-    else if (params.species == "Ecloacae"){
+    else if (params.genus=="Enterobacter" && params.species == "cloacae"){
       sp_taxid = '550'
     }
-    else if (params.species == "Saureus"){
+    else if (params.genus=="Staphylococcus" && params.species == "aureus"){
       sp_taxid = '1280'
     }
     else {
@@ -212,17 +218,17 @@ workflow {
         amrfinderplus(deconta_contigs_ch,params.amrfinder_organism)
       }
       else{
-        if(params.species){
-          if(params.species == "Ecoli"){
+        if(params.genus){
+          if(params.genus == "Escherichia"){
             organism = 'Escherichia'
           }
-          else if (params.species == "Kpneumoniae"){
+          else if (params.genus == "Klebsiella"){
             organism = 'Klebsiella'
           }
-          else if (params.species == "Salmonella"){
+          else if (params.genus == "Salmonella"){
             organism = 'Salmonella'
           }
-          else if (params.species == "Saureus"){
+          if (params.genus="Staphylococcus" && params.species == "aureus"){
             organism = 'Staphylococcus_aureus'
           }
           amrfinderplus(deconta_contigs_ch,organism)
@@ -242,6 +248,12 @@ workflow {
       // STEP 7 - Bakta annotation
       //*************************************************
       // bakta annotation of deconta contigs (and mapped contigs)
+  //    if(params.bakta_db){
+  //      bakta(deconta_contigs_ch, params.bakta_db, params.genus, params.species)
+  //    }
+
+      // prokka
+      prokka(deconta_contigs_ch, params.genus, params.species)
 
       //*************************************************
       // STEP 8 - PlasmidFinder et al. Platon ? MGEFinder..

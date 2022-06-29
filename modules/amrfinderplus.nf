@@ -6,13 +6,14 @@ process amrfinderplus {
     input:
         tuple val(id), path(contigs)
         val(species)
+        val(deconta)
     output:
-        path("${id}_AMRfinder.txt")
-        path("${id}_AMRfinder_all_mut.txt")
+        path("${id}_${deconta}_AMRfinder.txt")
+        path("${id}_${deconta}_AMRfinder_all_mut.txt")
     script:
         """
-        amrfinder --nucleotide ${contigs} -o ${id}_AMRfinder.txt --plus \
-            --organism ${species} --mutation_all ${id}_AMRfinder_all_mut.txt
+        amrfinder --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus \
+            --organism ${species} --mutation_all ${id}_${deconta}_AMRfinder_all_mut.txt
         """
 }
 
@@ -22,10 +23,11 @@ process amrfinderplus_no_species {
 
     input:
         tuple val(id), path(contigs)
+        val(deconta)
     output:
-        path("${id}_AMRfinder.txt")
+        path("${id}_${deconta}_AMRfinder.txt")
     script:
         """
-        amrfinder --nucleotide ${contigs} -o ${id}_AMRfinder.txt --plus
+        amrfinder --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus
         """
 }

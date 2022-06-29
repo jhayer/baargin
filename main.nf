@@ -94,9 +94,9 @@ workflow {
       include {mash_screen} from './modules/mash.nf' params(output: params.output)
     }
     // AMR analysis modules
-    include {amrfinderplus} from './modules/amrfinderplus.nf' params(output: params.output)
-    include {amrfinderplus_no_species} from './modules/amrfinderplus.nf' params(output: params.output)
-    include {card_rgi} from './modules/card.nf' params(output: params.output)
+    include {amrfinderplus; amrfinderplus as amrfinderplus2} from './modules/amrfinderplus.nf' params(output: params.output)
+    include {amrfinderplus_no_species; amrfinderplus_no_species as amrfinderplus_no_species2} from './modules/amrfinderplus.nf' params(output: params.output)
+    include {card_rgi; card_rgi as card_rgi2} from './modules/card.nf' params(output: params.output)
     //plasmids
     include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
     // MLST
@@ -153,7 +153,44 @@ workflow {
     mlst(contigs_ch, "raw")
 
     //*************************************************
-    // STEP 4 - decontamination with Kraken2
+    // STEP 4 - ARGs search: CARD RGI and AMRFinderPlus
+    //*************************************************
+    // on the all contigs (raw)
+    // AMRFinderPlus NCBI
+    // For all AMRFinderPlus processes
+    if(params.genus == "Escherichia"){
+      organism = 'Escherichia'
+    }
+    else if (params.genus == "Klebsiella"){
+      organism = 'Klebsiella'
+    }
+    else if (params.genus == "Salmonella"){
+      organism = 'Salmonella'
+    }
+    if (params.genus="Staphylococcus" && params.species == "aureus"){
+      organism = 'Staphylococcus_aureus'
+    }
+
+    // if amrfinder_organism is given in the params directly
+    if (params.amrfinder_organism){
+      amrfinderplus(contigs_ch,params.amrfinder_organism, "raw")
+    }
+    else{
+      if(params.genus){
+        amrfinderplus(contigs_ch,organism, "raw")
+      }
+      else{
+        amrfinderplus_no_species(contigs_ch, "raw")
+      }
+    }
+
+    // CARD Resistance Genes Identifier
+    if (params.conda_card_rgi){
+      card_rgi(contigs_ch,params.card_db, "raw")
+    }
+
+    //*************************************************
+    // STEP 5 - decontamination with Kraken2
     //*************************************************
     //kraken2nt contigs
     kraken2nt_contigs(contigs_w_reads, params.k2nt_db)
@@ -194,7 +231,7 @@ workflow {
 
     if (deconta_contigs_ch) {
       //*************************************************
-      // STEP 5 -Assembly QC (bis) of decontaminated contigs
+      // STEP 6 -Assembly QC (bis) of decontaminated contigs
       //*************************************************
       // QUAST Assembly QC
 
@@ -209,43 +246,30 @@ workflow {
       }
 
       //*************************************************
-      // STEP 6 - ARGs search: CARD RGI and AMRFinderPlus
+      // STEP 7 - ARGs search: CARD RGI and AMRFinderPlus
       //*************************************************
       // on the deconta_contigs_ch
       // AMRFinderPlus NCBI
 
       if (params.amrfinder_organism){
-        amrfinderplus(deconta_contigs_ch,params.amrfinder_organism)
+        amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, "deconta")
       }
       else{
         if(params.genus){
-          if(params.genus == "Escherichia"){
-            organism = 'Escherichia'
-          }
-          else if (params.genus == "Klebsiella"){
-            organism = 'Klebsiella'
-          }
-          else if (params.genus == "Salmonella"){
-            organism = 'Salmonella'
-          }
-          if (params.genus="Staphylococcus" && params.species == "aureus"){
-            organism = 'Staphylococcus_aureus'
-          }
-          amrfinderplus(deconta_contigs_ch,organism)
+          amrfinderplus2(deconta_contigs_ch,organism, "deconta")
         }
         else{
-          amrfinderplus_no_species(deconta_contigs_ch)
+          amrfinderplus_no_species2(deconta_contigs_ch, "deconta")
         }
       }
 
       // CARD Resistance Genes Identifier
       if (params.conda_card_rgi){
-        card_rgi(deconta_contigs_ch,params.card_db)
+        card_rgi2(deconta_contigs_ch,params.card_db, "deconta")
       }
-  //    card_rgi(dec_contigs_card,params.card_db)
 
       //*************************************************
-      // STEP 7 - Bakta annotation
+      // STEP 8 -  annotation
       //*************************************************
       // bakta annotation of deconta contigs (and mapped contigs)
   //    if(params.bakta_db){
@@ -256,7 +280,7 @@ workflow {
       prokka(deconta_contigs_ch, params.genus, params.species)
 
       //*************************************************
-      // STEP 8 - PlasmidFinder et al. Platon ? MGEFinder..
+      // STEP 9 - PlasmidFinder et al. Platon ? MGEFinder..
       //*************************************************
       if(params.plasmidfinder_db){
         plasmidfinder2(deconta_contigs_ch, params.plasmidfinder_db, "deconta")
@@ -268,21 +292,21 @@ workflow {
       // on deconta_contigs_ch
 
       //*************************************************
-      // STEP 9 - MLST - Sequence typing
+      // STEP 10 - MLST - Sequence typing
       //*************************************************
       mlst2(deconta_contigs_ch, "deconta")
 
       //*************************************************
-      // STEP 10 - Find closest relative with Mash
+      // STEP 11 - Find closest relative with Mash
       //*************************************************
       // using the mash dataset provided
-      if(params.mash_dataset){
+  /*    if(params.mash_dataset){
         mash_screen(deconta_contigs_ch,params.species,params.mash_sketch)
         // later, mash_screen will output fasta file of closest relative for mapping
       }
-
+*/
       //*************************************************
-      // STEP 11 - Map to the closest with Minimap2
+      // STEP 12 - Map to the closest with Minimap2
       //*************************************************
       // minimap2 with PAF Output - use all contigs: contigs_ch
       // compare the number of contigs mapped with the number of deconta_contigs_ch

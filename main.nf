@@ -47,6 +47,7 @@ def helpMSG() {
 
     --mash_dataset              path to mash dataset prepared for the species [default: $params.mash_dataset]
     --busco_lineage             to specify according to the bacterial species. e.g. enterobacterales_odb10, bacillales_odb10... check BUSCO [default: $params.busco_lineage]
+    --busco_db_offline          path to BUSCO datasets if user wants to run BUSCO offline [default: params.$busco_db_offline]
     --amrfinder_organism        To specify for PointMutation detection if not Ecoli, Salmonella, Kpneumoniae or Saureus.
                                 Can be among these: Acinetobacter_baumannii, Campylobacter,
                                 Clostridioides_difficile, Enterococcus_faecalis, Enterococcus_faecium,
@@ -136,7 +137,7 @@ workflow {
 
     // BUSCO completeness - Singularity container
     if(params.busco_lineage){
-      busco(contigs_ch, params.busco_lineage, "raw")
+      busco(contigs_ch, params.busco_lineage, "raw", params.busco_db_offline)
     }
     else {
       busco_auto_prok(contigs_ch, "raw")
@@ -239,7 +240,7 @@ workflow {
 
       // BUSCO completeness - Singularity container
       if(params.busco_lineage){
-        busco2(deconta_contigs_ch, params.busco_lineage, "deconta")
+        busco2(deconta_contigs_ch, params.busco_lineage, "deconta",params.busco_db_offline)
       }
       else {
         busco_auto_prok2(deconta_contigs_ch, "deconta")

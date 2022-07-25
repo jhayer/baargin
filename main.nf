@@ -104,7 +104,7 @@ workflow {
     include {mlst; mlst as mlst2} from './modules/mlst.nf' params(output: params.output)
     // Annotation
     include {prokka} from './modules/prokka.nf' params(output: params.output)
-    include {bakta} from './modules/bakta.nf' params(output: params.output)
+    //include {bakta} from './modules/bakta.nf' params(output: params.output)
 
 
     //*************************************************

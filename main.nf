@@ -22,6 +22,7 @@ def helpMSG() {
         Input:
     --illumina                  path to the directory containing the illumina read file (fastq) (default: $params.illumina)
         Optional input:
+    --phred_type                phred score type. Specify if 33 (default and current) or 64 (ex. BGI, older...) [default: $params.phred_type]
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. nt) [default: $params.k2nt_db]
     --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
     --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
@@ -117,7 +118,7 @@ workflow {
         .view()
 
     // run fastp module
-    fastp(illumina_input_ch)
+    fastp(illumina_input_ch, params.phred_type)
     illumina_clean_ch = fastp.out[0]
 
     //*************************************************

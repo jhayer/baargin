@@ -21,6 +21,7 @@ def helpMSG() {
 
         Input:
     --illumina                  path to the directory containing the illumina read file (fastq) (default: $params.illumina)
+    --contigs                  path to the directory containing the already assembled contigs files (fasta) (default: $params.contigs)
         Optional input:
     --phred_type                phred score type. Specify if 33 (default and current) or 64 (ex. BGI, older...) [default: $params.phred_type]
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. nt) [default: $params.k2nt_db]
@@ -83,7 +84,8 @@ workflow {
     // including assembler module
     include {spades} from './modules/spades.nf' params(output: params.output)
     // include quast, busco, checkm
-    include {quast; quast as quast2} from './modules/quast.nf' params(output: params.output)
+    include {quast} from './modules/quast.nf' params(output: params.output)
+    include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './modules/quast.nf' params(output: params.output)
     include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
     include {busco_auto_prok; busco_auto_prok as busco_auto_prok2} from './modules/busco.nf' params(output: params.output)
 
@@ -113,28 +115,39 @@ workflow {
     //*************************************************
 
     // DATA INPUT ILLUMINA
-    illumina_input_ch = Channel
-        .fromFilePairs( "${params.illumina}/*_{1,2}*.fq{,.gz}", checkIfExists: true)
-        .view()
+    if(params.illumina){
+      illumina_input_ch = Channel
+          .fromFilePairs( "${params.illumina}/*_{1,2}*.fq{,.gz}", checkIfExists: true)
+          .view()
 
-    // run fastp module
-    fastp(illumina_input_ch, params.phred_type)
-    illumina_clean_ch = fastp.out[0]
+      // run fastp module
+      fastp(illumina_input_ch, params.phred_type)
+      illumina_clean_ch = fastp.out[0]
 
-    //*************************************************
-    // STEP 2 - Assembly
-    //*************************************************
-    spades(illumina_clean_ch)
-    contigs_ch = spades.out.assembly
-    contigs_w_reads = spades.out.quast
+      //*************************************************
+      // STEP 2 - Assembly
+      //*************************************************
+      spades(illumina_clean_ch)
+      contigs_ch = spades.out.assembly
+      contigs_w_reads = spades.out.quast
 
-    //*************************************************
-    // STEP 2 - Assembly QC Quast, Busco on raw assembly
-    //*************************************************
-    // QUAST Assembly QC
-    //no taxonomic decontamination of the contigs yet
-    //deconta= "raw"
-    quast(contigs_w_reads, "raw")
+      //*************************************************
+      // STEP 2 - Assembly QC Quast, Busco on raw assembly
+      //*************************************************
+      // QUAST Assembly QC
+      //no taxonomic decontamination of the contigs yet
+      //deconta= "raw"
+      quast(contigs_w_reads, "raw")
+
+    }
+    else{
+      // DATA INPUT is Contigs from assembly
+      if(params.contigs){
+        contigs_ch = Channel.fromPath("${params.contigs}/*.{fasta,fa}", checkIfExists: true)
+        quast_contigs_only(contigs_ch, "raw")
+      }
+    }
+
 
     // BUSCO completeness - Singularity container
     if(params.busco_lineage){
@@ -195,10 +208,10 @@ workflow {
     // STEP 5 - decontamination with Kraken2
     //*************************************************
     //kraken2nt contigs
-    kraken2nt_contigs(contigs_w_reads, params.k2nt_db)
+    kraken2nt_contigs(contigs_ch, params.k2nt_db)
     krak_res = kraken2nt_contigs.out.kn_results
     krak_report = kraken2nt_contigs.out.kn_report
-    contigs_kn2 = kraken2nt_contigs.out.kn_reads_contigs
+    contigs_kn2 = kraken2nt_contigs.out.kn_contigs
 
     // KrakenTools
 // Maybe I should treat all this with parameters
@@ -229,7 +242,6 @@ workflow {
 //    deconta_for_quast = extract_kraken.out.kn_reads_contigs_deconta
 
     deconta_contigs_ch = extract_kraken.out[0]
-    deconta_for_quast = extract_kraken.out[1]
 
     if (deconta_contigs_ch) {
       //*************************************************
@@ -237,7 +249,7 @@ workflow {
       //*************************************************
       // QUAST Assembly QC
 
-      quast2(deconta_for_quast,"deconta")
+      quast_contigs_only2(deconta_contigs_ch,"deconta")
 
       // BUSCO completeness - Singularity container
       if(params.busco_lineage){

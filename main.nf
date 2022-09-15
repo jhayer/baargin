@@ -21,7 +21,7 @@ def helpMSG() {
 
         Input:
     --illumina                  path to the directory containing the illumina read file (fastq) (default: $params.illumina)
-    --contigs                  path to the directory containing the already assembled contigs files (fasta) (default: $params.contigs)
+    --contigs                   path to the directory containing the already assembled contigs files (fasta) (default: $params.contigs)
         Optional input:
     --phred_type                phred score type. Specify if 33 (default and current) or 64 (ex. BGI, older...) [default: $params.phred_type]
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. nt) [default: $params.k2nt_db]
@@ -143,7 +143,17 @@ workflow {
     else{
       // DATA INPUT is Contigs from assembly
       if(params.contigs){
-        contigs_ch = Channel.fromPath("${params.contigs}/*.{fasta,fa}", checkIfExists: true)
+        contigs_files_ch = Channel
+          .fromPath("${params.contigs}/*.{fasta,fa}", checkIfExists: true)
+          .view()
+
+
+          contigs_files_ch.map { file ->
+            def id = ( file.baseName.toString() =~ /^[^._]*(?=\_)/ )[0] // first element in the name until underscore
+            return tuple(id, file)
+          }
+            .set{ contigs_ch}
+
         quast_contigs_only(contigs_ch, "raw")
       }
     }

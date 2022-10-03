@@ -1,7 +1,6 @@
 process amrfinderplus {
     label 'amrfinderplus'
     publishDir "${params.output}/${id}/AMR/amrfinderplus", mode: 'copy'
-  //  scratch './tmpdir/'
 
     input:
         tuple val(id), path(contigs)

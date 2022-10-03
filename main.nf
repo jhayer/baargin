@@ -3,8 +3,8 @@ nextflow.enable.dsl=2
 
 start_var = Channel.from("""
 ********* Start running nf-wgs_amr pipeline *********
-nf-wgs_amr is a workflow for genomics qc, assembly, decontamination by
-taxonomic classification, analysis of Antimicrobial Resistance Genes
+nf-wgs_amr is a workflow for bacterial genomics qc, assembly, decontamination by
+taxonomic classification, analysis of Antimicrobial Resistance Genes, plasmids detection
 **************************************
 """)
 start_var.view()
@@ -24,7 +24,7 @@ def helpMSG() {
     --contigs                   path to the directory containing the already assembled contigs files (fasta) (default: $params.contigs)
         Optional input:
     --phred_type                phred score type. Specify if 33 (default and current) or 64 (ex. BGI, older...) [default: $params.phred_type]
-    --k2nt_db                   path to the Kraken2 nucleotide database (e.g. nt) [default: $params.k2nt_db]
+    --k2nt_db                   path to the Kraken2 nucleotide database (e.g. MiniKraken, nt) [default: $params.k2nt_db]
     --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
     --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
     --bakta_db                  path to the bakta annotation database [default: $params.bakta_db]
@@ -35,8 +35,9 @@ def helpMSG() {
 
         Outputed directories:
     qc                          The reads file after qc, qc logs and host mapping logs
-    assembly                    The spades assembly output directory
+    assembly                    The spades assembly output directory and all metrics related to assembly (busco, quast)
     taxonomic_classif           The taxonomic classifications at contigs level
+    AMR                         The output directory for resistane genes analysis: ARMFinderPlus and CARD
 
         Basic Parameter:
     --cpus                      max cores for local use [default: $params.cpus]
@@ -182,31 +183,13 @@ workflow {
     //*************************************************
     // on the all contigs (raw)
     // AMRFinderPlus NCBI
-    // For all AMRFinderPlus processes
-    if(params.genus == "Escherichia"){
-      organism = 'Escherichia'
-    }
-    else if (params.genus == "Klebsiella"){
-      organism = 'Klebsiella'
-    }
-    else if (params.genus == "Salmonella"){
-      organism = 'Salmonella'
-    }
-    if (params.genus="Staphylococcus" && params.species == "aureus"){
-      organism = 'Staphylococcus_aureus'
-    }
 
     // if amrfinder_organism is given in the params directly
     if (params.amrfinder_organism){
       amrfinderplus(contigs_ch,params.amrfinder_organism, "raw")
     }
     else{
-      if(params.genus){
-        amrfinderplus(contigs_ch,organism, "raw")
-      }
-      else{
-        amrfinderplus_no_species(contigs_ch, "raw")
-      }
+      amrfinderplus_no_species(contigs_ch, "raw")
     }
 
     // CARD Resistance Genes Identifier
@@ -224,27 +207,11 @@ workflow {
     contigs_kn2 = kraken2nt_contigs.out.kn_contigs
 
     // KrakenTools
-// Maybe I should treat all this with parameters
     if(params.species_taxid){
       sp_taxid = params.species_taxid
     }
-    else if (params.genus=="Escherichia" && params.species == "coli") {
-      sp_taxid = '562'
-    }
-    else if (params.genus=="Klebsiella" && params.species == "pneumoniae"){
-      sp_taxid = '573'
-    }
-    else if (params.genus == "Salmonella"){
-      sp_taxid = '590'
-    }
-    else if (params.genus=="Enterobacter" && params.species == "cloacae"){
-      sp_taxid = '550'
-    }
-    else if (params.genus=="Staphylococcus" && params.species == "aureus"){
-      sp_taxid = '1280'
-    }
     else {
-      exit 1, "No species or species taxid specified for retrieving the species of interest"
+      exit 1, "No TaxID specified for retrieving the species of interest - please provide a NCBI TaxID (from species or genus) with --species_taxid"
     }
 
     extract_kraken(contigs_kn2,krak_res,krak_report,sp_taxid,params.krakentools_extract)
@@ -279,12 +246,7 @@ workflow {
         amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, "deconta")
       }
       else{
-        if(params.genus){
-          amrfinderplus2(deconta_contigs_ch,organism, "deconta")
-        }
-        else{
-          amrfinderplus_no_species2(deconta_contigs_ch, "deconta")
-        }
+        amrfinderplus_no_species2(deconta_contigs_ch, "deconta")
       }
 
       // CARD Resistance Genes Identifier
@@ -341,6 +303,5 @@ workflow {
 
 
     }
-
 
 }

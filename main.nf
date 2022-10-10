@@ -27,7 +27,6 @@ def helpMSG() {
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. MiniKraken, nt) [default: $params.k2nt_db]
     --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
     --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
-    --bakta_db                  path to the bakta annotation database [default: $params.bakta_db]
 
       Output:
     --output                    path to the output directory (default: $params.output)
@@ -59,8 +58,6 @@ def helpMSG() {
                                 Streptococcus_agalactiae, Streptococcus_pneumoniae, Streptococcus_pyogenes, Vibrio_cholerae.
                                 The amrfinderplus will be run if not specified, but no point mutations are detected.
                                 [default: $params.amrfinder_organism]
-    --conda_card_rgi            path to existing conda env for CARD RGI [default: $params.conda_card_rgi]
-    --conda_amrfinder           path to existing conda env for AMRFinderPlus [default: $params.conda_amrfinder]
         Nextflow options:
     -profile                    change the profile of nextflow both the engine and executor more details on github README
     -resume                     resume the workflow where it stopped
@@ -72,9 +69,9 @@ workflow {
     // error handling
     if (
         workflow.profile.contains('itrop') ||
-        workflow.profile.contains('ifb')
+        workflow.profile.contains('singu')
     ) { "executer selected" }
-    else { exit 1, "No executer selected: -profile itrop/ifb"}
+    else { exit 1, "No executer selected: -profile itrop/singu"}
 
 
     //*************************************************
@@ -118,7 +115,7 @@ workflow {
     // DATA INPUT ILLUMINA
     if(params.illumina){
       illumina_input_ch = Channel
-          .fromFilePairs( "${params.illumina}/*_{1,2}*.fq{,.gz}", checkIfExists: true)
+          .fromFilePairs( "${params.illumina}/*R{1,2}*.fastq{,.gz}", checkIfExists: true)
           .view()
 
       // run fastp module
@@ -193,7 +190,7 @@ workflow {
     }
 
     // CARD Resistance Genes Identifier
-    if (params.conda_card_rgi){
+    if (params.card_db){
       card_rgi(contigs_ch,params.card_db, "raw")
     }
 
@@ -250,7 +247,7 @@ workflow {
       }
 
       // CARD Resistance Genes Identifier
-      if (params.conda_card_rgi){
+      if (params.card_db){
         card_rgi2(deconta_contigs_ch,params.card_db, "deconta")
       }
 

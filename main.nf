@@ -22,6 +22,8 @@ def helpMSG() {
         Input:
     --illumina                  path to the directory containing the illumina read file (fastq) (default: $params.illumina)
     --contigs                   path to the directory containing the already assembled contigs files (fasta) (default: $params.contigs)
+    --hybrid_index              path to the csv file containing the mapping between sampleID, illuminaR1.fastq.gz, illuminaR2.fastq.gz, ont_read.fastq
+
         Optional input:
     --phred_type                phred score type. Specify if 33 (default and current) or 64 (ex. BGI, older...) [default: $params.phred_type]
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. MiniKraken, nt) [default: $params.k2nt_db]
@@ -50,7 +52,7 @@ def helpMSG() {
     --mash_dataset              path to mash dataset prepared for the species [default: $params.mash_dataset]
     --busco_lineage             to specify according to the bacterial species. e.g. enterobacterales_odb10, bacillales_odb10... check BUSCO [default: $params.busco_lineage]
     --busco_db_offline          path to BUSCO datasets if user wants to run BUSCO offline [default: params.$busco_db_offline]
-    --amrfinder_organism        To specify for PointMutation detection if not Ecoli, Salmonella, Kpneumoniae or Saureus.
+    --amrfinder_organism        To specify for PointMutation detection.
                                 Can be among these: Acinetobacter_baumannii, Campylobacter,
                                 Clostridioides_difficile, Enterococcus_faecalis, Enterococcus_faecium,
                                 Escherichia, Klebsiella, Neisseria, Pseudomonas_aeruginosa,
@@ -81,6 +83,7 @@ workflow {
     include {fastp} from './modules/fastp.nf' params(output: params.output)
     // including assembler module
     include {spades} from './modules/spades.nf' params(output: params.output)
+    include {unicycler} from './modules/unicycler.nf' params(output: params.output)
     // include quast, busco, checkm
     include {quast} from './modules/quast.nf' params(output: params.output)
     include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './modules/quast.nf' params(output: params.output)
@@ -138,22 +141,37 @@ workflow {
       quast(contigs_w_reads, "raw")
 
     }
-    else{
+    else if(params.contigs){
       // DATA INPUT is Contigs from assembly
-      if(params.contigs){
-        contigs_files_ch = Channel
-          .fromPath("${params.contigs}/*.{fasta,fa}", checkIfExists: true)
-          .view()
+      contigs_files_ch = Channel
+        .fromPath("${params.contigs}/*.{fasta,fa}", checkIfExists: true)
+        .view()
 
 
-          contigs_files_ch.map { file ->
-            def id = ( file.baseName.toString() =~ /^[^._]*(?=\_)/ )[0] // first element in the name until underscore
-            return tuple(id, file)
-          }
-            .set{ contigs_ch}
+        contigs_files_ch.map { file ->
+          def id = ( file.baseName.toString() =~ /^[^._]*(?=\_)/ )[0] // first element in the name until underscore
+          return tuple(id, file)
+        }
+          .set{ contigs_ch}
 
-        quast_contigs_only(contigs_ch, "raw")
-      }
+      quast_contigs_only(contigs_ch, "raw")
+    }
+    else if(params.hybrid_index){
+      // the input is CSV file mapping sampleID to illumina and ont reads files
+      //sampleId	read1	read2 ont
+      //FC816RLABXX reads/FC816RLABXX_L1_R1.fastq.gz reads/FC816RLABXX_L1_R2.fastq.gz ont/FC816RLABXX.fastq
+      hybrid_ch = Channel.fromPath(params.hybrid_index, checkIfExists: true) \
+        | splitCsv(header:true) \
+        | map { row-> tuple(row.sampleId, file(row.read1), file(row.read2), file(row.ont)) }
+
+        // run fastp module
+    //   fastp(illumina_input_ch, params.phred_type)
+    //   illumina_clean_ch = fastp.out[0]
+      unicycler(hybrid_ch)
+      contigs_ch = unicycler.out.assembly
+    }
+    else{
+      //no input provided
     }
 
 

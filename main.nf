@@ -162,7 +162,7 @@ workflow {
       //FC816RLABXX reads/FC816RLABXX_L1_R1.fastq.gz reads/FC816RLABXX_L1_R2.fastq.gz ont/FC816RLABXX.fastq
       hybrid_ch = Channel.fromPath(params.hybrid_index, checkIfExists: true) \
         | splitCsv(header:true) \
-        | map { row-> tuple(row.sampleId.toString(), file(row.read1), file(row.read2), file(row.ont)) }
+        | map { row-> tuple(row.sampleID, file(row.read1), file(row.read2), file(row.ont)) }
 
         // run fastp module
     //   fastp(illumina_input_ch, params.phred_type)

@@ -11,12 +11,11 @@ process unicycler {
         path "unicycler.version.txt", emit: version
     script:
         """
-
         unicycler -1 ${illuminaR1} -2 ${illuminaR2} -l ${ont} -o unicycler \
           -t ${task.cpus} --keep 0
         mv unicycler/assembly.fasta ${id}_scaffolds.fasta
         mv unicycler/assembly.gfa ${id}_graph.gfa
-        mv unicycler/unicycler.log ${id}_unicycler.log
+        mv unicycler/unicycler.log ${id}_unicycler.log        
 
         unicycler --version > unicycler.version.txt
         """

@@ -87,6 +87,7 @@ workflow {
     // include quast, busco, checkm
     include {quast} from './modules/quast.nf' params(output: params.output)
     include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './modules/quast.nf' params(output: params.output)
+    include {quast_hybrid; quast_hybrid as quast_hybrid2} from './modules/quast.nf' params(output: params.output)
     include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
     include {busco_auto_prok; busco_auto_prok as busco_auto_prok2} from './modules/busco.nf' params(output: params.output)
 
@@ -169,6 +170,7 @@ workflow {
     //   illumina_clean_ch = fastp.out[0]
       unicycler(hybrid_ch)
       contigs_ch = unicycler.out.assembly
+      quast_hybrid(contigs_ch, hybrid_ch, "raw")
     }
     else{
       //no input provided

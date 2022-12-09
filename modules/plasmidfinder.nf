@@ -14,8 +14,6 @@ process plasmidfinder {
         mkdir plasmidfinder_${deconta}
         plasmidfinder.py -i ${contigs} -o plasmidfinder_${deconta} -p ${pf_db} -mp blastn -x
 
-        plasmidfinder.py -i ${contigs} -o plasmidfinder_kma_${deconta} -p ${pf_db} -mp kma -x
-
         mv plasmidfinder_${deconta}/results_tab.tsv ${id}_plasmidfinder_${deconta}_results.tsv
         """
 }

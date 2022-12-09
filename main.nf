@@ -81,6 +81,7 @@ workflow {
     //*************************************************
 
     include {fastp} from './modules/fastp.nf' params(output: params.output)
+    include {fastp_hybrid} from './modules/fastp.nf' params(output: params.output)
     // including assembler module
     include {spades} from './modules/spades.nf' params(output: params.output)
     include {unicycler} from './modules/unicycler.nf' params(output: params.output)
@@ -119,7 +120,7 @@ workflow {
     // DATA INPUT ILLUMINA
     if(params.illumina){
       illumina_input_ch = Channel
-          .fromFilePairs( "${params.illumina}/*R{1,2}*.fastq{,.gz}", checkIfExists: true)
+          .fromFilePairs( "${params.illumina}/*{1,2}*.fastq{,.gz}", checkIfExists: true)
           .view()
 
       // run fastp module
@@ -134,7 +135,7 @@ workflow {
       contigs_w_reads = spades.out.quast
 
       //*************************************************
-      // STEP 2 - Assembly QC Quast, Busco on raw assembly
+      // STEP 2bis - Assembly QC Quast, Busco on raw assembly
       //*************************************************
       // QUAST Assembly QC
       //no taxonomic decontamination of the contigs yet
@@ -147,7 +148,6 @@ workflow {
       contigs_files_ch = Channel
         .fromPath("${params.contigs}/*.{fasta,fa}", checkIfExists: true)
         .view()
-
 
         contigs_files_ch.map { file ->
           def id = ( file.baseName.toString() =~ /^[^._]*(?=\_)/ )[0] // first element in the name until underscore
@@ -165,10 +165,11 @@ workflow {
         | splitCsv(header:true) \
         | map { row-> tuple(row.sampleID, file(row.read1), file(row.read2), file(row.ont)) }
 
-        // run fastp module
-    //   fastp(illumina_input_ch, params.phred_type)
-    //   illumina_clean_ch = fastp.out[0]
-      unicycler(hybrid_ch)
+      // run fastp module on short reads
+      fastp_hybrid(hybrid_ch, params.phred_type)
+      trimmed_hybrid_ch = fastp_hybrid.out.trimmed_hybrid
+
+      unicycler(trimmed_hybrid_ch)
       contigs_ch = unicycler.out.assembly
       quast_hybrid(contigs_ch, hybrid_ch, "raw")
     }

@@ -15,7 +15,7 @@ process unicycler {
           -t ${task.cpus} --keep 0
         mv unicycler/assembly.fasta ${id}_scaffolds.fasta
         mv unicycler/assembly.gfa ${id}_graph.gfa
-        mv unicycler/unicycler.log ${id}_unicycler.log        
+        mv unicycler/unicycler.log ${id}_unicycler.log
 
         unicycler --version > unicycler.version.txt
         """

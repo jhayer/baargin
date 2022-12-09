@@ -88,7 +88,7 @@ workflow {
     // include quast, busco, checkm
     include {quast} from './modules/quast.nf' params(output: params.output)
     include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './modules/quast.nf' params(output: params.output)
-    include {quast_hybrid; quast_hybrid as quast_hybrid2} from './modules/quast.nf' params(output: params.output)
+    include {quast_hybrid} from './modules/quast.nf' params(output: params.output)
     include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
     include {busco_auto_prok; busco_auto_prok as busco_auto_prok2} from './modules/busco.nf' params(output: params.output)
 
@@ -106,6 +106,7 @@ workflow {
     include {card_rgi; card_rgi as card_rgi2} from './modules/card.nf' params(output: params.output)
     //plasmids
     include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
+    include {platon; platon as platon2} from './modules/platon.nf' params(output: params.output)
     // MLST
     include {mlst; mlst as mlst2} from './modules/mlst.nf' params(output: params.output)
     // Annotation
@@ -193,6 +194,9 @@ workflow {
     if(params.plasmidfinder_db){
       plasmidfinder(contigs_ch, params.plasmidfinder_db, "raw")
     }
+    if(params.platon_db){
+      platon(contigs_ch, params.platon_db, "raw")
+    }
 
     mlst(contigs_ch, "raw")
 
@@ -243,7 +247,6 @@ workflow {
       // STEP 6 -Assembly QC (bis) of decontaminated contigs
       //*************************************************
       // QUAST Assembly QC
-
       quast_contigs_only2(deconta_contigs_ch,"deconta")
 
       // BUSCO completeness - Singularity container
@@ -286,14 +289,17 @@ workflow {
       //*************************************************
       // STEP 9 - PlasmidFinder et al. Platon ? MGEFinder..
       //*************************************************
+      // Platon
       if(params.plasmidfinder_db){
         plasmidfinder2(deconta_contigs_ch, params.plasmidfinder_db, "deconta")
       }
-
       //Platon
+      if(params.platon_db){
+        platon2(deconta_contigs_ch, params.platon_db, "deconta")
+      }
+
       //  PlasForest
       //  MOB-recon
-      // on deconta_contigs_ch
 
       //*************************************************
       // STEP 10 - MLST - Sequence typing

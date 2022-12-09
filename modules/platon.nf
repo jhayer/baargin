@@ -7,7 +7,7 @@ process platon {
         path(platon_db)
         val(deconta)
     output:
-        path("platon_${deconta}")
+        path("platon_accu_${deconta}")
         path("${id}_platon_${deconta}_results.tsv"), emit: platon_tab
     script:
         """

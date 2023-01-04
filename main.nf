@@ -112,6 +112,8 @@ workflow {
     // Annotation
     include {prokka} from './modules/prokka.nf' params(output: params.output)
     //include {bakta} from './modules/bakta.nf' params(output: params.output)
+    // pangenome
+    include {roary} from './modules/roary.nf' params(output: params.output)
 
 
     //*************************************************
@@ -285,6 +287,11 @@ workflow {
 
       // prokka
       prokka(deconta_contigs_ch, params.genus, params.species)
+
+      //*************************************************
+      // STEP 8bis -  pangenome with Roary
+      //*************************************************
+      roary(prokka.out.prokka_gff.collect())
 
       //*************************************************
       // STEP 9 - PlasmidFinder et al. Platon ? MGEFinder..

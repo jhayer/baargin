@@ -5,14 +5,22 @@ process amrfinderplus {
     input:
         tuple val(id), path(contigs)
         val(species)
+        path(local_amr_db)
         val(deconta)
     output:
         path("${id}_${deconta}_AMRfinder.txt"), emit: amrfile
         path("${id}_${deconta}_AMRfinder_all_mut.txt"), emit: amrfile_allmut
     script:
         """
-        amrfinder --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus \
+        if [ -z "${local_amr_db}" ]
+        then
+          amrfinder --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus \
             --organism ${species} --mutation_all ${id}_${deconta}_AMRfinder_all_mut.txt
+        else
+          amrfinder --database ${local_amr_db} --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus \
+            --organism ${species} --mutation_all ${id}_${deconta}_AMRfinder_all_mut.txt
+
+        fi
         """
 }
 
@@ -22,11 +30,17 @@ process amrfinderplus_no_species {
 
     input:
         tuple val(id), path(contigs)
+        path(local_amr_db)
         val(deconta)
     output:
         path("${id}_${deconta}_AMRfinder.txt")
     script:
         """
-        amrfinder --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus
+        if [ -z "${local_amr_db}" ]
+        then
+          amrfinder --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus
+        else
+          amrfinder --database ${local_amr_db} --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus
+        fi
         """
 }

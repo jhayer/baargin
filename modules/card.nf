@@ -13,7 +13,8 @@ process card_rgi {
         """
         rgi load --card_json ${card_json_db} --local
 
-        rgi main -i ${contigs} -o ${id}_${deconta}_RGI_main --debug -a BLAST -d wgs -n ${task.cpus}
+        rgi main -i ${contigs} -o ${id}_${deconta}_RGI_main --debug \
+          --local -a BLAST -d wgs -n ${task.cpus}
         rgi tab -i ${id}_${deconta}_RGI_main.json
 
         rm ${contigs}.temp.*

@@ -28,6 +28,7 @@ def helpMSG() {
     --phred_type                phred score type. Specify if 33 (default and current) or 64 (ex. BGI, older...) [default: $params.phred_type]
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. MiniKraken, nt) [default: $params.k2nt_db]
     --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
+    --amrfinder_db              path to a local AMRFinder Database for Antimicrobial Resistance Genes prediction [default: $params.amrfinder_db]
     --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
 
       Output:
@@ -96,10 +97,6 @@ workflow {
     include {kraken2nt_contigs} from './modules/kraken2.nf' params(output: params.output)
     include {extract_kraken} from './modules/kraken2.nf' params(output: params.output)
 
-    // include mash_screen
-    if (params.mash_dataset){
-      include {mash_screen} from './modules/mash.nf' params(output: params.output)
-    }
     // AMR analysis modules
     include {amrfinderplus; amrfinderplus as amrfinderplus2} from './modules/amrfinderplus.nf' params(output: params.output)
     include {amrfinderplus_no_species; amrfinderplus_no_species as amrfinderplus_no_species2} from './modules/amrfinderplus.nf' params(output: params.output)
@@ -131,6 +128,7 @@ workflow {
       illumina_input_ch = Channel
           .fromFilePairs( "${params.illumina}/*{1,2}*.fastq{,.gz}", checkIfExists: true)
           .view()
+          .ifEmpty { exit 1, "Cannot find any reads in the directory: ${params.illumina}" }
 
       // run fastp module
       fastp(illumina_input_ch, params.phred_type)
@@ -144,7 +142,7 @@ workflow {
       contigs_w_reads = spades.out.quast
 
       //*************************************************
-      // STEP 2bis - Assembly QC Quast, Busco on raw assembly
+      // STEP 2bis - Assembly QC Quast on raw assembly
       //*************************************************
       // QUAST Assembly QC
       //no taxonomic decontamination of the contigs yet
@@ -157,13 +155,16 @@ workflow {
       contigs_files_ch = Channel
         .fromPath("${params.contigs}/*.{fasta,fa}", checkIfExists: true)
         .view()
+        .ifEmpty { exit 1, "Cannot find any contigs in the directory: ${params.contigs}" }
 
         contigs_files_ch.map { file ->
           def id = ( file.baseName.toString() =~ /^[^._]*(?=\_)/ )[0] // first element in the name until underscore
           return tuple(id, file)
         }
           .set{ contigs_ch}
-
+      //*************************************************
+      // STEP 2bis - Assembly QC Quast on raw assembly
+      //*************************************************
       quast_contigs_only(contigs_ch, "raw")
     }
     else if(params.hybrid_index){
@@ -174,19 +175,32 @@ workflow {
         | splitCsv(header:true) \
         | map { row-> tuple(row.sampleID, file(row.read1), file(row.read2), file(row.ont)) }
 
+      //*************************************************
+      // STEP 1 QC with fastp
+      //*************************************************
       // run fastp module on short reads
       fastp_hybrid(hybrid_ch, params.phred_type)
       trimmed_hybrid_ch = fastp_hybrid.out.trimmed_hybrid
-
+      //*************************************************
+      // STEP 2 - Hybrid Assembly
+      //*************************************************
       unicycler(trimmed_hybrid_ch)
       contigs_ch = unicycler.out.assembly
+      //*************************************************
+      // STEP 2bis - Assembly QC Quast on raw assembly
+      //*************************************************
       quast_hybrid(contigs_ch, hybrid_ch, "raw")
     }
     else{
       //no input provided
+      exit 1, "No input specified. Please provide input short reads with --illumina, \
+        or input contigs with --contigs, \
+        or provide a sample sheet for hybrid short and long reads with --hybrid_index"
     }
 
-
+    //*************************************************
+    // STEP 2bis - Assembly QC Busco on raw assembly
+    //*************************************************
     // BUSCO completeness - Singularity container
     if(params.busco_lineage){
       busco(contigs_ch, params.busco_lineage, "raw", params.busco_db_offline)
@@ -197,7 +211,6 @@ workflow {
 
     //*************************************************
     // STEP 3 - plasmids prediction on all raw contigs
-    // and MLST on raw contigs
     //*************************************************
     if(params.plasmidfinder_db){
       plasmidfinder(contigs_ch, params.plasmidfinder_db, "raw")
@@ -206,7 +219,9 @@ workflow {
     if(params.platon_db){
       platon(contigs_ch, params.platon_db, "raw")
     }
-
+    //*************************************************
+    // STEP 3bis - MLST on raw contigs
+    //*************************************************
     mlst(contigs_ch, "raw")
 
     //*************************************************
@@ -217,11 +232,11 @@ workflow {
 
     // if amrfinder_organism is given in the params directly
     if (params.amrfinder_organism){
-      amrfinderplus(contigs_ch,params.amrfinder_organism, "raw")
+      amrfinderplus(contigs_ch,params.amrfinder_organism, params.amrfinder_db, "raw")
       compile_amrfinder(amrfinderplus.out.amrfile.collect(), amrfinderplus.out.amrfile_allmut.collect(), "raw")
     }
     else{
-      amrfinderplus_no_species(contigs_ch, "raw")
+      amrfinderplus_no_species(contigs_ch, params.amrfinder_db, "raw")
       compile_amrfinder_no_species(compile_amrfinder_no_species.out.amrfile.collect(), "raw")
     }
 
@@ -249,8 +264,6 @@ workflow {
     }
 
     extract_kraken(contigs_kn2,krak_res,krak_report,sp_taxid,params.krakentools_extract)
-//    deconta_contigs_ch = extract_kraken.out.kn_contigs_deconta
-//    deconta_for_quast = extract_kraken.out.kn_reads_contigs_deconta
 
     deconta_contigs_ch = extract_kraken.out[0]
 
@@ -270,44 +283,7 @@ workflow {
       }
 
       //*************************************************
-      // STEP 7 - ARGs search: CARD RGI and AMRFinderPlus
-      //*************************************************
-      // on the deconta_contigs_ch
-      // AMRFinderPlus NCBI
-
-      if (params.amrfinder_organism){
-        amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, "deconta")
-        compile_amrfinder2(amrfinderplus2.out.amrfile.collect(), amrfinderplus2.out.amrfile_allmut.collect(), "deconta")
-      }
-      else{
-        amrfinderplus_no_species2(deconta_contigs_ch, "deconta")
-        compile_amrfinder_no_species2(amrfinderplus_no_species2.out.amrfile.collect(), "deconta")
-      }
-
-      // CARD Resistance Genes Identifier
-      if (params.card_db){
-        card_rgi2(deconta_contigs_ch,params.card_db, "deconta")
-        compile_card2(card_rgi2.out.card_json.collect(), "deconta")
-      }
-
-      //*************************************************
-      // STEP 8 -  annotation
-      //*************************************************
-      // bakta annotation of deconta contigs (and mapped contigs)
-  //    if(params.bakta_db){
-  //      bakta(deconta_contigs_ch, params.bakta_db, params.genus, params.species)
-  //    }
-
-      // prokka
-      prokka(deconta_contigs_ch, params.genus, params.species)
-
-      //*************************************************
-      // STEP 8bis -  pangenome with Roary
-      //*************************************************
-      roary(prokka.out.prokka_gff.collect())
-
-      //*************************************************
-      // STEP 9 - PlasmidFinder et al. Platon ? MGEFinder..
+      // STEP 7 - PlasmidFinder et al. Platon ? MGEFinder..
       //*************************************************
       // Platon
       if(params.plasmidfinder_db){
@@ -319,32 +295,42 @@ workflow {
         platon2(deconta_contigs_ch, params.platon_db, "deconta")
       }
 
-      //  PlasForest
-      //  MOB-recon
-
       //*************************************************
-      // STEP 10 - MLST - Sequence typing
+      // STEP 8 - MLST - Sequence typing
       //*************************************************
       mlst2(deconta_contigs_ch, "deconta")
 
       //*************************************************
-      // STEP 11 - Find closest relative with Mash
+      // STEP 9 - ARGs search: CARD RGI and AMRFinderPlus
       //*************************************************
-      // using the mash dataset provided
-  /*    if(params.mash_dataset){
-        mash_screen(deconta_contigs_ch,params.species,params.mash_sketch)
-        // later, mash_screen will output fasta file of closest relative for mapping
-      }
-*/
-      //*************************************************
-      // STEP 12 - Map to the closest with Minimap2
-      //*************************************************
-      // minimap2 with PAF Output - use all contigs: contigs_ch
-      // compare the number of contigs mapped with the number of deconta_contigs_ch
+      // on the deconta_contigs_ch
+      // AMRFinderPlus NCBI
 
-      // mapping could be done on same ref for all... need to select from mash results
-      // might need a second pipeline for mappings and core/pan genomes analysis,
-      // after the assemblies and decontamination are done...
+      if (params.amrfinder_organism){
+        amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, params.amrfinder_db, "deconta")
+        compile_amrfinder2(amrfinderplus2.out.amrfile.collect(), amrfinderplus2.out.amrfile_allmut.collect(), "deconta")
+      }
+      else{
+        amrfinderplus_no_species2(deconta_contigs_ch, params.amrfinder_db, "deconta")
+        compile_amrfinder_no_species2(amrfinderplus_no_species2.out.amrfile.collect(), "deconta")
+      }
+
+      // CARD Resistance Genes Identifier
+      if (params.card_db){
+        card_rgi2(deconta_contigs_ch,params.card_db, "deconta")
+        compile_card2(card_rgi2.out.card_json.collect(), "deconta")
+      }
+
+      //*************************************************
+      // STEP 10 -  annotation
+      //*************************************************
+      // prokka
+      prokka(deconta_contigs_ch, params.genus, params.species)
+
+      //*************************************************
+      // STEP 11 -  pangenome with Roary
+      //*************************************************
+      roary(prokka.out.prokka_gff.collect())
 
 
     }

@@ -117,7 +117,7 @@ workflow {
     // compilation
     include {compile_amrfinder; compile_amrfinder as compile_amrfinder2} from './modules/compile_amrfinder.nf'
     include {compile_amrfinder_no_species; compile_amrfinder_no_species as compile_amrfinder_no_species2} from './modules/compile_amrfinder.nf'
-
+    include {compile_plasmidfinder; compile_plasmidfinder as compile_plasmidfinder2} from './modules/compile_plasmidfinder.nf'
 
 
 
@@ -200,6 +200,7 @@ workflow {
     //*************************************************
     if(params.plasmidfinder_db){
       plasmidfinder(contigs_ch, params.plasmidfinder_db, "raw")
+      compile_plasmidfinder(plasmidfinder.out.plasmidfinder_tab.collect(), "raw")
     }
     if(params.platon_db){
       platon(contigs_ch, params.platon_db, "raw")
@@ -220,7 +221,7 @@ workflow {
     }
     else{
       amrfinderplus_no_species(contigs_ch, "raw")
-      compile_amrfinder_no_species(amrfinderplus.out.amrfile.collect(), "raw")
+      compile_amrfinder_no_species(compile_amrfinder_no_species.out.amrfile.collect(), "raw")
     }
 
     // CARD Resistance Genes Identifier
@@ -274,11 +275,11 @@ workflow {
 
       if (params.amrfinder_organism){
         amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, "deconta")
-        compile_amrfinder2(amrfinderplus.out.amrfile.collect(), amrfinderplus.out.amrfile_allmut.collect(), "deconta")
+        compile_amrfinder2(amrfinderplus2.out.amrfile.collect(), amrfinderplus2.out.amrfile_allmut.collect(), "deconta")
       }
       else{
         amrfinderplus_no_species2(deconta_contigs_ch, "deconta")
-        compile_amrfinder_no_species2(amrfinderplus.out.amrfile.collect(), "deconta")
+        compile_amrfinder_no_species2(amrfinderplus_no_species2.out.amrfile.collect(), "deconta")
       }
 
       // CARD Resistance Genes Identifier
@@ -308,6 +309,7 @@ workflow {
       // Platon
       if(params.plasmidfinder_db){
         plasmidfinder2(deconta_contigs_ch, params.plasmidfinder_db, "deconta")
+        compile_plasmidfinder2(plasmidfinder2.out.plasmidfinder_tab.collect(), "deconta")
       }
       //Platon
       if(params.platon_db){

@@ -7,7 +7,7 @@ process card_rgi {
         path(card_json_db)
         val(deconta)
     output:
-        path("${id}_${deconta}_RGI_main.json")
+        path("${id}_${deconta}_RGI_main.json"), emit: card_json
         path("${id}_${deconta}_RGI_main.txt")
     script:
         """

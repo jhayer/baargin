@@ -118,6 +118,7 @@ workflow {
     include {compile_amrfinder; compile_amrfinder as compile_amrfinder2} from './modules/compile_amrfinder.nf'
     include {compile_amrfinder_no_species; compile_amrfinder_no_species as compile_amrfinder_no_species2} from './modules/compile_amrfinder.nf'
     include {compile_plasmidfinder; compile_plasmidfinder as compile_plasmidfinder2} from './modules/compile_plasmidfinder.nf'
+    include {compile_card; compile_card as compile_card2} from './modules/compile_card.nf'
 
 
 
@@ -227,6 +228,7 @@ workflow {
     // CARD Resistance Genes Identifier
     if (params.card_db){
       card_rgi(contigs_ch,params.card_db, "raw")
+      compile_card(card_rgi.out.card_json.collect(), "raw")
     }
 
     //*************************************************
@@ -285,6 +287,7 @@ workflow {
       // CARD Resistance Genes Identifier
       if (params.card_db){
         card_rgi2(deconta_contigs_ch,params.card_db, "deconta")
+        compile_card2(card_rgi2.out.card_json.collect(), "deconta")
       }
 
       //*************************************************

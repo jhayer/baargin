@@ -7,8 +7,8 @@ process amrfinderplus {
         val(species)
         val(deconta)
     output:
-        path("${id}_${deconta}_AMRfinder.txt")
-        path("${id}_${deconta}_AMRfinder_all_mut.txt")
+        path("${id}_${deconta}_AMRfinder.txt"), emit: amrfile
+        path("${id}_${deconta}_AMRfinder_all_mut.txt"), emit: amrfile_allmut
     script:
         """
         amrfinder --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus \

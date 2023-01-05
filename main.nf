@@ -114,6 +114,11 @@ workflow {
     //include {bakta} from './modules/bakta.nf' params(output: params.output)
     // pangenome
     include {roary} from './modules/roary.nf' params(output: params.output)
+    // compilation
+    include {compile_amrfinder; compile_amrfinder as compile_amrfinder2} from './modules/compile_amrfinder.nf'
+    include {compile_amrfinder_no_species; compile_amrfinder_no_species as compile_amrfinder_no_species2} from './modules/compile_amrfinder.nf'
+
+
 
 
     //*************************************************
@@ -211,9 +216,11 @@ workflow {
     // if amrfinder_organism is given in the params directly
     if (params.amrfinder_organism){
       amrfinderplus(contigs_ch,params.amrfinder_organism, "raw")
+      compile_amrfinder(amrfinderplus.out.amrfile.collect(), amrfinderplus.out.amrfile_allmut.collect(), "raw")
     }
     else{
       amrfinderplus_no_species(contigs_ch, "raw")
+      compile_amrfinder_no_species(amrfinderplus.out.amrfile.collect(), "raw")
     }
 
     // CARD Resistance Genes Identifier
@@ -267,9 +274,11 @@ workflow {
 
       if (params.amrfinder_organism){
         amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, "deconta")
+        compile_amrfinder2(amrfinderplus.out.amrfile.collect(), amrfinderplus.out.amrfile_allmut.collect(), "deconta")
       }
       else{
         amrfinderplus_no_species2(deconta_contigs_ch, "deconta")
+        compile_amrfinder_no_species2(amrfinderplus.out.amrfile.collect(), "deconta")
       }
 
       // CARD Resistance Genes Identifier

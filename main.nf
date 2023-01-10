@@ -27,6 +27,7 @@ def helpMSG() {
         Optional input:
     --phred_type                phred score type. Specify if 33 (default and current) or 64 (ex. BGI, older...) [default: $params.phred_type]
     --k2nt_db                   path to the Kraken2 nucleotide database (e.g. MiniKraken, nt) [default: $params.k2nt_db]
+    --bakta_db                  path to the Bakta local database if the use prefer annotating the genomes with Bakta instead of Prokka [default: $params.bakta_db]
     --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
     --amrfinder_db              path to a local AMRFinder Database for Antimicrobial Resistance Genes prediction [default: $params.amrfinder_db]
     --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
@@ -104,11 +105,13 @@ workflow {
     //plasmids
     include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
     include {platon; platon as platon2} from './modules/platon.nf' params(output: params.output)
+    include {mefinder; mefinder as mefinder2} from './modules/mefinder.nf' params(output: params.output)
+
     // MLST
     include {mlst; mlst as mlst2} from './modules/mlst.nf' params(output: params.output)
     // Annotation
     include {prokka} from './modules/prokka.nf' params(output: params.output)
-    //include {bakta} from './modules/bakta.nf' params(output: params.output)
+    include {bakta} from './modules/bakta.nf' params(output: params.output)
     // pangenome
     include {roary} from './modules/roary.nf' params(output: params.output)
     // compilation
@@ -219,6 +222,8 @@ workflow {
     if(params.platon_db){
       platon(contigs_ch, params.platon_db, "raw")
     }
+
+  //  mefinder(contigs_ch, "raw")
     //*************************************************
     // STEP 3bis - MLST on raw contigs
     //*************************************************
@@ -295,6 +300,8 @@ workflow {
         platon2(deconta_contigs_ch, params.platon_db, "deconta")
       }
 
+  //    mefinder2(contigs_ch, "deconta")
+
       //*************************************************
       // STEP 8 - MLST - Sequence typing
       //*************************************************
@@ -322,15 +329,25 @@ workflow {
       }
 
       //*************************************************
-      // STEP 10 -  annotation
+      // STEP 10 -  annotation and pangenome
       //*************************************************
-      // prokka
-      prokka(deconta_contigs_ch, params.genus, params.species)
+      if(params.bakta_db){
+        // Annotation with Batka if DB provided
+        bakta(deconta_contigs_ch, params.bakta_db, params.genus, params.species)
+        // pangenome analysis with Roary using all gff outputs from bakta
+        roary(bakta.out.annot_gff.collect())
+      }
+      else{
+        // prokka
+        prokka(deconta_contigs_ch, params.genus, params.species)
+        // pangenome analysis with Roary using all gff outputs from Prokka
+        roary(prokka.out.annot_gff.collect())
+      }
 
       //*************************************************
       // STEP 11 -  pangenome with Roary
       //*************************************************
-      roary(prokka.out.prokka_gff.collect())
+//      roary(prokka.out.prokka_gff.collect())
 
 
     }

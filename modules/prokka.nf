@@ -9,7 +9,7 @@ process prokka {
         val(species)
     output:
         path("${id}_prokka")
-        path("${id}_prokka.gff"), emit: prokka_gff
+        path("${id}_prokka.gff"), emit: annot_gff
     script:
         """
         prokka --force --genus ${genus} --species ${species} \

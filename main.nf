@@ -262,15 +262,12 @@ workflow {
 
     // KrakenTools
     if(params.species_taxid){
-      sp_taxid = params.species_taxid
+      extract_kraken(contigs_kn2,krak_res,krak_report,params.species_taxid,params.krakentools_extract)
+      deconta_contigs_ch = extract_kraken.out[0]
     }
     else {
       exit 1, "No TaxID specified for retrieving the species of interest - please provide a NCBI TaxID (from species or genus) with --species_taxid"
     }
-
-    extract_kraken(contigs_kn2,krak_res,krak_report,sp_taxid,params.krakentools_extract)
-
-    deconta_contigs_ch = extract_kraken.out[0]
 
     if (deconta_contigs_ch) {
       //*************************************************

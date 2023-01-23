@@ -42,10 +42,6 @@ def helpMSG() {
     taxonomic_classif           The taxonomic classifications at contigs level
     AMR                         The output directory for resistane genes analysis: ARMFinderPlus and CARD
 
-        Basic Parameter:
-    --cpus                      max cores for local use [default: $params.cpus]
-    --memory                    80% of available RAM in GB [default: $params.memory]
-
         Workflow Options:
     --genus                     Bacterial genus (Escherichia, Salmonella, Enterobacter, Klebsiella, Staphylococcus)  [default: $params.genus]
     --species                   bacterial species to assemble (e.g. coli, pneumoniae, cloacae, aureus) [default: $params.species]
@@ -118,7 +114,7 @@ workflow {
     include {compile_amrfinder; compile_amrfinder as compile_amrfinder2} from './modules/compile_amrfinder.nf'
     include {compile_amrfinder_no_species; compile_amrfinder_no_species as compile_amrfinder_no_species2} from './modules/compile_amrfinder.nf'
     include {compile_plasmidfinder; compile_plasmidfinder as compile_plasmidfinder2} from './modules/compile_plasmidfinder.nf'
-    include {compile_card; compile_card as compile_card2} from './modules/compile_card.nf'
+    include {compile_card; compile_card as compile_card2} from './modules/card.nf'
 
 
 

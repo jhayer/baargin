@@ -16,7 +16,7 @@ process quast {
         """
 }
 process quast_contigs_only {
-    label 'quast_contigs_only'
+    label 'quast'
     publishDir "${params.output}/${id}/assembly", mode: 'copy'
     input:
         tuple val(id), path(contigs)
@@ -33,7 +33,7 @@ process quast_contigs_only {
         """
 }
 process quast_hybrid {
-    label 'quast_hybrid'
+    label 'quast'
     publishDir "${params.output}/${id}/assembly", mode: 'copy'
     input:
         tuple val(id), path(contigs)

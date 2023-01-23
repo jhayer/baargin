@@ -3,6 +3,9 @@ Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial R
 
 =========================================
 
+<img src="doc/img/IRD.png" width="500" height="150" />
+<img src="doc/img/MIVEGEC.png" width="500" height="150" />
+
 ## Table of Contents
 
    * [Prerequisites](#prerequisites)

@@ -161,7 +161,8 @@ workflow {
         .ifEmpty { exit 1, "Cannot find any contigs in the directory: ${params.contigs}" }
 
         contigs_files_ch.map { file ->
-          def id = ( file.baseName.toString() =~ /^[^._]*(?=\_)/ )[0] // first element in the name until underscore
+        //  def id = ( file.baseName.toString() =~ /^[^._]*(?=\_)/ )[0] // first element in the name until underscore
+          def id = ( file.baseName.toString())
           return tuple(id, file)
         }
           .set{ contigs_ch}

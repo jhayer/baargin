@@ -1,5 +1,5 @@
 process compile_plasmidfinder {
-    label 'compile_plasmidfinder'
+    label 'python3'
     publishDir "${params.output}/compile_results", mode: 'copy'
 
     input:

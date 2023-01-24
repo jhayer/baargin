@@ -1,5 +1,5 @@
 process compile_amrfinder {
-    label 'compile_amrfinder'
+    label 'python3'
     publishDir "${params.output}/compile_results", mode: 'copy'
 
     input:

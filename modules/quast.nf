@@ -45,10 +45,8 @@ process quast_hybrid {
     script:
         """
         quast.py -o quast_${deconta} -t ${task.cpus} --no-plots --no-icarus \
-            --pe1 ${illumina[0]} --pe2 ${illumina[1]} --nanopore ${ont} ${contigs}
+            --pe1 ${illuminaR1} --pe2 ${illuminaR2} --nanopore ${ont} ${contigs}
 
         mv quast_${deconta}/report.tsv ${id}_quast_${deconta}_report.tsv
         """
 }
-//quast.py -o quast -t ${task.cpus} --conserved-genes-finding \
-  //  --gene-finding --pe1 ${illumina[0]} --pe2 ${illumina[1]} ${contigs}

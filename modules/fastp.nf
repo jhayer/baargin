@@ -24,7 +24,7 @@ process fastp {
 }
 
 process fastp_hybrid {
-    label 'fastp_hybrid'
+    label 'fastp'
     publishDir "${params.output}/${id}/qc", mode: 'copy'
     input:
         tuple val(id), path(illuminaR1), path(illuminaR2), path(ont)

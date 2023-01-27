@@ -42,10 +42,6 @@ def helpMSG() {
     taxonomic_classif           The taxonomic classifications at contigs level
     AMR                         The output directory for resistane genes analysis: ARMFinderPlus and CARD
 
-        Basic Parameter:
-    --cpus                      max cores for local use [default: $params.cpus]
-    --memory                    80% of available RAM in GB [default: $params.memory]
-
         Workflow Options:
     --genus                     Bacterial genus (Escherichia, Salmonella, Enterobacter, Klebsiella, Staphylococcus)  [default: $params.genus]
     --species                   bacterial species to assemble (e.g. coli, pneumoniae, cloacae, aureus) [default: $params.species]
@@ -68,6 +64,50 @@ def helpMSG() {
     """
 }
 
+//*************************************************
+// STEP 0 - Include needed modules
+//*************************************************
+
+include {fastp} from './modules/fastp.nf' params(output: params.output)
+include {fastp_hybrid} from './modules/fastp.nf' params(output: params.output)
+// including assembler module
+include {spades} from './modules/spades.nf' params(output: params.output)
+include {unicycler} from './modules/unicycler.nf' params(output: params.output)
+// include quast, busco, checkm
+include {quast} from './modules/quast.nf' params(output: params.output)
+include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './modules/quast.nf' params(output: params.output)
+include {quast_hybrid} from './modules/quast.nf' params(output: params.output)
+include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
+include {busco_auto_prok; busco_auto_prok as busco_auto_prok2} from './modules/busco.nf' params(output: params.output)
+
+// including Kraken2 - nucleotide level
+include {kraken2nt_contigs} from './modules/kraken2.nf' params(output: params.output)
+include {extract_kraken} from './modules/kraken2.nf' params(output: params.output)
+
+// AMR analysis modules
+include {amrfinderplus; amrfinderplus as amrfinderplus2} from './modules/amrfinderplus.nf' params(output: params.output)
+include {amrfinderplus_no_species; amrfinderplus_no_species as amrfinderplus_no_species2} from './modules/amrfinderplus.nf' params(output: params.output)
+include {card_rgi; card_rgi as card_rgi2} from './modules/card.nf' params(output: params.output)
+//plasmids
+include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
+include {platon; platon as platon2} from './modules/platon.nf' params(output: params.output)
+include {mefinder; mefinder as mefinder2} from './modules/mefinder.nf' params(output: params.output)
+
+// MLST
+include {mlst; mlst as mlst2} from './modules/mlst.nf' params(output: params.output)
+// Annotation
+include {prokka} from './modules/prokka.nf' params(output: params.output)
+include {bakta} from './modules/bakta.nf' params(output: params.output)
+// pangenome
+include {roary} from './modules/roary.nf' params(output: params.output)
+// compilation
+include {compile_amrfinder; compile_amrfinder as compile_amrfinder2} from './modules/compile_amrfinder.nf'
+include {compile_amrfinder_no_species; compile_amrfinder_no_species as compile_amrfinder_no_species2} from './modules/compile_amrfinder.nf'
+include {compile_plasmidfinder; compile_plasmidfinder as compile_plasmidfinder2} from './modules/compile_plasmidfinder.nf'
+include {compile_card; compile_card as compile_card2} from './modules/card.nf'
+
+
+
 workflow {
 
     // error handling
@@ -79,57 +119,13 @@ workflow {
 
 
     //*************************************************
-    // STEP 0 - Include needed modules
-    //*************************************************
-
-    include {fastp} from './modules/fastp.nf' params(output: params.output)
-    include {fastp_hybrid} from './modules/fastp.nf' params(output: params.output)
-    // including assembler module
-    include {spades} from './modules/spades.nf' params(output: params.output)
-    include {unicycler} from './modules/unicycler.nf' params(output: params.output)
-    // include quast, busco, checkm
-    include {quast} from './modules/quast.nf' params(output: params.output)
-    include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './modules/quast.nf' params(output: params.output)
-    include {quast_hybrid} from './modules/quast.nf' params(output: params.output)
-    include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
-    include {busco_auto_prok; busco_auto_prok as busco_auto_prok2} from './modules/busco.nf' params(output: params.output)
-
-    // including Kraken2 - nucleotide level
-    include {kraken2nt_contigs} from './modules/kraken2.nf' params(output: params.output)
-    include {extract_kraken} from './modules/kraken2.nf' params(output: params.output)
-
-    // AMR analysis modules
-    include {amrfinderplus; amrfinderplus as amrfinderplus2} from './modules/amrfinderplus.nf' params(output: params.output)
-    include {amrfinderplus_no_species; amrfinderplus_no_species as amrfinderplus_no_species2} from './modules/amrfinderplus.nf' params(output: params.output)
-    include {card_rgi; card_rgi as card_rgi2} from './modules/card.nf' params(output: params.output)
-    //plasmids
-    include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
-    include {platon; platon as platon2} from './modules/platon.nf' params(output: params.output)
-    include {mefinder; mefinder as mefinder2} from './modules/mefinder.nf' params(output: params.output)
-
-    // MLST
-    include {mlst; mlst as mlst2} from './modules/mlst.nf' params(output: params.output)
-    // Annotation
-    include {prokka} from './modules/prokka.nf' params(output: params.output)
-    include {bakta} from './modules/bakta.nf' params(output: params.output)
-    // pangenome
-    include {roary} from './modules/roary.nf' params(output: params.output)
-    // compilation
-    include {compile_amrfinder; compile_amrfinder as compile_amrfinder2} from './modules/compile_amrfinder.nf'
-    include {compile_amrfinder_no_species; compile_amrfinder_no_species as compile_amrfinder_no_species2} from './modules/compile_amrfinder.nf'
-    include {compile_plasmidfinder; compile_plasmidfinder as compile_plasmidfinder2} from './modules/compile_plasmidfinder.nf'
-    include {compile_card; compile_card as compile_card2} from './modules/compile_card.nf'
-
-
-
-    //*************************************************
     // STEP 1 QC with fastp
     //*************************************************
 
     // DATA INPUT ILLUMINA
     if(params.illumina){
       illumina_input_ch = Channel
-          .fromFilePairs( "${params.illumina}/*{1,2}*.fastq{,.gz}", checkIfExists: true)
+          .fromFilePairs( "${params.illumina}/*R{1,2}*.fastq{,.gz}", checkIfExists: true)
           .view()
           .ifEmpty { exit 1, "Cannot find any reads in the directory: ${params.illumina}" }
 

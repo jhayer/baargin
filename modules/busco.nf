@@ -24,7 +24,7 @@ process busco {
 }
 
 process busco_auto_prok {
-    label 'busco_auto_prok'
+    label 'busco'
     publishDir "${params.output}/${id}/assembly", mode: 'copy'
     input:
         tuple val(id), path(contigs)

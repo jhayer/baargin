@@ -25,7 +25,7 @@ process amrfinderplus {
 }
 
 process amrfinderplus_no_species {
-    label 'amrfinderplus_no_species'
+    label 'amrfinderplus'
     publishDir "${params.output}/${id}/AMR/amrfinderplus", mode: 'copy'
 
     input:

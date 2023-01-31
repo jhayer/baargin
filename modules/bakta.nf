@@ -11,6 +11,7 @@ process bakta {
     output:
         path("${id}_bakta")
         path("${id}_bakta.gff"), emit: annot_gff
+        path("${id}_bakta/${id}_scaffolds.faa"), emit: annot_faa
     script:
         """
         bakta --db ${bakta_db} --keep-contig-headers --genus ${genus} \

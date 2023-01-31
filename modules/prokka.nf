@@ -10,6 +10,7 @@ process prokka {
     output:
         path("${id}_prokka")
         path("${id}_prokka.gff"), emit: annot_gff
+        path("${id}_prokka/${id}_scaffolds.faa"), emit: annot_faa
     script:
         """
         prokka --force --genus ${genus} --species ${species} \

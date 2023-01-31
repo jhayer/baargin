@@ -79,6 +79,7 @@ include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './
 include {quast_hybrid} from './modules/quast.nf' params(output: params.output)
 include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
 include {busco_auto_prok; busco_auto_prok as busco_auto_prok2} from './modules/busco.nf' params(output: params.output)
+include {busco_proteins; busco_proteins_auto_prok} from './modules/busco.nf' params(output: params.output)
 
 // including Kraken2 - nucleotide level
 include {kraken2nt_contigs} from './modules/kraken2.nf' params(output: params.output)
@@ -206,7 +207,7 @@ workflow {
       busco(contigs_ch, params.busco_lineage, "raw", params.busco_db_offline)
     }
     else {
-      busco_auto_prok(contigs_ch, "raw")
+      busco_auto_prok(contigs_ch, "raw", params.busco_db_offline)
     }
 
     //*************************************************
@@ -275,10 +276,10 @@ workflow {
 
       // BUSCO completeness - Singularity container
       if(params.busco_lineage){
-        busco2(deconta_contigs_ch, params.busco_lineage, "deconta",params.busco_db_offline)
+        busco2(deconta_contigs_ch, params.busco_lineage, "deconta", params.busco_db_offline)
       }
       else {
-        busco_auto_prok2(deconta_contigs_ch, "deconta")
+        busco_auto_prok2(deconta_contigs_ch, "deconta", params.busco_db_offline)
       }
 
       //*************************************************
@@ -328,20 +329,37 @@ workflow {
       if(params.bakta_db){
         // Annotation with Batka if DB provided
         bakta(deconta_contigs_ch, params.bakta_db, params.genus, params.species)
+        // proteins for Busco
+        faa_annot = bakta.out.annot_faa
+      
         // pangenome analysis with Roary using all gff outputs from bakta
-        roary(bakta.out.annot_gff.collect())
+        gff_annot = bakta.out.annot_gff
       }
-      else{
+      else { // if no Bakta DB provided, run Prokka as default
         // prokka
         prokka(deconta_contigs_ch, params.genus, params.species)
-        // pangenome analysis with Roary using all gff outputs from Prokka
-        roary(prokka.out.annot_gff.collect())
+        // proteins for Busco
+        faa_annot = prokka.out.annot_faa
+
+        // GFF for pangenome analysis with Roary
+        gff_annot = prokka.out.annot_gff
+        
+      }
+
+      // Busco on annotation
+      if(params.busco_lineage){
+         busco_proteins(faa_annot, params.busco_lineage,params.busco_db_offline)
+      }
+      else {
+        busco_proteins_auto_prok(faa_annot, params.busco_db_offline)
       }
 
       //*************************************************
       // STEP 11 -  pangenome with Roary
       //*************************************************
 //      roary(prokka.out.prokka_gff.collect())
+      // pangenome analysis with Roary using all gff outputs from Prokka or Bakta
+      roary(gff_annot.collect())
 
 
     }

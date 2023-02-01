@@ -80,6 +80,8 @@ include {quast_hybrid} from './modules/quast.nf' params(output: params.output)
 include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
 include {busco_auto_prok; busco_auto_prok as busco_auto_prok2} from './modules/busco.nf' params(output: params.output)
 include {busco_proteins; busco_proteins_auto_prok} from './modules/busco.nf' params(output: params.output)
+include {compile_busco; compile_busco as compile_busco2} from './modules/busco.nf' params(output: params.output)
+include {compile_busco_prot} from './modules/busco.nf' params(output: params.output)
 
 // including Kraken2 - nucleotide level
 include {kraken2nt_contigs} from './modules/kraken2.nf' params(output: params.output)
@@ -205,10 +207,14 @@ workflow {
     // BUSCO completeness - Singularity container
     if(params.busco_lineage){
       busco(contigs_ch, params.busco_lineage, "raw", params.busco_db_offline)
+      busco_collect = busco.out.busco_sum.collect()
     }
     else {
       busco_auto_prok(contigs_ch, "raw", params.busco_db_offline)
+      busco_collect = busco_auto_prok.out.busco_sum.collect()
     }
+    // compile and format Busco results
+    compile_busco(busco_collect, "raw")
 
     //*************************************************
     // STEP 3 - plasmids prediction on all raw contigs
@@ -277,10 +283,14 @@ workflow {
       // BUSCO completeness - Singularity container
       if(params.busco_lineage){
         busco2(deconta_contigs_ch, params.busco_lineage, "deconta", params.busco_db_offline)
+        busco_collect2 = busco2.out.busco_sum.collect()
       }
       else {
         busco_auto_prok2(deconta_contigs_ch, "deconta", params.busco_db_offline)
+        busco_collect2 = busco_auto_prok2.out.busco_sum.collect()
       }
+      // compile and format Busco results
+      compile_busco2(busco_collect2, "deconta")
 
       //*************************************************
       // STEP 7 - PlasmidFinder et al. Platon ? MGEFinder..
@@ -349,11 +359,14 @@ workflow {
       // Busco on annotation
       if(params.busco_lineage){
          busco_proteins(faa_annot, params.busco_lineage,params.busco_db_offline)
+         busco_prot_collect = busco_proteins.out.busco_prot.collect()
       }
       else {
         busco_proteins_auto_prok(faa_annot, params.busco_db_offline)
+        busco_prot_collect = busco_proteins_auto_prok.out.busco_prot.collect()
       }
-
+      compile_busco_prot(busco_prot_collect)
+      
       //*************************************************
       // STEP 11 -  pangenome with Roary
       //*************************************************

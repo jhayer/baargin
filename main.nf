@@ -77,6 +77,7 @@ include {unicycler} from './modules/unicycler.nf' params(output: params.output)
 include {quast} from './modules/quast.nf' params(output: params.output)
 include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './modules/quast.nf' params(output: params.output)
 include {quast_hybrid} from './modules/quast.nf' params(output: params.output)
+include {compile_quast; compile_quast as compile_quast2} from './modules/quast.nf' params(output: params.output)
 include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
 include {busco_auto_prok; busco_auto_prok as busco_auto_prok2} from './modules/busco.nf' params(output: params.output)
 include {busco_proteins; busco_proteins_auto_prok} from './modules/busco.nf' params(output: params.output)
@@ -150,7 +151,7 @@ workflow {
       //no taxonomic decontamination of the contigs yet
       //deconta= "raw"
       quast(contigs_w_reads, "raw")
-
+      quast_collect = quast.out.quast_transpo.collect()
     }
     else if(params.contigs){
       // DATA INPUT is Contigs from assembly
@@ -169,6 +170,7 @@ workflow {
       // STEP 2bis - Assembly QC Quast on raw assembly
       //*************************************************
       quast_contigs_only(contigs_ch, "raw")
+      quast_collect = quast_contigs_only.out.quast_transpo.collect()
     }
     else if(params.hybrid_index){
       // the input is CSV file mapping sampleID to illumina and ont reads files
@@ -193,6 +195,7 @@ workflow {
       // STEP 2bis - Assembly QC Quast on raw assembly
       //*************************************************
       quast_hybrid(contigs_ch, hybrid_ch, "raw")
+      quast_collect = quast_hybrid.out.quast_transpo.collect()
     }
     else{
       //no input provided
@@ -200,6 +203,9 @@ workflow {
         or input contigs with --contigs, \
         or provide a sample sheet for hybrid short and long reads with --hybrid_index"
     }
+
+    //compile Quast results
+    compile_quast(quast_collect, "raw")
 
     //*************************************************
     // STEP 2bis - Assembly QC Busco on raw assembly
@@ -279,6 +285,8 @@ workflow {
       //*************************************************
       // QUAST Assembly QC
       quast_contigs_only2(deconta_contigs_ch,"deconta")
+      //compile quast deconta results
+      compile_quast2(quast_contigs_only2.out.quast_transpo.collect(), "deconta")
 
       // BUSCO completeness - Singularity container
       if(params.busco_lineage){
@@ -366,7 +374,7 @@ workflow {
         busco_prot_collect = busco_proteins_auto_prok.out.busco_prot.collect()
       }
       compile_busco_prot(busco_prot_collect)
-      
+
       //*************************************************
       // STEP 11 -  pangenome with Roary
       //*************************************************

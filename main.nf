@@ -99,6 +99,8 @@ include {mefinder; mefinder as mefinder2} from './modules/mefinder.nf' params(ou
 
 // MLST
 include {mlst; mlst as mlst2} from './modules/mlst.nf' params(output: params.output)
+include {compile_mlst; compile_mlst as compile_mlst2 } from './modules/mlst.nf' params(output: params.output)
+
 // Annotation
 include {prokka} from './modules/prokka.nf' params(output: params.output)
 include {bakta} from './modules/bakta.nf' params(output: params.output)
@@ -238,6 +240,7 @@ workflow {
     // STEP 3bis - MLST on raw contigs
     //*************************************************
     mlst(contigs_ch, "raw")
+    compile_mlst(mlst.out.mlst_tab.collect(), "raw")
 
     //*************************************************
     // STEP 4 - ARGs search: CARD RGI and AMRFinderPlus
@@ -319,6 +322,7 @@ workflow {
       // STEP 8 - MLST - Sequence typing
       //*************************************************
       mlst2(deconta_contigs_ch, "deconta")
+      compile_mlst2(mlst2.out.mlst_tab.collect(), "deconta")
 
       //*************************************************
       // STEP 9 - ARGs search: CARD RGI and AMRFinderPlus
@@ -381,7 +385,6 @@ workflow {
 //      roary(prokka.out.prokka_gff.collect())
       // pangenome analysis with Roary using all gff outputs from Prokka or Bakta
       roary(gff_annot.collect())
-
 
     }
 

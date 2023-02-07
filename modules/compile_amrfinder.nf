@@ -26,7 +26,7 @@ process compile_amrfinder {
 }
 
 process compile_amrfinder_no_species {
-    label 'compile_amrfinder_no_species'
+    label 'python3'
     publishDir "${params.output}/compile_results", mode: 'copy'
 
     input:

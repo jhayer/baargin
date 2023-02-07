@@ -8,7 +8,7 @@ process busco {
         path(busco_dl_db)
     output:
         path("busco_${deconta}")
-        path("${id}_${deconta}_busco.txt"), emit: busco_sum
+        path("${id}_busco_${deconta}.txt"), emit: busco_sum
     script:
         """
         if [ -z "${busco_dl_db}" ]
@@ -19,7 +19,7 @@ process busco {
             --offline --download_path ${busco_dl_db}  -f --lineage_dataset ${lineage}
         fi
 
-        mv busco_${deconta}/short_summary.*.busco_${deconta}.txt ${id}_${deconta}_busco.txt
+        mv busco_${deconta}/short_summary.*.busco_${deconta}.txt ${id}_busco_${deconta}.txt
         """
 }
 
@@ -32,7 +32,7 @@ process busco_auto_prok {
         path(busco_dl_db)
     output:
         path("busco_${deconta}")
-        path "${id}_${deconta}_busco.txt", emit: busco_sum
+        path "${id}_busco_${deconta}.txt", emit: busco_sum
     script:
         """
         if [ -z "${busco_dl_db}" ]
@@ -43,7 +43,7 @@ process busco_auto_prok {
             --offline --download_path ${busco_dl_db}  -f --auto-lineage-prok
         fi
 
-        mv busco_${deconta}/short_summary*.busco_${deconta}.txt ${id}_${deconta}_busco.txt
+        mv busco_${deconta}/short_summary*.busco_${deconta}.txt ${id}_busco_${deconta}.txt
         """
 }
 

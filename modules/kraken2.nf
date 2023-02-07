@@ -21,7 +21,7 @@ process kraken2nt_contigs {
 //KrakenTools - retrieval of species of interest
 process extract_kraken {
   label 'python3'
-  publishDir "${params.output}/${id}/assembly/taxonomic_deconta", mode: 'copy'
+  publishDir "${params.output}/${id}/assembly", mode: 'copy'
 
   input:
     tuple val(id), path(contigs)

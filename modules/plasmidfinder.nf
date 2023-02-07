@@ -1,6 +1,6 @@
 process plasmidfinder {
     label 'plasmidfinder'
-    publishDir "${params.output}/${id}/assembly", mode: 'copy'
+    publishDir "${params.output}/${id}/plasmids", mode: 'copy'
 
     input:
         tuple val(id), path(contigs)

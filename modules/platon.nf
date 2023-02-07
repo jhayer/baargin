@@ -1,6 +1,6 @@
 process platon {
     label 'platon'
-    publishDir "${params.output}/${id}/assembly", mode: 'copy'
+    publishDir "${params.output}/${id}/plasmids", mode: 'copy'
 
     input:
         tuple val(id), path(contigs)
@@ -21,7 +21,7 @@ process platon {
 
 process platon_json2tsv {
     label 'python3'
-    publishDir "${params.output}/${id}/assembly", mode: 'copy'
+    publishDir "${params.output}/${id}/plasmids", mode: 'copy'
 
     input:
         path(json_platon)

@@ -1,0 +1,8 @@
+---
+# this yaml file configure the Database to download
+
+# PlasmidFinder DB
+plasmidfinder: https://bitbucket.org/genomicepidemiology/plasmidfinder/raw/de6860d40056077dd75b89765c985e03e9682409/test/database/enterobacteriaceae.fsa
+
+# CARD DB. For a latest version see https://card.mcmaster.ca/latest/data more information here https://card.mcmaster.ca/download
+card: https://card.mcmaster.ca/download/0/broadstreet-v3.2.6.tar.bz2

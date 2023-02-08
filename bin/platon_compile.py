@@ -32,7 +32,7 @@ def main():
 
     dic_plasmids, lst_samples = prep_plasmid_dic(args.input_dir, suffix)
 
-    write_output_tsv(dic_plasmids, lst_samples, args.output_file)
+    write_output_tsv(dic_plasmids, lst_samples, args.output_file, args.type)
 
 
 def prep_plasmid_dic(in_dir, suf):
@@ -73,14 +73,14 @@ def prep_plasmid_dic(in_dir, suf):
     return(plasmid_dic,sample_list)
 
 
-def write_output_tsv(plasmid_dic, sample_lst, tsv_file):
+def write_output_tsv(plasmid_dic, sample_lst, tsv_file, res_type):
 
     save_handle = open(tsv_file, 'w')
     # sort the list of sample_ids to always keep the same order while writing values
     sorted_sample_lst=sorted(sample_lst)
-    if(args.type == "inc"):
+    if(res_type == "inc"):
         line="Inc_type"
-    if(args.type == "amr"):
+    if(res_type == "amr"):
         line="AMR_type"
     else:
         line ="Plasmid"

@@ -96,6 +96,7 @@ include {card_rgi; card_rgi as card_rgi2} from './modules/card.nf' params(output
 include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
 include {platon; platon as platon2} from './modules/platon.nf' params(output: params.output)
 include {platon_json2tsv; platon_json2tsv as platon_json2tsv2} from './modules/platon.nf' params(output: params.output)
+include {compile_platon; compile_platon as compile_platon2} from './modules/platon.nf' params(output: params.output)
 include {mefinder; mefinder as mefinder2} from './modules/mefinder.nf' params(output: params.output)
 
 // MLST
@@ -197,7 +198,8 @@ workflow {
       //*************************************************
       // STEP 2bis - Assembly QC Quast on raw assembly
       //*************************************************
-      quast_hybrid(contigs_ch, hybrid_ch, "raw")
+  //    quast_hybrid(contigs_ch, hybrid_ch, "raw")
+      quast_hybrid(contigs_ch, trimmed_hybrid_ch, "raw")
       quast_collect = quast_hybrid.out.quast_transpo.collect()
     }
     else{
@@ -235,6 +237,7 @@ workflow {
     if(params.platon_db){
       platon(contigs_ch, params.platon_db, "raw")
       platon_json2tsv(platon.out.platon_json, "raw", platon.out.platon_id)
+      compile_platon(platon_json2tsv.out.platon_inc.collect(), platon_json2tsv.out.platon_plasmid.collect(), platon_json2tsv.out.platon_amr.collect(), "raw" )
     }
 
   //  mefinder(contigs_ch, "raw")
@@ -317,6 +320,7 @@ workflow {
       if(params.platon_db){
         platon2(deconta_contigs_ch, params.platon_db, "deconta")
         platon_json2tsv2(platon2.out.platon_json, "deconta", platon2.out.platon_id)
+        compile_platon2(platon_json2tsv2.out.platon_inc.collect(), platon_json2tsv2.out.platon_plasmid.collect(), platon_json2tsv2.out.platon_amr.collect(), "deconta" )
       }
 
   //    mefinder2(contigs_ch, "deconta")

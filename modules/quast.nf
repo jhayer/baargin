@@ -14,6 +14,10 @@ process quast {
 
         mv quast_${deconta}/report.tsv ${id}_quast_${deconta}_report.tsv
         mv quast_${deconta}/transposed_report.tsv ${id}_quast_${deconta}_transposed_report.tsv
+
+        rm -r quast_${deconta}
+        rm ${illumina[0]}
+        rm ${illumina[1]}
         """
 }
 process quast_contigs_only {
@@ -32,6 +36,8 @@ process quast_contigs_only {
 
         mv quast_${deconta}/report.tsv ${id}_quast_${deconta}_report.tsv
         mv quast_${deconta}/transposed_report.tsv ${id}_quast_${deconta}_transposed_report.tsv
+
+        rm -r quast_${deconta}
         """
 }
 process quast_hybrid {
@@ -52,6 +58,10 @@ process quast_hybrid {
 
         mv quast_${deconta}/report.tsv ${id}_quast_${deconta}_report.tsv
         mv quast_${deconta}/transposed_report.tsv ${id}_quast_${deconta}_transposed_report.tsv
+
+        rm -r quast_${deconta}
+        rm ${illuminaR1}
+        rm ${illuminaR2}        
         """
 }
 

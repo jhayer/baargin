@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+### From KrakenTools repository, retrieved 2023-02-09, commit 91325ce (Sept 30, 2022)
 ######################################################################
 #extract_kraken_reads.py takes in a kraken-style output and kraken report
 #and a taxonomy level to extract reads matching that level

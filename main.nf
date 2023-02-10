@@ -112,7 +112,10 @@ include {extract_kraken} from './modules/kraken2.nf' params(output: params.outpu
 
 // AMR analysis modules
 include {amrfinderplus; amrfinderplus as amrfinderplus2} from './modules/amrfinderplus.nf' params(output: params.output)
+include {amrfinderplus_no_db; amrfinderplus_no_db as amrfinderplus_no_db2} from './modules/amrfinderplus.nf' params(output: params.output)
 include {amrfinderplus_no_species; amrfinderplus_no_species as amrfinderplus_no_species2} from './modules/amrfinderplus.nf' params(output: params.output)
+include {amrfinderplus_no_species_no_db; amrfinderplus_no_species_no_db as amrfinderplus_no_species_no_db2} from './modules/amrfinderplus.nf' params(output: params.output)
+
 include {card_rgi; card_rgi as card_rgi2} from './modules/card.nf' params(output: params.output)
 //plasmids
 include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
@@ -162,6 +165,8 @@ workflow {
           .ifEmpty { exit 1, "Cannot find any reads in the directory: ${params.illumina}" }
 
     //  n_files = illumina_input_ch.count().view()
+     // illu_nb = illumina_input_ch.size() 
+      log.info """ Number of busco: pouet """
 
       // run fastp module
       fastp(illumina_input_ch, params.phred_type)
@@ -246,11 +251,6 @@ workflow {
     if(params.busco_lineage){
       busco(contigs_ch, params.busco_lineage, "raw", params.busco_db_offline)
       busco_collect = busco.out.busco_sum.collect()
-
-      busco_nb = busco_collect.view() 
-      log.info """
-      Number of busco: $busco_nb
-      """
     }
     else {
       busco_auto_prok(contigs_ch, "raw", params.busco_db_offline)
@@ -263,13 +263,26 @@ workflow {
     // STEP 3 - plasmids prediction on all raw contigs
     //*************************************************
     if(params.plasmidfinder_db){
-      plasmidfinder(contigs_ch, params.plasmidfinder_db, "raw")
-      compile_plasmidfinder(plasmidfinder.out.plasmidfinder_tab.collect(), "raw")
+
+      File db = new File("${params.plasmidfinder_db}");
+      if(db.exists()){
+        plasmidfinder(contigs_ch, params.plasmidfinder_db, "raw")
+        compile_plasmidfinder(plasmidfinder.out.plasmidfinder_tab.collect(), "raw")
+      }
+      else {
+        exit 1, "${params.plasmidfinder_db} plasmidfinder_db path does not exists!"
+      }
     }
     if(params.platon_db){
-      platon(contigs_ch, params.platon_db, "raw")
-      platon_json2tsv(platon.out.platon_json, "raw", platon.out.platon_id)
-      compile_platon(platon_json2tsv.out.platon_inc.collect(), platon_json2tsv.out.platon_plasmid.collect(), platon_json2tsv.out.platon_amr.collect(), "raw" )
+      File db = new File("${params.platon_db}");
+      if(db.exists()){
+        platon(contigs_ch, params.platon_db, "raw")
+        platon_json2tsv(platon.out.platon_json, "raw", platon.out.platon_id)
+        compile_platon(platon_json2tsv.out.platon_inc.collect(), platon_json2tsv.out.platon_plasmid.collect(), platon_json2tsv.out.platon_amr.collect(), "raw" )
+      }
+      else {
+        exit 1, "${params.platon_db} platon_db path does not exists!"
+      }
     }
 
   //  mefinder(contigs_ch, "raw")
@@ -285,30 +298,59 @@ workflow {
     // on the all contigs (raw)
     // AMRFinderPlus NCBI
 
-    // if amrfinder_organism is given in the params directly
-    if (params.amrfinder_organism){
-      amrfinderplus(contigs_ch,params.amrfinder_organism, params.amrfinder_db, "raw")
-      compile_amrfinder(amrfinderplus.out.amrfile.collect(), amrfinderplus.out.amrfile_allmut.collect(), "raw")
-    }
-    else{
-      amrfinderplus_no_species(contigs_ch, params.amrfinder_db, "raw")
-      compile_amrfinder_no_species(compile_amrfinder_no_species.out.amrfile.collect(), "raw")
+    if (params.amrfinder_db){
+      File db = new File("${params.amrfinder_db}");   
+      if (db.exists()){
+        // if amrfinder_organism is given in the params directly
+        if (params.amrfinder_organism){
+          amrfinderplus(contigs_ch,params.amrfinder_organism, params.amrfinder_db, "raw")
+          compile_amrfinder(amrfinderplus.out.amrfile.collect(), amrfinderplus.out.amrfile_allmut.collect(), "raw")
+        }
+        else{
+          amrfinderplus_no_species(contigs_ch, params.amrfinder_db, "raw")
+          compile_amrfinder_no_species(amrfinderplus_no_species.out.amrfile.collect(), "raw")
+        }
+      }
+      else {
+        // if amrfinder_organism is given in the params directly
+        if (params.amrfinder_organism){
+          amrfinderplus_no_db(contigs_ch,params.amrfinder_organism, "raw")
+          compile_amrfinder(amrfinderplus_no_db.out.amrfile.collect(), amrfinderplus_no_db.out.amrfile_allmut.collect(), "raw")
+        }
+        else{
+          amrfinderplus_no_species_no_db(contigs_ch, "raw")
+          compile_amrfinder_no_species(amrfinderplus_no_species_no_db.out.amrfile.collect(), "raw")
+        }
+      }
     }
 
     // CARD Resistance Genes Identifier
     if (params.card_db){
-      card_rgi(contigs_ch,params.card_db, "raw")
-      compile_card(card_rgi.out.card_json.collect(), "raw")
+      File db = new File("${params.card_db}");
+      if(db.exists()){
+        card_rgi(contigs_ch,params.card_db, "raw")
+        compile_card(card_rgi.out.card_json.collect(), "raw")
+      }
+      else {
+        exit 1, "${params.card_db} card_db path does not exists!"
+      }
+      
     }
 
     //*************************************************
     // STEP 5 - decontamination with Kraken2
     //*************************************************
     //kraken2nt contigs
-    kraken2nt_contigs(contigs_ch, params.kraken2_db)
-    krak_res = kraken2nt_contigs.out.kn_results
-    krak_report = kraken2nt_contigs.out.kn_report
-    contigs_kn2 = kraken2nt_contigs.out.kn_contigs
+    File db = new File("${params.kraken2_db}");
+    if(db.exists()){
+      kraken2nt_contigs(contigs_ch, params.kraken2_db)
+      krak_res = kraken2nt_contigs.out.kn_results
+      krak_report = kraken2nt_contigs.out.kn_report
+      contigs_kn2 = kraken2nt_contigs.out.kn_contigs
+    }
+    else {
+      exit 1, "${params.kraken2_db} kraken2_db path does not exists!"
+    }
 
     // KrakenTools
     if(params.species_taxid){
@@ -367,13 +409,33 @@ workflow {
       // on the deconta_contigs_ch
       // AMRFinderPlus NCBI
 
-      if (params.amrfinder_organism){
-        amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, params.amrfinder_db, "deconta")
-        compile_amrfinder2(amrfinderplus2.out.amrfile.collect(), amrfinderplus2.out.amrfile_allmut.collect(), "deconta")
-      }
-      else{
-        amrfinderplus_no_species2(deconta_contigs_ch, params.amrfinder_db, "deconta")
-        compile_amrfinder_no_species2(amrfinderplus_no_species2.out.amrfile.collect(), "deconta")
+
+      if (params.amrfinder_db) {
+        
+        File amrdb = new File ("${params.amrfinder_db}");
+
+        if (amrdb.exists()) {
+          // if amrfinder_organism is given in the params directly
+          if (params.amrfinder_organism){
+            amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, params.amrfinder_db, "deconta")
+            compile_amrfinder2(amrfinderplus2.out.amrfile.collect(), amrfinderplus2.out.amrfile_allmut.collect(), "deconta")
+          }
+          else {
+            amrfinderplus_no_species2(deconta_contigs_ch, params.amrfinder_db, "deconta")
+            compile_amrfinder_no_species2(amrfinderplus_no_species2.out.amrfile.collect(), "deconta")
+          }
+        }
+        else {
+          // if amrfinder_organism is given in the params directly
+          if (params.amrfinder_organism){
+            amrfinderplus_no_db2(deconta_contigs_ch,params.amrfinder_organism, "deconta")
+            compile_amrfinder2(amrfinderplus_no_db2.out.amrfile.collect(), amrfinderplus_no_db2.out.amrfile_allmut.collect(), "deconta")
+          }
+          else {
+            amrfinderplus_no_species_no_db2(deconta_contigs_ch, "deconta")
+            compile_amrfinder_no_species2(amrfinderplus_no_species_no_db2.out.amrfile.collect(), "deconta")
+          }
+        }
       }
 
       // CARD Resistance Genes Identifier

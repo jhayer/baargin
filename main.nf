@@ -14,43 +14,51 @@ if (params.help) { exit 0, helpMSG() }
 // Help Message
 def helpMSG() {
     log.info """
-    ********* Assembly and taxonomic classification workflow for (viral) metagenomics *********
+    ********* Workflow for bacterial genome assembly and detection of antimicrobial resistances and plasmids *********
 
         Usage example:
-    nextflow run main.nf --illumina illumina/ -profile itrop --species Ecoli
+    nextflow run main.nf --illumina short_reads_Ecoli --genus Escherichia --species coli --species_taxid 562 -profile singu -resume
+    --help                      prints the help section
 
-        Input:
+        Input sequences:
     --illumina                  path to the directory containing the illumina read file (fastq) (default: $params.illumina)
     --contigs                   path to the directory containing the already assembled contigs files (fasta) (default: $params.contigs)
-    --hybrid_index              path to the csv file containing the mapping between sampleID, illuminaR1.fastq.gz, illuminaR2.fastq.gz, ont_read.fastq
+    --hybrid_index              For users having both short and long reads:
+                                path to the CSV file containing the mapping between sampleID, illuminaR1.fastq.gz, illuminaR2.fastq.gz, ont_read.fastq
+                                Must have the header as follow: 
+                                sampleID,read1,read2,ont
 
-        Optional input:
-    --phred_type                phred score type. Specify if 33 (default and current) or 64 (ex. BGI, older...) [default: $params.phred_type]
-    --k2nt_db                   path to the Kraken2 nucleotide database (e.g. MiniKraken, nt) [default: $params.k2nt_db]
-    --bakta_db                  path to the Bakta local database if the use prefer annotating the genomes with Bakta instead of Prokka [default: $params.bakta_db]
-    --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
-    --amrfinder_db              path to a local AMRFinder Database for Antimicrobial Resistance Genes prediction [default: $params.amrfinder_db]
-    --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
-
-      Output:
+                                Example of CSV index file:
+                                sampleID,read1,read2,ont
+                                124,test_illu_hybrid/124_1.fq,test_illu_hybrid/124_2.fq,test_ont/barcode05_concat.fastq
+                                365,test_illu_hybrid/365_1.fq,test_illu_hybrid/365_2.fq,test_ont/barcode01_concat.fastq
+        
+        Output:
     --output                    path to the output directory (default: $params.output)
     --tmpdir                    path to the tmp directory (default: $params.tmpdir)
 
-        Outputed directories:
-    qc                          The reads file after qc, qc logs and host mapping logs
-    assembly                    The spades assembly output directory and all metrics related to assembly (busco, quast)
-    taxonomic_classif           The taxonomic classifications at contigs level
-    AMR                         The output directory for resistane genes analysis: ARMFinderPlus and CARD
-
-        Workflow Options:
+        Species mandatory options:
     --genus                     Bacterial genus (Escherichia, Salmonella, Enterobacter, Klebsiella, Staphylococcus)  [default: $params.genus]
     --species                   bacterial species to assemble (e.g. coli, pneumoniae, cloacae, aureus) [default: $params.species]
     --species_taxid             NCBI TaxID of the bacterial species to assemble [default: $params.species_taxid]
 
-    --mash_dataset              path to mash dataset prepared for the species [default: $params.mash_dataset]
+        Databases path required (script provided for downloading them):
+    --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
+    --kraken2_db                path to the local Kraken2 nucleotide database (e.g. MiniKraken, nt, standard) [default: $params.kraken2_db]
+    --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
+
+        Optional databases paths: if provided, the tool is run:
+    --amrfinder_db              path to a local AMRFinder Database for Antimicrobial Resistance Genes prediction [default: $params.amrfinder_db] - a database if provided within the container
+
+    --bakta_db                  path to the Bakta local database if the user prefers annotating the genomes with Bakta instead of Prokka [default: $params.bakta_db]
+    --busco_db_offline          path to local BUSCO datasets if user wants to run BUSCO offline [default: $params.busco_db_offline]
+    --platon_db                 path to the Platon local database
+
+       Optional input:
+    --phred_type                phred score type. Specify if 33 (default and current) or 64 (ex. BGI, older...) [default: $params.phred_type]
     --busco_lineage             to specify according to the bacterial species. e.g. enterobacterales_odb10, bacillales_odb10... check BUSCO [default: $params.busco_lineage]
-    --busco_db_offline          path to BUSCO datasets if user wants to run BUSCO offline [default: params.$busco_db_offline]
-    --amrfinder_organism        To specify for PointMutation detection.
+                                If not provided, Busco will use prokaryotes database
+    --amrfinder_organism        To specify for PointMutation detection
                                 Can be among these: Acinetobacter_baumannii, Campylobacter,
                                 Clostridioides_difficile, Enterococcus_faecalis, Enterococcus_faecium,
                                 Escherichia, Klebsiella, Neisseria, Pseudomonas_aeruginosa,
@@ -58,9 +66,23 @@ def helpMSG() {
                                 Streptococcus_agalactiae, Streptococcus_pneumoniae, Streptococcus_pyogenes, Vibrio_cholerae.
                                 The amrfinderplus will be run if not specified, but no point mutations are detected.
                                 [default: $params.amrfinder_organism]
+                                If not provided, resistance genes will be detected but not species-specific point mutations involved in AMR
         Nextflow options:
     -profile                    change the profile of nextflow both the engine and executor more details on github README
     -resume                     resume the workflow where it stopped
+
+            Outputed directories:
+    sample_ID
+      AMR                       The output directory for resistance genes analysis: ARMFinderPlus and CARD
+      annotation                The annotation directory containing Prokka output and Bakta output if run
+      assembly                  The spades assembly output directory with scaffolds.fasta files and all metrics related to assembly (busco, quast) and the "decontaminated" scaffolds
+        |
+         --taxonomic_classif    The taxonomic classification from Kraken2 at contigs/scaffolds level - the extracted scaffolds using provided TaxID are in the (upper) assembly directory
+      plasmids                  The output directory for plasmids identification with PlasmidFinder and Platon
+      qc                        The reads file after qc, qc logs and host mapping logs
+
+    compile_results             The ouput directory for the summary files of all samples together, from all tools used. Presence/Absence (1/0) tabular (tsv) files
+    pangenome                   The pangenome analysis output directory from Roary
     """
 }
 
@@ -118,6 +140,8 @@ include {compile_card; compile_card as compile_card2} from './modules/card.nf'
 
 workflow {
 
+  //  start_var.view()
+
     // error handling
     if (
         workflow.profile.contains('itrop') ||
@@ -136,6 +160,8 @@ workflow {
           .fromFilePairs( "${params.illumina}/*R{1,2}*.fastq{,.gz}", checkIfExists: true)
           .view()
           .ifEmpty { exit 1, "Cannot find any reads in the directory: ${params.illumina}" }
+
+    //  n_files = illumina_input_ch.count().view()
 
       // run fastp module
       fastp(illumina_input_ch, params.phred_type)
@@ -206,9 +232,10 @@ workflow {
       //no input provided
       exit 1, "No input specified. Please provide input short reads with --illumina, \
         or input contigs with --contigs, \
-        or provide a sample sheet for hybrid short and long reads with --hybrid_index"
+        or provide a CSV sample sheet for hybrid: short and long reads with --hybrid_index"
     }
 
+    
     //compile Quast results
     compile_quast(quast_collect, "raw")
 
@@ -219,6 +246,11 @@ workflow {
     if(params.busco_lineage){
       busco(contigs_ch, params.busco_lineage, "raw", params.busco_db_offline)
       busco_collect = busco.out.busco_sum.collect()
+
+      busco_nb = busco_collect.view() 
+      log.info """
+      Number of busco: $busco_nb
+      """
     }
     else {
       busco_auto_prok(contigs_ch, "raw", params.busco_db_offline)
@@ -273,14 +305,14 @@ workflow {
     // STEP 5 - decontamination with Kraken2
     //*************************************************
     //kraken2nt contigs
-    kraken2nt_contigs(contigs_ch, params.k2nt_db)
+    kraken2nt_contigs(contigs_ch, params.kraken2_db)
     krak_res = kraken2nt_contigs.out.kn_results
     krak_report = kraken2nt_contigs.out.kn_report
     contigs_kn2 = kraken2nt_contigs.out.kn_contigs
 
     // KrakenTools
     if(params.species_taxid){
-      extract_kraken(contigs_kn2,krak_res,krak_report,params.species_taxid,params.krakentools_extract)
+      extract_kraken(contigs_kn2,krak_res,krak_report,params.species_taxid)
       deconta_contigs_ch = extract_kraken.out[0]
     }
     else {
@@ -322,8 +354,6 @@ workflow {
         platon_json2tsv2(platon2.out.platon_json, "deconta", platon2.out.platon_id)
         compile_platon2(platon_json2tsv2.out.platon_inc.collect(), platon_json2tsv2.out.platon_plasmid.collect(), platon_json2tsv2.out.platon_amr.collect(), "deconta" )
       }
-
-  //    mefinder2(contigs_ch, "deconta")
 
       //*************************************************
       // STEP 8 - MLST - Sequence typing
@@ -389,7 +419,7 @@ workflow {
       //*************************************************
       // STEP 11 -  pangenome with Roary
       //*************************************************
-//      roary(prokka.out.prokka_gff.collect())
+
       // pangenome analysis with Roary using all gff outputs from Prokka or Bakta
       roary(gff_annot.collect())
 

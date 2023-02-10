@@ -28,12 +28,11 @@ process extract_kraken {
     tuple val(id), path(kraken_res)
     tuple val(id), path(kraken_report)
     val(taxid)
-    path(krakentools)
   output:
     tuple val(id), path("${id}_kraken_extract_contigs_${taxid}.fasta") optional true
   script:
     """
-    python ${krakentools} -k ${kraken_res} -r ${kraken_report} \
+    extract_kraken_reads.py -k ${kraken_res} -r ${kraken_report} \
         -s ${contigs} --include-children -t ${taxid} \
         -o ${id}_kraken_extract_contigs_${taxid}.fasta
 

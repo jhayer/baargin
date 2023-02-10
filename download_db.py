@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import requests
+from git import Repo
 import shutil
 import re,os,sys
 import logging
@@ -64,15 +65,16 @@ if __name__ == '__main__':
 
 
                 # bitbucket case, use curl
-                if "bitbucket.org" in url:
-                    cmd = "curl "+url+" --output "+path
-                    os.system(cmd)
+                if "bitbucket.org" in url or "github.com" in url :
+                    Repo.clone_from(url, path)
+                    #cmd = "curl "+url+" --output "+path
+                    #os.system(cmd)
                 # use request approach
                 else :
                     r = requests.get(url, allow_redirects=True)
                     # Save the content
                     open(path, 'wb').write(r.content)
-                    
+
                 # check extension to uncompress if needed
                 # bz2 extension
                 if db_basename.endswith('.bz2'):

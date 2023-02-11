@@ -1,6 +1,10 @@
 #!/usr/bin/env nextflow
 nextflow.enable.dsl=2
 
+// Import
+import static groovy.io.FileType.FILES
+import java.nio.file.*
+
 start_var = Channel.from("""
 ********* Start running nf-wgs_amr pipeline *********
 nf-wgs_amr is a workflow for bacterial genomics qc, assembly, decontamination by
@@ -86,6 +90,7 @@ def helpMSG() {
     """
 }
 
+
 //*************************************************
 // STEP 0 - Include needed modules
 //*************************************************
@@ -156,17 +161,37 @@ workflow {
     //*************************************************
     // STEP 1 QC with fastp
     //*************************************************
+    samples_number = 0
 
     // DATA INPUT ILLUMINA
     if(params.illumina){
+
+      // checking the number of samples in put
+      def list_files = []
+      File illumina_input = new File(params.illumina)
+      if(illumina_input.exists()){
+        if ( illumina_input.isDirectory()) {
+          illumina_input.eachFileRecurse(FILES){
+            if (it.name =~ ~/.*.fastq.*$/){
+              list_files.add(it)
+            }
+          }
+          nb_files = list_files.size()
+          samples_number = nb_files/2
+          log.info "${samples_number} samples in ${params.illumina}"
+        }
+        else {
+          exit 1,  "The input ${params.illumina} is a file! A folder containing fastq(.gz) files pairs is expected!\n"
+        }
+      } else {
+        exit 1, "The input folder ${params.illumina} does not exists!\n"
+      }
+
+      // creating channels from file pairs      
       illumina_input_ch = Channel
           .fromFilePairs( "${params.illumina}/*R{1,2}*.fastq{,.gz}", checkIfExists: true)
           .view()
           .ifEmpty { exit 1, "Cannot find any reads in the directory: ${params.illumina}" }
-
-    //  n_files = illumina_input_ch.count().view()
-     // illu_nb = illumina_input_ch.size() 
-      log.info """ Number of busco: pouet """
 
       // run fastp module
       fastp(illumina_input_ch, params.phred_type)
@@ -190,6 +215,28 @@ workflow {
     }
     else if(params.contigs){
       // DATA INPUT is Contigs from assembly
+
+      // checking the number of samples in put
+      def list_files = []
+      File fasta_input = new File(params.contigs)
+      if(fasta_input.exists()){
+        if ( fasta_input.isDirectory()) {
+          fasta_input.eachFileRecurse(FILES){
+            if (it.name =~ ~/.*.fasta/){
+              list_files.add(it)
+            }
+          }
+          samples_number = list_files.size()
+          log.info "${samples_number} files in ${params.contigs}"
+        }
+        else {
+          exit 1,  "The input ${params.contigs} is a file! A folder containing contigs in fasta is expected!\n"
+        }
+      } else {
+        exit 1, "The input folder ${params.contigs} does not exists!\n"
+      }
+
+      // Creating contigs input channels from fasta files
       contigs_files_ch = Channel
         .fromPath("${params.contigs}/*.{fasta,fa}", checkIfExists: true)
         .view()
@@ -211,6 +258,27 @@ workflow {
       // the input is CSV file mapping sampleID to illumina and ont reads files
       //sampleId	read1	read2 ont
       //FC816RLABXX reads/FC816RLABXX_L1_R1.fastq.gz reads/FC816RLABXX_L1_R2.fastq.gz ont/FC816RLABXX.fastq
+
+      // checking number of samples
+      // Count lines
+      File hybrid_csv = new File(params.hybrid_index)
+      if(hybrid_csv.exists()){
+        if ( hybrid_csv.isDirectory()) {
+          exit 1,  "The input ${params.hybrid_index} is a directory! A CSV file is expected!\n" 
+        }
+        else {
+          File file = new File(params.hybrid_index);
+          LineNumberReader lineNumberReader = new LineNumberReader(new FileReader(file));
+          lineNumberReader.skip(Long.MAX_VALUE);
+          int lines = lineNumberReader.getLineNumber();
+          lineNumberReader.close();
+          samples_number = lines - 1
+          log.info "${samples_number} samples in ${params.hybrid_index}"
+        }
+      } else {
+        exit 1, "The input CSV file ${params.hybrid_index} does not exists!\n"
+      }
+      // Creating the input hybrid channel containing illumina paired reads and ont reads
       hybrid_ch = Channel.fromPath(params.hybrid_index, checkIfExists: true) \
         | splitCsv(header:true) \
         | map { row-> tuple(row.sampleID, file(row.read1), file(row.read2), file(row.ont)) }
@@ -240,7 +308,6 @@ workflow {
         or provide a CSV sample sheet for hybrid: short and long reads with --hybrid_index"
     }
 
-    
     //compile Quast results
     compile_quast(quast_collect, "raw")
 
@@ -264,8 +331,8 @@ workflow {
     //*************************************************
     if(params.plasmidfinder_db){
 
-      File db = new File("${params.plasmidfinder_db}");
-      if(db.exists()){
+      File pfdb = new File("${params.plasmidfinder_db}");
+      if(pfdb.exists()){
         plasmidfinder(contigs_ch, params.plasmidfinder_db, "raw")
         compile_plasmidfinder(plasmidfinder.out.plasmidfinder_tab.collect(), "raw")
       }
@@ -274,8 +341,8 @@ workflow {
       }
     }
     if(params.platon_db){
-      File db = new File("${params.platon_db}");
-      if(db.exists()){
+      File platondb = new File("${params.platon_db}");
+      if(platondb.exists()){
         platon(contigs_ch, params.platon_db, "raw")
         platon_json2tsv(platon.out.platon_json, "raw", platon.out.platon_id)
         compile_platon(platon_json2tsv.out.platon_inc.collect(), platon_json2tsv.out.platon_plasmid.collect(), platon_json2tsv.out.platon_amr.collect(), "raw" )
@@ -299,8 +366,8 @@ workflow {
     // AMRFinderPlus NCBI
 
     if (params.amrfinder_db){
-      File db = new File("${params.amrfinder_db}");   
-      if (db.exists()){
+      File amrdb = new File("${params.amrfinder_db}");   
+      if (amrdb.exists()){
         // if amrfinder_organism is given in the params directly
         if (params.amrfinder_organism){
           amrfinderplus(contigs_ch,params.amrfinder_organism, params.amrfinder_db, "raw")
@@ -326,23 +393,29 @@ workflow {
 
     // CARD Resistance Genes Identifier
     if (params.card_db){
-      File db = new File("${params.card_db}");
-      if(db.exists()){
-        card_rgi(contigs_ch,params.card_db, "raw")
-        compile_card(card_rgi.out.card_json.collect(), "raw")
+      File carddb = new File("${params.card_db}");
+      if(carddb.exists()){
+        if (carddb.isDirectory()){
+            exit 1, "${params.card_db} is a folder, the card.json file is required here!"
+        }
+        else {
+          card_rgi(contigs_ch,params.card_db, "raw")
+          if (samples_number > 1) {
+            compile_card(card_rgi.out.card_json.collect(), "raw")
+          }
+        }
       }
       else {
         exit 1, "${params.card_db} card_db path does not exists!"
       }
-      
     }
 
     //*************************************************
     // STEP 5 - decontamination with Kraken2
     //*************************************************
     //kraken2nt contigs
-    File db = new File("${params.kraken2_db}");
-    if(db.exists()){
+    File kndb = new File("${params.kraken2_db}");
+    if(kndb.exists()){
       kraken2nt_contigs(contigs_ch, params.kraken2_db)
       krak_res = kraken2nt_contigs.out.kn_results
       krak_report = kraken2nt_contigs.out.kn_report
@@ -383,18 +456,18 @@ workflow {
       compile_busco2(busco_collect2, "deconta")
 
       //*************************************************
-      // STEP 7 - PlasmidFinder et al. Platon ? MGEFinder..
+      // STEP 7 - PlasmidFinder and Platon 
       //*************************************************
-      // Platon
+      // PlasmidFinder
       if(params.plasmidfinder_db){
         plasmidfinder2(deconta_contigs_ch, params.plasmidfinder_db, "deconta")
         compile_plasmidfinder2(plasmidfinder2.out.plasmidfinder_tab.collect(), "deconta")
       }
       //Platon
       if(params.platon_db){
-        platon2(deconta_contigs_ch, params.platon_db, "deconta")
-        platon_json2tsv2(platon2.out.platon_json, "deconta", platon2.out.platon_id)
-        compile_platon2(platon_json2tsv2.out.platon_inc.collect(), platon_json2tsv2.out.platon_plasmid.collect(), platon_json2tsv2.out.platon_amr.collect(), "deconta" )
+          platon2(deconta_contigs_ch, params.platon_db, "deconta")
+          platon_json2tsv2(platon2.out.platon_json, "deconta", platon2.out.platon_id)
+          compile_platon2(platon_json2tsv2.out.platon_inc.collect(), platon_json2tsv2.out.platon_plasmid.collect(), platon_json2tsv2.out.platon_amr.collect(), "deconta" )
       }
 
       //*************************************************
@@ -409,29 +482,29 @@ workflow {
       // on the deconta_contigs_ch
       // AMRFinderPlus NCBI
 
-
       if (params.amrfinder_db) {
-        
-        File amrdb = new File ("${params.amrfinder_db}");
 
         if (amrdb.exists()) {
-          // if amrfinder_organism is given in the params directly
+          // if amrfinder_organism is given in the params directly, run the mutation search
           if (params.amrfinder_organism){
             amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, params.amrfinder_db, "deconta")
             compile_amrfinder2(amrfinderplus2.out.amrfile.collect(), amrfinderplus2.out.amrfile_allmut.collect(), "deconta")
           }
           else {
+            // no mutation search
             amrfinderplus_no_species2(deconta_contigs_ch, params.amrfinder_db, "deconta")
             compile_amrfinder_no_species2(amrfinderplus_no_species2.out.amrfile.collect(), "deconta")
           }
         }
         else {
-          // if amrfinder_organism is given in the params directly
+          //run AMRFinder with no localDB - will use the container DB
+          // if amrfinder_organism is given in the params directly, run the mutation search
           if (params.amrfinder_organism){
             amrfinderplus_no_db2(deconta_contigs_ch,params.amrfinder_organism, "deconta")
             compile_amrfinder2(amrfinderplus_no_db2.out.amrfile.collect(), amrfinderplus_no_db2.out.amrfile_allmut.collect(), "deconta")
           }
           else {
+            // no mutation search
             amrfinderplus_no_species_no_db2(deconta_contigs_ch, "deconta")
             compile_amrfinder_no_species2(amrfinderplus_no_species_no_db2.out.amrfile.collect(), "deconta")
           }
@@ -441,27 +514,33 @@ workflow {
       // CARD Resistance Genes Identifier
       if (params.card_db){
         card_rgi2(deconta_contigs_ch,params.card_db, "deconta")
-        compile_card2(card_rgi2.out.card_json.collect(), "deconta")
+        if (samples_number > 1){
+          compile_card2(card_rgi2.out.card_json.collect(), "deconta")
+        }
       }
 
       //*************************************************
       // STEP 10 -  annotation and pangenome
       //*************************************************
       if(params.bakta_db){
-        // Annotation with Batka if DB provided
-        bakta(deconta_contigs_ch, params.bakta_db, params.genus, params.species)
-        // proteins for Busco
-        faa_annot = bakta.out.annot_faa
-      
-        // pangenome analysis with Roary using all gff outputs from bakta
-        gff_annot = bakta.out.annot_gff
+        File baktadb = new File("${params.bakta_db}");
+        if (baktadb.exists()) {
+          // Annotation with Batka if DB provided
+          bakta(deconta_contigs_ch, params.bakta_db, params.genus, params.species)
+          // proteins for Busco
+          faa_annot = bakta.out.annot_faa
+          // pangenome analysis with Roary using all gff outputs from bakta
+          gff_annot = bakta.out.annot_gff
+        }
+        else {
+          exit 1, "${params.bakta_db} bakta_db path does not exists!"
+        }
       }
       else { // if no Bakta DB provided, run Prokka as default
         // prokka
         prokka(deconta_contigs_ch, params.genus, params.species)
         // proteins for Busco
         faa_annot = prokka.out.annot_faa
-
         // GFF for pangenome analysis with Roary
         gff_annot = prokka.out.annot_gff
         
@@ -483,8 +562,10 @@ workflow {
       //*************************************************
 
       // pangenome analysis with Roary using all gff outputs from Prokka or Bakta
-      roary(gff_annot.collect())
-
+      if (samples_number > 1){
+        roary(gff_annot.collect())
+      }
+ 
     }
 
 }

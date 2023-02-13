@@ -78,7 +78,7 @@ def helpMSG() {
             Outputed directories:
     sample_ID
       AMR                       The output directory for resistance genes analysis: ARMFinderPlus and CARD
-      annotation                The annotation directory containing Prokka output and Bakta output if run
+      annotation                The annotation directory containing Prokka or Bakta output if run
       assembly                  The spades assembly output directory with scaffolds.fasta files and all metrics related to assembly (busco, quast) and the "decontaminated" scaffolds
         |
          --taxonomic_classif    The taxonomic classification from Kraken2 at contigs/scaffolds level - the extracted scaffolds using provided TaxID are in the (upper) assembly directory
@@ -483,8 +483,8 @@ workflow {
       // AMRFinderPlus NCBI
 
       if (params.amrfinder_db) {
-
-        if (amrdb.exists()) {
+        File amrdb2 = new File("${params.amrfinder_db}");
+        if (amrdb2.exists()) {
           // if amrfinder_organism is given in the params directly, run the mutation search
           if (params.amrfinder_organism){
             amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, params.amrfinder_db, "deconta")

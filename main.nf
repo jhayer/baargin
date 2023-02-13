@@ -106,8 +106,7 @@ include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './
 include {quast_hybrid} from './modules/quast.nf' params(output: params.output)
 include {compile_quast; compile_quast as compile_quast2} from './modules/quast.nf' params(output: params.output)
 include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
-include {busco_auto_prok; busco_auto_prok as busco_auto_prok2} from './modules/busco.nf' params(output: params.output)
-include {busco_proteins; busco_proteins_auto_prok} from './modules/busco.nf' params(output: params.output)
+include {busco_proteins} from './modules/busco.nf' params(output: params.output)
 include {compile_busco; compile_busco as compile_busco2} from './modules/busco.nf' params(output: params.output)
 include {compile_busco_prot} from './modules/busco.nf' params(output: params.output)
 
@@ -315,16 +314,26 @@ workflow {
     // STEP 2bis - Assembly QC Busco on raw assembly
     //*************************************************
     // BUSCO completeness - Singularity container
+    add_cmd = ""
+    if(params.busco_db_offline){
+      File bu_offline = new File("${params.busco_db_offline}")
+      if(bu_offline.exists()){
+        add_cmd = add_cmd + " --offline --download_path ${params.busco_db_offline}"
+      }
+      else{
+        exit 1, "${params.busco_db_offline} busco_db_offline path does not exists!"
+      }
+    }
     if(params.busco_lineage){
-      busco(contigs_ch, params.busco_lineage, "raw", params.busco_db_offline)
-      busco_collect = busco.out.busco_sum.collect()
+      add_cmd = add_cmd + " --lineage_dataset ${params.busco_lineage}"
     }
     else {
-      busco_auto_prok(contigs_ch, "raw", params.busco_db_offline)
-      busco_collect = busco_auto_prok.out.busco_sum.collect()
+      add_cmd = add_cmd + " --auto-lineage-prok"
     }
+    log.info "Here is the busco command line addition=${add_cmd}"
+    busco(contigs_ch, "raw", add_cmd)
     // compile and format Busco results
-    compile_busco(busco_collect, "raw")
+    compile_busco(busco.out.busco_sum.collect(), "raw")
 
     //*************************************************
     // STEP 3 - plasmids prediction on all raw contigs
@@ -443,17 +452,26 @@ workflow {
       //compile quast deconta results
       compile_quast2(quast_contigs_only2.out.quast_transpo.collect(), "deconta")
 
-      // BUSCO completeness - Singularity container
+      // BUSCO completeness
+      add_cmd2 = ""
+      if(params.busco_db_offline){
+        File local_bu_db = new File("${params.busco_db_offline}")
+        if(local_bu_db.exists()){
+          add_cmd2 = add_cmd2 + " --offline --download_path ${params.busco_db_offline}"
+        }
+        else{
+          exit 1, "${params.busco_db_offline} busco_db_offline path does not exists!"
+        }
+      }
       if(params.busco_lineage){
-        busco2(deconta_contigs_ch, params.busco_lineage, "deconta", params.busco_db_offline)
-        busco_collect2 = busco2.out.busco_sum.collect()
+        add_cmd2 = add_cmd2 + " --lineage_dataset ${params.busco_lineage}"
       }
       else {
-        busco_auto_prok2(deconta_contigs_ch, "deconta", params.busco_db_offline)
-        busco_collect2 = busco_auto_prok2.out.busco_sum.collect()
+        add_cmd2 = add_cmd2 + " --auto-lineage-prok"
       }
+      busco2(deconta_contigs_ch, "deconta", add_cmd2)
       // compile and format Busco results
-      compile_busco2(busco_collect2, "deconta")
+      compile_busco2(busco2.out.busco_sum.collect(), "deconta")
 
       //*************************************************
       // STEP 7 - PlasmidFinder and Platon 
@@ -547,15 +565,24 @@ workflow {
       }
 
       // Busco on annotation
+      add_p_cmd = ""
+      if(params.busco_db_offline){
+        File local_bup_db = new File("${params.busco_db_offline}")
+        if(local_bup_db.exists()){
+          add_p_cmd = add_p_cmd + " --offline --download_path ${params.busco_db_offline}"
+        }
+        else{
+          exit 1, "${params.busco_db_offline} busco_db_offline path does not exists!"
+        }
+      }
       if(params.busco_lineage){
-         busco_proteins(faa_annot, params.busco_lineage,params.busco_db_offline)
-         busco_prot_collect = busco_proteins.out.busco_prot.collect()
+        add_p_cmd = add_p_cmd + " --lineage_dataset ${params.busco_lineage}"
       }
       else {
-        busco_proteins_auto_prok(faa_annot, params.busco_db_offline)
-        busco_prot_collect = busco_proteins_auto_prok.out.busco_prot.collect()
+        add_p_cmd = add_p_cmd + " --auto-lineage-prok"
       }
-      compile_busco_prot(busco_prot_collect)
+      busco_proteins(faa_annot, add_p_cmd)
+      compile_busco_prot(busco_proteins.out.busco_prot.collect())
 
       //*************************************************
       // STEP 11 -  pangenome with Roary

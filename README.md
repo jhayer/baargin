@@ -8,6 +8,11 @@ Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial R
 
    * [Prerequisites](#prerequisites)
    * [Installation](#installation)
+      * [Using conda](#using-conda)
+      * [Old school - Manually](#old-school---manually)
+   * [Download databases](#download-databases)
+     * [Mandatory databases](#mandatory-databases)
+     * [Optional databases](#optional-databases)
    * [Test the workflow](#Test)
    * [Usage](#usage)
    * [Parameters](#parameters)
@@ -22,10 +27,74 @@ Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial R
 
 You need to have installed Docker or Singularity as the workflow uses containers to run the different tools.
 
-Python3 is required for the setup and installation of minimal databases.
 
 ## Installation
-First, you need to install NextFlow version 22.04.0+ [https://www.nextflow.io](https://www.nextflow.io)
+
+### Using conda
+
+Prerequisite: conda 
+
+   <details>
+      <summary>See here for conda installation</summary>
+  
+      Conda is installed by downloading and executing an installer from the Conda website, but which version you need depends on your operating system:
+
+      ```
+      # Install Miniconda3 for 64-bit Mac
+      curl -L https://repo.continuum.io/miniconda/Miniconda3-4.7.12.1-MacOSX-x86_64.sh -O
+      bash Miniconda3-4.7.12.1-MacOSX-x86_64.sh
+      rm Miniconda3-4.7.12.1-MacOSX-x86_64.sh
+      ```
+      ```
+      # Install Miniconda3 for 64-bit Linux
+      curl -L https://repo.continuum.io/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh -O
+      bash Miniconda3-4.7.12.1-Linux-x86_64.sh
+      rm Miniconda3-4.7.12.1-Linux-x86_64.sh
+      ```
+      The installer will ask you questions during the installation:
+
+      Do you accept the license terms? (Yes)
+      Do you accept the installation path or do you want to choose a different one? (Probably yes)
+      Do you want to run conda init to setup Conda on your system? (Yes)
+      Restart your shell so that the settings in ~/.bashrc/~/.bash_profile can take effect. You can verify that the installation worked by running:
+
+      ```
+      conda --version
+      ```
+      Lastly, we will setup the default channels (from where packages will be searched for and downloaded if no channel is specified).
+
+      ```
+      conda config --add channels defaults
+      conda config --add channels bioconda
+      conda config --add channels conda-forge
+      ```
+   </details>
+
+Clone the baargin repository and move into it
+```
+git clone https://github.com/jhayer/baargin.git
+cd 
+```
+
+Create an environment conda with needed dependencies:
+```
+conda env create -f conda_environment_baargin.yml
+```
+
+Activate the environment to be ready to use baargin:
+```
+conda activate baargin
+```
+
+### Old school - Manually
+
+Python modules for the setup and installation of minimal databases. 
+Prerequisite: Python>=3.8.0  
+```
+pip install pyyaml gitpython requests biopython>=1.78 numpy>=1.22
+```
+
+Then, you need to install NextFlow version 22.04.0+ [https://www.nextflow.io](https://www.nextflow.io)
 
 ```
 # verify Java version (at least version 8+)
@@ -35,23 +104,22 @@ java -version
 curl -s https://get.nextflow.io | bash
 
 # Then clone the workflow repository
-git clone https://github.com/jhayer/nf-wgs_amr.git
+git clone https://github.com/jhayer/baargin.git
 ```
 Then the repository folder appears in your local directory
 
 
-### Install the mandatory databases
+## Download databases
+
+### Mandatory databases
 
 Go to the repository folder and run:
 ```
-# prepare the environment
-setup.py
-
 # download the mandatory databases to run the workflow
 download_db.py
 ```
 
-### Optional: install additional databases
+### Optional databases
 
 Some databases are not mandatory can take a significant disk space. We do not provide a download script for those but they can be installed separately by the user who will then provide the path accordingly when running the workflow.
 
@@ -266,5 +334,5 @@ pangenome                   The pangenome analysis output directory from Roary
 
 ## Author and contributors
 
-Juliette Hayer
-Jacques Dainat
+Juliette Hayer  (@jhayer)
+Jacques Dainat  (@Juke34)

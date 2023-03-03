@@ -11,12 +11,11 @@ Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial R
    * [Test the workflow](#Test)
    * [Usage](#usage)
    * [Parameters](#parameters)
-
    * [Update](#update)
    * [Uninstall](#uninstall)
-   * [Complete help and options](#Complete)
+   * [Complete help and options](#complete)
    * [Citation](#citation)
-   * [Author](#author)
+   * [Author](#author-and-contributors)
 
 
 ## Prerequisites

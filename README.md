@@ -150,11 +150,14 @@ If Bakta database is provided, the annotation will be performed by Bakta, otherw
 3. AMRFinderPlus => add if no auto update
 
 
+## Test
+
+TODO
 
 ## Usage
 
 You can first check the available options and parameters by running:
-`nextflow run /path/to/nf-wgs_amr/main.nf -profile singu --help`
+`nextflow run /path/to/baargin/main.nf -profile singu --help`
 
 You always need to select a profile to run the workflow with.
 
@@ -167,11 +170,11 @@ Feel free to add your own favourite config, in the `conf` folder.
 
 ## Test the workflow
 
-We provide a test directory containing 3 illumina tests datasets, of *E. coli*,  that have been downsampled to be lighter. You can run this, from the directory of your choice, as long as you give the path to the nf-wgs_amr directory:
+We provide a test directory containing 3 illumina tests datasets, of *E. coli*,  that have been downsampled to be lighter. You can run this, from the directory of your choice, as long as you give the path to the baargin directory:
 
 ```
-nextflow run /path/to/nf-wgs_amr/main.nf -profile singu \
-  --illumina '/path/to/nf-wgs_amr/data' --genus 'Escherichia' --species 'coli' \
+nextflow run /path/to/baargin/main.nf -profile singu \
+  --illumina '/path/to/baargin/data' --genus 'Escherichia' --species 'coli' \
   --busco_lineage 'enterobacterales_odb10' --amrfinder_organism 'Escherichia' \
   --species_taxid '562' --output './results_test'
 ```
@@ -245,7 +248,7 @@ process {
 If you have such a file, you can run the workflow that way:
 
 ```
-nextflow run nf-wgs_amr/main.nf -profile singu \
+nextflow run baargin/main.nf -profile singu \
   -c '/path_to_my_params/params_node5_slurm.config' \
   --illumina 'path/to/your/illumina/reads_folder' \
   --output 'results_Ecoli'

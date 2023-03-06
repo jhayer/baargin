@@ -14,6 +14,57 @@ try:
 except ImportError:
     from yaml import Loader, Dumper
 
+
+def downloadFileWithProgress(url, local_file, sha1=None, chunk_size=8192):
+  import requests, sys
+  """
+  Function to download a file from the specified URL.
+  Outputs a basic progress bar and download stats to the CLI.
+  Optionally downloads to a specified download folder, and checks the SHA1 checksum of the file.
+  Chunk size can also be specified, to control the download.
+  Uses 'Requests' :: http://www.python-requests.org
+  """
+  def size_fmt(numBytes):
+    for symbol in ['B','KB','MB','GB','TB','EB','ZB']:
+      if numBytes < 1024.0:
+        return "{0:3.1f} {1}".format(numBytes, symbol)
+      else:
+        numBytes /= 1024.0
+    # Return Yottabytes if all else fails.
+    return "{0:3.1f} {1}".format(numBytes, 'YB')
+
+  r = requests.get(url, stream=True)
+  r.raise_for_status()
+
+  file_size = int(r.headers['Content-Length'])
+  dl_size = 0
+
+  print("Downloading: {0}; {1}".format(local_file.split('/')[-1], size_fmt(file_size)))
+  with open(local_file, 'wb') as f:
+    for chunk in r.iter_content(chunk_size):
+      if chunk: # filter out keep-alive new chunks
+        dl_size += len(chunk)
+        f.write(chunk)
+        f.flush()
+        percentage = (dl_size * 100. / file_size)
+        num_equals = int(round(percentage/4))
+
+        sys.stdout.write("[{0:25}] {1:>10} [{2: 3.2f}%]\r".format('='*num_equals, size_fmt(dl_size), percentage))
+        sys.stdout.flush()
+  print
+  if sha1 is not None:
+    import hashlib
+    print("Verifying download...")
+    f = open(local_file, 'rb')
+    download_checksum = hashlib.sha1(f.read()).hexdigest()
+    f.close()
+    if download_checksum == sha1:
+      return local_file
+    else:
+      raise Exception("Checksum mismatch")
+  else:
+    return local_file
+
 ##########################
 #        MAIN            #
 ##########################
@@ -55,7 +106,7 @@ if __name__ == '__main__':
 
             # loop over databases
             for db in yamlDict :
-                logging.info("Downloading " + db + "database...")
+                logging.info("Downloading " + db + " database...")
                 os.mkdir(args.output+"/"+db)
 
                 # get URL
@@ -71,14 +122,21 @@ if __name__ == '__main__':
                     #os.system(cmd)
                 # use request approach
                 else :
-                    r = requests.get(url, allow_redirects=True)
-                    # Save the content
-                    open(path, 'wb').write(r.content)
+                    downloadFileWithProgress(url, path)
 
                 # check extension to uncompress if needed
                 # bz2 extension
                 if db_basename.endswith('.bz2'):
                     tar = tarfile.open(path, "r:bz2")
+                    tar.extractall(args.output+"/"+db+"/")
+                    tar.close()
+                # gz extension
+                elif db_basename.endswith('.gz') or db_basename.endswith('.tgz'):
+                    tar = tarfile.open(path, "r:gz")
+                    tar.extractall(args.output+"/"+db+"/")
+                    tar.close()
+                elif db_basename.endswith(".tar"):
+                    tar = tarfile.open(fname, "r:")
                     tar.extractall(args.output+"/"+db+"/")
                     tar.close()
     else :

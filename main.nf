@@ -6,8 +6,8 @@ import static groovy.io.FileType.FILES
 import java.nio.file.*
 
 start_var = Channel.from("""
-********* Start running nf-wgs_amr pipeline *********
-nf-wgs_amr is a workflow for bacterial genomics qc, assembly, decontamination by
+********* Start running baargin pipeline *********
+baargin is a workflow for bacterial genomics qc, assembly, decontamination by
 taxonomic classification, analysis of Antimicrobial Resistance Genes, plasmids detection
 **************************************
 """)
@@ -18,10 +18,10 @@ if (params.help) { exit 0, helpMSG() }
 // Help Message
 def helpMSG() {
     log.info """
-    ********* Workflow for bacterial genome assembly and detection of antimicrobial resistances and plasmids *********
+    ********* Bacterial Assembly and ARGs detection In Nextflow *********
 
         Usage example:
-    nextflow run main.nf --illumina short_reads_Ecoli --genus Escherichia --species coli --species_taxid 562 -profile singu -resume
+    nextflow run main.nf --illumina short_reads_Ecoli --genus Escherichia --species coli --species_taxid 562 -profile docker -resume
     --help                      prints the help section
 
         Input sequences:
@@ -29,14 +29,14 @@ def helpMSG() {
     --contigs                   path to the directory containing the already assembled contigs files (fasta) (default: $params.contigs)
     --hybrid_index              For users having both short and long reads:
                                 path to the CSV file containing the mapping between sampleID, illuminaR1.fastq.gz, illuminaR2.fastq.gz, ont_read.fastq
-                                Must have the header as follow: 
+                                Must have the header as follow:
                                 sampleID,read1,read2,ont
 
                                 Example of CSV index file:
                                 sampleID,read1,read2,ont
                                 124,test_illu_hybrid/124_1.fq,test_illu_hybrid/124_2.fq,test_ont/barcode05_concat.fastq
                                 365,test_illu_hybrid/365_1.fq,test_illu_hybrid/365_2.fq,test_ont/barcode01_concat.fastq
-        
+
         Output:
     --output                    path to the output directory (default: $params.output)
     --tmpdir                    path to the tmp directory (default: $params.tmpdir)
@@ -152,9 +152,10 @@ workflow {
     // error handling
     if (
         workflow.profile.contains('itrop') ||
-        workflow.profile.contains('singu')
+        workflow.profile.contains('singularity') ||
+        workflow.profile.contains('docker')
     ) { "executer selected" }
-    else { exit 1, "No executer selected: -profile itrop/singu"}
+    else { exit 1, "No executer selected: -profile docker/singularity/itrop"}
 
 
     //*************************************************
@@ -186,7 +187,7 @@ workflow {
         exit 1, "The input folder ${params.illumina} does not exists!\n"
       }
 
-      // creating channels from file pairs      
+      // creating channels from file pairs
       illumina_input_ch = Channel
           .fromFilePairs( "${params.illumina}/*R{1,2}*.fastq{,.gz}", checkIfExists: true)
           .view()
@@ -263,7 +264,7 @@ workflow {
       File hybrid_csv = new File(params.hybrid_index)
       if(hybrid_csv.exists()){
         if ( hybrid_csv.isDirectory()) {
-          exit 1,  "The input ${params.hybrid_index} is a directory! A CSV file is expected!\n" 
+          exit 1,  "The input ${params.hybrid_index} is a directory! A CSV file is expected!\n"
         }
         else {
           File file = new File(params.hybrid_index);
@@ -375,7 +376,7 @@ workflow {
     // AMRFinderPlus NCBI
 
     if (params.amrfinder_db){
-      File amrdb = new File("${params.amrfinder_db}");   
+      File amrdb = new File("${params.amrfinder_db}");
       if (amrdb.exists()){
         // if amrfinder_organism is given in the params directly
         if (params.amrfinder_organism){
@@ -474,7 +475,7 @@ workflow {
       compile_busco2(busco2.out.busco_sum.collect(), "deconta")
 
       //*************************************************
-      // STEP 7 - PlasmidFinder and Platon 
+      // STEP 7 - PlasmidFinder and Platon
       //*************************************************
       // PlasmidFinder
       if(params.plasmidfinder_db){
@@ -561,7 +562,7 @@ workflow {
         faa_annot = prokka.out.annot_faa
         // GFF for pangenome analysis with Roary
         gff_annot = prokka.out.annot_gff
-        
+
       }
 
       // Busco on annotation
@@ -592,7 +593,7 @@ workflow {
       if (samples_number > 1){
         roary(gff_annot.collect())
       }
- 
+
     }
 
 }

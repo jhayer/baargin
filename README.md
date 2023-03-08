@@ -1,8 +1,9 @@
-# baargin: Bacterial Assembly and Antimicrobial Resistance Genes In NextFlow
+# baargin: Bacterial Assembly and Antimicrobial Resistance Genes detection In NextFlow
 Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial Resistance (AMR) focus
 
 <img src="doc/img/IRD.png" width="300" height="100" /> <img src="doc/img/MIVEGEC.png" width="150" height="100" />
 
+<img src="doc/img/baargin_flowchart.jpg" width="500" height="300" />
 
 ## Table of Contents
 
@@ -13,8 +14,8 @@ Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial R
    * [Download databases](#download-databases)
      * [Mandatory databases](#mandatory-databases)
      * [Optional databases](#optional-databases)
-   * [Test the workflow](#Test)
    * [Usage](#usage)
+   * [Test the workflow](#Test)
    * [Parameters](#parameters)
    * [Update](#update)
    * [Uninstall](#uninstall)
@@ -32,11 +33,11 @@ You need to have installed Docker or Singularity as the workflow uses containers
 
 ### Using conda
 
-Prerequisite: conda 
+Prerequisite: conda
 
    <details>
       <summary>See here for conda installation</summary>
-  
+
       Conda is installed by downloading and executing an installer from the Conda website, but which version you need depends on your operating system:
 
       ```
@@ -73,7 +74,7 @@ Prerequisite: conda
 Clone the baargin repository and move into it
 ```
 git clone https://github.com/jhayer/baargin.git
-cd 
+cd baargin
 ```
 
 Create an environment conda with needed dependencies:
@@ -88,7 +89,7 @@ conda activate baargin
 
 ### Old school - Manually
 
-Python modules for the setup and installation of minimal databases. 
+Python modules for the setup and installation of minimal databases.
 Prerequisite: Python>=3.8.0  
 ```
 pip install pyyaml gitpython requests biopython>=1.78 numpy>=1.22
@@ -150,21 +151,20 @@ If Bakta database is provided, the annotation will be performed by Bakta, otherw
 3. AMRFinderPlus => add if no auto update
 
 
-## Test
-
-TODO
-
 ## Usage
 
 You can first check the available options and parameters by running:
-`nextflow run /path/to/baargin/main.nf -profile singu --help`
+`nextflow run /path/to/baargin/main.nf -profile docker --help`
 
 You always need to select a profile to run the workflow with.
 
-We provide `singu`, a profile using Singularity containers only with Slurm executor.
-We also provide `itrop` an example of config with a module environment, where some tools are run from modules installed on a HPC environment.
+We provide 3 profiles:
+- `singularity`, a profile using Singularity to run the containers
+- `docker`, a profile using Docker to run the containers
+- `slurm`, to add if your system has a slurm executor (local by default)
 
-The `local` provide is a config using Docker and without Slurm.
+We also provide `itrop` an example of config with a module environment, where some tools are run from modules installed on a HPC environment,
+instead of containers.
 
 Feel free to add your own favourite config, in the `conf` folder.
 
@@ -173,10 +173,10 @@ Feel free to add your own favourite config, in the `conf` folder.
 We provide a test directory containing 3 illumina tests datasets, of *E. coli*,  that have been downsampled to be lighter. You can run this, from the directory of your choice, as long as you give the path to the baargin directory:
 
 ```
-nextflow run /path/to/baargin/main.nf -profile singu \
+nextflow run /path/to/baargin/main.nf -profile docker \
   --illumina '/path/to/baargin/data' --genus 'Escherichia' --species 'coli' \
   --busco_lineage 'enterobacterales_odb10' --amrfinder_organism 'Escherichia' \
-  --species_taxid '562' --output './results_test'
+  --species_taxid '562' --output './results_test' -resume
 ```
 
 
@@ -195,7 +195,7 @@ sampleID,read1,read2,ont
 365,test_illu_hybrid/365_1.fq,test_illu_hybrid/365_2.fq,test_ont/barcode01_concat.fastq
 ```
 
-2. Three mandatory databases: in the directory .... already in the nextflow.config. To overwrite in the command line if different
+2. Three mandatory databases should already be in the `db` directory within the `baargin` directory (these paths are default in the `nextflow.config` after you have run the `download_db.py` script). To overwrite in the command line if different
 
 3. A TaxID (NCBI Taxonomy ID) to which extract from to get "decontaminated" scaffolds/contigs belonging to the expected bacterial taxon. It can be a TaxID corresponding to an *order*, a *genus* or a *species*, and all the contigs classified by Kraken2 under this specified taxon and lower in the taxonomy (children taxa) will be retrieved as decontaminated.
 
@@ -209,14 +209,13 @@ params.output = "./results"
 params.tmpdir = "./tmpdir"
 
 //db
-params.card_db = "/data2/projects/ARCAHE/databases/CARD_2022/card.json"
-params.kraken2_db = "/data/projects/banks/kraken2/nt/21-09/nt/"
-params.plasmidfinder_db = "database/plasmidfinder/plasmidfinder_db"
+// Full Kraken nt database instead of the mini standard 4Gb
+params.kraken2_db = "/path/to/local/databases/kraken2/22-09/nt/"
 
-params.amrfinder_db = "/databases/amrfinder/latest"
-params.bakta_db = "/databases/bakta_db_2208/db/"
-params.busco_db_offline = "/databases/busco_downloads"
-params.platon_db = "/databases/platon/db"
+params.amrfinder_db = "/path/to/local/databases/amrfinder/latest"
+params.bakta_db = "/path/to/local/databases/bakta_db_2208/db/"
+params.busco_db_offline = "/path/to/local/databases/busco_downloads"
+params.platon_db = "/path/to/local/databases/platon/db"
 
 // Species options
 params.amrfinder_organism = "Escherichia"
@@ -228,17 +227,7 @@ params.species_taxid = "562"
 // Nextflow configuration options
 workDir = './work'
 
-profiles {
-  itrop {
-    process.executor = 'slurm'
-    includeConfig "conf/itrop.config"
-  }
-  singu {
-    process.executor = 'slurm'
-    includeConfig "conf/singu.config"
-  }
-}
-
+// these are the options for my local HPC using Slurm
 process {
     clusterOptions = '-p highmemplus --nodelist=node5'
     // You can also override existing process cpu or time settings here too.
@@ -248,7 +237,7 @@ process {
 If you have such a file, you can run the workflow that way:
 
 ```
-nextflow run baargin/main.nf -profile singu \
+nextflow run baargin/main.nf -profile singularity,slurm \
   -c '/path_to_my_params/params_node5_slurm.config' \
   --illumina 'path/to/your/illumina/reads_folder' \
   --output 'results_Ecoli'
@@ -261,7 +250,7 @@ nextflow run baargin/main.nf -profile singu \
 ********* Workflow for bacterial genome assembly and detection of antimicrobial resistances and plasmids *********
 
     Usage example:
-nextflow run main.nf --illumina short_reads_Ecoli --genus Escherichia --species coli --species_taxid 562 -profile singu -resume
+nextflow run main.nf --illumina short_reads_Ecoli --genus Escherichia --species coli --species_taxid 562 -profile singularity -resume
 --help                      prints the help section
 
     Input sequences:
@@ -332,6 +321,12 @@ pangenome                   The pangenome analysis output directory from Roary
 ## Update
 
 ## Uninstall
+
+You can simply remove the `baargin` directory from your computer, and remove the
+conda environment:
+```
+conda remove -n baargin
+```
 
 ## Citation
 

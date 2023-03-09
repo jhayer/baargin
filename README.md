@@ -3,7 +3,7 @@ Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial R
 
 <img src="doc/img/IRD.png" width="300" height="100" /> <img src="doc/img/MIVEGEC.png" width="150" height="100" />
 
-<img src="doc/img/baargin_flowchart.jpg" width="500" height="300" />
+<img src="doc/img/baargin_flowchart.jpg" width="900" height="500" />
 
 ## Table of Contents
 
@@ -14,8 +14,7 @@ Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial R
    * [Download databases](#download-databases)
      * [Mandatory databases](#mandatory-databases)
      * [Optional databases](#optional-databases)
-   * [Usage](#usage)
-   * [Test the workflow](#Test)
+   * [Usage and test](#usage)
    * [Parameters](#parameters)
    * [Update](#update)
    * [Uninstall](#uninstall)
@@ -208,6 +207,10 @@ here is an example config:
 params.output = "./results"
 params.tmpdir = "./tmpdir"
 
+// Nextflow configuration options
+workDir = './work'
+resume = true
+
 //db
 // Full Kraken nt database instead of the mini standard 4Gb
 params.kraken2_db = "/path/to/local/databases/kraken2/22-09/nt/"
@@ -223,9 +226,6 @@ params.busco_lineage = "enterobacterales_odb10"
 params.genus = "Escherichia"
 params.species = "coli"
 params.species_taxid = "562"
-
-// Nextflow configuration options
-workDir = './work'
 
 // these are the options for my local HPC using Slurm
 process {

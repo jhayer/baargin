@@ -16,7 +16,6 @@ Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial R
      * [Optional databases](#optional-databases)
    * [Usage and test](#usage)
    * [Parameters](#parameters)
-   * [Update](#update)
    * [Uninstall](#uninstall)
    * [Complete help and options](#complete)
    * [Citation](#citation)
@@ -145,9 +144,6 @@ tar -xzf db.tar.gz
 ```
 
 If Bakta database is provided, the annotation will be performed by Bakta, otherwise Prokka will be used with its default database.
-
-
-3. AMRFinderPlus => add if no auto update
 
 
 ## Usage
@@ -317,8 +313,6 @@ sample_ID
 compile_results             The ouput directory for the summary files of all samples together, from all tools used. Presence/Absence (1/0) tabular (tsv) files
 pangenome                   The pangenome analysis output directory from Roary
 ````
-
-## Update
 
 ## Uninstall
 

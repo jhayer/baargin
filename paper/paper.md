@@ -61,7 +61,7 @@ conduct reproducible analyses.
 
 # Statement of need
 
-The DNA Hight Throughput Sequencing technologies produce a significant amount of data,
+The Hight Throughput Sequencing technologies produce a significant amount of data,
 and the DNA from multiple bacterial strains can be sequenced at the same time on a same
 sequencing run. Moreover, researchers are producing genomics data all over the world on a
 daily basis, notably to better understand the spread of bacterial pathogens and

@@ -1,5 +1,6 @@
 ---
-title: 'baargin: Bacterial Assembly and Antimicrobial Resistance Genes detection In NextFlow'
+title: 'Baargin: a Nextflow workflow for the automatic analysis of bacterial
+genomics data with a focus on Antimicrobial Resistance'
 tags:
   - NextFlow
   - Whole Genome Shotgun
@@ -17,7 +18,8 @@ authors:
     orcid: 0000-0002-6629-0173
     affiliation: 1
   - name: Ella Marcy
-    affiliation: "1, 2"
+    affiliation: "1, 3"
+    orcid: 0009-0002-6000-1665
   - name: Anne-Laure Bañuls
     orcid: 0000-0002-2106-8667
     affiliation: "1, 2"
@@ -27,6 +29,8 @@ affiliations:
    index: 1
  - name: Laboratoire Mixte International Drug Resistance in Southeast Asia
    index: 2
+ - name: Centre Hospitalier Universitaire (CHU) Lapeyronie, Montpellier, France
+   index: 3
 
 date: 18 February 2023
 bibliography: paper.bib
@@ -40,12 +44,14 @@ problem, that could cause about 10 million deaths yearly by 2050 [@Thompson:2022
 The study of the genomes of these (multi)resistant bacterial strains is of high
 importance to understand emergence and circulation of the resistance. In the past
 couple of decades, high throughput sequencing technologies have seriously improved
-and it is now affordable to sequence the full genomes of hundreds of bacterial
+and it is now affordable to sequence the full genomes of hundreds of bacterial strains
 at a time. As a counterpart, these experiments produce large amount of data that
 needs to be analysed by various bioinformatics methods and tools for reconstructing
 the genomes and therefore identify their specific features and the genetic
 determinants of the AMR. For automating the bioinformatics analysis of multiple
-strains, we have developed a NextFlow [@DITommaso:2017] workflow: *baargin* [https://github.com/jhayer/baargin](https://github.com/jhayer/baargin).
+strains, we have developed a NextFlow [@DITommaso:2017] workflow called *baargin*
+(Bacterial Assembly and Antimicrobial Resistance Genes detection In NextFlow)
+[https://github.com/jhayer/baargin](https://github.com/jhayer/baargin).
 It enables to conduct sequencing reads quality control, genome assembly and annotation,
 Multi-Locus Sequence Typing and plasmid identification, as well as antimicrobial
 resistance determinants detection, and pangenome analysis. The use of NextFlow,
@@ -59,7 +65,7 @@ The DNA Hight Throughput Sequencing technologies produce a significant amount of
 and the DNA from multiple bacterial strains can be sequenced at the same time on a same
 sequencing run. Moreover, researchers are producing genomics data all over the world on a
 daily basis, notably to better understand the spread of bacterial pathogens and
-their resistance to antibiotics. The analyse this data requires the use of a
+their resistance to antibiotics. The analysis of this data requires the use of a
 wide range of bioinformatics programs to be able to identify the genomic structure,
 the genes and their functions, and among those, the genes and mutations conferring
 resistance to antimicrobial drugs. In order to make the results of these analyses
@@ -92,7 +98,7 @@ a folder containing already assembled contigs (fasta format files), or an index
 file containing the paths to pair-end short reads (fastq files) and to long reads
 (ONT, fastq file) for the same sample/strain in order to perform hybrid assembly.
 If assembled contigs are provided, the analysis will start at step 4.
-2. Reads quality check and adapters removal is performed on the short reads using
+2. Quality check and adapters removal is performed on the short reads using
 Fastp [@Chen:2018].
 3. De novo assembly is run using SPAdes [@Prjibelski:2020] if only short reads were
 provided, and with Unicycler [@Wick:2017] for a hybrid assembly when short and
@@ -149,7 +155,7 @@ easy to customise and extend, by adding new modules for new processes.
 
 # Figures
 
-![Flowchart of baargin workflow.\label{fig:Figure1}](baargin_flowchart.jpg){ width=50% }
+![Flowchart of baargin workflow.\label{fig:Figure1}](baargin_flowchart.jpg)
 
 
 # Acknowledgements

@@ -12,8 +12,8 @@ tags:
 authors:
   - name: Juliette Hayer
     orcid: 0000-0003-4899-9637
-    affiliation: "1, 2" # (Multiple affiliations must be quoted)
-    corresponding: true # (This is how to denote the corresponding author)
+    affiliation: "1, 2"
+    corresponding: true
   - name: Jacques Dainat
     orcid: 0000-0002-6629-0173
     affiliation: 1
@@ -29,7 +29,7 @@ affiliations:
    index: 1
  - name: Laboratoire Mixte International Drug Resistance in Southeast Asia
    index: 2
- - name: Centre Hospitalier Universitaire (CHU) Lapeyronie, Montpellier, France
+ - name: Centre Hospitalier Universitaire (CHU) Lapeyronie, Montpellier, France 
    index: 3
 
 date: 18 February 2023
@@ -113,7 +113,7 @@ For BUSCO, the users have the possibility to specify the taxonomic lineage datab
 to use for searching the housekeeping genes (at the class level of the strain to
 analyse for example: *enterobacterales_odb10*)
 6. The contigs (*raw* and *deconta*) are then screened to identify the sequence type of
-the strain using MLST tool (Multi-Loci Sequence Typing) [@Seemann:2022].
+the strain using MLST tool (Multi-Locus Sequence Typing) [@Seemann:2022].
 7. The contigs are then submitted to a plasmid identification with PlasmidFinder [@Carattoli:2014]
 and additionally with Platon if the user provides a database for it [@Schwengers:2020].
 8. Antimicrobial Resistance Genes (ARGs) are then searched in the contigs using both CARD RGI [@Alcock:2023]

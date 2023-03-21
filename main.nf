@@ -172,7 +172,7 @@ workflow {
       if(illumina_input.exists()){
         if ( illumina_input.isDirectory()) {
           illumina_input.eachFileRecurse(FILES){
-            if (it.name =~ ~/.*.fastq.*$/){
+            if (it.name =~ ~/.*.f*q.*$/){
               list_files.add(it)
             }
           }
@@ -189,7 +189,7 @@ workflow {
 
       // creating channels from file pairs
       illumina_input_ch = Channel
-          .fromFilePairs( "${params.illumina}/*R{1,2}*.fastq{,.gz}", checkIfExists: true)
+          .fromFilePairs( "${params.illumina}/*{1,2}*.{fastq,fq}{,.gz}", checkIfExists: true)
           .view()
           .ifEmpty { exit 1, "Cannot find any reads in the directory: ${params.illumina}" }
 

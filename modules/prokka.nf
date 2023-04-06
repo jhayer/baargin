@@ -20,3 +20,25 @@ process prokka {
         mv ${id}_prokka/${id}.gff ${id}_prokka.gff
         """
 }
+
+process prokka_genus {
+    label 'prokka'
+    publishDir "${params.output}/${id}/annotation", mode: 'copy'
+
+
+    input:
+        tuple val(id), path(contigs)
+        val(genus)
+    output:
+        path("${id}_prokka")
+        path("${id}_prokka.gff"), emit: annot_gff
+        tuple val(id), path("${id}_prokka/${id}.faa"), emit: annot_faa
+    script:
+        """
+        prokka --force --genus ${genus} \
+          --kingdom Bacteria --usegenus \
+          --notrna --prefix ${id} --outdir ${id}_prokka ${contigs}
+
+        mv ${id}_prokka/${id}.gff ${id}_prokka.gff
+        """
+}

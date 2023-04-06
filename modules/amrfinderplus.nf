@@ -44,7 +44,7 @@ process amrfinderplus_no_species {
         path(local_amr_db)
         val(deconta)
     output:
-        path("${id}_${deconta}_AMRfinder.txt")
+        path("${id}_${deconta}_AMRfinder.txt"), emit: amrfile
     script:
         """
         amrfinder --database ${local_amr_db} --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus
@@ -59,7 +59,7 @@ process amrfinderplus_no_species_no_db {
         tuple val(id), path(contigs)
         val(deconta)
     output:
-        path("${id}_${deconta}_AMRfinder.txt")
+        path("${id}_${deconta}_AMRfinder.txt"), emit: amrfile
     script:
         """
         amrfinder --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus

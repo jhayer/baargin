@@ -133,8 +133,8 @@ include {mlst; mlst as mlst2} from './modules/mlst.nf' params(output: params.out
 include {compile_mlst; compile_mlst as compile_mlst2 } from './modules/mlst.nf' params(output: params.output)
 
 // Annotation
-include {prokka} from './modules/prokka.nf' params(output: params.output)
-include {bakta} from './modules/bakta.nf' params(output: params.output)
+include {prokka; prokka_genus} from './modules/prokka.nf' params(output: params.output)
+include {bakta; bakta_genus} from './modules/bakta.nf' params(output: params.output)
 // pangenome
 include {roary} from './modules/roary.nf' params(output: params.output)
 // compilation
@@ -541,15 +541,30 @@ workflow {
       //*************************************************
       // STEP 10 -  annotation and pangenome
       //*************************************************
+      if(params.genus){
+        log.info "Genus is: ${params.genus}"
+      }
+      else{
+        exit 1, "Genus not provided, genus is needed for annotation!"
+      }
       if(params.bakta_db){
         File baktadb = new File("${params.bakta_db}");
         if (baktadb.exists()) {
           // Annotation with Batka if DB provided
-          bakta(deconta_contigs_ch, params.bakta_db, params.genus, params.species)
-          // proteins for Busco
-          faa_annot = bakta.out.annot_faa
-          // pangenome analysis with Roary using all gff outputs from bakta
-          gff_annot = bakta.out.annot_gff
+          if(params.species){
+            bakta(deconta_contigs_ch, params.bakta_db, params.genus, params.species)
+            // proteins for Busco
+            faa_annot = bakta.out.annot_faa
+            // pangenome analysis with Roary using all gff outputs from bakta
+            gff_annot = bakta.out.annot_gff
+          }
+          else{
+            bakta_genus(deconta_contigs_ch, params.bakta_db, params.genus)
+            // proteins for Busco
+            faa_annot = bakta_genus.out.annot_faa
+            // pangenome analysis with Roary using all gff outputs from bakta
+            gff_annot = bakta_genus.out.annot_gff
+          }
         }
         else {
           exit 1, "${params.bakta_db} bakta_db path does not exists!"
@@ -557,11 +572,21 @@ workflow {
       }
       else { // if no Bakta DB provided, run Prokka as default
         // prokka
-        prokka(deconta_contigs_ch, params.genus, params.species)
-        // proteins for Busco
-        faa_annot = prokka.out.annot_faa
-        // GFF for pangenome analysis with Roary
-        gff_annot = prokka.out.annot_gff
+        if(params.species){
+          prokka(deconta_contigs_ch, params.genus, params.species)
+          // proteins for Busco
+          faa_annot = prokka.out.annot_faa
+          // GFF for pangenome analysis with Roary
+          gff_annot = prokka.out.annot_gff
+        }
+        else{
+          prokka_genus(deconta_contigs_ch, params.genus)
+          // proteins for Busco
+          faa_annot = prokka.out.annot_faa
+          // GFF for pangenome analysis with Roary
+          gff_annot = prokka.out.annot_gff
+        }
+        
 
       }
 

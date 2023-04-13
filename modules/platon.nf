@@ -8,14 +8,11 @@ process platon {
         val(deconta)
     output:
         path("platon_accu_${deconta}")
-        path("${id}_platon_${deconta}_results.tsv"), emit: platon_tab
-        path("platon_accu_${deconta}/*.json"), emit: platon_json
+        path("platon_accu_${deconta}/*.json"), emit: platon_json optional true
         val(id), emit: platon_id
     script:
         """
         platon --db ${platon_db} -o platon_accu_${deconta} ${contigs}
-
-        mv platon_accu_${deconta}/*.tsv ${id}_platon_${deconta}_results.tsv
         """
 }
 

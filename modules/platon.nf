@@ -1,5 +1,6 @@
 process platon {
     label 'platon'
+    errorStrategy 'ignore'
     publishDir "${params.output}/${id}/plasmids", mode: 'copy'
 
     input:

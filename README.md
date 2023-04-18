@@ -246,12 +246,15 @@ nextflow run baargin/main.nf -profile singularity,slurm \
 ********* Workflow for bacterial genome assembly and detection of antimicrobial resistances and plasmids *********
 
     Usage example:
-nextflow run main.nf --illumina short_reads_Ecoli --genus Escherichia --species coli --species_taxid 562 -profile singularity -resume
+nextflow run main.nf --reads_folder data --illumina_pattern "*R{1,2}_001_subs10000.fastq.gz" --genus Escherichia --species coli --species_taxid 562 -profile docker -resume
 --help                      prints the help section
 
     Input sequences:
---illumina                  path to the directory containing the illumina read file (fastq) (default: null)
+--illumina_pattern          pattern of the R1 and R2 illumina files paired. Ex: "*_{R1,R2}_001.fastq.gz" or "*_{1,2}.fastq.gz". Required with --reads_folder and must be quoted (default: null)
+--reads_folder              path to the directory containing the illumina reads files (fastq.gz) (default: null)
+OR
 --contigs                   path to the directory containing the already assembled contigs files (fasta) (default: null)
+OR
 --hybrid_index              For users having both short and long reads:
                             path to the CSV file containing the mapping between sampleID, illuminaR1.fastq.gz, illuminaR2.fastq.gz, ont_read.fastq
                             Must have the header as follow:

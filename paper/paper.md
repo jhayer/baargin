@@ -61,6 +61,22 @@ conduct reproducible analyses.
 
 # Statement of need
 
+High Throughput Sequencing technologies produce a significant amount of data and 
+researchers are producing genomics data all over the world on a daily basis. 
+These technologies are notably used for studying bacterial genomes in order to understand 
+the spread of bacterial pathogens and their resistance to antibiotics. In the bacterial genomics field, 
+it is possible to sequence the DNA from multiple bacterial strains at the same time. 
+The analysis of these sequencing data requires the use of a wide range of bioinformatics programs 
+to be able to identify the genes and their functions, and among those, the genes and 
+mutations conferring resistance to antimicrobial drugs. In order to make the results of 
+these analyses comparable, it is crucial to standardize, automate and parallelize all the steps. 
+The *baargin* workflow allows the user to perform a complete *in silico* analysis of bacterial genomes, 
+from the quality control of the raw data, to the detection of AMR genes and mutations, on multiple datasets 
+of the same bacterial species in parallel. It compiles and summarize the results from all the analysis steps, 
+allowing comparative studies. As a last step, *baargin* performs a pangenome analysis of all the strains provided, 
+producing the basis for the construction of a phylogenetic tree. The use of Nextflow and containers ensures 
+the reproducibility of the data analysis.
+
 The Hight Throughput Sequencing technologies produce a significant amount of data,
 and the DNA from multiple bacterial strains can be sequenced at the same time on a same
 sequencing run. Moreover, researchers are producing genomics data all over the world on a

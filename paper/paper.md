@@ -44,7 +44,7 @@ problem, that could cause about 10 million deaths yearly by 2050 [@Thompson:2022
 The study of the genomes of these (multi)resistant bacterial strains is of high
 importance to understand emergence and circulation of the resistance. In the past
 couple of decades, high throughput sequencing technologies have seriously improved
-and it is now affordable to sequence the full genomes of hundreds of bacterial strains
+and it has become more affordable to sequence the full genomes of hundreds of bacterial strains
 at a time. As a counterpart, these experiments produce large amount of data that
 needs to be analysed by various bioinformatics methods and tools for reconstructing
 the genomes and therefore identify their specific features and the genetic

@@ -175,14 +175,18 @@ nextflow run /path/to/baargin/main.nf -profile docker \
 ```
 
 
-## Parameters
+# Parameters
 
-For running the workflow needs 3 main parameters:
+## Mandatory
+
+For running the workflow you need 3 mandatory parameters:
 1. the input datasets: 3 possible inputs:
-  - directory containing paired-end short reads (Illumina type)
-  - directory containing already assembled contigs/scaffolds
+  - directory containing paired-end short reads (Illumina type): path to provide with the parameter `--illumina`
+OR
+  - directory containing already assembled contigs/scaffolds: path to provide with the parameter `--contigs`
+OR
   - an index CSV file indicating path to short reads and long reads; for hybrid input requiring Unicycler hybrid assembly.
-  The CSV index file should look as below and must include the columns headers:
+  The CSV index file is provided with the parameter `--hybrid_index ` and should look as below and must include the columns headers:
 
 ```
 sampleID,read1,read2,ont
@@ -190,10 +194,83 @@ sampleID,read1,read2,ont
 365,test_illu_hybrid/365_1.fq,test_illu_hybrid/365_2.fq,test_ont/barcode01_concat.fastq
 ```
 
-2. Three mandatory databases should already be in the `db` directory within the `baargin` directory (these paths are default in the `nextflow.config` after you have run the `download_db.py` script). To overwrite in the command line if different
+2. Three mandatory databases should already be in the `db` directory within the `baargin` directory (these paths are set by default in the `nextflow.config` after you have run the `download_db.py` script). 
+
+
+Note: If you wish to set a different path for these 3 DB, you can overwrite in the command line using the parameters:
+`--card_db path/to/card/db`
+`--kraken2_db path/to/kraken/db`
+`--plasmidfinder_db path/to/plasmidfinder/db`
 
 3. A TaxID (NCBI Taxonomy ID) to which extract from to get "decontaminated" scaffolds/contigs belonging to the expected bacterial taxon. It can be a TaxID corresponding to an *order*, a *genus* or a *species*, and all the contigs classified by Kraken2 under this specified taxon and lower in the taxonomy (children taxa) will be retrieved as decontaminated.
+This parameter is provided as follow:
+`--species_taxid "562"` (in this example we want to extract seqeunces classified as Taxonomy_ID 562, which corresponds to *E. coli*
 
+
+You set the output directory with `--output path/outputdir`, it is set by default to `./results` in the `nextflow.config` file.
+
+You set the temporary directory with `--tmpdir path/tmpdir`, it is set by default to `./tmpdir` in the `nextflow.config` file.
+
+You set the NextFlow work directory with `-work-dir path/work`, it is set by default to `./work` in the `nextflow.config` file.
+
+## Optional parameters
+
+**A. The databases**
+
+You can set the paths to the optional databases (for amrfinder, bakta and platon) if you have them in local using the following parameters:
+
+```
+--amrfinder_db "/path/to/local/databases/amrfinder/latest"
+--bakta_db "/path/to/local/databases/bakta_db"
+--platon_db "/path/to/local/databases/platon/db"
+```
+
+*Note:* a database for amrfinder is included in its container.
+
+If you want to avoid the download of Busco databases every time you run the pipeline, you can specify a local BUSCO database using:
+
+`--busco_db_offline "/path/to/local/databases/busco_downloads"`
+
+**B. The taxonomy parameters**
+
+Additionally to the mandatory `--species_taxid` parameter, you can add the following parameters:
+
+```
+--genus = "Escherichia"
+--species = "coli"
+```
+
+For BUSCO and AMRFinder, you can specify specific datasets to use.
+
+```
+--amrfinder_organism "Escherichia"
+--busco_lineage "enterobacterales_odb10"
+```
+
+The values for these parameters can be found by typing:
+
+`amrfinder --list_organisms` for AMRFinder (if you have it installed, or by running to corresponding container downloaded by *baargin*).
+This is used for detecting the resistance mutations known for certain species.
+Today (May 2023), the list of organisms available in AMRFinderPlus are:
+
+```
+Available --organism options: Acinetobacter_baumannii, Campylobacter, Enterococcus_faecalis, Enterococcus_faecium, 
+Escherichia, Klebsiella, Neisseria, Pseudomonas_aeruginosa, Salmonella, Staphylococcus_aureus, 
+Staphylococcus_pseudintermedius, Streptococcus_agalactiae, Streptococcus_pneumoniae, Streptococcus_pyogenes, Vibrio_cholerae
+```
+
+`busco --list-datasets` for BUSCO. If you don't know the lineage, you can always use the generic one bacteria by specifying:
+`--busco_lineage "bacteria_odb10"`.
+
+A container directory is ususally created in the `work-dir` specified, if you have not specified another path to Nextflow for the containers. You can find the containers for all the tools used by baaring in that directory.
+
+**C. Phred type**
+
+If your reads fastq files are coded with a Phred score 64 (like some files coming from BGI), instead of the current and usual 33, you can specify it using the option:
+`--phred_type 64` (default is 33)
+
+
+## Setting the parameters in a config file 
 
 You can avoid writing all the parameters by providing a config file containing the parameters (e.g. paths to databases, busco lineage...)
 here is an example config:
@@ -230,11 +307,11 @@ process {
 }
 ```
 
-If you have such a file, you can run the workflow that way:
+If you have such a file, you can run the workflow providing the config file with `-c path/to/my_config`. Like this:
 
 ```
 nextflow run baargin/main.nf -profile singularity,slurm \
-  -c '/path_to_my_params/params_node5_slurm.config' \
+  -c 'path_to_my_params/params_node5_slurm.config' \
   --illumina 'path/to/your/illumina/reads_folder' \
   --output 'results_Ecoli'
 ```
@@ -277,7 +354,7 @@ nextflow run main.nf --illumina short_reads_Ecoli --genus Escherichia --species 
 --plasmidfinder_db          path to the CGE PlasmidFinder database [default: ]
 
     Optional databases paths: if provided, the tool is run:
---amrfinder_db              path to a local AMRFinder Database for Antimicrobial Resistance Genes prediction [default: ] - a database if provided within the container
+--amrfinder_db              path to a local AMRFinder Database for Antimicrobial Resistance Genes prediction [default: ] - a database is provided within the container
 
 --bakta_db                  path to the Bakta local database if the user prefers annotating the genomes with Bakta instead of Prokka [default: ]
 --busco_db_offline          path to local BUSCO datasets if user wants to run BUSCO offline [default: null]

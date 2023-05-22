@@ -31,6 +31,8 @@ jobs:
         run: conda env create -f conda_environment_baargin.yml
       - name: Activate baargin env
         run: conda activate baargin
+      - name: Install DBs needed by baargin
+        run: ./download_db.py
       - name: Run baargin test pipeline
         run: nextflow run main.nf -profile docker \ 
              --illumina '/path/to/baargin/data' --genus 'Escherichia' --species 'coli' \

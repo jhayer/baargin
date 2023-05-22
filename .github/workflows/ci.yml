@@ -28,7 +28,7 @@ jobs:
           path: .cache
       - name: Install baargin conda env
         run: conda env create -f conda_environment_baargin.yml
-       - name: Activate baargin env
+      - name: Activate baargin env
         run: conda activate baargin
       - name: Run baargin test pipeline
         run: nextflow run main.nf -profile docker \ 

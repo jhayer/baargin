@@ -1,12 +1,13 @@
 process quast {
     label 'quast'
+    errorStrategy 'ignore'
     publishDir "${params.output}/${id}/assembly", mode: 'copy'
     input:
         tuple val(id), path(illumina), path(contigs)
         val(deconta)
     output:
-        path("${id}_quast_${deconta}_transposed_report.tsv"), emit: quast_transpo
-        path("${id}_quast_${deconta}_report.tsv"), emit: quast_report
+        path("${id}_quast_${deconta}_transposed_report.tsv"), emit: quast_transpo optional true
+        path("${id}_quast_${deconta}_report.tsv"), emit: quast_report optional true
     script:
         """
         quast.py -o quast_${deconta} -t ${task.cpus} --no-plots --no-icarus \
@@ -22,13 +23,14 @@ process quast {
 }
 process quast_contigs_only {
     label 'quast'
+    errorStrategy 'ignore'
     publishDir "${params.output}/${id}/assembly", mode: 'copy'
     input:
         tuple val(id), path(contigs)
         val(deconta)
     output:
-        path("${id}_quast_${deconta}_transposed_report.tsv"), emit: quast_transpo
-        path("${id}_quast_${deconta}_report.tsv"), emit: quast_report
+        path("${id}_quast_${deconta}_transposed_report.tsv"), emit: quast_transpo optional true
+        path("${id}_quast_${deconta}_report.tsv"), emit: quast_report optional true
     script:
         """
         quast.py -o quast_${deconta} -t ${task.cpus} --no-plots --no-icarus \
@@ -42,14 +44,15 @@ process quast_contigs_only {
 }
 process quast_hybrid {
     label 'quast'
+    errorStrategy 'ignore'
     publishDir "${params.output}/${id}/assembly", mode: 'copy'
     input:
         tuple val(id), path(contigs)
         tuple val(id), path(illuminaR1), path(illuminaR2), path(ont)
         val(deconta)
     output:
-        path("${id}_quast_${deconta}_transposed_report.tsv"), emit: quast_transpo
-        path("${id}_quast_${deconta}_report.tsv"), emit: quast_report
+        path("${id}_quast_${deconta}_transposed_report.tsv"), emit: quast_transpo optional true
+        path("${id}_quast_${deconta}_report.tsv"), emit: quast_report optional true
 
     script:
         """

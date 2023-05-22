@@ -21,12 +21,15 @@ def helpMSG() {
     ********* Bacterial Assembly and ARGs detection In Nextflow *********
 
         Usage example:
-    nextflow run main.nf --illumina short_reads_Ecoli --genus Escherichia --species coli --species_taxid 562 -profile docker -resume
+    nextflow run main.nf --reads_folder data --illumina_pattern "*R{1,2}_001_subs10000.fastq.gz" --genus Escherichia --species coli --species_taxid 562 -profile docker -resume
     --help                      prints the help section
 
         Input sequences:
-    --illumina                  path to the directory containing the illumina read file (fastq) (default: $params.illumina)
+    --illumina_pattern          pattern of the R1 and R2 illumina files paired. Ex: "*_{R1,R2}_001.fastq.gz" or "*_{1,2}.fastq.gz". Required with --reads_folder and must be quoted (default: $params.illumina_pattern)
+    --reads_folder              path to the directory containing the illumina reads files (fastq.gz) (default: $params.reads_folder)
+  OR
     --contigs                   path to the directory containing the already assembled contigs files (fasta) (default: $params.contigs)
+  OR
     --hybrid_index              For users having both short and long reads:
                                 path to the CSV file containing the mapping between sampleID, illuminaR1.fastq.gz, illuminaR2.fastq.gz, ont_read.fastq
                                 Must have the header as follow:
@@ -52,7 +55,7 @@ def helpMSG() {
     --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
 
         Optional databases paths: if provided, the tool is run:
-    --amrfinder_db              path to a local AMRFinder Database for Antimicrobial Resistance Genes prediction [default: $params.amrfinder_db] - a database if provided within the container
+    --amrfinder_db              path to a local AMRFinder Database for Antimicrobial Resistance Genes prediction [default: $params.amrfinder_db] - a database is provided within the container
 
     --bakta_db                  path to the Bakta local database if the user prefers annotating the genomes with Bakta instead of Prokka [default: $params.bakta_db]
     --busco_db_offline          path to local BUSCO datasets if user wants to run BUSCO offline [default: $params.busco_db_offline]
@@ -164,11 +167,11 @@ workflow {
     samples_number = 0
 
     // DATA INPUT ILLUMINA
-    if(params.illumina){
+    if(params.reads_folder){
 
       // checking the number of samples in put
       def list_files = []
-      File illumina_input = new File(params.illumina)
+      File illumina_input = new File(params.reads_folder)
       if(illumina_input.exists()){
         if ( illumina_input.isDirectory()) {
           illumina_input.eachFileRecurse(FILES){
@@ -178,20 +181,31 @@ workflow {
           }
           nb_files = list_files.size()
           samples_number = nb_files/2
-          log.info "${samples_number} samples in ${params.illumina}"
+          log.info "${samples_number} samples in ${params.reads_folder}"
         }
         else {
-          exit 1,  "The input ${params.illumina} is a file! A folder containing fastq(.gz) files pairs is expected!\n"
+          exit 1,  "The input ${params.reads_folder} is a file! A folder containing fastq(.gz) files pairs is expected!\n"
         }
       } else {
-        exit 1, "The input folder ${params.illumina} does not exists!\n"
+        exit 1, "The input folder ${params.reads_folder} does not exists!\n"
       }
 
       // creating channels from file pairs
       illumina_input_ch = Channel
-          .fromFilePairs( "${params.illumina}/*{1,2}*.{fastq,fq}{,.gz}", checkIfExists: true)
+          .fromFilePairs( "${params.reads_folder}/${params.illumina_pattern}", checkIfExists: true)
           .view()
-          .ifEmpty { exit 1, "Cannot find any reads in the directory: ${params.illumina}" }
+          .ifEmpty { exit 1, "Cannot find any reads in the directory: ${params.reads_folder} matching the pattern ${params.illumina_pattern}\nNB: Path needs to be enclosed in quotes!" }
+        
+  
+ /*     illumina_input_ch = Channel
+        .fromFilePairs("${params.reads_folder}/${params.illumina_pattern}", size: 1 : 2)
+        .ifEmpty { exit 1, "Cannot find any reads matching: ${params.illumina}\nNB: Path needs to be enclosed in quotes!" }
+        .map { row ->
+          def meta = [:]
+          meta.id = row[0]
+          meta.group  = 0
+          return [ meta, row[1] ] }
+*/
 
       // run fastp module
       fastp(illumina_input_ch, params.phred_type)
@@ -354,8 +368,14 @@ workflow {
       File platondb = new File("${params.platon_db}");
       if(platondb.exists()){
         platon(contigs_ch, params.platon_db, "raw")
-        platon_json2tsv(platon.out.platon_json, "raw", platon.out.platon_id)
-        compile_platon(platon_json2tsv.out.platon_inc.collect(), platon_json2tsv.out.platon_plasmid.collect(), platon_json2tsv.out.platon_amr.collect(), "raw" )
+        if(platon.out.platon_json){
+          platon_json2tsv(platon.out.platon_json, "raw", platon.out.platon_id)
+          compile_platon(platon_json2tsv.out.platon_inc.collect(), platon_json2tsv.out.platon_plasmid.collect(), platon_json2tsv.out.platon_amr.collect(), "raw" )
+        }
+        else {
+          log.info "Platon did not identify any plamid sequence"
+        }
+        
       }
       else {
         exit 1, "${params.platon_db} platon_db path does not exists!"
@@ -485,8 +505,13 @@ workflow {
       //Platon
       if(params.platon_db){
           platon2(deconta_contigs_ch, params.platon_db, "deconta")
-          platon_json2tsv2(platon2.out.platon_json, "deconta", platon2.out.platon_id)
-          compile_platon2(platon_json2tsv2.out.platon_inc.collect(), platon_json2tsv2.out.platon_plasmid.collect(), platon_json2tsv2.out.platon_amr.collect(), "deconta" )
+          if(platon2.out.platon_json){
+            platon_json2tsv2(platon2.out.platon_json, "deconta", platon2.out.platon_id)
+            compile_platon2(platon_json2tsv2.out.platon_inc.collect(), platon_json2tsv2.out.platon_plasmid.collect(), platon_json2tsv2.out.platon_amr.collect(), "deconta" )
+          }
+          else {
+            log.info "Platon did not identify any plamid sequence"
+          }
       }
 
       //*************************************************

@@ -165,11 +165,27 @@ Feel free to add your own favourite config, in the `conf` folder.
 
 ## Test the workflow
 
-We provide a test directory containing 3 illumina tests datasets, of *E. coli*,  that have been downsampled to be lighter. You can run this, from the directory of your choice, as long as you give the path to the baargin directory:
+**On contigs**
+
+You can test the workflow using already assembled contigs from 3 *E. coli* datasets. Contigs are located in the `data/contigs` directory of *baargin* repository.
+You can run this, from the directory of your choice, as long as you give the path to the baargin directory (where the test `data` directory is located):
 
 ```
 nextflow run /path/to/baargin/main.nf -profile docker \
-  --illumina '/path/to/baargin/data' --genus 'Escherichia' --species 'coli' \
+  --contigs '/path/to/baargin/data/contigs'  \
+  --genus 'Escherichia' --species 'coli' \
+  --busco_lineage 'enterobacterales_odb10' --amrfinder_organism 'Escherichia' \
+  --species_taxid '562' --output './results_test' -resume
+```
+
+**On short reads to test the assembly step**
+
+We provide a test directory containing 3 illumina tests datasets, of *E. coli*, that have been downsampled to be lighter. 
+
+```
+nextflow run /path/to/baargin/main.nf -profile docker \
+  --reads_folder '/path/to/baargin/data' --illumina_pattern "*_R{1,2}_001_subs10000.fastq.gz" \
+  --genus 'Escherichia' --species 'coli' \
   --busco_lineage 'enterobacterales_odb10' --amrfinder_organism 'Escherichia' \
   --species_taxid '562' --output './results_test' -resume
 ```
@@ -181,9 +197,14 @@ nextflow run /path/to/baargin/main.nf -profile docker \
 
 For running the workflow you need 3 mandatory parameters:
 1. the input datasets: 3 possible inputs:
-  - directory containing paired-end short reads (Illumina type): path to provide with the parameter `--illumina`
+  - directory containing paired-end short reads (Illumina type): path to provide with the parameter `--reads_folder` 
+  AND the parameter `--illumina_pattern`: pattern of the R1 and R2 illumina files paired. Ex: "*_{R1,R2}_001.fastq.gz" or "*_{1,2}.fastq.gz".
+  If paired illumina data are provided, these 2 parameters are mandatory.
+
 OR
+
   - directory containing already assembled contigs/scaffolds: path to provide with the parameter `--contigs`
+
 OR
   - an index CSV file indicating path to short reads and long reads; for hybrid input requiring Unicycler hybrid assembly.
   The CSV index file is provided with the parameter `--hybrid_index ` and should look as below and must include the columns headers:
@@ -312,7 +333,8 @@ If you have such a file, you can run the workflow providing the config file with
 ```
 nextflow run baargin/main.nf -profile singularity,slurm \
   -c 'path_to_my_params/params_node5_slurm.config' \
-  --illumina 'path/to/your/illumina/reads_folder' \
+  --reads_folder 'path/to/your/illumina/reads_folder' \
+  --illumina_pattern "*_{R1,R2}_001.fastq.gz" \
   --output 'results_Ecoli'
 ```
 

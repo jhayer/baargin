@@ -325,7 +325,20 @@ conda environment:
 conda remove -n baargin
 ```
 
+
+## Contributing
+
+We welcome contributions from the community! See our [Contributing guidelines](https://github.com/jhayer/baargin/blob/main/CONTRIBUTING.md)
+
+## Report bugs and issues
+
+Found a bug or have a question? Please open an [issue](https://github.com/jhayer/baargin/issues).
+Precisions on how to report issues are given in our [Contributing guidelines](https://github.com/jhayer/baargin/blob/main/CONTRIBUTING.md)
+
+
 ## Citation
+
+Coming soon...
 
 ## Author and contributors
 

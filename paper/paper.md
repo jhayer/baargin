@@ -77,23 +77,6 @@ allowing comparative studies. As a last step, *baargin* performs a pangenome ana
 producing the basis for the construction of a phylogenetic tree. The use of Nextflow and containers ensures 
 the reproducibility of the data analysis.
 
-The Hight Throughput Sequencing technologies produce a significant amount of data,
-and the DNA from multiple bacterial strains can be sequenced at the same time on a same
-sequencing run. Moreover, researchers are producing genomics data all over the world on a
-daily basis, notably to better understand the spread of bacterial pathogens and
-their resistance to antibiotics. The analysis of this data requires the use of a
-wide range of bioinformatics programs to be able to identify the genomic structure,
-the genes and their functions, and among those, the genes and mutations conferring
-resistance to antimicrobial drugs. In order to make the results of these analyses
-comparable, it is crucial to standardize, automate and parallelize all the steps to ensure the
-reproducibility of the data analysis. The workflow that we have developed allows
-the user to perform a complete *in silico* analysis of a bacterial genome, from
-the quality control of the raw data, to the detection of AMR genes and mutations,
-on multiple datasets of bacterial strains of the same species in parallel.
-It compiles and summarize the results from all the analysis steps, allowing comparative
-studies, and it also performs a pangenome analysis of all the strains provided,
-providing the basis for the construction of a phylogenetic tree.
-
 
 # Materials and Methods
 

@@ -167,12 +167,12 @@ Feel free to add your own favourite config, in the `conf` folder.
 
 **On contigs**
 
-You can test the workflow using already assembled contigs from 3 *E. coli* datasets. Contigs are located in the `data/contigs` directory of *baargin* repository.
-You can run this, from the directory of your choice, as long as you give the path to the baargin directory (where the test `data` directory is located):
+You can test the workflow using already assembled contigs from 3 *E. coli* datasets. Contigs are located in the `test/input/contigs` directory of *baargin* repository.
+You can run this, from the directory of your choice, as long as you give the path to the baargin directory (where the test `test/input` directory is located):
 
 ```
 nextflow run /path/to/baargin/main.nf -profile docker \
-  --contigs '/path/to/baargin/data/contigs'  \
+  --contigs '/path/to/baargin/test/input/contigs'  \
   --genus 'Escherichia' --species 'coli' \
   --busco_lineage 'enterobacterales_odb10' --amrfinder_organism 'Escherichia' \
   --species_taxid '562' --output './results_test' -resume
@@ -180,11 +180,11 @@ nextflow run /path/to/baargin/main.nf -profile docker \
 
 **On short reads to test the assembly step**
 
-We provide a test directory containing 3 illumina tests datasets, of *E. coli*, that have been downsampled to be lighter. 
+We provide a test directory containing 3 illumina tests datasets, of *E. coli*, that have been downsampled to be lighter.
 
 ```
 nextflow run /path/to/baargin/main.nf -profile docker \
-  --reads_folder '/path/to/baargin/data' --illumina_pattern "*_R{1,2}_001_subs10000.fastq.gz" \
+  --reads_folder '/path/to/baargin/test/input/' --illumina_pattern "*_R{1,2}_001_subs10000.fastq.gz" \
   --genus 'Escherichia' --species 'coli' \
   --busco_lineage 'enterobacterales_odb10' --amrfinder_organism 'Escherichia' \
   --species_taxid '562' --output './results_test' -resume
@@ -197,7 +197,7 @@ nextflow run /path/to/baargin/main.nf -profile docker \
 
 For running the workflow you need 3 mandatory parameters:
 1. the input datasets: 3 possible inputs:
-  - directory containing paired-end short reads (Illumina type): path to provide with the parameter `--reads_folder` 
+  - directory containing paired-end short reads (Illumina type): path to provide with the parameter `--reads_folder`
   AND the parameter `--illumina_pattern`: pattern of the R1 and R2 illumina files paired. Ex: "*_{R1,R2}_001.fastq.gz" or "*_{1,2}.fastq.gz".
   If paired illumina data are provided, these 2 parameters are mandatory.
 
@@ -215,7 +215,7 @@ sampleID,read1,read2,ont
 365,test_illu_hybrid/365_1.fq,test_illu_hybrid/365_2.fq,test_ont/barcode01_concat.fastq
 ```
 
-2. Three mandatory databases should already be in the `db` directory within the `baargin` directory (these paths are set by default in the `nextflow.config` after you have run the `download_db.py` script). 
+2. Three mandatory databases should already be in the `db` directory within the `baargin` directory (these paths are set by default in the `nextflow.config` after you have run the `download_db.py` script).
 
 
 Note: If you wish to set a different path for these 3 DB, you can overwrite in the command line using the parameters:
@@ -275,8 +275,8 @@ This is used for detecting the resistance mutations known for certain species.
 Today (May 2023), the list of organisms available in AMRFinderPlus are:
 
 ```
-Available --organism options: Acinetobacter_baumannii, Campylobacter, Enterococcus_faecalis, Enterococcus_faecium, 
-Escherichia, Klebsiella, Neisseria, Pseudomonas_aeruginosa, Salmonella, Staphylococcus_aureus, 
+Available --organism options: Acinetobacter_baumannii, Campylobacter, Enterococcus_faecalis, Enterococcus_faecium,
+Escherichia, Klebsiella, Neisseria, Pseudomonas_aeruginosa, Salmonella, Staphylococcus_aureus,
 Staphylococcus_pseudintermedius, Streptococcus_agalactiae, Streptococcus_pneumoniae, Streptococcus_pyogenes, Vibrio_cholerae
 ```
 
@@ -291,7 +291,7 @@ If your reads fastq files are coded with a Phred score 64 (like some files comin
 `--phred_type 64` (default is 33)
 
 
-## Setting the parameters in a config file 
+## Setting the parameters in a config file
 
 You can avoid writing all the parameters by providing a config file containing the parameters (e.g. paths to databases, busco lineage...)
 here is an example config:

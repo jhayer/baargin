@@ -76,6 +76,12 @@ of the same bacterial species in parallel. It compiles and summarize the results
 allowing comparative studies. As a last step, *baargin* performs a pangenome analysis of all the strains provided, 
 producing the basis for the construction of a phylogenetic tree. The use of Nextflow and containers ensures 
 the reproducibility of the data analysis.
+Only few bacterial genomics workflows are available, like Bactopia [@Petit:2020], which is highly 
+flexible and complete in term of tools available. Therefore, we needed a lighter workflow, 
+with only a few tools and databases installed for our collaborators that have only limited computing resources and storage. 
+Also, *baargin* is specifically designed for detecting AMR genes and plasmid features, and include a 
+decontamination step of the assembly, allowing the downstream analyses to be performed especially 
+on the contigs belonging to the targeted species.  
 
 
 # Materials and Methods

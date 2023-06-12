@@ -168,13 +168,22 @@ Please follow the instructions at the [Singularity website](https://docs.sylabs.
 
 #### Manually
 
-Create o dedicated folder where you will put all the databases. You will have to inform baargin the path of this folder.
+Create a dedicated folder where you will put all the databases. 
+
+```bash
+    mkdir db
+    cd db
+ ```
+
+You will have to provide baargin with each database path. 
+(By strictly following the folder structure described here, you may skip to provide the mandatory databases paths in baargin command line)
 
 ##### Mandatory databases
 
   * Plasmid finder  
     ```bash
     git clone https://bitbucket.org/genomicepidemiology/plasmidfinder_db
+    mv plasmidfinder_db plasmidfinder
     ```
 
   * Card  
@@ -197,8 +206,8 @@ Create o dedicated folder where you will put all the databases. You will have to
     curl https://zenodo.org/record/7648745/files/kraken2_mini_standard_db_202302.tar.gz --output kraken2_mini_standard_db_202302.tar.gz
 
     # The uncompress it in a dedicated folder
-    tar -xf broadstreet-v3.2.6.tar.bz2
-    mv mini_std_4G kraken2_mini
+    mkdir kraken2_mini
+    tar -xf broadstreet-v3.2.6.tar.bz2 -C kraken2_mini
     ``` 
 
 ##### Optional databases

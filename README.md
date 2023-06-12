@@ -1,22 +1,25 @@
-# baargin: Bacterial Assembly and Antimicrobial Resistance Genes detection In NextFlow
-=========================================
+baargin: Bacterial Assembly and Antimicrobial Resistance Genes detection In NextFlow 
+=========================================  
 <img align="right" src="doc/img/IRD.png" width="200" height="66" /> <img align="right" src="doc/img/MIVEGEC.png" width="100" height="66" />
 Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial Resistance (AMR) focus
-
-
+  
+  
 ## Table of Contents
 
-   * [Foreword](#Foreword)
+   * [Foreword](#foreword)
    * [Installation](#installation)
-      * [Using conda](#using-conda)
-      * [Old school - Manually](#old-school---manually)
-   * [Download databases](#download-databases)
-     * [Mandatory databases](#mandatory-databases)
-     * [Optional databases](#optional-databases)
+      * [Baargin](#baargin)
+      * [Nextflow](#nextflow)
+      * [Container platform](#container-platform)
+        * [Docker](#docker)
+        * [Singularity](#singularity)  
+      * [Databases](#databases)
+        * [Mandatory databases](#mandatory-databases)
+        * [Optional databases](#optional-databases)
    * [Usage and test](#usage)
    * [Parameters](#parameters)
    * [Uninstall](#uninstall)
-   * [Complete help and options](#complete)
+   * [Complete help and options](#complete-help-and-options)
    * [Citation](#citation)
    * [Author](#author-and-contributors)
 
@@ -99,6 +102,18 @@ cd baargin
       # sudo mv nextflow /usr/local/bin
       ```
     </details>
+
+### Container platform
+
+To run the workflow you will need a container platform: docker or singularity.
+
+### Docker
+
+Please follow the instructions at the [Docker website](https://docs.docker.com/desktop/)
+
+### Singularity
+
+Please follow the instructions at the [Singularity website](https://docs.sylabs.io/guides/latest/admin-guide/installation.html)
 
 ### Databases
 

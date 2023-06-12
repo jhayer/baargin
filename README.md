@@ -1,27 +1,12 @@
 # baargin: Bacterial Assembly and Antimicrobial Resistance Genes detection In NextFlow
+=========================================
+<img align="right" src="doc/img/IRD.png" width="200" height="66" /> <img align="right" src="doc/img/MIVEGEC.png" width="100" height="66" />
 Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial Resistance (AMR) focus
 
-The *baargin* workflow allows to perform a complete *in silico* analysis of bacterial genomics datasets from multiple isolates in parallel.
-The user can input sequencing datasets from short reads only or from both short and long reads (hybrid assembly Illumina + Oxford Nanopore Technologies), of several bacterial strains from the same species in one command line. The workflow will automatically assemble the genomes, assign the taxonomy of the assembled sequences (contigs) and specifically extract the sequences that belong the expected taxon (specified by the user). The contigs extracted at that step are then called *deconta* (for decontaminated).
-For both *raw* and *deconta* contigs, *baargin* will then:
--	identify their sequence type (MLST),
--	screen for plasmids sequences,
--	detect Antimicrobial Resistance Genes (ARGs) and mutations, and 
--	perform genome annotation (*deconta* only). 
-
-The workflow compiles and summarizes the results from all the analysis steps, allowing comparative studies. As a last step, *baargin* performs a pangenome analysis of all the genomics datasets provided, producing the basis for the construction of a phylogenetic tree. 
-A flowchart below describes the process.
-
-
-
-
-<img src="doc/img/IRD.png" width="300" height="100" /> <img src="doc/img/MIVEGEC.png" width="150" height="100" />
-
-<img src="doc/img/baargin_flowchart.jpg" width="900" height="500" />
 
 ## Table of Contents
 
-   * [Prerequisites](#prerequisites)
+   * [Foreword](#Foreword)
    * [Installation](#installation)
       * [Using conda](#using-conda)
       * [Old school - Manually](#old-school---manually)
@@ -35,104 +20,173 @@ A flowchart below describes the process.
    * [Citation](#citation)
    * [Author](#author-and-contributors)
 
+## Foreword
 
-## Prerequisites
+The *baargin* workflow allows to perform a complete *in silico* analysis of bacterial genomics datasets from multiple isolates in parallel.
+The user can input sequencing datasets from short reads only or from both short and long reads (hybrid assembly Illumina + Oxford Nanopore Technologies), of several bacterial strains from the same species in one command line. The workflow will automatically assemble the genomes, assign the taxonomy of the assembled sequences (contigs) and specifically extract the sequences that belong the expected taxon (specified by the user). The contigs extracted at that step are then called *deconta* (for decontaminated).
+For both *raw* and *deconta* contigs, *baargin* will then:
+-	identify their sequence type (MLST),
+-	screen for plasmids sequences,
+-	detect Antimicrobial Resistance Genes (ARGs) and mutations, and 
+-	perform genome annotation (*deconta* only). 
 
-You need to have installed Docker or Singularity as the workflow uses containers to run the different tools.
+The workflow compiles and summarizes the results from all the analysis steps, allowing comparative studies. As a last step, *baargin* performs a pangenome analysis of all the genomics datasets provided, producing the basis for the construction of a phylogenetic tree. 
+A flowchart below describes the process.
+
+
+<img src="doc/img/baargin_flowchart.jpg" width="900" height="500" />
 
 
 ## Installation
 
-### Using conda
+The prerequisites to run the pipeline are:  
 
-Prerequisite: conda
+  * The baargin repository
+  * [Nextflow](https://www.nextflow.io/)  >= 22.04.0
+  * [Docker](https://www.docker.com) or [Singularity](https://sylabs.io/singularity/)  
+  * Databases
 
-   <details>
-      <summary>See here for conda installation</summary>
+### Baargin
 
-      Conda is installed by downloading and executing an installer from the Conda website, but which version you need depends on your operating system:
-
-      ```
-      # Install Miniconda3 for 64-bit Mac
-      curl -L https://repo.continuum.io/miniconda/Miniconda3-4.7.12.1-MacOSX-x86_64.sh -O
-      bash Miniconda3-4.7.12.1-MacOSX-x86_64.sh
-      rm Miniconda3-4.7.12.1-MacOSX-x86_64.sh
-      ```
-      ```
-      # Install Miniconda3 for 64-bit Linux
-      curl -L https://repo.continuum.io/miniconda/Miniconda3-4.7.12.1-Linux-x86_64.sh -O
-      bash Miniconda3-4.7.12.1-Linux-x86_64.sh
-      rm Miniconda3-4.7.12.1-Linux-x86_64.sh
-      ```
-      The installer will ask you questions during the installation:
-
-      Do you accept the license terms? (Yes)
-      Do you accept the installation path or do you want to choose a different one? (Probably yes)
-      Do you want to run conda init to setup Conda on your system? (Yes)
-      Restart your shell so that the settings in ~/.bashrc/~/.bash_profile can take effect. You can verify that the installation worked by running:
-
-      ```
-      conda --version
-      ```
-      Lastly, we will setup the default channels (from where packages will be searched for and downloaded if no channel is specified).
-
-      ```
-      conda config --add channels defaults
-      conda config --add channels bioconda
-      conda config --add channels conda-forge
-      ```
-   </details>
-
-Clone the baargin repository and move into it
-```
+```bash
+# clone the workflow repository
 git clone https://github.com/jhayer/baargin.git
+
+# Move in it
 cd baargin
 ```
 
-Create an environment conda with needed dependencies:
-```
-conda env create -f conda_environment_baargin.yml
-```
+### Nextflow 
 
-Activate the environment to be ready to use baargin:
-```
-conda activate baargin
-```
+  * Via conda 
 
-### Old school - Manually
+    <details>
+      <summary>See here</summary>
+      This will install Nextflow as well dependencies for convenient scripts to download the DBs.  
 
-Python modules for the setup and installation of minimal databases.
-Prerequisite: Python>=3.8.0  
-```
-pip install pyyaml gitpython requests biopython>=1.78 numpy>=1.22
-```
+      Clone the baargin repository and move into it
+      ```
+      git clone https://github.com/jhayer/baargin.git
+      cd baargin
+      ```
 
-Then, you need to install NextFlow version 22.04.0+ [https://www.nextflow.io](https://www.nextflow.io)
+      Create an environment conda with needed dependencies:
+      ```
+      conda env create -f conda_environment_baargin.yml
+      ```
 
-```
-# verify Java version (at least version 8+)
-java -version
+      Activate the environment to be ready to use baargin:
+      ```
+      conda activate baargin
+      ```  
+    </details>
 
-# Setup nextflow (it will create a nextflow executable file in the current directory)
-curl -s https://get.nextflow.io | bash
+  * Manually
+    <details>
+      <summary>See here</summary>
+       Nextflow runs on most POSIX systems (Linux, macOS, etc) and can typically be installed by running these commands:
 
-# Then clone the workflow repository
-git clone https://github.com/jhayer/baargin.git
-```
-Then the repository folder appears in your local directory
+      ```
+      # Make sure 11 or later is installed on your computer by using the command:
+      java -version
+
+      # Install Nextflow by entering this command in your terminal(it creates a file nextflow in the current dir):
+      curl -s https://get.nextflow.io | bash 
+
+      # Add Nextflow binary to your user's PATH:
+      mv nextflow ~/bin/
+      # OR system-wide installation:
+      # sudo mv nextflow /usr/local/bin
+      ```
+    </details>
+
+### Databases
+
+#### Via download_db.py 
+
+  * Prerequisites
+    The use of the script `download_db.py` requires python and python modules.
+
+      * Via conda
+
+        <details>
+            <summary>See here</summary>
+            This will actually install Nextflow as well dependencies for convenient scripts to download the DBs.  
+
+            Clone the baargin repository and move into it
+            ```
+            git clone https://github.com/jhayer/baargin.git
+            cd baargin
+            ```
+
+            Create an environment conda with needed dependencies:
+            ```
+            conda env create -f conda_environment_baargin.yml
+            ```
+
+            Activate the environment to be ready to use baargin:
+            ```
+            conda activate baargin
+            ```
+        </details>
+
+      * Manually
+
+        <details>
+          <summary>See here</summary>
+
+            Prerequisite: Python>=3.8.0  
+            ```
+            pip install pyyaml gitpython requests biopython>=1.78 numpy>=1.22
+            ```
+        </details>
+  
+  * Usage
+
+    Go to the repository folder and run:
+    ```
+    ./download_db.py
+    ```
+
+    This will download the Mandatory databases. For better results you may whish to install optional databases. See [Optional databases](#optional-databases). You can also diwload optional databases via `download_db.py` by uncommenting appropriate lines in the `db.yaml` files.
 
 
-## Download databases
+#### Manually
 
-### Mandatory databases
+Create o dedicated folder where you will put all the databases. You will have to inform baargin the path of this folder.
 
-Go to the repository folder and run:
-```
-# download the mandatory databases to run the workflow
-download_db.py
-```
+##### Mandatory databases
 
-### Optional databases
+  * Plasmid finder  
+    ```bash
+    git clone https://bitbucket.org/genomicepidemiology/plasmidfinder_db
+    ```
+
+  * Card  
+    ```bash
+    # Via wget
+    wget https://card.mcmaster.ca/download/0/broadstreet-v3.2.6.tar.bz2
+    # or via curl
+    curl https://card.mcmaster.ca/download/0/broadstreet-v3.2.6.tar.bz2 --output broadstreet-v3.2.6.tar.bz2
+
+    # The uncompress it in a dedicated folder
+    mkdir card
+    tar -xf broadstreet-v3.2.6.tar.bz2 -C card
+    ```
+
+  * kraken2_mini  
+      ```bash
+    # Via wget
+    wget https://zenodo.org/record/7648745/files/kraken2_mini_standard_db_202302.tar.gz
+    # or via curl
+    curl https://zenodo.org/record/7648745/files/kraken2_mini_standard_db_202302.tar.gz --output kraken2_mini_standard_db_202302.tar.gz
+
+    # The uncompress it in a dedicated folder
+    tar -xf broadstreet-v3.2.6.tar.bz2
+    mv mini_std_4G kraken2_mini
+    ``` 
+
+##### Optional databases
 
 Some databases are not mandatory can take a significant disk space. We do not provide a download script for those but they can be installed separately by the user who will then provide the path accordingly when running the workflow.
 
@@ -163,17 +217,26 @@ If Bakta database is provided, the annotation will be performed by Bakta, otherw
 ## Usage
 
 You can first check the available options and parameters by running:
-`nextflow run /path/to/baargin/main.nf -profile docker --help`
+`nextflow run main.nf --help`
 
-You always need to select a profile to run the workflow with.
-
-We provide 3 profiles:
+To run the workflow you must select a profile according to the container platform you want to use:   
 - `singularity`, a profile using Singularity to run the containers
 - `docker`, a profile using Docker to run the containers
-- `slurm`, to add if your system has a slurm executor (local by default)
 
-We also provide `itrop` an example of config with a module environment, where some tools are run from modules installed on a HPC environment,
-instead of containers.
+The command will look like that: 
+```
+nextflow run main.nf -profile docker <rest of paramaters>
+```
+
+We provide 2 other profiles:
+
+- `slurm`, to add if your system has a slurm executor (local by default)
+- `itrop`, which is an example of config with a module environment, where some tools are run from modules installed on a HPC environment, instead of containers.
+
+The use of e.g. `slurm` profile  will give a command like this one: 
+```
+nextflow run main.nf -profile docker,slurm <rest of paramaters>
+```
 
 Feel free to add your own favourite config, in the `conf` folder.
 
@@ -185,7 +248,7 @@ You can test the workflow using already assembled contigs from 3 *E. coli* datas
 You can run this, from the directory of your choice, as long as you give the path to the baargin directory (where the test `test/input` directory is located):
 
 ```
-nextflow run /path/to/baargin/main.nf -profile docker \
+nextflow run main.nf -profile docker \
   --contigs '/path/to/baargin/test/input/contigs'  \
   --genus 'Escherichia' --species 'coli' \
   --busco_lineage 'enterobacterales_odb10' --amrfinder_organism 'Escherichia' \
@@ -197,7 +260,7 @@ nextflow run /path/to/baargin/main.nf -profile docker \
 We provide a test directory containing 3 illumina tests datasets, of *E. coli*, that have been downsampled to be lighter.
 
 ```
-nextflow run /path/to/baargin/main.nf -profile docker \
+nextflow run main.nf -profile docker \
   --reads_folder '/path/to/baargin/test/input/' --illumina_pattern "*_R{1,2}_001_subs10000.fastq.gz" \
   --genus 'Escherichia' --species 'coli' \
   --busco_lineage 'enterobacterales_odb10' --amrfinder_organism 'Escherichia' \
@@ -442,5 +505,5 @@ conda remove -n baargin
 
 ## Author and contributors
 
-Juliette Hayer  (@jhayer)
+Juliette Hayer  (@jhayer)  
 Jacques Dainat  (@Juke34)

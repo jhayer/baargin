@@ -1,6 +1,20 @@
 # baargin: Bacterial Assembly and Antimicrobial Resistance Genes detection In NextFlow
 Workflow for analysis of Whole Genome Sequencing (WGS) data with AntiMicrobial Resistance (AMR) focus
 
+The *baargin* workflow allows to perform a complete *in silico* analysis of bacterial genomics datasets from multiple isolates in parallel.
+The user can input sequencing datasets from short reads only or from both short and long reads (hybrid assembly Illumina + Oxford Nanopore Technologies), of several bacterial strains from the same species in one command line. The workflow will automatically assemble the genomes, assign the taxonomy of the assembled sequences (contigs) and specifically extract the sequences that belong the expected taxon (specified by the user). The contigs extracted at that step are then called *deconta* (for decontaminated).
+For both *raw* and *deconta* contigs, *baargin* will then:
+-	identify their sequence type (MLST),
+-	screen for plasmids sequences,
+-	detect Antimicrobial Resistance Genes (ARGs) and mutations, and 
+-	perform genome annotation (*deconta* only). 
+
+The workflow compiles and summarizes the results from all the analysis steps, allowing comparative studies. As a last step, *baargin* performs a pangenome analysis of all the genomics datasets provided, producing the basis for the construction of a phylogenetic tree. 
+A flowchart below describes the process.
+
+
+
+
 <img src="doc/img/IRD.png" width="300" height="100" /> <img src="doc/img/MIVEGEC.png" width="150" height="100" />
 
 <img src="doc/img/baargin_flowchart.jpg" width="900" height="500" />

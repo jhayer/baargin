@@ -53,7 +53,6 @@ def prep_plasmid_dic(in_dir, suf):
 
                 for line in tsv_handle:
                     lst_line = line.split('\t')
-                    print(lst_line)
 
                     plasmid_symbol = lst_line[1]
 
@@ -75,34 +74,35 @@ def prep_plasmid_dic(in_dir, suf):
 
 def write_output_tsv(plasmid_dic, sample_lst, tsv_file, res_type):
 
-    save_handle = open(tsv_file, 'w')
-    # sort the list of sample_ids to always keep the same order while writing values
-    sorted_sample_lst=sorted(sample_lst)
-    if(res_type == "inc"):
-        line="Inc_type"
-    if(res_type == "amr"):
-        line="AMR_type"
-    else:
-        line ="Plasmid"
+#    save_handle = open(tsv_file, 'w')
+    with open(tsv_file, 'w', newline='') as csvfile:
+        samplewriter = csv.writer(csvfile, delimiter='\t')
+        # sort the list of sample_ids to always keep the same order while writing values
+        sorted_sample_lst=sorted(sample_lst)
+        if(res_type == "inc"):
+            line=["Inc_type"]
+        else:
+            if(res_type == "amr"):
+                line=["AMR_type"]
+            else:
+                line =["Plasmid"]
 
-    for sample_id in sorted_sample_lst:
-        line=line+"\t"+sample_id
-    # write the tsv file header
-    save_handle.write(line + os.linesep)
+        for sample_id in sorted_sample_lst:
+            line.append(sample_id)
+        # write the tsv file header
+        samplewriter.writerow(line)
 
-    for plasmid, samples in plasmid_dic.items():
-        line=plasmid
+        for plasmid, samples in plasmid_dic.items():
+            line=[plasmid]
 
-        for s_id in sorted_sample_lst:
-            pres=0
-            if(s_id in samples):
-                # the number of times that the sample_id is found for this plasmid
-                pres=samples.count(s_id)
-            line=line+"\t"+str(pres)
+            for s_id in sorted_sample_lst:
+                pres=0
+                if(s_id in samples):
+                    # the number of times that the sample_id is found for this plasmid
+                    pres=samples.count(s_id)
+                line.append(str(pres))
 
-        save_handle.write(line + os.linesep)
-
-    save_handle.close()
+            samplewriter.writerow(line)
 
 
 if __name__ == '__main__':

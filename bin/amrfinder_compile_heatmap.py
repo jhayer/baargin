@@ -54,7 +54,7 @@ def prep_gene_dic(in_dir, suf):
                     gene_symbol = lst_line[5]
                     # retrieving info about gene, type of AMR
                     gene_info_lst = lst_line[6:12]
-                    
+
                     # if the gene is already in the dic:
                     # add the sample with value 1 for presence
                     if gene_symbol in gene_dic.keys():
@@ -73,30 +73,29 @@ def prep_gene_dic(in_dir, suf):
 
 def write_output_tsv(gene_dic, sample_lst, gene_info_dic, tsv_file):
 
-    save_handle = open(tsv_file, 'w')
-    # sort the list of sample_ids to always keep the same order while writing values
-    sorted_sample_lst=sorted(sample_lst)
-    line ="Gene symbol"+"\t"+"Seq name"+"\t"+"Scope"+"\t"+"Element type"+"\t"+ \
-            "Element subtype"+"\t"+"Class"+"\t"+"Subclass"
-    for sample_id in sorted_sample_lst:
-        line=line+"\t"+sample_id
-    # write the tsv file header
-    save_handle.write(line + os.linesep)
+    with open(tsv_file, 'w', newline='') as csvfile:
+        samplewriter = csv.writer(csvfile, delimiter='\t')
+        # sort the list of sample_ids to always keep the same order while writing values
+        sorted_sample_lst=sorted(sample_lst)
+        line1 = ['Gene symbol', 'Seq name', 'Scope', 'Element type', 'Element subtype', 'Class', 'Subclass']
 
-    for gene, samples in gene_dic.items():
-        line=gene+"\t"+gene_info_dic[gene][0]+"\t"+gene_info_dic[gene][1] \
-            +"\t"+gene_info_dic[gene][2]+"\t"+gene_info_dic[gene][3]+"\t"+ \
-            gene_info_dic[gene][4]+"\t"+gene_info_dic[gene][5]
+        for sample_id in sorted_sample_lst:
+            line1.append(sample_id)
+        # write the tsv file header
+        samplewriter.writerow(line1)
 
-        for s_id in sorted_sample_lst:
-            pres=0
-            if(s_id in samples):
-                pres=1
-            line=line+"\t"+str(pres)
+        for gene, samples in gene_dic.items():
+            line = [gene,gene_info_dic[gene][0],gene_info_dic[gene][1], \
+                    gene_info_dic[gene][2],gene_info_dic[gene][3], \
+                    gene_info_dic[gene][4],gene_info_dic[gene][5]]
 
-        save_handle.write(line + os.linesep)
+            for s_id in sorted_sample_lst:
+                pres=0
+                if(s_id in samples):
+                    pres=1
+                line.append(str(pres))
 
-    save_handle.close()
+            samplewriter.writerow(line)
 
 
 if __name__ == '__main__':

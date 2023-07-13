@@ -98,46 +98,46 @@ def helpMSG() {
 // STEP 0 - Include needed modules
 //*************************************************
 
-include {fastp} from './modules/fastp.nf' params(output: params.output)
-include {fastp_hybrid} from './modules/fastp.nf' params(output: params.output)
+include {fastp} from './modules/fastp.nf'
+include {fastp_hybrid} from './modules/fastp.nf'
 // including assembler module
-include {spades} from './modules/spades.nf' params(output: params.output)
-include {unicycler} from './modules/unicycler.nf' params(output: params.output)
+include {spades} from './modules/spades.nf'
+include {unicycler} from './modules/unicycler.nf'
 // include quast, busco, checkm
-include {quast} from './modules/quast.nf' params(output: params.output)
-include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './modules/quast.nf' params(output: params.output)
-include {quast_hybrid} from './modules/quast.nf' params(output: params.output)
-include {compile_quast; compile_quast as compile_quast2} from './modules/quast.nf' params(output: params.output)
-include {busco; busco as busco2} from './modules/busco.nf' params(output: params.output)
-include {busco_proteins} from './modules/busco.nf' params(output: params.output)
-include {compile_busco; compile_busco as compile_busco2} from './modules/busco.nf' params(output: params.output)
-include {compile_busco_prot} from './modules/busco.nf' params(output: params.output)
+include {quast} from './modules/quast.nf'
+include {quast_contigs_only; quast_contigs_only as quast_contigs_only2} from './modules/quast.nf'
+include {quast_hybrid} from './modules/quast.nf'
+include {compile_quast; compile_quast as compile_quast2} from './modules/quast.nf'
+include {busco; busco as busco2} from './modules/busco.nf'
+include {busco_proteins} from './modules/busco.nf'
+include {compile_busco; compile_busco as compile_busco2} from './modules/busco.nf'
+include {compile_busco_prot} from './modules/busco.nf'
 
 // including Kraken2 - nucleotide level
-include {kraken2nt_contigs} from './modules/kraken2.nf' params(output: params.output)
-include {extract_kraken} from './modules/kraken2.nf' params(output: params.output)
+include {kraken2nt_contigs} from './modules/kraken2.nf'
+include {extract_kraken} from './modules/kraken2.nf'
 
 // AMR analysis modules
-include {amrfinderplus; amrfinderplus as amrfinderplus2} from './modules/amrfinderplus.nf' params(output: params.output)
-include {amrfinderplus_no_db; amrfinderplus_no_db as amrfinderplus_no_db2} from './modules/amrfinderplus.nf' params(output: params.output)
-include {amrfinderplus_no_species; amrfinderplus_no_species as amrfinderplus_no_species2} from './modules/amrfinderplus.nf' params(output: params.output)
-include {amrfinderplus_no_species_no_db; amrfinderplus_no_species_no_db as amrfinderplus_no_species_no_db2} from './modules/amrfinderplus.nf' params(output: params.output)
+include {amrfinderplus; amrfinderplus as amrfinderplus2} from './modules/amrfinderplus.nf'
+include {amrfinderplus_no_db; amrfinderplus_no_db as amrfinderplus_no_db2} from './modules/amrfinderplus.nf'
+include {amrfinderplus_no_species; amrfinderplus_no_species as amrfinderplus_no_species2} from './modules/amrfinderplus.nf'
+include {amrfinderplus_no_species_no_db; amrfinderplus_no_species_no_db as amrfinderplus_no_species_no_db2} from './modules/amrfinderplus.nf'
 
-include {card_rgi; card_rgi as card_rgi2} from './modules/card.nf' params(output: params.output)
+include {card_rgi; card_rgi as card_rgi2} from './modules/card.nf'
 //plasmids
-include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf' params(output: params.output)
-include {platon; platon as platon2} from './modules/platon.nf' params(output: params.output)
-include {platon_json2tsv; platon_json2tsv as platon_json2tsv2} from './modules/platon.nf' params(output: params.output)
-include {compile_platon; compile_platon as compile_platon2} from './modules/platon.nf' params(output: params.output)
-include {mefinder; mefinder as mefinder2} from './modules/mefinder.nf' params(output: params.output)
+include {plasmidfinder; plasmidfinder as plasmidfinder2} from './modules/plasmidfinder.nf'
+include {platon; platon as platon2} from './modules/platon.nf'
+include {platon_json2tsv; platon_json2tsv as platon_json2tsv2} from './modules/platon.nf'
+include {compile_platon; compile_platon as compile_platon2} from './modules/platon.nf'
+include {mefinder; mefinder as mefinder2} from './modules/mefinder.nf'
 
 // MLST
-include {mlst; mlst as mlst2} from './modules/mlst.nf' params(output: params.output)
-include {compile_mlst; compile_mlst as compile_mlst2 } from './modules/mlst.nf' params(output: params.output)
+include {mlst; mlst as mlst2} from './modules/mlst.nf'
+include {compile_mlst; compile_mlst as compile_mlst2 } from './modules/mlst.nf'
 
 // Annotation
-include {prokka; prokka_genus} from './modules/prokka.nf' params(output: params.output)
-include {bakta; bakta_genus} from './modules/bakta.nf' params(output: params.output)
+include {prokka; prokka_genus} from './modules/prokka.nf'
+include {bakta; bakta_genus} from './modules/bakta.nf' 
 // pangenome
 include {roary} from './modules/roary.nf' params(output: params.output)
 // compilation
@@ -195,8 +195,8 @@ workflow {
           .fromFilePairs( "${params.reads_folder}/${params.illumina_pattern}", checkIfExists: true)
           .view()
           .ifEmpty { exit 1, "Cannot find any reads in the directory: ${params.reads_folder} matching the pattern ${params.illumina_pattern}\nNB: Path needs to be enclosed in quotes!" }
-        
-  
+
+
  /*     illumina_input_ch = Channel
         .fromFilePairs("${params.reads_folder}/${params.illumina_pattern}", size: 1 : 2)
         .ifEmpty { exit 1, "Cannot find any reads matching: ${params.illumina}\nNB: Path needs to be enclosed in quotes!" }
@@ -375,7 +375,7 @@ workflow {
         else {
           log.info "Platon did not identify any plamid sequence"
         }
-        
+
       }
       else {
         exit 1, "${params.platon_db} platon_db path does not exists!"
@@ -611,7 +611,7 @@ workflow {
           // GFF for pangenome analysis with Roary
           gff_annot = prokka.out.annot_gff
         }
-        
+
 
       }
 

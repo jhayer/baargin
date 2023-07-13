@@ -3,7 +3,7 @@
 
 import argparse
 import os
-#import csv
+import csv
 import json
 
 def main():
@@ -24,24 +24,26 @@ def main():
 
     args = parser.parse_args()
 
+    csvfile_inc = open(args.inc_types_file, 'w', newline='')
     # write columns headers for inc_type output file
-    inctype_handle = open(args.inc_types_file, 'w')
-    inc_header = "Contig_id"+"\t"+"Inc_type"+"\t"+"Identity"+"\t"+"Coverage"
-    inctype_handle.write(inc_header + os.linesep)
+    inctype_handle = csv.writer(csvfile_inc, delimiter='\t')
+    inc_header = ["Contig_id","Inc_type","Identity","Coverage"]
+    inctype_handle.writerow(inc_header)
 
+    csvfile_pla = open(args.plasmids_file, 'w', newline='')
     # write columns headers for plasmid hits output file
-    plasmid_handle = open(args.plasmids_file, 'w')
-    plasmid_header = "Contig_id"+"\t"+"Plasmid_accession"+"\t"+"Identity"+"\t"+"coverage" \
-        +"\t"+"plasmid_length"+"\t"+"contig_start"+"\t"+"contig_end"+"\t" \
-        +"plasmid_start"+"\t"+"plasmid_end"
-    plasmid_handle.write(plasmid_header + os.linesep)
+    plasmid_handle = csv.writer(csvfile_pla, delimiter='\t')
+    plasmid_header = ["Contig_id","Plasmid_accession","Identity","coverage", \
+            "plasmid_length","contig_start","contig_end","plasmid_start","plasmid_end"]
+    plasmid_handle.writerow(plasmid_header)
 
     # write columns headers for amr hits output file
     if args.amr_file:
-        amr_handle = open(args.amr_file, 'w')
-        amr_header = "Contig_id"+"\t"+"AMR_type"+"\t"+"Gene"+"\t"+"Product" \
-            +"\t"+"Evalue"+"\t"+"Start"+"\t"+"End"+"\t"+"Strand"
-        amr_handle.write(amr_header + os.linesep)
+        csvfile_amr = open(args.amr_file, 'w', newline='')
+
+        amr_handle = csv.writer(csvfile_amr, delimiter='\t')
+        amr_header = ["Contig_id","AMR_type","Gene","Product","Evalue","Start","End","Strand"]
+        amr_handle.writerow(amr_header)
 
     # read the json data
     with open(args.json_input) as fd:
@@ -53,43 +55,32 @@ def main():
             if key == "inc_types" and len(vals) > 0:
                 # prepare lines for inc_types_file
                 for inc in vals:
-                    inc_line = contig+"\t"+inc['type']+"\t"+str(inc['identity']) \
-                        +"\t"+str(inc['coverage'])
-                    inctype_handle.write(inc_line + os.linesep)
+                    inc_line = [contig,inc['type'],str(inc['identity']),str(inc['coverage'])]
+                    inctype_handle.writerow(inc_line)
 
             if key == "plasmid_hits":
                 for ph in vals:
                     #[{'contig_start': 1, 'contig_end': 7073, 'plasmid_start': 3267,
                     # 'plasmid_end': 10339, 'plasmid': {'id': 'NC_021155.1', 'length': 148711},
                     # 'coverage': 1.0, 'identity': 0.9998586172769688}]
-                    ph_line = contig+"\t"+ph['plasmid']['id']+"\t" \
-                        +str(ph['identity'])+"\t"+str(ph['coverage'])+"\t" \
-                        +str(ph['plasmid']['length'])+"\t"+str(ph['contig_start'])+"\t" \
-                        +str(ph['contig_end'])+"\t"+str(ph['plasmid_start'])+"\t" \
-                        +str(ph['plasmid_end'])
-                    plasmid_handle.write(ph_line + os.linesep)
+                    ph_line = [contig,ph['plasmid']['id'],str(ph['identity']), \
+                        str(ph['coverage']),str(ph['plasmid']['length']), \
+                        str(ph['contig_start']),str(ph['contig_end']), \
+                        str(ph['plasmid_start']),str(ph['plasmid_end'])]
+                    plasmid_handle.writerow(ph_line)
 
 
             if key == "amr_hits" and args.amr_file:
                 for amr in vals:
-                    amr_line = contig+"\t"+amr['type']+"\t" \
-                        +amr['gene']+"\t"+amr['product']+"\t" \
-                        +str(amr['evalue'])+"\t"+str(amr['start'])+"\t" \
-                        +str(amr['end'])+"\t"+str(amr['strand'])
-                    amr_handle.write(amr_line + os.linesep)
-
-    # open the csv file as a DictWriter using those names
-    # with open(args.inc_types_file, "w", newline='') as of:
-    #     wr = csv.DictWriter(of, names)
-    #     wr.writeheader()
-    #     for field, vals in data.items():
-    #         d['field'] = field
-    #         for inner in vals:
-    #             for k,v in inner.items():
-    #                 d[k] = v
-    #         wr.writerow(d)
+                    amr_line = [contig,amr['type'],amr['gene'],amr['product'], \
+                        str(amr['evalue']),str(amr['start']), \
+                        str(amr['end']),str(amr['strand'])]
+                    amr_handle.writerow(amr_line)
 
 
+    csvfile_inc.close()
+    csvfile_pla.close()
+    csvfile_amr.close()
 
 if __name__ == '__main__':
     main()

@@ -76,28 +76,27 @@ def prep_gene_dic(in_dir, suf):
 
 def write_output_tsv(gene_dic, sample_lst, gene_info_dic, tsv_file):
 
-    save_handle = open(tsv_file, 'w')
-    # sort the list of sample_ids to always keep the same order while writing values
-    sorted_sample_lst=sorted(sample_lst)
-    line ="Gene symbol"+"\t"+"Database"+"\t"+"Protein function"+"\t"+"Accession number"
-    for sample_id in sorted_sample_lst:
-        line=line+"\t"+sample_id
-    # write the tsv file header
-    save_handle.write(line + os.linesep)
+#    save_handle = open(tsv_file, 'w')
+    with open(tsv_file, 'w', newline='') as csvfile:
+        samplewriter = csv.writer(csvfile, delimiter='\t')
+        # sort the list of sample_ids to always keep the same order while writing values
+        sorted_sample_lst=sorted(sample_lst)
+        line =["Gene symbol","Database","Protein function","Accession number"]
+        for sample_id in sorted_sample_lst:
+            line.append(sample_id)
+        # write the tsv file header
+        samplewriter.writerow(line)
 
-    for gene, samples in gene_dic.items():
-        line=gene+"\t"+gene_info_dic[gene][0]+"\t"+gene_info_dic[gene][1] \
-            +"\t"+gene_info_dic[gene][2]
+        for gene, samples in gene_dic.items():
+            line=[gene,gene_info_dic[gene][0],gene_info_dic[gene][1],gene_info_dic[gene][2]]
 
-        for s_id in sorted_sample_lst:
-            pres=0
-            if(s_id in samples):
-                pres=1
-            line=line+"\t"+str(pres)
+            for s_id in sorted_sample_lst:
+                pres=0
+                if(s_id in samples):
+                    pres=1
+                line.append(str(pres))
 
-        save_handle.write(line + os.linesep)
-
-    save_handle.close()
+            samplewriter.writerow(line)
 
 
 if __name__ == '__main__':

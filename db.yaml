@@ -9,3 +9,10 @@ card: https://card.mcmaster.ca/download/0/broadstreet-v3.2.6.tar.bz2
 
 # kraken2_mini_standard_db_202302 (4Gb) on zenodo
 kraken2_mini: https://zenodo.org/record/7648745/files/kraken2_mini_standard_db_202302.tar.gz
+
+# Platon - optional database
+#platon:  https://zenodo.org/record/4066768/files/db.tar.gz
+
+# Bakta - optional database
+#bakta: https://zenodo.org/record/7025248/files/db.tar.gz
+

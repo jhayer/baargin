@@ -55,7 +55,7 @@ def helpMSG() {
     --plasmidfinder_db          path to the CGE PlasmidFinder database [default: $params.plasmidfinder_db]
 
         Optional databases paths: if provided, the tool is run:
-    --amrfinder_db              path to a local AMRFinder Database for Antimicrobial Resistance Genes prediction [default: $params.amrfinder_db] - a database if provided within the container
+    --amrfinder_db              path to a local AMRFinder Database for Antimicrobial Resistance Genes prediction [default: $params.amrfinder_db] - a database is provided within the container
 
     --bakta_db                  path to the Bakta local database if the user prefers annotating the genomes with Bakta instead of Prokka [default: $params.bakta_db]
     --busco_db_offline          path to local BUSCO datasets if user wants to run BUSCO offline [default: $params.busco_db_offline]

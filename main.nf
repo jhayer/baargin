@@ -93,7 +93,47 @@ def helpMSG() {
     """
 }
 
+//*************************************************
+// Check options
+//*************************************************
 
+// check plasmidfinder_db
+if(params.plasmidfinder_db){
+  File pfdb = new File("${params.plasmidfinder_db}");
+  if(! pfdb.exists()){
+    exit 1, "Mandatory plasmidfinder_db path does not exists! (${params.plasmidfinder_db})"   
+  }
+}
+else {
+  exit 1, "Mandatory plasmidfinder_db path missing!" 
+}
+
+// check card_db
+if (params.card_db){
+  File carddb = new File("${params.card_db}");
+  if(carddb.exists()){
+    if (carddb.isDirectory()){
+      exit 1, "${params.card_db} is a folder, the card.json file is required here!" 
+    }
+  }
+  else {
+    exit 1, "Mandatory card_db path does not exists! (${params.card_db})"    
+  }
+}
+else {
+  exit 1, "Mandatory card_db path missing!" 
+}
+
+// check kraken2_db
+if (params.kraken2_db){
+  File kndb = new File("${params.kraken2_db}");
+  if(! kndb.exists()){
+    exit 1, "Mandatory kraken2_db path does not exists! (${params.kraken2_db})"
+  }
+}
+else {
+  exit 1, "Mandatory kraken2_db path missing!" 
+}
 //*************************************************
 // STEP 0 - Include needed modules
 //*************************************************
@@ -229,7 +269,7 @@ workflow {
     }
     else if(params.contigs){
       // DATA INPUT is Contigs from assembly
-
+      
       // checking the number of samples in put
       def list_files = []
       File fasta_input = new File(params.contigs)
@@ -353,17 +393,10 @@ workflow {
     //*************************************************
     // STEP 3 - plasmids prediction on all raw contigs
     //*************************************************
-    if(params.plasmidfinder_db){
+    
+    plasmidfinder(contigs_ch, params.plasmidfinder_db, "raw")
+    compile_plasmidfinder(plasmidfinder.out.plasmidfinder_tab.collect(), "raw")
 
-      File pfdb = new File("${params.plasmidfinder_db}");
-      if(pfdb.exists()){
-        plasmidfinder(contigs_ch, params.plasmidfinder_db, "raw")
-        compile_plasmidfinder(plasmidfinder.out.plasmidfinder_tab.collect(), "raw")
-      }
-      else {
-        exit 1, "${params.plasmidfinder_db} plasmidfinder_db path does not exists!"
-      }
-    }
     if(params.platon_db){
       File platondb = new File("${params.platon_db}");
       if(platondb.exists()){
@@ -422,38 +455,21 @@ workflow {
     }
 
     // CARD Resistance Genes Identifier
-    if (params.card_db){
-      File carddb = new File("${params.card_db}");
-      if(carddb.exists()){
-        if (carddb.isDirectory()){
-            exit 1, "${params.card_db} is a folder, the card.json file is required here!"
-        }
-        else {
-          card_rgi(contigs_ch,params.card_db, "raw")
-          if (samples_number > 1) {
-            compile_card(card_rgi.out.card_json.collect(), "raw")
-          }
-        }
-      }
-      else {
-        exit 1, "${params.card_db} card_db path does not exists!"
-      }
+    
+    card_rgi(contigs_ch,params.card_db, "raw")
+    if (samples_number > 1) {
+      compile_card(card_rgi.out.card_json.collect(), "raw")
     }
 
     //*************************************************
     // STEP 5 - decontamination with Kraken2
     //*************************************************
     //kraken2nt contigs
-    File kndb = new File("${params.kraken2_db}");
-    if(kndb.exists()){
-      kraken2nt_contigs(contigs_ch, params.kraken2_db)
-      krak_res = kraken2nt_contigs.out.kn_results
-      krak_report = kraken2nt_contigs.out.kn_report
-      contigs_kn2 = kraken2nt_contigs.out.kn_contigs
-    }
-    else {
-      exit 1, "${params.kraken2_db} kraken2_db path does not exists!"
-    }
+    kraken2nt_contigs(contigs_ch, params.kraken2_db)
+    krak_res = kraken2nt_contigs.out.kn_results
+    krak_report = kraken2nt_contigs.out.kn_report
+    contigs_kn2 = kraken2nt_contigs.out.kn_contigs
+
 
     // KrakenTools
     if(params.species_taxid){

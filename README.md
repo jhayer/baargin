@@ -37,7 +37,7 @@ The workflow compiles and summarizes the results from all the analysis steps, al
 A flowchart below describes the process.
 
 
-<img src="doc/img/baargin_flowchart.jpg" width="900" height="500" />
+<img src="doc/img/baargin_flowchart_v2.jpg" width="900" height="500" />
 
 
 ## Installation
@@ -152,7 +152,7 @@ Please follow the instructions at the [Singularity website](https://docs.sylabs.
 
             Prerequisite: Python>=3.8.0  
             ```
-            pip install pyyaml gitpython requests biopython>=1.78 numpy>=1.22
+            pip install pyyaml gitpython requests 'biopython>=1.78' 'numpy>=1.22'
             ```
         </details>
   
@@ -273,10 +273,10 @@ You can run this, from the directory of your choice, as long as you give the pat
 
 ```
 nextflow run main.nf -profile docker \
-  --contigs '/path/to/baargin/test/input/contigs'  \
-  --genus 'Escherichia' --species 'coli' \
-  --busco_lineage 'enterobacterales_odb10' --amrfinder_organism 'Escherichia' \
-  --species_taxid '562' --output './results_test' -resume
+  --contigs 'test/input/contigs'  \
+  --genus 'Escherichia' --species 'coli' --species_taxid 562 \
+  --busco_lineage 'enterobacterales_odb10' \
+  --output './results_test' -resume
 ```
 
 **On short reads to test the assembly step**
@@ -285,10 +285,10 @@ We provide a test directory containing 3 illumina tests datasets, of *E. coli*, 
 
 ```
 nextflow run main.nf -profile docker \
-  --reads_folder '/path/to/baargin/test/input/' --illumina_pattern "*_R{1,2}_001_subs10000.fastq.gz" \
-  --genus 'Escherichia' --species 'coli' \
+  --reads_folder 'test/input/' --illumina_pattern "*_R{1,2}_001_subs10000.fastq.gz" \
+  --genus 'Escherichia' --species 'coli' --species_taxid '562' \
   --busco_lineage 'enterobacterales_odb10' --amrfinder_organism 'Escherichia' \
-  --species_taxid '562' --output './results_test' -resume
+  --output './results_test' -resume
 ```
 
 

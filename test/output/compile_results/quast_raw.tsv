@@ -1,0 +1,4 @@
+Assembly #contigs(>=0bp) #contigs(>=10000bp) #contigs(>=50000bp) #contigs(>=500bp) Largest_contig Total_length GC(%) N50 N75 L50 L75 Avg.coverage_depth
+E_coli_S86_L002_scaffolds 2811 0 0 220 2797 142523 51.77 611 541 89 152 
+E_coli_S89_L002_scaffolds 2455 0 0 172 3935 111441 51.63 600 550 71 119 
+E_coli_S92_L002_scaffolds 2689 0 0 235 5148 151518 51.39 604 547 97 163 

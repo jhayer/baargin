@@ -1,0 +1,22 @@
+Assembly	E_coli_S89_L002_scaffolds_kraken_extract_contigs_562
+# contigs (>= 0 bp)	109
+# contigs (>= 1000 bp)	0
+# contigs (>= 5000 bp)	0
+# contigs (>= 10000 bp)	0
+# contigs (>= 25000 bp)	0
+# contigs (>= 50000 bp)	0
+Total length (>= 0 bp)	38561
+Total length (>= 1000 bp)	0
+Total length (>= 5000 bp)	0
+Total length (>= 10000 bp)	0
+Total length (>= 25000 bp)	0
+Total length (>= 50000 bp)	0
+# contigs	13
+Largest contig	736
+Total length	8069
+GC (%)	52.78
+N50	612
+N75	575
+L50	6
+L75	10
+# N's per 100 kbp	0.00

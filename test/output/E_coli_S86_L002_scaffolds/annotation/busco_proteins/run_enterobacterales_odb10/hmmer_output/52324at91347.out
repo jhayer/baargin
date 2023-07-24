@@ -1,0 +1,16 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+ICGBINNC_00008       -            191 52324at91347         -            198     9e-16   51.8   0.0   1   2    0.0035       0.4    4.0   0.0    50    75     2    27     1    45 0.89 AI-2 ABC transporter - ATP binding subunit
+ICGBINNC_00008       -            191 52324at91347         -            198     9e-16   51.8   0.0   2   2   4.8e-16   5.6e-14   45.9   0.0   104   185    81   162    66   169 0.93 AI-2 ABC transporter - ATP binding subunit
+ICGBINNC_00111       -            105 52324at91347         -            198   1.5e-14   47.8   0.0   1   1   1.5e-16   1.7e-14   47.6   0.0   100   184    14    98     2   103 0.92 cell division protein FtsE
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/busco_downloads/lineages/enterobacterales_odb10/hmms/52324at91347.hmm
+# Target file:     /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/E_coli_S86_L002_scaffolds.faa
+# Option settings: hmmsearch --domtblout /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/busco_proteins/run_enterobacterales_odb10/hmmer_output/52324at91347.out --cpu 1 /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/busco_downloads/lineages/enterobacterales_odb10/hmms/52324at91347.hmm /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/E_coli_S86_L002_scaffolds.faa 
+# Current dir:     /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd
+# Date:            Wed Jul 19 14:41:52 2023
+# [ok]

@@ -1,0 +1,16 @@
+#                                                                                           --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                       accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#               ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+NODE_1419_length_284_cov_1.763285_1 -             94 25383at91347         -            399   8.9e-51  168.5   0.7   1   1   3.5e-53   9.5e-51  168.4   0.7   240   326     1    92     1    94 0.96 # 1 # 282 # -1 # ID=459_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.546
+NODE_1059_length_325_cov_0.705645_2 -             58 25383at91347         -            399   7.1e-07   23.9   0.2   1   1   2.8e-09   7.8e-07   23.8   0.2     3    39    15    51    13    57 0.88 # 150 # 323 # 1 # ID=349_2;partial=01;start_type=GTG;rbs_motif=None;rbs_spacer=None;gc_cont=0.529
+NODE_1075_length_322_cov_1.191837_1 -            106 25383at91347         -            399    0.0014   13.1   0.6   1   1   6.2e-06    0.0017   12.8   0.6     1    34     5    38     5    74 0.87 # 3 # 320 # -1 # ID=360_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.597
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264/busco_downloads/lineages/enterobacterales_odb10/hmms/25383at91347.hmm
+# Target file:     /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264/busco_deconta/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264/busco_deconta/run_enterobacterales_odb10/hmmer_output/25383at91347.out --cpu 1 /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264/busco_downloads/lineages/enterobacterales_odb10/hmms/25383at91347.hmm /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264/busco_deconta/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264
+# Date:            Wed Jul 19 14:28:56 2023
+# [ok]

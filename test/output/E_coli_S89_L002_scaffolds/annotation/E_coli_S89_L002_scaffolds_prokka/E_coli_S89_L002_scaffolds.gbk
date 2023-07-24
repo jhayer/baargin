@@ -1,0 +1,2791 @@
+LOCUS       NODE_24_length_736_cov_0.886191736 bp   DNA linear      19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..736
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             complement(266..472)
+                     /locus_tag="JACDIILA_00001"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /translation="MEHRTGIFLGVFHHFQKNVVYQRRIDIDKTGVLVGTLAGQVDIF
+                     RLVKRFVIQTVLVNRAARIIISID"
+ORIGIN      
+        1 tcccgagatt gataaagcga tcctgaatac ctactttgcc gagaatggcg caccaatcca
+       61 ccttgacgac atccgggagt ttattccctc cgtctgcagc atcgaaatac cctacgttga
+      121 caatgcgatt cgtcatcttg cgcaacaagg cgtcatccag cttaaagatg agaacgtcta
+      181 ccccctgcaa ctgaagaaag ctgaagcctg cgcctgcgtg ctgattaaac acgaaaaagg
+      241 tctgccctgg ctggatattg caaaattaat caatggaaat aattattcgc gcagccctgt
+      301 ttacgaggac cgtctggatc acgaagcgtt taaccagcct gaatatatct acctgtccgg
+      361 caagggtacc tacaagcaca cctgttttat cgatgtcgat gcggcgctga tagacgacat
+      421 ttttctggaa atgatggaat acgccgagaa aaattcccgt ccggtgttcc acctgaatga
+      481 gttttaccaa gcctcgcgca atctaaaaaa gcatgattac tatgttattc gccattttgt
+      541 gaaacatttc ggcgaggatt acggttttta cttcgacgga aaatctcaga cggattcgat
+      601 cgggctggag aaaggcttta agaacatcac acaaaaggac gtcatcgtcg aagcgatgaa
+      661 caacagtgat aaaccgctaa cgaaacctga aattgccaat ttgctgaaga gtaaaagcct
+      721 agcacatgcg tcgttt
+//
+LOCUS       NODE_25_length_729_cov_1.047546729 bp   DNA linear      19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..729
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             complement(37..699)
+                     /gene="cysG"
+                     /locus_tag="JACDIILA_00002"
+                     /EC_number="4.99.1.4"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /inference="similar to AA
+                     sequence:RefSeq:SIROHEMESYN-MONOMER"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="uroporphyrin III C-methyltransferase
+                     [multifunctional]"
+                     /translation="MREKLESLLPLHLGQVAKYAGQLRGRVKQQFATMGERRRFWEKL
+                     FVNDRLAQSLANNDQKAITETTEQLINEPLDHRGEVVLVGAGPGDAGLLTLKGLQQIQ
+                     QADVVVYDRLVSDDIMNLVRRDADRVFVGKRAGYHCVPQEEINQILLREAQKGKRVVR
+                     LKGGDPFIFGRGGEELETLCNAGILFIGKFFQLSNFVKKTRSAERDATDIMDVLSVPT
+                     PC"
+ORIGIN      
+        1 gtcagggtga gctggtcaga gacaccgccc gcgatatcag cacggcgttg ggactgaaag
+       61 cacatccata atgtctgtcg catcccgctc tgcggagcgg gtttttttga caaaatttga
+      121 aagttggaaa aattttccaa taaatagaat acccgcgttg cacagtgttt ccagctcttc
+      181 gccaccacgg ccaaaaataa acggatcgcc acctttcagc cgcaccacgc gtttgccttt
+      241 ttgcgcttcc cgcagcagga tctggttaat ctcttcctgc ggtacacagt ggtatcccgc
+      301 gcgtttgccg acgaaaacgc gatcagcatc gcggcgtacc agattcataa tatcgtcaga
+      361 aaccagacgg tcgtagacca ccacatctgc ctgctgaatt tgttgcagtc ctttcagcgt
+      421 cagcagcccg gcatcgcccg gacctgcacc aaccagcacc acttcaccgc gatggtcaag
+      481 cggttcgttg attaactgtt cggtggtttc agtaatggct ttctgatcgt tgtttgccag
+      541 cgactgcgcc aggcgatcgt taacgaacaa tttctcccag aaacggcgac gctcacccat
+      601 cgtggcgaac tgttgtttca ctcgcccgcg taattgcccg gcgtatttcg ctacctggcc
+      661 cagatgcaac ggcagcagtg attcaagttt ttcgcgcaac aggcgtgcca gaaccggaga
+      721 ggtgccgcc
+//
+LOCUS       NODE_26_length_720_cov_1.155521720 bp   DNA linear      19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..720
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             243..605
+                     /locus_tag="JACDIILA_00003"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /translation="MRYLIEHFLRTFLRCTCWQLNHGHKYALVLIWQEGAWQTHEQIG
+                     HADHDDQIQHQVTPRTAQNTAYAVGVVVRALLEHAVKPAEEAFFTFPVIAFGNRFQHG
+                     GTKSRSQDQRYQYRQRHC"
+ORIGIN      
+        1 gcagtaccca gttccacgat tgcgggcagg ttaaaggcga aaaccatcgc atctttgatt
+       61 tgcgagaaag cgcgtgttgc acgcatagta atcgcttcaa ctttgttttc ttcgcccgga
+      121 cgatcggccc agtccttcaa ggaaacgaac gcaataccgg tattctgacc acgtcccgca
+      181 aagccgaagc cgttaacggc gaacaccgac tcaacgttgt tcttttcttt ggtcagatag
+      241 taatgcgtta cctcattgag cactttctgc gtacgttcct gcgttgcacc tgctggcagc
+      301 tgaaccatgg tcataaatac gccctggtcc tcatctggca agaaggagct tggcagacgc
+      361 acgaacagat aggccatgcc gaccacgatg atcagataca gcaccaggta acgccccgta
+      421 ctgcgcagaa taccgcctac gctgtcggtg tagtggtgcg tgctcttctc gaacatgcgg
+      481 ttaaaccagc cgaagaagcc ttttttacct tccccgtgat cgcctttggc aatcggtttc
+      541 agcatggtgg cacaaagagc cggagtcagg atcaacgcta ccagtaccga cagcgccatt
+      601 gctgaaacaa tggtaataga gaactggcga tagatggcac cggtggtgcc gccgaagaag
+      661 gccattggta caaataccgc cgaaagaacc atcgcaatcc cgaccagtgc cccctggatc
+//
+LOCUS       NODE_50_length_643_cov_0.985866643 bp   DNA linear      19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..643
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ggcagcgcga acgctgttgc tttccttatg gctcatctga agctctacag catcttcaga
+       61 ccatagccct gattcaatca gagcactaca tgccagtgtg cggaaaccat gaccgcaaat
+      121 atcctgcgtg gtgtcatagc ccatcttacg tagtgcttta ttgatggtgt tttcactcat
+      181 gggtttgaac gagtcataac agcccgtaaa aattaacccc gtctcattac cttcttcata
+      241 ggtaagctga cggatctctt tcagtatctt aatagcctgc ctgcaaaggg gaacaaagtg
+      301 ctggcgtttc atttttgcac cacgcgtgga atatttgacg cgctcaatcg cttcacgctt
+      361 ttctggtatc acccataact tactgttgat gtcgatttct gaccatcgtg catagcggag
+      421 ttcactggaa cgaatgaaaa tcaacagatt gagtttaatc gccagtgtgg taagtccacg
+      481 gcctttgtaa gcatcaatac gttcaagtaa cagggggatc tcttccagct ccagtgcagg
+      541 acggtgctca gtctctggtt tctgcacagc accttccata tcgtaagcag gattatggcg
+      601 cataagcttt tgctggacgg cgtgacgcag gatggcagtg atg
+//
+LOCUS       NODE_57_length_617_cov_1.470370617 bp   DNA linear      19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..617
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gattcaggtt atgccgctca attcgctgcg tatatcgctt gctgattacg tgcagctttc
+       61 ccttcaggcg ggattcatac agcggccagc catccgtcat ccatatcacc acgtcaaagg
+      121 gtgacagcag gctcataaga cgccccagcg tcgccatagt gcgttcaccg aatacgtgcg
+      181 caacaaccgt cttccggagc ctgtcatacg cgtaaaacag ccagcgctgg cgcgatttag
+      241 ccccgacgta tcccctctgt tcgtccattt ccgcgcagac gatgacgtca ctgcccggct
+      301 gtatgcgcga ggttaccgac tgcggcctga gttttttaag tgacgtaaaa tcgtgttgag
+      361 gccaacgccc ataatgcggg ctgttgcccg gcatccaacg ccattcttgg ccatatcaat
+      421 gattttctgg tgcgtaccgg gttgagaagc ggtgtaagtg aactgcagtt gccatgtttt
+      481 acggcagtga gagcagagat agcgctgatg tccggcggtg cttttgccgt tacgcaccac
+      541 cccgtcagta gctgaacagg agggacagct gatagaaaca gaagccactg gagcacctca
+      601 aaaacaccat catacac
+//
+LOCUS       NODE_62_length_612_cov_1.500935612 bp   DNA linear      19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..612
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ggtgacaagg tatcgattct ctgaccgtta aagataattt cgccgccctg cgattcgacc
+       61 aggcgcagca acgcccgccc ggtagtggat ttaccgctgc cagactcgcc caccagcgat
+      121 agcgtttcgc caggccagag atcaaaactg actttctcaa cggcatgcac ttcccgcgtt
+      181 acgcgattca acaaaccgct gcgcaaaggg aaacgggtga caagattacg cactcgtaaa
+      241 acaggttcgc catccaccac cgttttctgc tcgatggggg aggcctgttt cgctggatgt
+      301 tcaagcgata tcaacgggaa acgtcgggga taatctaacc ctttcatcgc accaagttgc
+      361 ggaacagcag ctaacagcgc acgggtgtaa ggatgttgcg gtgcatgaaa aatctgttcg
+      421 acggtacccg tttccaccgc ctcgccctga tacatcacca gtacccgatc ggcaatctct
+      481 gccaccacgc ccatatcgtg agtgataaag ataacgccca tcgacatctc tttttgcaat
+      541 actttgatta attgcaggat ctgcgcctga atagtgacat ccagcgcggt ggttggctca
+      601 tcggcaatca gc
+//
+LOCUS       NODE_63_length_612_cov_0.985047612 bp   DNA linear      19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..612
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             74..229
+                     /gene="mtlD"
+                     /locus_tag="JACDIILA_00004"
+                     /EC_number="1.1.1.17"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /inference="similar to AA
+                     sequence:RefSeq:MANNPDEHYDROG-MONOMER"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="mannitol-1-phosphate 5-dehydrogenase"
+                     /translation="MHFRSEDDPQAQELAALIADKGPQAALAQISGLDANSEVVSEAV
+                     TAYKTMQ"
+ORIGIN      
+        1 gatcaagcca ttgctcggta cgctggaata cagccttccg cacaagaatc tgattcaggg
+       61 gattgctggt gcaatgcact tccgcagtga agatgatccg caggctcagg aactggcagc
+      121 actgatcgct gacaaaggtc cgcaggcggc gctggcacag atttccggtc ttgatgccaa
+      181 cagcgaggtt gtatccgagg cggtaaccgc ttataaaaca atgcaataat ggtggaccag
+      241 gcgcaggaca ccctgcgccc gaataacaga ttgtcagata tgcaggcaac aatggaacaa
+      301 acccaggcct ttgaaaaccg tgtgcttgag cgtctgaatg ctggcaaaac cgtgcgaagc
+      361 tttctgatca ccgccgtcga gcttttgacc gaggcggtaa atcttctggt gcttcaggta
+      421 ttccgcaaag acgattacgc ggtgaagtat gctgtagaac cgttactcga cggcgacggt
+      481 ccgctgggcg atctttctgt gcgtttaaaa ctcatttacg ggttgggcgt cattaaccgc
+      541 caggaatacg aagatgcgga gctgctgatg gcattgcgtg aagaactaaa tcacgacggc
+      601 aacgagtacg cc
+//
+LOCUS       NODE_67_length_605_cov_1.373106605 bp   DNA linear      19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..605
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             142..510
+                     /locus_tag="JACDIILA_00005"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /translation="MAFCVSMLIPILAAKQAILESILPGRSNISATVATRVICDLPLL
+                     ISLTISNGPPMRTSGDTNAPFPGSFTTLASQVQRAPLRAAGWLLIRTSRAPSAIYSAA
+                     GGSSSPLNRLLMLPITAFTP"
+ORIGIN      
+        1 ccttccgtgc gttcgtcacg actgctgtac acgcgctgcc agtccagcgg aaagtggccc
+       61 ggcagactga aatcgaagtc atcgtcatcg gccaggtatt tggccccggt ggcggcattg
+      121 accggatgcg gaagggcact ggtggccttc tgcgtcagca tgctcatccc gatactggca
+      181 gcaaaacagg cgattttaga aagcattttg cccgggcgaa gtaacatcag cgccacggtt
+      241 gccaccaggg ttatctgcga cctgccgctt ctgatatccc tgaccatcag taacggaccg
+      301 ccaatgcgca catccggtga cacaaacgcc ccgttccccg gctcattcac caccctggcc
+      361 tcgcaggtac agcgtgcccc gctgcgtgcc gccggctggc tgttgatacg cacatcccgc
+      421 gcgccttccg cgatatattc cgctgcgggc ggctcgtcat cgcctttgaa cagattactg
+      481 atgctgccaa taaccgcatt cactccctga aaggcggttt ccagcatacc gtccggactc
+      541 agcaggttaa gggccgttcc cagggggtca tccagaaagg cggctttttt ttgtgcgaga
+      601 aactg
+//
+LOCUS       NODE_74_length_591_cov_0.700389591 bp   DNA linear      19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..591
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 aagcggtagg caccatagct gcccgcatta ctaaagcttt ctggtgccag ttggatacgc
+       61 tggcgcaatg cgtcatcgct ctcttcaccg cagccgcccg ttgacgcagt caggttggtt
+      121 acgttgatgt cataatgacc aatcctgtcg accagtgcgc taatttgtgc aggctgccag
+      181 ccgttaccct gttcacctgc tgcgaggctg gtggcaggaa cggagatatg caatctcctg
+      241 gccggaagca gaacatcttc atcggtggcg aacatcacgc tatcagaggc actggcccgc
+      301 gttccctggg gaatcaggat attgctggta tacgcgctga cgaccgaaaa ctgcaacgtc
+      361 gtttttgccg gctgcgcagg caaacggtga acgcccacca actcccctaa atactccagc
+      421 attggcgcgc gggaatacgc gaccaggttc tgtttcgccg cttcctgaat ggcgatgcgt
+      481 actaggtttt cacgataggc aaacaggtcg atgagcatcc gctcagcctg tgcctgatag
+      541 tgttttttac cgctggcatc ttcgtattgc gcaatcatct cactggtaat t
+//
+LOCUS       NODE_92_length_575_cov_1.172691575 bp   DNA linear      19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..575
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gccccagctt ttgtgcctgc gtcgcctgaa gaaccatcgc gatttgccac agcggttggg
+       61 tagaaaagag cgacggagaa atgcccatct cctggctaat gtgctgcagg ttttggagtt
+      121 gctcctcgct aatacgctct tccagcgcct cgcaggcagg caaattagca aaaggcgtat
+      181 cgctggtgga aacatcagcc tcgacgatca gcgcatcggc gtttttgagc tttttgagca
+      241 aacgagtggg caggggagcc atatcgtggc tacccatatg aatactgcca atcagatgaa
+      301 aatggcgatt gccgggaagg gtgatatcga tggcaggcca ggtgtaatga ttaccgcgca
+      361 gcgcggccca aagcgttttt acccggtaca acagatccat acgacctccc tttgtgaaat
+      421 atcatgctag cgcgcgggga gggatggcgc aaatggagtt gattgtcgca cttgtgcaca
+      481 gtgcttatgt gcattacaat aattaaacaa tggacaagga gatgagaatg gaatggctca
+      541 aaagaataat ataaggagtt ttcgtgatgc ctggc
+//
+LOCUS       NODE_111_length_557_cov_0.912500557 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..557
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tcgccaggct aatcccgctc aggtagagat aatcgaaatt cgccagctct tcgcaaatcg
+       61 ccgcagactg ctcactctcc agccagaatt tggcggcggc ttcgttccgc cagtagtaga
+      121 acgtacgctc gccggtgctg tcggtttcaa tgtagtaaag gcccggcaga cggttttcca
+      181 tccgttgggt cagggaagta tcaacgttct cgccgtgcca ggcgtccagc atttgctggc
+      241 taaaactgtc cgttcccagc gccgttacgt aatgaacggt taatgccgca ggatcgacct
+      301 gacgggcgat atagacggaa gtgttcaggg tatcgccgcc gaaaccgcgc ttaacgtccg
+      361 cgcctttctc ggaaagctca atcatgcatt cgccaatcac ggcaatcttt ttggacatag
+      421 tcgtgaacct gatctgtaaa aaattagcgt tagtttgcgc tgtggtggtt tgctggtcaa
+      481 ccatattaaa acagtgttcc attatttttt tgagccagaa cgtattcctg aaagattccg
+      541 ttgtggagtg aggaaat
+//
+LOCUS       NODE_127_length_539_cov_0.961039539 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..539
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             83..373
+                     /locus_tag="JACDIILA_00006"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /translation="MRDIVHEPAASYPAPQFLRCAGDHHFAATFPESASAAEYGFAAR
+                     LIRSGVAASSALLADVSPTSSLLHLPVAMSVHNPPMPLRAAAGVVQFAVDTG"
+ORIGIN      
+        1 gtgtcaaact gcgcctgggc tttgtgcaga ctttgcgccg ccagaacgtc ctgttgctgt
+       61 aacgtctgct gctggctgtg taatgcgaga cattgttcat gaacctgccg ccagttatcc
+      121 agcgccacag tttcttcgct gtgcgggaga tcatcacttt gcggcaacgt ttccagaatc
+      181 ggcgtcagct gctgaatacg gttttgcagc gcggttaatt cgttctggcg ttgctgccag
+      241 ctctgcgctt cttgctgacg tgtcgccaac cagctctctt cttcatcttc ctgtggcaat
+      301 gtcagtgcat aacccgccaa tgccgttaag agctgctgct ggcgttgttc aatttgctgt
+      361 tgatactgga taatttgctg attatgcgcg gcaatcagcc cttgtaattc atgtcgttgg
+      421 ctgagtaacc gcagctggcg ttcgtgctca tcttgtgcat ccagccacgg ttgaatatcg
+      481 tcctgtggct gcaaggtgat attgaggctg gccgtgacgg cttgccattg ttgagtaag
+//
+LOCUS       NODE_132_length_533_cov_1.835526533 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..533
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             36..332
+                     /gene="copA"
+                     /locus_tag="JACDIILA_00007"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /inference="similar to AA sequence:RefSeq:G6260-MONOMER"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="Cu+ efflux ATPase"
+                     /translation="MGGGSDVAIETAAITLMRHSLMGVADALAISRATLRNMKQNLLG
+                     AFIYNSIGIPVAAGILWPFTGTLLNPVVAGAAMALSSITVVSNANRLLRFKPKE"
+ORIGIN      
+        1 cgccagcgct ggctcaggcg gatgtcggta ttgcgatggg gggcggcagt gatgttgcca
+       61 ttgaaaccgc ggcgattacc ctgatgcgcc atagcctgat gggcgttgcg gatgcgctcg
+      121 cgatttcccg cgcaacgctg cgcaacatga agcagaatct gctcggtgcc tttatctaca
+      181 acagcatcgg tattccggtc gccgccggta ttttgtggcc gtttactgga acactgctta
+      241 acccggtggt tgccggagcg gcaatggcgc tctcgtcgat taccgtagtg agtaacgcca
+      301 atcggttgct gcggtttaaa ccgaaggaat aagtatgtca ttgcggatgc gctgctttag
+      361 ggtggcgcat ccgttatagg gaaattattc tacgcgacct tttttgcacg ctcttcacgg
+      421 cgtgccaaat attcagccac tgtttcaatc cgtcccaatt cttcctgggt acgcatgttg
+      481 ttttcaactt cccaaagatc aactgccgcc tggaggttta gccaaaaatc gac
+//
+LOCUS       NODE_181_length_495_cov_1.014354495 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..495
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             9..263
+                     /locus_tag="JACDIILA_00008"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /translation="MNLKYRGKINSLIYRKLKIFDNYEITSIYEYKGNIEIDVKTKHS
+                     NLIDAINDNEELKNEISKIIENVCRVKIGGAIHFNDEIPF"
+ORIGIN      
+        1 ctaatgaatt gaatttaaaa tataggggaa aaatcaactc ccttatttat agaaaattga
+       61 aaatattcga caactatgaa atcacaagta tatatgaata taaaggcaat atagaaattg
+      121 atgtaaaaac caaacattca aatttaattg atgcaattaa cgataatgag gaattaaaaa
+      181 atgaaatatc aaaaatcatt gagaatgtgt gtagggtaaa aattggtggg gctatacact
+      241 ttaatgatga aatcccattt taagtatgta ttttatagac tattcggaga tagaatatat
+      301 acaacaacaa aattcgtaac caaaattgaa aaagagtcat tatgactctt tttattcttt
+      361 catgcataca acccatttta aaataggtat aaagatatta tgtaaatatc ctacaaatat
+      421 gattccaatc gccacataaa atatctgatt ttgaattttc aaaatactat tcaaccctga
+      481 taaacaagaa caacc
+//
+LOCUS       NODE_189_length_492_cov_0.985542492 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..492
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ccagggtacc tgcaccaacg cctgccgctg ggagtacaac gtccaggaag ggaaagaaga
+       61 tgacgttggc aacatcgtac acaagtacga gccgattccg gtgcaaaatg ttgagccgac
+      121 gctgggtatc ggcgcgccaa ccgacaaagt gtttatgatc gaagaagccc agcgaccggg
+      181 cgagtatatg accgcgtttg aagatgagca cggcacttac atcatgaact cgaaagatct
+      241 gcgcgccatc gcccatgtag aactcctgac caaaatgggc gtgcattcgc tgaaaatcga
+      301 aggccgtact aaatctttct actattgcgc acgcaccgca caggtttacc gtaaagctat
+      361 cgatgacgcc gctgcgggca aaccgttcga taccagcctg ctggaaactc tggaaggtct
+      421 ggcgcatcgt ggctataccg aaggtttcct gcgtcgtcat actcacgacg attatcataa
+      481 ctacgaatac gg
+//
+LOCUS       NODE_191_length_491_cov_1.485507491 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..491
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             complement(67..477)
+                     /locus_tag="JACDIILA_00009"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /translation="MWRESDGFCQPAGKHTGNKCCDTNNRQAAHCCTHHKFQAVARIE
+                     QRKEKQHDKIGACQPVPHQRKGADKQAEKGQRMLREVEQMLGNLFFITKDQVQRPDGH
+                     AQHNDDVRQRANLYIHLIRDNRHGHNQAITYQTA"
+ORIGIN      
+        1 gctgaactgc gcccgttcac gattcaggac gagagcgccc gttactggag tcgtcgcctg
+       61 agctggttaa gcagtttgat aggttatggc ctgattgtgg ccgtgccgat tatctctaat
+      121 caggtgaatg tacaaattgg cgcgctggcg aacgtcatca ttatgctgtg catgaccatc
+      181 tgggcgttgt acctgatctt tcgtaataaa aaagagatta cccagcattt gctcaacttc
+      241 gcggagcatt cgctggcctt tttcagcctg tttatccgcg cctttgcgct ggtgtggcac
+      301 tggctggcaa gcgcctattt tatcgtgctg tttttctttt cgttgttcga tccgggcaac
+      361 agcctgaaat ttatgatggg tgcaacagtg cgcagcctgg cgattattgg tatcgcagca
+      421 tttgtttccg gtatgttttc ccgctggctg gcaaaaacca tcactctctc gccacatact
+      481 cagcgtaact t
+//
+LOCUS       NODE_199_length_487_cov_1.424390487 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..487
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             19..312
+                     /locus_tag="JACDIILA_00010"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /translation="MLIIFLPFTLYAMSFEILFFAISGRRLSKVTMVRLWLIIKIIIA
+                     FSICAMLIFSSIYKKELLSRNYIACSGIPSGWMPGLATKYVKEKTSCEKNGNN"
+ORIGIN      
+        1 gtatatagct gggggtatat gttaattatc tttttacctt ttacattata tgcaatgtcg
+       61 tttgagattt tgttttttgc tattagtggg cgacgattat ctaaagtaac aatggtgcgc
+      121 ctttggttga taattaagat tattattgct ttctctattt gcgcaatgtt gattttttct
+      181 tcaatttaca aaaaagaatt attatctaga aattatattg cttgtagtgg tatcccgtct
+      241 gggtggatgc cgggtctggc aacgaaatat gttaaagaaa aaacatcatg tgaaaaaaat
+      301 ggcaataatt aaatcaatga tgagattgta atactttatc taaatttccg gcgcggatac
+      361 ggacctcatc tgccagcttg ccgaatccct gctgctgacg caggcaaaag acgtgcgcat
+      421 cgccacttac tacatctggg cgcgactgca ccgcgacggt gagcgcggac tggctgaggg
+      481 gctggcg
+//
+LOCUS       NODE_249_length_462_cov_0.740260462 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..462
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             complement(81..392)
+                     /gene="fucP"
+                     /locus_tag="JACDIILA_00011"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /inference="similar to AA sequence:RefSeq:FUCP-MONOMER"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="fucose:H+ symporter"
+                     /translation="MALCLISAFAGGHVGLIALTLCSAFMSIQYPTIFSLGIKNLGQD
+                     TKYGSSFIVMTIIGGGIVTPVMGFVSDAAGNIPTAELIPALCFAVIFIFARFRSQTAT
+                     N"
+ORIGIN      
+        1 gtcaataacc gggcggatac caattttcgg taagctgatt tttttcatta cagattcctc
+       61 actttattcg gaaaatatgt tcagttagtt gccgtttgag agcggaaacg ggcaaagata
+      121 aagatgaccg cgaagcagag tgcggggatc agttcagcag tggggatgtt gcccgccgcg
+      181 tcactgacaa aacccatgac cggagtgaca ataccgccgc caatgatggt cataacgatg
+      241 aaggacgaac cgtatttggt gtcctggccg agattcttaa tgcccagcga gaagattgtt
+      301 gggtactgaa tcgacataaa ggcgctgcat aaagtcaggg ctattaagcc cacatgaccg
+      361 ccagcgaagg ctgagatcag gcacagtgcc atagcgatta atgcgtaggc ggccaggact
+      421 ttgtgtggtg cgaagcgact gatgagccag gtaccggtga aa
+//
+LOCUS       NODE_250_length_461_cov_1.328125461 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..461
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ttcgcacggc gttcgcgaca gagaatttca tgacgcggag caacataagg taccgtttct
+       61 gtcgggcact gatgagaggt atcactggtg cacggttcct gaacaccggg tgcaagggta
+      121 atgatcgcca gcgggctgtt gatcttttcc tgagcgaacg ctaacccgcc atacatccgg
+      181 tgttcggcgc aaatgtgacc atcgacaata tccaccgccg tggcatcatt caccagcgcc
+      241 gcattcagtt gcacacttaa ccgtgctgcc agagctttac cacgtttcgt cgcggccaac
+      301 agcaacatag cggggtgttt atctttcagc agggcagcaa tgctttcggc gtaattttca
+      361 gtgcgttgca gcgcgtcgtt ttgctcaaga acataaatac attttggacc ataaggcata
+      421 actgcctgcg cctggtcggt attttgtaca atggcataca c
+//
+LOCUS       NODE_256_length_459_cov_1.751309459 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..459
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 agcgagatgg actaaattat ccagcgtcag cccctgggca aacttgcgga atttatcgcc
+       61 ctctttggaa cctattagcg aattcagata tccccagtcc tcaacctgct gcgtcatttg
+      121 agcaatttgc tgcagtaagg tttgttgttg ctgacggtta tctgcatcct gcttcagctg
+      181 ctggcgaatc tcgccttgac tcgttgtgtt ttcacgcaac ttttggtgag tttgcgctaa
+      241 ctcttgctga atctgctccc ccgtcacagt gagagccaac ccgccaggtc ggtgttgctg
+      301 atgctgtgcc agcgtttctg ctgtctgagt gaccagcgtt tgcgcctgac ggcgctggtt
+      361 ttccagattc tgcttgagct gttccagctg cgttagtgtt tgttcatcca ttagcgcctc
+      421 aaggaacgcc tgctgatcgt caaagacgct ggcctgtag
+//
+LOCUS       NODE_263_length_451_cov_0.975936451 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..451
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ttccacggca taatcgccag aatcgtcccc aacggtcgat actcaataac cgcctgctga
+       61 ttatccacca gcgtaggttc cgccttcagc attgccggac catgttctgc ataccagtca
+      121 cacaaattcg ccgatttcgc cacttcagcg cgcgcctgat tgattggttt gcccatttca
+      181 cgggtgatca tttgcgccat ttcttcacta cgggcgcgca gagccttacc gatatcacgc
+      241 agtttttcag cacgataatc tatatttgtc tcgcgccagt cgcgaaagcc tgctgccgcc
+      301 agctgaagtg cgttttcgat atcgtcagcg ccagccaacg gcagcacaga aagttgttca
+      361 ccggtggcag gatttatcga aattgcatga gttgccggag taatggtcat cggggtatct
+      421 cctttatgag tcatggtatg aagatacgca g
+//
+LOCUS       NODE_267_length_449_cov_0.830645449 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..449
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tcgtcatgct gtcctgccag tacttcatcc gccgcctgcc gaatggcgct cgctttctct
+       61 tcagacaaca agcctaaatc ttcattaact tttgccgctg cgcgcttggt tagcgccagc
+      121 gcatgaatca gtgaggtggg cattttctcc gtcgaaatgc ggaaatgctc cagcgagcgt
+      181 tgagtttgtg cgccccacag cttatctgcc gggacatcaa tcgcccccat cgaatctttt
+      241 tcgctgcgta ctgtattcat ggcctgctcc tcacctgttt aattttttct ttctgttttg
+      301 ctttcgttaa gcaactttta gctcacttat tatttactat tttataacaa atgtttggtc
+      361 tttcgtgcca tgtaaaaaaa ccgccccgaa gggcggctct gtttatttca cacagcgagt
+      421 gcactgtgtg agttgtatct gctggaaga
+//
+LOCUS       NODE_282_length_444_cov_0.994550444 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..444
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             130..408
+                     /locus_tag="JACDIILA_00012"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /translation="MSWGAVCHNIHIGGLQRGVGHQNTHSSRSADNNAASPSLWCTKR
+                     FFQCIAGAGGILQFKMSGFVGIDIAKGPIEFFQGDFNTAFHVRNIVAT"
+ORIGIN      
+        1 gtttttcggt gtatcgccga gagtcgaaag cacggtttta ccgatttcgc gtgcggagat
+       61 gaccgcctgg cggactgcgc cggagtcacc cgagataatt agaatgactt cattgctgta
+      121 gctggtgcct tgagctgggg agctgtatgc cacaacatcc acattggcgg acttcagcgc
+      181 ggtgtcggcc atcagaacac ccacagcagc cggagcgccg acaataacgc cgcgagcccg
+      241 tccctgtggt gcaccaaacg ctttttccag tgcatagctg gcgcgggcgg tatattgcag
+      301 ttcaagatgt ccggcttcgt tggcatagac atcgccaaag gtccgatcga gttctttcag
+      361 ggcgacttca ataccgcgtt tcacgtcaga aacatcgttg ccacctaaga ggatcaatga
+      421 gccatgtccg gcaccgcctt tagt
+//
+LOCUS       NODE_298_length_437_cov_1.013889437 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..437
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tgcccttaga tgtagcgcaa caaatgctca acacccctgc ggtagagtca gctatagaga
+       61 agttcgaaca cgactggaat gccgcatttg gcactactca tctctaaagg agcaattatg
+      121 gaccgcatta ttcaatcacc gggtaaatac atccagggcg ctgatgtgat taatcgtctg
+      181 ggcgaatacc tgaagccgct ggcagaacgc tggttagtgg tgggtgacaa atttgtttta
+      241 ggttttgctc aaaccactgt cgagaaaagc tttaaagatg ctggactggt agtagaaatt
+      301 gcgccgtttg gcggtgaatg ttcgcaaaat gagatcgacc gtctgcgtgg catcgcggag
+      361 actgcgcagt gtggcgcaat tctcggtatc ggtggcggaa aaaccctcga tactgccaaa
+      421 gcactggcac atttcat
+//
+LOCUS       NODE_356_length_414_cov_0.866469414 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..414
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gagtaaatag cgggcagcgt gttgatagag aatcatcttt ggatagcgac gattttctcg
+       61 ccagttcgcg gcgctgcgcc cggcgttgac ttgctcgaca tgaccaaacc agcgagtggc
+      121 atctaaccct ttggatgcag ccagtttttt atcccggtta acccacccct gaccgccgtt
+      181 ataggcgctt agggtaaacg ccatacgctg acagtcattt tgcgcagaga tgtttttcca
+      241 caaatgctgg tcatattgca ccagcgcgcg aatcgcccag gttgggttat acggtttgtt
+      301 ttcacgcaat tgtggataca actggcttat ccatgtcgca gtagcaggca taaattgcgc
+      361 cataccttgt gcgccaacgg gggaacgtac cattggctgc caggcggact cctg
+//
+LOCUS       NODE_360_length_413_cov_1.086310413 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..413
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tttcaaaact aaaattaatg aagataatac ttcagactat tccatagcta tattcccttt
+       61 cactacttcg ttgaatacac tggatccatt aatacttaat caggaattag tgcaaatcat
+      121 ttcaaataaa aaaatcgatg gtctctatac ctatccgatg gctgcgacaa atttttgtaa
+      181 tgatcacata tctcaaaatt cattcttgag cagattcaag ccagattatt tcgttacagg
+      241 aagaataaac cagaataatg cagtgaacac tttatacatt gagttgatcg acgctaaaaa
+      301 ccttttcctc atcgccagta atcatctccc tgttgatgaa ctacataata catcacaatt
+      361 tattatagat aatatccttc aaacggtaca taaaccagaa cgatctgtaa gat
+//
+LOCUS       NODE_393_length_403_cov_1.119632403 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..403
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gtaactgtgt ggcatcaact tacggcgtgt tggcgtcggt atcgcggcgc tatgcgcatc
+       61 gcattccatt tctcgtcaaa cttaatcaca acgagacgct aagttacccg aatacctacg
+      121 atcaaacgct gtatgccagc gtggagcagg ccttcaacat gggcgcggtg gcggttggtg
+      181 cgactatcta ttttggctcg gaagaatcac gtcgccagat tgaagaaatt tctgcggctt
+      241 ttgaacgtgc gcacgagctg ggcatggtga cagtgctgtg ggcctatttg cgtaactccg
+      301 cctttaagaa agatggcgtt gattaccatg tctccgccga cctgactggt caggcgaacc
+      361 atctggcggc aaccataggt gcagatatcg tcaaacaaaa aat
+//
+LOCUS       NODE_406_length_400_cov_0.678019400 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..400
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             5..193
+                     /gene="ybbA"
+                     /locus_tag="JACDIILA_00013"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /inference="similar to AA sequence:RefSeq:YBBA-MONOMER"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="YbbA/YbbP ABC transporter"
+                     /translation="MLFADEPTGNLDRQTGDKIADLLFSLNREHGTTLIMVTHDLQLA
+                     ARCDRCLRLVNGQLQEEA"
+ORIGIN      
+        1 tgatgtgctg tttgccgacg aacccaccgg caaccttgac cgccagaccg gcgataaaat
+       61 tgccgacctg ctgttttccc tcaaccgtga gcatggcacc acgttgatta tggtgaccca
+      121 cgacctgcaa ctggcggcac gctgcgaccg ctgcttacgg ctggtgaacg ggcagttgca
+      181 ggaggaagca tgattgcacg ctggttctgg cgcgaatggc gctcgccttc gctattgatt
+      241 gtctggctgg cgttaagcct ggcggtggcc tgcgtgctgg cgctgggtaa tatcagcgat
+      301 cgcatggaaa aaggcttaag ccagcaaagc cgtgaattta tggcgggcga tcgggcgttg
+      361 cgcagttcgc gcgaagtgcc gcaagcgtgg ctggaggaag
+//
+LOCUS       NODE_407_length_399_cov_1.586957399 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..399
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tttgcagccg tctcgtttca tcacatgcgg tgtcatgatc gctccatatt tttaagaaca
+       61 ggttatccac agaaattggg aaaggcgttt tccggttttt tcgtttcgtt ttccggtgct
+      121 ttccgcaatc gccatccgct tatccacaac gccgcacctt tttcgtgggg agctgtagta
+      181 gcaattatag tcgattaata caacatattg ggttgggacg cattttaaag tctatatata
+      241 gtgctttgca tcaaggatgt ttgaactttt tttgatgtag ctcaaagtaa aaagcagagc
+      301 gtacggatga cgggcgctac agcgttatgt aaatttttta atgaatttgc tggttgaaaa
+      361 atcaacaaaa acaacatgct gacagacaaa accccggaa
+//
+LOCUS       NODE_449_length_389_cov_1.403846389 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..389
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             complement(175..357)
+                     /gene="mrdA"
+                     /locus_tag="JACDIILA_00014"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /inference="similar to AA sequence:RefSeq:EG10606-MONOMER"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="cell shape; peptidoglycan synthetase;
+                     penicillin-binding protein 2"
+                     /translation="MTAFAPYNNPQVAVAMILENGGAGPAVGTLMRQILDHIMLGDNN
+                     TDLPAENPAVAAAEDH"
+ORIGIN      
+        1 ccagacccat cgcgatttgg ccgattttac gctccatcat gccaatatcc tgaccgctgg
+       61 cgctccagat aaccagggcg ctgtaaacca gcaatgccag taagatcagc agcattgtgg
+      121 gatcgagatg gactttatcc cagaatgttt ttttattcgg attatccgtc atgattaatg
+      181 gtcctccgct gcggcaaccg ctggattttc cgcaggcaga tcggtgttgt tatcacccag
+      241 cataatgtgg tcgaggatct ggcgcatcag tgtcccaacc gccggacccg caccaccgtt
+      301 ctccagaatc atggcgacag ccacttgcgg attgttgtat ggcgcaaagg cggtcatcag
+      361 tttgtggtca cgtaaacgct cggcaattt
+//
+LOCUS       NODE_463_length_388_cov_0.938907388 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..388
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 cgctgctatg atttaaatta caactcttta atagataatt ttgaaataaa atcagcttcc
+       61 ttgctgattt tatttcacat attcattact tctctaataa acattggtcc gattgtgctt
+      121 taaaataagc acaaagcaat attatggtga caaacacagc agtcggaacc ggtttagaaa
+      181 agagtattac atcacttagg cctactacca gcagtgaaaa aagcaagatt aaaatataag
+      241 gttctttagc agttcttaag gcatatatga gtattgctga aaatgctaaa attgttaata
+      301 caactccagg aataccacgc gttgataacg tatctatgag atcgttatgc aaatgagaat
+      361 ctacaaaggg taaagcgcca cttaatct
+//
+LOCUS       NODE_491_length_380_cov_1.204620380 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..380
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gcttttggct tgatggctcg aactctgacg agatacgaga tagttgctca agactctgtt
+       61 caattgaacg ctggaactca acagcggctt ctgtgcgttg ttttatgact aaggcaacga
+      121 tctcttcatc actcttttct gaaatggcct tacggtataa cactcgttcg ttaaataaat
+      181 cgagattacc agttgatctt gcagatgtgt tagcttttga actgctgatg ggatttaact
+      241 cgtcaataaa gtattcaata agagattctc tctttttttc aagtctgcga agttcggtat
+      301 gtgcagactt aaatttctga gccttaacca atggaatatc atcggaacgc agcttgcggt
+      361 attcgtctct gtattcttct
+//
+LOCUS       NODE_533_length_372_cov_0.738983372 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..372
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             complement(215..346)
+                     /gene="aspS"
+                     /locus_tag="JACDIILA_00015"
+                     /EC_number="6.1.1.12"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /inference="similar to AA sequence:RefSeq:ASPS-MONOMER"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="aspartyl-tRNA synthetase"
+                     /translation="MGQQVTLCGWVNRRRDLGSLIFIDMRDREGIVQVFFDPDRADA"
+ORIGIN      
+        1 ggtcgaggta gcggtatttc agacgcgctt cttcggtgtt gacgtggtta gagtcaagcg
+       61 gcagaacatc tgcgcggttg atgatagtca gcgaggacgc cagcacttcg atttcgccgg
+      121 tcgccatatc gcggttaata tttttttcga cacgcgcacg tacggtgccc gtgacctgaa
+      181 tgcagaactc attacgcagt tcagaggcca gcttttacgc gtccgcacga tccggatcga
+      241 aaaatacctg cacgatacct tcgcggtcgc gcatatcgat gaagatcagg ctaccaagat
+      301 cacgacgacg gttgacccaa ccacacagag tcacctgctg ccccacgtgg gacaaacgga
+      361 gctgtccaca at
+//
+LOCUS       NODE_534_length_371_cov_1.489796371 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..371
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gcgtaatcat cgacgtcatt gaccgcagag agcacttgtc cgtcatcgac gatgatggct
+       61 gaggtatgga gataatcgcc ggtcagtttt gctttttgca tgttgagcat gtcctgggcg
+      121 acatcggtaa aaccgccttg cgccagcgct ttcaccactt ccaggctgtt ccggttttta
+      181 ttgataatct cctgggcgaa cttgatgtct tccacaatat tgcgctcagg catatctttt
+      241 gaaccgtggg cataggttgc cgcttcgact tcttcatcgg taataggcgg tagtcccata
+      301 ccggcaaaga cagcctgtaa agcgcgagcg gctttattgc ggatagcgat aacatcttct
+      361 tcgcgtagtg g
+//
+LOCUS       NODE_559_length_368_cov_1.085911368 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..368
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gcttaatcct gtgcgcaccg gtgggccgat gcaggtcagc attgcttttg ccgaacagca
+       61 taccaaaggg tatccgtgga aaatggacgg tacagttcgt caggaagtct tcagtcgccg
+      121 cggcgggttg tggtttggta cttaccattt actgaattat cccgccagct atagcgcacc
+      181 gatataccgc tttgctgatt ttaacgctgg ctggtacgcc agccgtaatg ccgcgtttca
+      241 gaacgcggtc agtaaggcca gcggcgtgaa gctggcactg gacggtgatt taattcgtta
+      301 cgacagtaaa gatcccggga aaaccgaact ggcaacgcgc aaactggcgg caaaactggg
+      361 gatgagcg
+//
+LOCUS       NODE_560_length_368_cov_1.003436368 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..368
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             complement(71..262)
+                     /gene="ybaE"
+                     /locus_tag="JACDIILA_00016"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /inference="similar to AA sequence:RefSeq:EG13217-MONOMER"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="putative transporter subunit:
+                     periplasmic-binding component of ABC superfamily protein"
+                     /translation="MPDEENRFNALKAVFSQLMADATLTPLFNYHYRISAPPGVNGVR
+                     LTSRGWFEFTEAWLPAPSQ"
+ORIGIN      
+        1 tttcatagat aatcctgctt gaacaataaa agcgttatgg taacgcctgc gattaacccg
+       61 gaccagctat tcattgcgac ggcgcgggaa gccaggcttc ggtaaattca aaccagccgc
+      121 gcgatgtcag tcgcacaccg ttcacgccgg gaggggcact aatgcgatag tgatagttga
+      181 acagcggcgt cagcgtcgcg tctgccatta actggctaaa aaccgctttc agggcattaa
+      241 atcggttttc ctcatcaggc attacttgca ccgcgtccag cgtcgattgc agatgtgcat
+      301 atgctggagc gtcgaaaaca tgtggccata gtggatcgca acgtagccat tgctccagag
+      361 tatattcc
+//
+LOCUS       NODE_582_length_364_cov_1.017422364 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..364
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gctctgcagc agccatatcg gcgagcactt tttgtgtctg ctcatgtggc tgactgaaga
+       61 aggaagcatc cgccacctgc gtctgtaggg cttccagctt cgcctccaga tcttcgagca
+      121 attgcggtag ctgctccagt tcgcgctgca atttatagct tagtttgcta ctgctgcgtt
+      181 ttacagtttc tgcttttgcc gcggcggctt cttcggtttt tttcaccgca ggctgtttga
+      241 gcgccacata ctgctcttgc tgaccacggg catcatgata accgccgaca taacgaccaa
+      301 ttttaccgcc gccttcgaag atccaacatt ctgtaacggt gttatcgaca aactgacgat
+      361 cgtg
+//
+LOCUS       NODE_587_length_363_cov_1.251748363 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..363
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ggtcatcagg gaatgccaca acgacaccac cagggacata aacgcacacc gaaacagttg
+       61 gcgctcatca tcaaacgctg tttgccgatg gtgctcactg gcagcggcat gctttgcact
+      121 accgctaacg ccgaagagta ttatttcgac cccattatgc tggaaactac aaaaagtggt
+      181 atgcaaacaa ctgatctgtc acgtttttca aaaaaatacg cacaactacc aggaacttat
+      241 caggttgata tctggctgaa taaaaagaag gtttcacaga aaaaaattac atttaccgcc
+      301 aatgcagagc aacttctgca gccacagttt acggtagaac aactacgtga gctgggtatt
+      361 aag
+//
+LOCUS       NODE_594_length_362_cov_1.024561362 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..362
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             15..326
+                     /gene="chbB"
+                     /locus_tag="JACDIILA_00017"
+                     /EC_number="2.7.1.69"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /inference="similar to AA sequence:RefSeq:CELA-MONOMER"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="chitobiose / cellobiose PTS permease - ChbB
+                     subunit"
+                     /translation="MKKILLVCAAGMSTSMLVKRMIDHANAISLEVNISALAIAEAKG
+                     KIKNNEVDVVLLGPQVRFQKPEIEAVAQGKMPVAVIEMKDYGTMNGQAVLEFAMKLLQ
+                     E"
+ORIGIN      
+        1 cagtaaggga aaatatgaaa aaaatattgt tagtttgcgc tgcgggcatg tcaaccagta
+       61 tgctggttaa acgtatgatt gatcatgcta acgctatttc acttgaagtt aatatttccg
+      121 cattggcgat tgcagaggct aaagggaaaa ttaaaaataa cgaagttgac gttgttttac
+      181 ttggcccgca agttcgcttt cagaaaccag agattgaagc cgttgcacag gggaaaatgc
+      241 ctgtagccgt tatcgagatg aaagactacg gcaccatgaa cggacaggca gttcttgaat
+      301 ttgcgatgaa actactgcaa gagtaagaat ctaatattat taaactatta cctgaactaa
+      361 ct
+//
+LOCUS       NODE_604_length_359_cov_1.294326359 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..359
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ctatcacatc ttccagttga tattgttcga tgagggtgcg caggcgtcgt tcccacgggc
+       61 caatgccgag gatgcgatag cgaaatgcca cgccctgctc tttcaactgc cgacaggctt
+      121 caatcgccac atgcaggcct tttttctcgg ttaagcgtgc gacggaaatg atttccagcg
+      181 gcgttgcagg cgctttcacg ggacgcgggc taaagcgcgt catgtccacg cccatgcgcg
+      241 atacggcgat tttttccctc gggcagccca ttttttgcag ccttccggcc cacagatcgc
+      301 ttatcggtag catcaggtcg ccacggcgga acagttgctg atattcggga gtgtagtgg
+//
+LOCUS       NODE_606_length_359_cov_1.035461359 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..359
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gcatgtcgct ggctggtcgc cccggcaact tcgcgaccgg atgtgcggct gattgctgaa
+       61 gcaacacaat ttgcacgaga aggataaaaa atatcagcgc cttaaggggc gctcaaattg
+      121 gtggcaaagt acacattgtt tatgccggat gcggaatgaa gccttattcg gcctacataa
+      181 tctcgaaaat tcaatatatt gcagttatct ggtaggcctg gtaagcgtag cgcatcaggc
+      241 aatgctgtgt ttgtcatcag tctcagcgcc cggtgcaata cgtgacatcg tgagccatgt
+      301 cagtaagtgg ttaaattcgc agtggtagca tgcctcccgt gatttcttac taaccggag
+//
+LOCUS       NODE_635_length_354_cov_1.054152354 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..354
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gttgcaagaa cagacgttgc catttggcgt gaaattattg tgcgtaagta tttgcttttt
+       61 tttaatgagc gggtggtatg gtgaaaaatt atattcattt ggtatcgaaa tgctgaattt
+      121 agcattcgcg agaggatagc atgggggagg cgatactcta tcagttgcat agtctgctgg
+      181 ctgctacagc gctcggtttt tgccgattgg caccaacttt ctatttgtta ccatttttcg
+      241 ccagtgggaa tataccaaca gtagttcgtc acccaataat aatagtggta tcatgtgcat
+      301 tagttcagca ttaccactat gaattattga acttaaatga aatcgatatt gctt
+//
+LOCUS       NODE_636_length_354_cov_0.873646354 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..354
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gtttattaca gtgatatcag cggtgaaagt ggctggtctg ccccgatcaa aaccaatgtt
+       61 attaatgtta ccggagcggg cgatgccatg atggcgggac ttgcttcgtg ttgggtagac
+      121 ggaatgccgt ttgccgaatc tgttcgtttc gcacagggat gttcgtcaat ggcgctctcc
+      181 tgtgaataca ccaataaccc cgatttatcg attgccaacg ttatatcgtt agtggagaac
+      241 gcagaatgtc tgaattaaaa atttcccctg acttattaca aatttccccg gaagtgcagg
+      301 acgctttaaa aaacaaaaaa ccggttgtgg cgctggaatc gaccattatt tctc
+//
+LOCUS       NODE_698_length_344_cov_0.820225344 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..344
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tcacgttgat taatgcggtt gcctccagtg cgccagattt aactttgttt gtatcgtaga
+       61 cgtagtaact ggcagttatc ggaattgaaa ccgttgtatc tgtaagtttt gactttgccg
+      121 caatttcttt taaatttgtg tatcctttgc tgttatcagt gatatttaaa aatgtgactg
+      181 gagaaccatt actttcaagc ataaatccga ctccattatt ttctgcacct ttcaggatcg
+      241 tgttactgcc ggctaacaaa tcagaacttg ataaatacac ctgcattttc cgtgatgttt
+      301 gattttgttg acctaataaa tttttacaac gcagaataat atcc
+//
+LOCUS       NODE_724_length_340_cov_0.832700340 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..340
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gtacgcgacg aaaataacgc tcgccttctt ccgtcaggct aagttgccgc gtggtccgat
+       61 taagcaggct aacgccaagt ttcatttcca gctttttcac cgcccggctt accgctgagt
+      121 ttgcttgccc taattgttcc gctgcccggc taaagctgcc gctttcgacg accgaaacaa
+      181 aaatgtcgag ttcttccgac gtggctttca tttttgctcc tgttgcaaaa tagaagagat
+      241 attttgaatt tatttgtcat taaaccatca gaatgcgtga tatgtcatgc gatttaatgt
+      301 tctcaataat gagcaaaatt ctgaccggtg taagcacttg
+//
+LOCUS       NODE_745_length_337_cov_0.842308337 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..337
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ccgtaaatac ggtttcccat taacggtcgc aactcttccg ggatcgcccc ttccagttcg
+       61 atggtgagat aagagataca gcggcaagca tcgacggtat atggctcgac gatggcaccg
+      121 gtcgggcaaa tcgtcataca ggccacgcat ttgccgcatc cttcctcgac tggttgatcc
+      181 acgggcagcg gaatatcgac cagcaattcg cctaaaaaga agaaagaacc ggcctcgcga
+      241 ttgaggataa gtgagtgctt acctgtccag ccgagcccag ctttttcagc taacgggcgc
+      301 tcgagaatag gcgcagaatc gacaaacggt ctaaaat
+//
+LOCUS       NODE_763_length_334_cov_1.136187334 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..334
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ggattcgtga tcgctttcat gcttttcgtt gggcggtaga gatctacgtt ttcgcgaaaa
+       61 agtagacatc tgtgagcact ggtacacagc atcgaacaca tctttaaaaa aaagatgttt
+      121 tttcaatcga ttaagcagaa cttgtgggcg cattacccgg gcttgcaggc aaaaaagaga
+      181 tctagagatg atctacaaaa gcattgcgga gcggttaaga attcgactta attccgcgga
+      241 tttcacgcta aacagccttc ttcccggtga aaaaaagttg gcggaagaat ttgcagtatc
+      301 ccggatgacc atccgtaaag cgattgacct gctg
+//
+LOCUS       NODE_773_length_333_cov_0.855469333 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..333
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 cgacggattg ctggcgaaaa agggctgccc gcagcctggt caggtcgcga ttattgctga
+       61 tgtcgacgag cgtacccgta aaacaggcga agccttcgcc gccgggctgg cacctgactg
+      121 tgcaataacc gtacataccc aggcagatac gtccagtccc gatccgttat ataatcctct
+      181 aaaaactggc gtttgccaac tggataacgc gaacgtgacg gacgcgatcc tcagcagggc
+      241 aggagggtca attgctgact ttaccgggca tcggcaaacg gcgtttcgcg aactggaacg
+      301 ggtgcttaat ttcccgcaat caaacttgtg cct
+//
+LOCUS       NODE_776_length_332_cov_1.145098332 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..332
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tggtttaata atggctgaaa agtaatgtgt atgcttgttc tgtgataagt gcaatcgaac
+       61 gagatatatt gcatggcaat aaacatatcc acggcaaatt ctagtccgta gacatagaca
+      121 atttcatcca tgagttcagg gcattcgccc cagaatttac gcgaaaccag aacaacctgt
+      181 acagccaacg cagcaggaga aagtggacca ttagtgagag cttcattgat attctgctgc
+      241 cagttagcag aacatgcact gaaatcgtat gttgttaatt ttcctgatag attatgaata
+      301 tcctgaccta aattcataag gaggctgtct tg
+//
+LOCUS       NODE_779_length_332_cov_0.858824332 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..332
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gctttgtgtc ttcgcgttta ccccacagct taccgacccg cgccattagc ccactcgtcc
+       61 tgggggctgg tggcctgcta ttgatgagtt cttgataaat aatttccagg cggctgacgg
+      121 cctctttttg aacgtcgtcg ggttgatggc tgccttcatt gggcgccttc aggtattgcg
+      181 atgttggggt aacgctttgc atgatcttat tgttattcct tgaataatcg gtgcgccgtt
+      241 gttcacggtt gacgaaaaaa aggccgttct acactacgcg atatgcagtc gggattccac
+      301 ttctgtggaa ttaacggtta tagtagcata at
+//
+LOCUS       NODE_783_length_331_cov_1.149606331 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..331
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tgtccgggga gataaagctg gtcagaagga atagtcatac aacggtgctg taaaaggttg
+       61 tcggcgtctt tgccaagcaa ctgcgcaata tctgtcatta ctatgctccc gtaaattccg
+      121 attggatatc ggctatggat tttcctggcc cgccttttgc gggcaatcat aatcctggtc
+      181 gttacgggcg agtttttcca tcttttggat gttttttcag cgttttctgt tggctcgatt
+      241 catcagaaaa aatgttagca cggtcaagtt ttcaccgcaa aggtatttaa aaggtattat
+      301 taagtggtat tgtcatcgcg taccttacat t
+//
+LOCUS       NODE_827_length_324_cov_0.886640324 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..324
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tactgggcgc gcggtgcttt accgctgttt ttatcttctt cttccagggt gttgatctct
+       61 tcaatgctca taaaggtgaa gaacttcagg aagcggtaaa cgtcggcatc cgcagtgttg
+      121 atccagaact ggtagaattt gtacgggctg gttttcttcg gatccaacca gactgcgccg
+      181 ccttcagttt taccaaattt ggtgccatct gctttagtga tcagcggaac ggtcaggcca
+      241 aacacctgat tctgatgcag acgacgggtc aggtcgatac cagaagtgat gttaccccac
+      301 tggtcagaac caccaatttg cagc
+//
+LOCUS       NODE_877_length_319_cov_0.904959319 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..319
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ggccaacgtt gatctctcgt aataaagatc tataagtgct ttgagaaaca gatggaatat
+       61 acgtaaaatt tgacaagttc tgttcagttg caatattttt tattagtcta acctcatccc
+      121 cttgtccaac aaataaaaaa tgagcttctg gaaacttgct cattcttatt accaaacgca
+      181 tgaggttgct catatcttga gcatgcccaa tattcccccc ataaaaaaat atcaccttat
+      241 catgtaagtt atattttctt acaatagatg aatacgattc atcatgcact ggtaaaatat
+      301 tatctgccca attatacag
+//
+LOCUS       NODE_879_length_319_cov_0.867769319 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..319
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gcgtcggcct gcaagtgctg gcattgctga taatgaccgc cattgcgctg gtattcggct
+       61 ggcatttagt cgcctccatc ggtggtgctg atatgccagt ggtggtgtcg atgctgaact
+      121 cgtactccgg ctgggcggct gcggctgcgg gctttatgct cagcaacgac ctgctgattg
+      181 tgaccggtgc gctggtcggt tcttcggggg ctatcctttc ttacattatg tgtaaggcga
+      241 tgaaccgttc ctttatcagc gttattgcgg gtggtttcgg caccgacggt tcttctactg
+      301 gcgatgatca ggaagtggg
+//
+LOCUS       NODE_913_length_315_cov_0.726891315 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..315
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 cgatgcagcg attaccgatg ccgcaactga tgaccaattt gcagttggaa tcgtctacca
+       61 gttctaatca gccaacaagc tgcggcgtgt aaatggaaaa cttaacacta gcctgagttc
+      121 gtccctcatc gaactcagga tttttttatt ggcatttcat ctccatctcc ggaacacgca
+      181 attgtcaatg catatcgata cagcacctta ccctgcccct cctggcacaa tatcttctac
+      241 cagctactct tccagccaac actccaaata catttcttta tgaattaatc cgcaacaaac
+      301 acgcctccca tatag
+//
+LOCUS       NODE_939_length_311_cov_1.414530311 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..311
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 cagtattagc atcgaaaaga tgccgcgtat ccagacggat taaattctct tcctcttgtt
+       61 cgccgctgga ttgttcggca actaatccga tcccaagccc aagagcaaca taggttttaa
+      121 tgacatcaga atcctgcgca cttaacacaa tatctgccag caaacctttg cgggcaaatg
+      181 cgtcatcaat acgtgagcgc cccgtaatcc cctgtcggta agtgattaac ggccacttcg
+      241 ctattgattc cagcgtcaat ggtgaaattt gcgttaaggg atgatcgagt ggaacaagca
+      301 aactatggtg c
+//
+LOCUS       NODE_948_length_311_cov_0.752137311 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..311
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 cataaaccga agacgacaat ctttttgggg cccagcaaat cggcataacg tccggcatga
+       61 ggacggctca gcaaggtggc gaaatattgc aggctgataa ccaatcctgc ccagaaagcg
+      121 ctaaagccca tcacatcatg gacatagccc ggtaatacag cgagcggcaa cccgatggtg
+      181 aggtagctgg cgaagttaaa catgacaatg gagacaatgc gcaaagtcag gcgcaatccg
+      241 tttagcgcgg gttcggctac gggttcgggc atgaggatca ccacattttt acaacagtgt
+      301 ttcattttta c
+//
+LOCUS       NODE_968_length_308_cov_1.264069308 bp   DNA linear     19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..308
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 cagccagata ttcagcgcaa tggtaccaag cagcaccacg cccaccagac gggtatgatt
+       61 gagcacccat ttcagcgact tgccgtagcc ttgttgcagg gctattaaca tgcgaccaaa
+      121 accacgcagt cgcttttgct cgcgcggctt gctggctttt agcatccagc cgcacatcat
+      181 tggcgttagc gtcagggaaa ccagtaacga aataccaatg gcgacagaaa gcgtcacggc
+      241 aaactcgcgt aacagtcggc ccggcaatcc gcccatcaac agcagcggca ggaacaccgc
+      301 caccagtg
+//
+LOCUS       NODE_1039_length_300_cov_1.309417300 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..300
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gaccatttat gacatgtgca aagcggtgca aaaagatatg gtgattggtc cggtacgttt
+       61 gctggcgaag agcggcggca agtcgggtga ctttaaggtg gaagcggatg attaaagttc
+      121 tttttttcgc ccaggtgcgc gagttggtgg gaacagatgc aaccgaagtg gctgcggatt
+      181 tcccaaccgt tgaagcgtta cgccagcacc tggctgcgca gagcgatcgc tgggcgttgg
+      241 cgctggagga tggcaaattg ctggctgccg ttaaccagac gctggtgagt tttgaccatt
+//
+LOCUS       NODE_1055_length_298_cov_0.954751298 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..298
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             22..294
+                     /gene="aes"
+                     /locus_tag="JACDIILA_00018"
+                     /EC_number="3.1.1.-"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /inference="protein motif:HAMAP:MF_01958"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="Acetyl esterase"
+                     /translation="MYLPGIERRHPEASPLWRDDFNGLPPVHIITAEYYPLCDEGEAL
+                     YHRMTGQGVQCTCQRYLGVIHGFFQLGGISEAARSALRDVAWRAGR"
+ORIGIN      
+        1 actttactga gcggctttga gatgtatctg ccaggcattg aacgcaggca tcctgaagcc
+       61 agccctcttt ggcgcgatga tttcaatgga ttgccacctg tacatatcat taccgctgaa
+      121 tactacccac tttgcgatga aggtgaagcg ttgtatcacc gcatgacagg gcaaggagtg
+      181 caatgcacct gccaacgcta ccttggcgtt atccacggat tttttcagtt aggtggtatc
+      241 agcgaggccg cgcgatcggc actacgggat gttgcctgga gagcgggaag gtaacttc
+//
+LOCUS       NODE_1117_length_291_cov_0.742991291 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..291
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 aggcgagcct gcctaaggcg atttttttga tggggccgac ggcctccggt aaaacggcgt
+       61 tagccattga gctgcgtaaa attttaccag tagagttgat aagcgttgat tctgccctta
+      121 tttacaaagg gatggatatc gggaaggcga agccgaacgc tgaagagtta ctcgccgcgc
+      181 cgcaccgatt gctggatatt cgcgatccgt cgcaggctta ctcggctgct gattttcgcc
+      241 gcgatgcgct ggcggaaatg gccgatatca ccgcggcggg gcggatccca c
+//
+LOCUS       NODE_1119_length_290_cov_1.370892290 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..290
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gcaccgtacc catgcccaga ttgctcacct ggctacttag acgctggata aacatcacca
+       61 gatccgggtg accgaaatag cgacgctgat cggtacgcat gacctgataa tgttcggact
+      121 gtatcggcaa cgtgtcagcg ccgacaatac agccattaga aaaactgcct atcgattgtg
+      181 cgctacccgg cacaggttgg gttatttttt gccacggcgt cgctgccagg ctagcgctac
+      241 tggcaagcag agccagcagc gcaatcgcgg ttttgttcat tttttaccag
+//
+LOCUS       NODE_1142_length_287_cov_1.042857287 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..287
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gtgctggatc tgcatactca gtgggcaaag ggatctactg taaacaaagc ccggtagctc
+       61 gtggaaaata aaaaaccccg ctggtgaggc agggttcttt atttttcgtc ctcagactgc
+      121 tgattgcgac ctgagcaacg ttgcgcgaca atacaactta gcgttataag tgtaactcgc
+      181 tttttcgccc gttgcaaatg aacagcgcgg tcttataata gcagacgcta ggtttgtctc
+      241 gtcctggacc acaccgattt caagccctgg ctgccggacg ggtggtg
+//
+LOCUS       NODE_1158_length_285_cov_1.375000285 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..285
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ctccctgccc cactgggctg aaaaattggg ccgcttgagc ggtgatgtga acctgatttg
+       61 caaactgcac cacggcacca gctcgcgccc gcaagaagct gcatcgctgg ccctggcgcg
+      121 caggcactta aaacagctca ccgactccgc ccgccacacg ctggcgctgc tggcaaaagc
+      181 cgattacgtg ctgaccgata acagcgggtt tattttcgat gctatccacg ttgataagcg
+      241 ggtgatcctg ctcgactttc cgggcatgaa tgatttgctc gacgg
+//
+LOCUS       NODE_1161_length_285_cov_1.052885285 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..285
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gtatttacgt attcgattaa atcactgttg tctgttttta cttttctcat gaaaaatacc
+       61 tcgtagataa aatagttgat atatttatat tacgagatat ggcgtaagtg tcaaattagc
+      121 tctttagcta tcttggcaag aaaatacctt taatgcaatc gtggtttatt acggtgattt
+      181 tttagcctat tttcccgctg ataattaatt gttattattc actgttttct ttttgtcctt
+      241 caagtaataa gttttcatga aagttaaacg atcaccatta aacat
+//
+LOCUS       NODE_1184_length_283_cov_1.033981283 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..283
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 actgtatgca catacagtat tatttttacc tgtagtgtaa aaagatcgtt tccctcacag
+       61 tcgctgactt tcttaaacaa actttaaaaa tcaaataact atcgactatt cctacgatcc
+      121 accatcatct tttccctgca taatgacgcg cttattcgcc aggtcaccgt ttgctcttta
+      181 attgctgagt cgatttatta gcgggcatgt tcatttatag agaatctatt ttttaaactt
+      241 atttattaaa gcttttttca ttcttcactg gcgggttctg acg
+//
+LOCUS       NODE_1247_length_278_cov_0.726368278 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..278
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gttcaattcg acgtgccatt gctattccct gattacttgc cagaaacaat agcgagcata
+       61 agctttattg ataccccttg ccaatcatta atatgactct tcgtaatttc ggaccaccac
+      121 cagtaattta cgtgtaacaa tggaggcatc tttgaacgag gagtggaagc caacactcaa
+      181 tgaaccgggc tattttattc tataaatatt ccggttcatt ttttatataa ttaaactaaa
+      241 taaactataa agaatttgat ataaaatcaa ctatatct
+//
+LOCUS       NODE_1278_length_277_cov_0.730000277 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..277
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gtcatggtca aattacgtga tcggcatcct gaaatggata tatttatttc atctacggat
+       61 gcccagaaat atattccaca gacacaacaa gttgcagtga ttattaatta tagcggttct
+      121 gtctttacca cacccgaaag cagtgatgcc atcgtgcaac agcaaatact ccgcttaacc
+      181 gccaccgtta ttgttgacaa aaattgtgac gcgttaaacg cacttgattg catacgcagc
+      241 gcattgggcg gccttcagct tcctgattgc gatcgtc
+//
+LOCUS       NODE_1282_length_276_cov_1.693467276 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..276
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ttactcaaac gctcgctggc gataccaata tcagcttcgc tattttgcaa caacgtcgca
+       61 atttcctgtg gcgtcccctg gattagctcg agccgtacct ccgggaaaag ttcgcgaaaa
+      121 gctttaatga cctctggcaa gctataacgc gcctgagtat gcgtcgttgc aatagtgaga
+      181 acgccagacg tatcgttggt aaacaggtct gcaagccgac gaacattact ggcttcattc
+      241 agaatacgtt ctgcaatgac cagtaatgct ttgccc
+//
+LOCUS       NODE_1297_length_276_cov_0.733668276 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..276
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ctcgggattc gatccgcagg cgatgccaac cttcctcgaa aaattactcg atcaggcgcg
+       61 ttactcctcg cgcccgccgg aaattttatt gactcacccg ttgccggaaa gtcgtctgtc
+      121 agatgcccgc aaccgtgcta atcagatgcg accgatggtg gtgcagtcgt cggaagattt
+      181 ctatctggcg aaagcgcgca cactggggat gtataattcc ggacgtaacc agctcaccag
+      241 tgatttgctg gatgaatggg cgaaaggaaa cgttcg
+//
+LOCUS       NODE_1311_length_275_cov_1.106061275 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..275
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ttccactggg tatcgaagtg ttcgttaacg cgataatgat tatttctggc gacgtcgtgg
+       61 ataatcacag aagccacgcg aatcgcgcga tccagccatt ttttgtcatg cgttacgtca
+      121 tacacaatca agaaagcttc cactgcgtgc atattggcat tgccgccgcg gtactcttcg
+      181 gttttgctga aggcttcgtc ccaggactcc aggcacatct gctcttcttc gctccagaag
+      241 tatttctcga taatttcaat ggtgtaatcg agcag
+//
+LOCUS       NODE_1323_length_275_cov_0.737374275 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..275
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gttcctggtg gagcatccgc tggtacgtca cttaacccga cggctgttat ggggggttta
+       61 taacgatgaa aacgccctta tgacctgttt tcgcgtggca gaagacagca cttacagcga
+      121 tgcgcaggat gagctattca cgctgccagc aggaaacatc ggtattccgc atgtgctgga
+      181 aatatcccct gaatccgccg ctgcattcag gcaaatttac gctgattacg aactgcttcc
+      241 ccctttccaa cagctcgagc gaggtagcta tcacc
+//
+LOCUS       NODE_1347_length_274_cov_0.741117274 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..274
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gcttccaggt gctggcttac gagccgtatc tggagctgtg cgagattatg aatcagaagg
+       61 tgccgggcga tttcgccaag aaaacgctgc tggttacgac cggttccgaa gcggtggaaa
+      121 acgcggtaaa aatcgcccgc gccgccacca aacgtagcgg aactatcgcc tttagcggcg
+      181 cgtatcacgg gcgcacgcat tacacgctgg cgctgaccgg caaggtgaat ccgtactctg
+      241 cgggcatggg gctgatgccg ggtcatgttt atcg
+//
+LOCUS       NODE_1385_length_272_cov_1.123077272 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..272
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tataagagag aaatttatct gggccaaaag gaaagcagat accactgatg ctgaccatga
+       61 taagcgtatc gcagaaaact ttgtctatga tgaagtgctg ggtgtcaatg tcccacgctc
+      121 agagtttgaa aaacgcgcta agtttaacaa tgatcagaca tcaccagaag caggcgtcta
+      181 tggcaatgaa tcagaccatg acaagaccgt tcgttttcca agccgtccta aactggaaga
+      241 gcctaatttt gataagaaca tggatctcat ac
+//
+LOCUS       NODE_1395_length_272_cov_0.748718272 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..272
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gctttgcttc ggcgacccgt aacagtctcg acagcgtttc tgaccgtgac catgtgttgg
+       61 aactgctttc tgctgccgct atcggcatgg tgcatctgtc gcgttttgct gaagatctga
+      121 ttttctttaa caccggcgaa gcggggtttg tggagctttc tgactgcgtg acttccggtt
+      181 catcattaat gccgcagaag aaaaacccgg atgcgctgga gctgattcgc ggtaaatgcg
+      241 gtcgggtgca gggggcgtta accggcatga tg
+//
+LOCUS       NODE_1402_length_272_cov_0.748718272 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..272
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gggtaatgct gcgccgcagc gccaggcgca catcggctgc cagcagaata tgatctttgg
+       61 tcaccgcgct actggcgacc agcacggtgg cgatggtgac gatatcgcgc agggaaacgc
+      121 cttcggtcag cagcgcccgg tacactttca gcaactggct gtaattgagc accgcgctta
+      181 attcctccgc caggcgcggt gccatcgacg ccaaacggtt atgcaactgc gtaatatcgt
+      241 catagttaaa taaatcagga atatagctgc gc
+//
+LOCUS       NODE_1418_length_271_cov_0.752577271 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..271
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gcgctaatca cgacgcgctg tatcgctgga tcaaatctgt cgatccttcc cgcccggtgc
+       61 agtatgaagg cggcggagcc gacaccacgg ccaccgatat tatttgcccg atgtacgcgc
+      121 gcgtggatga agaccagctc ttcccggctg tgccgaaatg gtccatcaaa aaatggcttt
+      181 cgctacctgg agagctgcgc ccgctgatcc tttgcgaata tgcccacgcg atgggtaaca
+      241 gtcttggcgg cttcgctaaa tactggcagg c
+//
+LOCUS       NODE_1440_length_270_cov_1.119171270 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..270
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 cgataccatt gtgggatcag cgaccagagt tgcagcaaca tttcaccgct ggtaacaacg
+       61 accatcgtca cctcgcggga ttgccagcgc atcgcttctt ctgcaccatc gtaatggatt
+      121 gcgcatcgtt gataacattc acaaaaagtg acctcagcac cgcgcgctgt cagggtatcc
+      181 ccaattagct cacgaccgcc attgccacgt aatatcagcg cacgtttgcc cgcaatattt
+      241 tgtaattcag gtaattgtag caagacttcg
+//
+LOCUS       NODE_1488_length_268_cov_1.146597268 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..268
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 aggcgacgct ctgcgtaacg gacctccggt cctttgcggc tgacgcgatc acgcaggcca
+       61 taatggtgga cgcgggcaat gcgctgcacc ttaccttcaa actgcacgct ggcagagtcc
+      121 tcgctggcgg cggttttcag gtattttgtg gtgcgaagtt ttgtaaacat ctgccgtttg
+      181 atacggcctt ttttactgcg tgctgttacc ctgcgcggtt cataactgct gccatctgga
+      241 ttgcgctgca tcctgatatt ctgctgct
+//
+LOCUS       NODE_1514_length_267_cov_0.768421267 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..267
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ctataattat tcaaaaaaat aaaaagacgt tattaaccct ttgttcagaa agtctaagca
+       61 actctcctgt aaagcaatgc taaacatgct gtcaatatcc ttattggtgg tatagctatg
+      121 ttgcctgttc gtcttaaaac cgctcgttta agtgctaatc tcactcagga aaagttaggt
+      181 gtactggcag gtattgaaga agcgacggcc cgttcccgta tttctcagta tgaaagtgga
+      241 atacaccgcc cgacattcga aatgatg
+//
+LOCUS       NODE_1526_length_267_cov_0.768421267 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..267
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gttctcttgt gtcgcctttt ttggcacggc ctttgtaaac agcctgaact gggcactggt
+       61 accagatacc gtagactacg gtgaatggaa aaccggtatt cgtgccgaag gttctgttta
+      121 taccggttat accttctttc gtaaaatttc tgccgcactt gctggcttct tgccagggat
+      181 tatgctgacg caaatcggtt atgttcccaa catcgcgcaa agtgatgcga cattacaggg
+      241 tttgcgtcag ctcattttta tctggcc
+//
+LOCUS       NODE_1589_length_264_cov_1.139037264 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..264
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 cttcaggacg tggaagcgtt tttccataaa catgatggca aaaaatatga ttggcgcggc
+       61 gcgcttggaa ttattaccgg taataaagaa cagcgtgaac gcctgttttg cagcgaattt
+      121 tgtgccgaat ttctgcaatt aaaggagagt tggcgctatt ccccaaacca cttgtacgct
+      181 ttagtcagta gctggcaata tcagccgtaa aataacgccg ggcttcacgc ccggcgcatt
+      241 accgtctggt acagtaaact atcc
+//
+LOCUS       NODE_1659_length_261_cov_0.793478261 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..261
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gcgttatgct catctatcac ctgatcactt agagacagct cttcgtttca atccactagc
+       61 aactttggat gttactaaat cagattctta aaggttcaag catggttaag tttttgtttc
+      121 aattcccaat attcgacttc tccttaacat ttgatattat cgagacgtta atcactcata
+      181 gcgaatcatc aatcgctaag ggcatagcag aatataaaga caaaggacct gaagaatata
+      241 taattgaaat atctccggaa g
+//
+LOCUS       NODE_1705_length_259_cov_1.027473259 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..259
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tcgttctgga ctggatcgat acagaacact acaactatcc taaagtagaa catttagttg
+       61 aaataactga tcagcaatgg cagacatatg cgaaagctaa tatcccaatt tggattaact
+      121 gtgaagattt atcctttatc tctacgccac caccagatag atttcacaaa ctaaaaaaag
+      181 gagaatggat agttgataca gattcaatgc ttaaatttat ttcagaaata aaagcggata
+      241 taataagaag aataaaatc
+//
+LOCUS       NODE_1717_length_259_cov_0.802198259 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..259
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ggctaccagc cactgggctt tgaccgtttc ccgctgccct tctgccgttt tcaggtgcaa
+       61 ggtcacttcg tcattttgct ggctgaagac ctccagctcg cgggaaaaca agcagcgcac
+      121 attcggaaaa cgcgacaacc cttccagcat caccgcatcg acctgaggct gaataaaggc
+      181 gttacggcgc ggccagccaa attcatcggt cattggctga atatcagcaa aacagcggcc
+      241 tttcggggtg agaaaacgc
+//
+LOCUS       NODE_1730_length_258_cov_1.209945258 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..258
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tcgggaaaat cgctcgcctt ttcctcaatg ttaggctcct gggtggtaat cgccggaggt
+       61 aaaagtggat ttttaggatc gccggtgtac tcctggagcg acatcgttcc gttttgggca
+      121 atcacattgc cccagggatc ggtgtgctgg tgggtggcgg ttagctccgt aattacaaac
+      181 cagccgcgat aatcgccatt gccaaatacc agtgccatcg ccttgtgagc aagcatggct
+      241 tcacgcagtc gattaagc
+//
+LOCUS       NODE_1798_length_256_cov_0.815642256 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..256
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ggtatccagt ttgcgcgaga agtcagccgg gaaacgcacc agtagtaacg ccttttgtgt
+       61 gtcgatggtt gggcggatct cctgtgggct tttcagcagc agcacatgag taaaggcgct
+      121 ggcgcgggca aaacgttggg tcagctccac cgaatgctcg ccgttatctt catcgtagat
+      181 ggcgatggtg gcgttagtca cttccagcgt ggcggcgaac gggaaaagga tcacctgaat
+      241 aagcacaggt aaaatc
+//
+LOCUS       NODE_1918_length_251_cov_1.678161251 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..251
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gctttagaat ttaacatttc catccaaggt gtagaatgat cttcaccttg aacaaatcgc
+       61 agtggtggtt cttccagtct agttaaagca gaatcaaata aacgagttat aaaatcctca
+      121 tcatccaact tagatgcttc atttctatag ccttcatacg ccttcgccac agaagcttta
+      181 taagcataat cctctgccaa cctgaatctc tgattaattt gtttagttga taaccaagca
+      241 aaccataatg g
+//
+LOCUS       NODE_1931_length_251_cov_0.839080251 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..251
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 agataaccct tgtctgaaca ttaaaatagg aaccgagatt ttatataacc atttttcacg
+       61 ttgtggagta acgtggcaat gcctggggac ttataatgcg ggttttgcaa tggataacca
+      121 aaaaaagaga cagcaatatg ccccaaaata tacattgtat ataccaggct taatgaacta
+      181 gacaatcgta aggcttcagc aaaatgagcc taaagcctct ttttttttat atagtgcaaa
+      241 cacccatacg t
+//
+LOCUS       NODE_1944_length_250_cov_0.843931250 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..250
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+     CDS             complement(40..159)
+                     /locus_tag="JACDIILA_00019"
+                     /inference="ab initio prediction:Prodigal:002006"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="hypothetical protein"
+                     /translation="MDITPEELGTVHTGGLNAANNIPFFLQNAVPNPDVINAS"
+ORIGIN      
+        1 gttttgtaga gcccgtttta caacggactc tacaaatgtt tatgaggcgt taataacgtc
+       61 tggattaggg actgcatttt gtaaaaagaa tggaatatta ttagcagcat taagcccgcc
+      121 agtatgtact gtgcctaact cttcaggcgt aatatccata gttggccata ttttattatt
+      181 tccgataaac ctgtctagat taagtttatt cagttctaaa aataaataat cttctgtctc
+      241 acctctactt
+//
+LOCUS       NODE_1950_length_250_cov_0.843931250 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..250
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gttgccattt ctgctgccac tttctcactc accgcagaat atcgttcaag agattgctgg
+       61 cttacgctga ggattttcat ctttgcctga tcggtgaaag taacaaagcc tgcaccgtaa
+      121 aatttgggtg tatcttcagc tgcacacagg gcgctagcca acttaccgcc ggtgaatgat
+      181 tcggcggtag ttaagcgtaa ttgatccgcg ataagtcttt gactcaacgc ggatgtcagg
+      241 ttttcaatag
+//
+LOCUS       NODE_1957_length_249_cov_1.156977249 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..249
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 atcctggcct ttgctactgt aacttttggc aatcgcaccc tgcaattctg cgagggcgct
+       61 atcgccaggc agaatttgcg tcagatggaa aaaagccatc tgcatgactg tattaatacg
+      121 ggccgccagg ccacattcgc gggcgatttt cgccgcgtta atcacataga agcgcgcttt
+      181 tttctgattt agcacggcct gaacttcctg cggcaagcgc gaccacactt catctgcgct
+      241 gtacggcgt
+//
+LOCUS       NODE_1989_length_247_cov_1.288235247 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..247
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gacaaatacc gagcgaaaat acatataccc aaaactcgaa catttcccgc ataaagagtt
+       61 ttcttaagat aagaataata agtggcgtaa gaagaaaaaa tgctgcaatc attgcttgca
+      121 atatacgatc ttcgcctgaa acggaaggta tactgcaaat attgtctccc gactcaagca
+      181 tccagtcata cttattgaaa gcaaaaaaag catctattaa ccaataagta agcattatgt
+      241 ataactg
+//
+LOCUS       NODE_2005_length_247_cov_0.817647247 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..247
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gcataatggt tttcgcataa tgctcagacc agcgtgtatg ctcgccatgc cagttcgtcg
+       61 cgatttggct gaacgtctgc ccatttttcc gtttctgttt ctccgtctgc tttactgctg
+      121 ccggatcgac acctgcatga atgttattgc gtgcagcttc gcgcaggcgg tgggcctgca
+      181 acagcgagat ctccgggtag gggccaaagg ccagcttttt ctctttcccg tcgatacggt
+      241 acttcat
+//
+LOCUS       NODE_2019_length_246_cov_0.863905246 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..246
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ggttcatacc atagccagtg attatctacg ccagcgtaaa ctcggcgtgc gcccggtgtt
+       61 tgatccgttg cgttatccgg atatcggtcg ccagctttct ccagacgcgt gggatgatgt
+      121 ttcgcaggag taatcacaac tatcgatcaa ctcattctct ttttttgcta aagtcggcat
+      181 aaatttcctg caaggactgg atatgctgat tcttatttca cctgcgaaaa cgcttgatta
+      241 ccaaag
+//
+LOCUS       NODE_2027_length_246_cov_0.863905246 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..246
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gccagaaacc tttctaatgc aagcgatgac gtttttttat gtgtctgaat ttgcactgtg
+       61 tcacaattcc aaatctttat taacaactca cctaaaacga cgctgatcca gcgtgaatac
+      121 tggtttccct tatgttcatc agattcattt aagcaagggt ttcttcttca ttcctgatga
+      181 aagtgccatc taaaaagatg atcttaataa atctattaag aatgagatgg agcacactgg
+      241 atattt
+//
+LOCUS       NODE_2041_length_245_cov_0.869048245 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..245
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 cattgaacag actaaagcgt tacagctggc gttaaatgat ttatggctca gcattggctt
+       61 gcaattaatg ccgctgattg gcgagctggc acaaagcctt acgccggttg ttcgccagtt
+      121 cagcgcctgg ctacgtgagc acccggcact ggtgcaaaac attgcgaaaa tcgtcggggc
+      181 gatttggctg tttaacggcg cgctgaatgt tttaaaactg ggcgcgaact tcatcgcctc
+      241 gccgt
+//
+LOCUS       NODE_2048_length_245_cov_0.869048245 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..245
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tctttgacac atcctttaat atcttagcgg ctataaaaat ggcttattaa ttatgcggtt
+       61 tatttggtcg ctctcaattt tcagagcgcg ttaatgatgg aaggtcaatg tgaagattga
+      121 tgcatcccgt cggggcatac tcactggtcg ctggcgcaaa cccagtaacg gtatccgtcc
+      181 gccctggtcc ggtgatgaat ctcattttct gacccattgc acccgctgcg acgcctgtat
+      241 taatg
+//
+LOCUS       NODE_2126_length_242_cov_0.884848242 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..242
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tgcattcttc cctgccagcc agcggcggat aatcgccgcg cgacgggcat cactcatcgc
+       61 cagcattggc gcaatctgca gcgtcccctg cggcttttga cagtgcgcta tatcatccgc
+      121 cagcagttca tctaacaggc tctcttgttc agcgcaaagc gcagcgctgc gggccgttgc
+      181 ttcggcaaaa tgcggccaac gctgctgcaa taacggcact acgcgcaggc gcagaaagat
+      241 ac
+//
+LOCUS       NODE_2145_length_241_cov_0.890244241 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..241
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gtaatggacc gtttgattta taccgccctg agcggtgctt ctcagaccct gtacgagcag
+       61 cagatcagcg ccaacaacct ggcgaacgtc aataccaacg gttttcgcgc cgatatggcg
+      121 atggcgacca acgacaaggt gaaaggcggt ggcttcgaca cgcgctatat ggcgcaggaa
+      181 ggggccagcg gcgtgaacga cagcaccggt gttgcggaga aaaccgaacg cccgctggat
+      241 g
+//
+LOCUS       NODE_2180_length_239_cov_0.901235239 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..239
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gacgtgacac atctggcaga attccttaat tgtattattc aggggatgtc gatcagcgca
+       61 cgcgaaggtg catcgctgga aaaactgatg cagattgccg gaacgacttt gcgtttatgg
+      121 cccgaactgg tgaaataagt cgcaaaaaaa gcccctcagc ctgagcgaat gaggggccaa
+      181 attgcagagt acagccttgt tatactttgt tattcaaaat cagttgcccg ttactatct
+//
+LOCUS       NODE_2186_length_239_cov_0.901235239 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..239
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gtcgtaccac cgccgatatc caccaccagc acccgttttt cttcctgcaa ggtggcttcg
+       61 taatccagcc cagccgcgac cggctcgtac tggaatacca cgtccttaaa cccggcacgc
+      121 ttcgccgcgc gttccagaat cccttgcgcc tgggcgtttg cttcatcgcc gcccagcccc
+      181 tggaagttga tcgggcgacc aatcaccgcc tgagtaatcg cttctggcag ctgcgcctg
+//
+LOCUS       NODE_2228_length_237_cov_0.912500237 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..237
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tcctggcacg ccgccgttga gcgagttatt cctgtggcaa tacgtcgctg gcgtaaagcc
+       61 tggttctcgg cccccataaa agctgaacgc aaagcgtttc gtgaagcgct acaagcagag
+      121 aactatgacg cagttatcga cgctcagggg ctggtaaaaa gcgcggcact agtgacgcgt
+      181 ctggcgcatg gcgtaaagca tggaatggac tggcaaaccg cacgcgaacc tttagcc
+//
+LOCUS       NODE_2232_length_237_cov_0.912500237 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..237
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 ttgctatatt gggcaatatt cttttatcgg atccaacaca aagattggaa attttgctat
+       61 attttcagat aatgtcaact ttattggttc tgatcataag tttgatgagg tgggaactcc
+      121 tattatttta gcgggcattc cagagtttca accccttact actgtaggtg acgatgtttg
+      181 gcttggacat ggtgttacag taatgcgggg aataaatata ggcacgggag ctataat
+//
+LOCUS       NODE_2253_length_236_cov_0.918239236 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..236
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tgtgaagatt gggctttccc ttgatggggg catgagccct gccgactggc gtcacgacgt
+       61 caacccgcgc ggcaaatata tgccaggtaa accagcgtgg tatatgtacg atagctgcca
+      121 gagcaaacgc agcaacagta tcggtgtcct ctgttcagcg gtcttctggt cacaaaacaa
+      181 tggcctgcaa ctgcaaaacc tgaccatcga aaacacgctg ggcgatagcg tagatg
+//
+LOCUS       NODE_2277_length_235_cov_0.924051235 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..235
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gtcataaact tttacgtgca catcatcctt ttggctgtaa tctctatgaa taacagcatt
+       61 aactaatatt tccttcaatg cttctgcagg atagctaagt tttactagat tttcgccgtc
+      121 tttgaatgat gctccatcaa catattcttt tacttttgct attgtattta aaataaccac
+      181 ttcaagtggc ccctcaatcg ttacaggatc ttcctgtaat tgttcacgtt tgtac
+//
+LOCUS       NODE_2320_length_233_cov_0.935897233 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..233
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 gctgtgaggt gtgtagcagg tgtgccgcct cagtcaggct tccggcggtc attaccgcat
+       61 gaaaaatttc aatatgacgt aagttaacgg cggccattag cgctctctcg caatccggta
+      121 atccatatca tttttgcata aactcgacat aaatcgatat tttttattct ttttatgatg
+      181 tggcgtaatc ataaaaaagc acttatctgg agtttgttat gccacattca ctg
+//
+LOCUS       NODE_2369_length_231_cov_0.948052231 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..231
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 caattgcccc agcccagact tgtttttcca gaggacggga ttcggcaaac tcatcacgag
+       61 ggagaatacg gctggcacct aaacttttca gatattcatg ggtactttcg cgaccggaaa
+      121 cggcaacgac ttggtaaccc aacttatgca gcagcgccac ggcggtactg ccgacgccac
+      181 cactggcacc cgtcacgaca atctccccgt cctgcgggcg aacaccggca t
+//
+LOCUS       NODE_2370_length_231_cov_0.948052231 bp   DNA linear
+19-JUL-2023
+DEFINITION  Escherichia species strain strain.
+ACCESSION   
+VERSION
+KEYWORDS    .
+SOURCE      Escherichia species
+  ORGANISM  Escherichia species
+            Unclassified.
+COMMENT     Annotated using prokka 1.14.6 from
+            https://github.com/tseemann/prokka.
+FEATURES             Location/Qualifiers
+     source          1..231
+                     /organism="Escherichia species"
+                     /mol_type="genomic DNA"
+                     /strain="strain"
+ORIGIN      
+        1 tgagtaatct ataccatcat cttgataaaa gtattaaaaa tggtaaattt agcaagctac
+       61 atattaaagg aaaatgaaga tgtatgaagt aattgatata tcagcgcagg aaattaaggc
+      121 gttgttaaac actgctgaag atcatttcaa tgattttaaa agtaagcaaa tagcgcctaa
+      181 taaattacaa gaaacttttg tagcatttgc aaatgctgat ggcggtaata t
+//

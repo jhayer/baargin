@@ -1,0 +1,35 @@
+  5.47	147	147	0	0	U	0	unclassified
+ 94.53	2542	29	14703	14607	R	1	root
+ 93.45	2513	0	14307	14307	R1	131567	  cellular organisms
+ 93.45	2513	8	14300	14300	D	2	    Bacteria
+ 93.16	2505	10	13765	13761	P	1224	      Pseudomonadota
+ 92.75	2494	5	13626	13580	C	1236	        Gammaproteobacteria
+ 92.49	2487	26	13397	13281	O	91347	          Enterobacterales
+ 91.52	2461	2287	12638	12476	F	543	            Enterobacteriaceae
+  6.14	165	13	363	363	G	561	              Escherichia
+  5.50	148	146	342	342	S	562	                Escherichia coli
+  0.04	1	1	1	1	S1	1329907	                  Escherichia coli APEC IMT5155
+  0.04	1	1	1	1	S1	2773706	                  Escherichia coli O68:H12
+  0.07	2	2	2	2	S	1499973	                Escherichia marmotae
+  0.04	1	1	1	1	S	564	                Escherichia fergusonii
+  0.04	1	1	1	1	S	208962	                Escherichia albertii
+  0.15	4	0	6	6	G	547	              Enterobacter
+  0.15	4	0	6	6	G1	354276	                Enterobacter cloacae complex
+  0.07	2	2	2	2	S	550	                  Enterobacter cloacae
+  0.04	1	1	1	1	S	299767	                  Enterobacter ludwigii
+  0.04	1	1	1	1	S	1812935	                  Enterobacter roggenkampii
+  0.15	4	0	5	5	G	544	              Citrobacter
+  0.07	2	0	3	3	G1	1344959	                Citrobacter freundii complex
+  0.04	1	1	1	1	S	546	                  Citrobacter freundii
+  0.04	1	1	1	1	S	67827	                  Citrobacter werkmanii
+  0.04	1	1	1	1	S	35703	                Citrobacter amalonaticus
+  0.04	1	1	1	1	S	67825	                Citrobacter rodentium
+  0.04	1	0	1	1	G	590	              Salmonella
+  0.04	1	0	1	1	S	28901	                Salmonella enterica
+  0.04	1	1	1	1	S1	59203	                  Salmonella enterica subsp. arizonae
+  0.07	2	0	2	2	O	135623	          Vibrionales
+  0.07	2	0	2	2	F	641	            Vibrionaceae
+  0.07	2	1	2	2	G	662	              Vibrio
+  0.04	1	1	1	1	S	29494	                Vibrio furnissii
+  0.04	1	0	1	1	C	28211	        Alphaproteobacteria
+  0.04	1	1	1	1	O	356	          Hyphomicrobiales

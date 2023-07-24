@@ -1,0 +1,14 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+ICGBINNC_00116       -            115 72076at91347         -            168   1.4e-07   25.4   0.2   1   1   2.2e-09   5.1e-07   23.6   0.2    69   166     2   113     1   115 0.68 para-aminobenzoate synthase multi-enzyme complex
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/busco_downloads/lineages/enterobacterales_odb10/hmms/72076at91347.hmm
+# Target file:     /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/E_coli_S86_L002_scaffolds.faa
+# Option settings: hmmsearch --domtblout /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/busco_proteins/run_enterobacterales_odb10/hmmer_output/72076at91347.out --cpu 1 /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/busco_downloads/lineages/enterobacterales_odb10/hmms/72076at91347.hmm /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/E_coli_S86_L002_scaffolds.faa 
+# Current dir:     /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd
+# Date:            Wed Jul 19 14:42:24 2023
+# [ok]

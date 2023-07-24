@@ -1,0 +1,15 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+ICGBINNC_00111       -            105 10523at91347         -            514   8.7e-10   31.4   0.0   1   1   8.2e-12   9.4e-10   31.3   0.0   420   497    19    98     4   104 0.85 cell division protein FtsE
+ICGBINNC_00008       -            191 10523at91347         -            514   1.8e-09   30.4   0.5   1   1     2e-11   2.2e-09   30.0   0.5   421   502    83   166    75   177 0.90 AI-2 ABC transporter - ATP binding subunit
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/busco_downloads/lineages/enterobacterales_odb10/hmms/10523at91347.hmm
+# Target file:     /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/E_coli_S86_L002_scaffolds.faa
+# Option settings: hmmsearch --domtblout /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/busco_proteins/run_enterobacterales_odb10/hmmer_output/10523at91347.out --cpu 1 /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/busco_downloads/lineages/enterobacterales_odb10/hmms/10523at91347.hmm /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd/E_coli_S86_L002_scaffolds.faa 
+# Current dir:     /Users/2021jh002/Documents/github/baargin/work/03/d6c5aa2426e17d9bf3f235c7e907cd
+# Date:            Wed Jul 19 14:40:47 2023
+# [ok]

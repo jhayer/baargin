@@ -1,0 +1,443 @@
+# BUSCO version is: 5.3.2 
+# The lineage dataset is: enterobacterales_odb10 (Creation date: 2021-02-23, number of genomes: 212, number of BUSCOs: 440)
+# Busco id	Status	Sequence	Gene Start	Gene End	Strand	Score	Length	OrthoDB url	Description
+312at91347	Missing
+373at91347	Missing
+854at91347	Missing
+1674at91347	Missing
+2121at91347	Fragmented	NODE_273_length_482_cov_1.740741	26	472	+	282.5	139	https://www.orthodb.org/v10?query=2121at91347	DNA topoisomerase I
+2325at91347	Missing
+2605at91347	Missing
+2659at91347	Missing
+3039at91347	Missing
+3084at91347	Missing
+3734at91347	Missing
+4210at91347	Missing
+4269at91347	Fragmented	NODE_810_length_352_cov_0.796364	2	352	-	119.7	83	https://www.orthodb.org/v10?query=4269at91347	primosomal protein N'
+4411at91347	Missing
+4459at91347	Missing
+4673at91347	Fragmented	NODE_2341_length_243_cov_1.150602	1	243	+	132.8	73	https://www.orthodb.org/v10?query=4673at91347	methionine--tRNA ligase
+4867at91347	Missing
+5022at91347	Missing
+5062at91347	Missing
+5072at91347	Missing
+5392at91347	Missing
+5537at91347	Missing
+6335at91347	Missing
+6493at91347	Fragmented	NODE_351_length_446_cov_1.168022	2	445	+	170.5	120	https://www.orthodb.org/v10?query=6493at91347	DNA mismatch repair protein MutS
+6639at91347	Missing
+6839at91347	Missing
+6990at91347	Fragmented	NODE_375_length_439_cov_1.008287	2	439	-	173.3	103	https://www.orthodb.org/v10?query=6990at91347	Penicillin-binding protein 1B
+7453at91347	Missing
+7906at91347	Missing
+8198at91347	Missing
+8345at91347	Missing
+8636at91347	Missing
+8822at91347	Missing
+9070at91347	Missing
+9079at91347	Missing
+9375at91347	Missing
+9490at91347	Missing
+9913at91347	Missing
+10523at91347	Missing
+10905at91347	Missing
+11158at91347	Missing
+11276at91347	Missing
+11342at91347	Missing
+11564at91347	Missing
+12067at91347	Missing
+12072at91347	Missing
+12374at91347	Missing
+12745at91347	Missing
+12922at91347	Missing
+13022at91347	Fragmented	NODE_1729_length_267_cov_0.826316	3	266	+	86.9	69	https://www.orthodb.org/v10?query=13022at91347	exodeoxyribonuclease I
+13051at91347	Missing
+13068at91347	Fragmented	NODE_211_length_512_cov_0.797701	2	511	-	193.2	148	https://www.orthodb.org/v10?query=13068at91347	outer membrane protein assembly factor BamA
+13089at91347	Missing
+13521at91347	Missing
+13589at91347	Missing
+13669at91347	Missing
+14646at91347	Missing
+15307at91347	Missing
+15629at91347	Missing
+15960at91347	Missing
+16772at91347	Missing
+16784at91347	Missing
+16910at91347	Missing
+17229at91347	Missing
+17277at91347	Missing
+17608at91347	Missing
+17649at91347	Missing
+17778at91347	Missing
+17858at91347	Missing
+18389at91347	Missing
+18497at91347	Missing
+18548at91347	Missing
+18659at91347	Missing
+18707at91347	Fragmented	NODE_164_length_546_cov_1.240938	3	545	-	372.2	179	https://www.orthodb.org/v10?query=18707at91347	Transcription termination/antitermination protein NusA
+19149at91347	Missing
+19201at91347	Missing
+19461at91347	Missing
+19548at91347	Missing
+19553at91347	Missing
+19608at91347	Missing
+19761at91347	Missing
+19976at91347	Missing
+20568at91347	Fragmented	NODE_223_length_506_cov_0.850816	3	506	+	341.9	166	https://www.orthodb.org/v10?query=20568at91347	membrane protein insertase YidC
+20637at91347	Missing
+20863at91347	Missing
+20969at91347	Missing
+21870at91347	Missing
+21912at91347	Missing
+22092at91347	Missing
+22118at91347	Missing
+22142at91347	Missing
+22239at91347	Missing
+22268at91347	Missing
+22626at91347	Missing
+23148at91347	Missing
+23303at91347	Missing
+23619at91347	Missing
+23866at91347	Missing
+24168at91347	Missing
+24492at91347	Missing
+25024at91347	Missing
+25383at91347	Missing
+25899at91347	Missing
+26452at91347	Fragmented	NODE_1135_length_314_cov_0.924051	1	312	+	47.9	91	https://www.orthodb.org/v10?query=26452at91347	MFS transporter
+26874at91347	Missing
+26959at91347	Missing
+26964at91347	Missing
+27487at91347	Missing
+27549at91347	Missing
+27820at91347	Missing
+28109at91347	Missing
+29283at91347	Missing
+29509at91347	Missing
+29648at91347	Missing
+29797at91347	Missing
+29906at91347	Missing
+30360at91347	Missing
+30417at91347	Missing
+30806at91347	Missing
+30873at91347	Fragmented	NODE_446_length_421_cov_0.787791	1	393	+	244.6	124	https://www.orthodb.org/v10?query=30873at91347	phospho-N-acetylmuramoyl-pentapeptide- transferase
+30994at91347	Missing
+31386at91347	Missing
+31545at91347	Missing
+31561at91347	Missing
+31637at91347	Missing
+31738at91347	Missing
+31787at91347	Missing
+32356at91347	Missing
+32744at91347	Missing
+33151at91347	Missing
+33224at91347	Missing
+33442at91347	Missing
+33787at91347	Missing
+34836at91347	Missing
+35016at91347	Missing
+35495at91347	Missing
+35539at91347	Missing
+35630at91347	Missing
+35760at91347	Missing
+35816at91347	Missing
+35918at91347	Missing
+36137at91347	Fragmented	NODE_825_length_349_cov_1.073529	3	347	-	194.7	98	https://www.orthodb.org/v10?query=36137at91347	glycerol-3-phosphate dehydrogenase
+36271at91347	Missing
+36292at91347	Missing
+36653at91347	Missing
+36667at91347	Missing
+37096at91347	Missing
+37391at91347	Missing
+38001at91347	Missing
+38133at91347	Missing
+38228at91347	Missing
+38408at91347	Missing
+38762at91347	Missing
+38913at91347	Missing
+39012at91347	Fragmented	NODE_376_length_439_cov_0.961326	242	439	-	46.9	47	https://www.orthodb.org/v10?query=39012at91347	1-deoxy-D-xylulose-5-phosphate reductoisomerase
+39499at91347	Missing
+40340at91347	Missing
+40851at91347	Missing
+40895at91347	Missing
+40939at91347	Missing
+41092at91347	Missing
+41111at91347	Missing
+42181at91347	Missing
+42318at91347	Missing
+43000at91347	Missing
+43106at91347	Missing
+43407at91347	Missing
+43441at91347	Fragmented	NODE_103_length_598_cov_1.180422	2	598	+	232.8	158	https://www.orthodb.org/v10?query=43441at91347	3-oxoacyl-
+43537at91347	Missing
+43538at91347	Fragmented	NODE_1188_length_307_cov_1.269565	3	305	+	126.9	85	https://www.orthodb.org/v10?query=43538at91347	glutathione synthase
+43976at91347	Missing
+44171at91347	Missing
+44707at91347	Missing
+44837at91347	Missing
+45215at91347	Missing
+46153at91347	Missing
+46419at91347	Missing
+46906at91347	Missing
+46945at91347	Fragmented	NODE_1832_length_263_cov_1.177419	1	261	+	163.5	86	https://www.orthodb.org/v10?query=46945at91347	protoheme IX farnesyltransferase
+46977at91347	Missing
+47034at91347	Missing
+47740at91347	Missing
+47842at91347	Missing
+48197at91347	Fragmented	NODE_2382_length_241_cov_0.890244	2	241	+	74.8	64	https://www.orthodb.org/v10?query=48197at91347	Dihydrofolate synthase/folylpolyglutamate synthase
+48208at91347	Missing
+48224at91347	Missing
+48740at91347	Missing
+49226at91347	Missing
+49244at91347	Missing
+49282at91347	Fragmented	NODE_7_length_1003_cov_1.357451	254	1003	-	314.1	170	https://www.orthodb.org/v10?query=49282at91347	rod shape-determining protein MreC
+49349at91347	Missing
+49353at91347	Missing
+49743at91347	Missing
+49804at91347	Missing
+50042at91347	Missing
+50332at91347	Missing
+50585at91347	Missing
+51115at91347	Missing
+51202at91347	Missing
+51348at91347	Missing
+52122at91347	Missing
+52324at91347	Missing
+52332at91347	Missing
+52475at91347	Missing
+52476at91347	Missing
+52566at91347	Missing
+52719at91347	Missing
+52925at91347	Missing
+52934at91347	Missing
+53222at91347	Missing
+53308at91347	Missing
+53337at91347	Missing
+54184at91347	Fragmented	NODE_465_length_416_cov_1.076696	3	416	-	265.8	133	https://www.orthodb.org/v10?query=54184at91347	phosphatidylserine decarboxylase
+54310at91347	Missing
+54393at91347	Missing
+54756at91347	Missing
+55352at91347	Missing
+55368at91347	Missing
+56003at91347	Missing
+56018at91347	Missing
+56094at91347	Missing
+56156at91347	Missing
+56250at91347	Missing
+56253at91347	Missing
+56258at91347	Missing
+56387at91347	Missing
+56477at91347	Missing
+56763at91347	Missing
+56764at91347	Missing
+56819at91347	Missing
+56917at91347	Missing
+57147at91347	Missing
+57151at91347	Missing
+57831at91347	Missing
+58196at91347	Missing
+58439at91347	Missing
+58494at91347	Missing
+58562at91347	Missing
+58706at91347	Missing
+58708at91347	Missing
+59634at91347	Fragmented	NODE_2134_length_253_cov_0.829545	1	252	+	138.7	77	https://www.orthodb.org/v10?query=59634at91347	tRNA (guanine-N(7)-)-methyltransferase
+59851at91347	Missing
+60543at91347	Missing
+60900at91347	Missing
+60967at91347	Missing
+61400at91347	Missing
+61409at91347	Missing
+61434at91347	Missing
+61690at91347	Missing
+62284at91347	Missing
+62379at91347	Missing
+62466at91347	Missing
+62648at91347	Missing
+62655at91347	Missing
+63025at91347	Missing
+63042at91347	Missing
+63850at91347	Missing
+63936at91347	Missing
+64091at91347	Missing
+64145at91347	Fragmented	NODE_181_length_535_cov_0.796943	2	307	-	131.4	83	https://www.orthodb.org/v10?query=64145at91347	ribosome maturation factor RimM
+64179at91347	Missing
+64259at91347	Missing
+64323at91347	Fragmented	NODE_418_length_428_cov_0.974359	3	428	-	245.3	133	https://www.orthodb.org/v10?query=64323at91347	serine O-acetyltransferase
+64441at91347	Missing
+64486at91347	Missing
+64712at91347	Missing
+64742at91347	Missing
+64924at91347	Missing
+64954at91347	Missing
+64955at91347	Missing
+64963at91347	Missing
+64968at91347	Missing
+65110at91347	Missing
+65588at91347	Missing
+65730at91347	Fragmented	NODE_654_length_378_cov_1.209302	1	378	+	110.8	74	https://www.orthodb.org/v10?query=65730at91347	elongation factor Ts
+65823at91347	Missing
+65824at91347	Missing
+65961at91347	Fragmented	NODE_359_length_444_cov_1.087193	1	402	+	190.1	112	https://www.orthodb.org/v10?query=65961at91347	superoxide dismutase
+66051at91347	Missing
+66179at91347	Fragmented	NODE_461_length_417_cov_1.102941	1	417	+	180.8	116	https://www.orthodb.org/v10?query=66179at91347	4-diphosphocytidyl-2-C-methyl-D-erythritol kinase
+66368at91347	Missing
+67100at91347	Missing
+67418at91347	Missing
+67457at91347	Missing
+67463at91347	Missing
+67620at91347	Missing
+67725at91347	Missing
+68569at91347	Missing
+68836at91347	Missing
+69316at91347	Missing
+69788at91347	Fragmented	NODE_366_length_443_cov_1.325137	104	442	+	116.6	92	https://www.orthodb.org/v10?query=69788at91347	hydroxyacylglutathione hydrolase
+69849at91347	Missing
+70091at91347	Missing
+70283at91347	Missing
+70738at91347	Missing
+70972at91347	Missing
+71136at91347	Missing
+71239at91347	Missing
+71716at91347	Missing
+71844at91347	Missing
+72064at91347	Fragmented	NODE_1974_length_258_cov_0.806630	2	256	+	119.4	76	https://www.orthodb.org/v10?query=72064at91347	Lipopolysaccharide export system protein LptC
+72076at91347	Missing
+72088at91347	Missing
+72355at91347	Missing
+72356at91347	Missing
+73023at91347	Missing
+73105at91347	Missing
+73130at91347	Missing
+73167at91347	Missing
+73580at91347	Fragmented	NODE_7_length_1003_cov_1.357451	3	254	-	108.5	70	https://www.orthodb.org/v10?query=73580at91347	rod shape-determining protein MreD
+73655at91347	Missing
+73785at91347	Missing
+73798at91347	Missing
+74046at91347	Missing
+74115at91347	Missing
+74209at91347	Fragmented	NODE_737_length_363_cov_1.569930	3	362	-	203.4	108	https://www.orthodb.org/v10?query=74209at91347	uracil-DNA glycosylase
+74260at91347	Missing
+74468at91347	Missing
+74706at91347	Missing
+74856at91347	Missing
+75116at91347	Missing
+75170at91347	Complete	NODE_263_length_487_cov_0.868293	67	486	-	192.4	130	https://www.orthodb.org/v10?query=75170at91347	Threonylcarbamoyl-AMP synthase
+75392at91347	Missing
+75689at91347	Fragmented	NODE_1271_length_298_cov_1.316742	2	256	-	93.7	66	https://www.orthodb.org/v10?query=75689at91347	SsrA-binding protein
+75763at91347	Missing
+75919at91347	Fragmented	NODE_1217_length_305_cov_0.728070	1	303	-	161.3	86	https://www.orthodb.org/v10?query=75919at91347	septum formation inhibitor
+75969at91347	Missing
+75999at91347	Missing
+76135at91347	Missing
+76222at91347	Missing
+76350at91347	Missing
+76438at91347	Missing
+76441at91347	Missing
+76920at91347	Missing
+77060at91347	Missing
+77071at91347	Missing
+77165at91347	Missing
+77286at91347	Missing
+77379at91347	Fragmented	NODE_1370_length_289_cov_1.033019	3	287	-	106.7	75	https://www.orthodb.org/v10?query=77379at91347	50S ribosomal protein L10
+77687at91347	Missing
+77782at91347	Missing
+78274at91347	Missing
+78429at91347	Missing
+78566at91347	Missing
+78786at91347	Missing
+78998at91347	Missing
+79018at91347	Missing
+79257at91347	Missing
+79300at91347	Missing
+79384at91347	Missing
+79395at91347	Missing
+80037at91347	Missing
+80129at91347	Missing
+80271at91347	Fragmented	NODE_2629_length_230_cov_0.856209	1	228	+	116.0	66	https://www.orthodb.org/v10?query=80271at91347	tRNA (adenosine(37)-N6)-threonylcarbamoyltransferase complex dimerization subunit type 1 TsaB
+80419at91347	Missing
+80524at91347	Missing
+80874at91347	Missing
+80956at91347	Missing
+80958at91347	Missing
+80962at91347	Missing
+80995at91347	Fragmented	NODE_2038_length_256_cov_0.815642	1	228	+	152.8	70	https://www.orthodb.org/v10?query=80995at91347	30S ribosomal protein S12
+81099at91347	Missing
+81206at91347	Fragmented	NODE_1578_length_274_cov_0.741117	108	272	+	91.4	49	https://www.orthodb.org/v10?query=81206at91347	NADH-quinone oxidoreductase subunit A
+81317at91347	Fragmented	NODE_1316_length_294_cov_0.880184	3	293	-	128.9	86	https://www.orthodb.org/v10?query=81317at91347	osmotically-inducible protein OsmY
+81647at91347	Complete	NODE_1312_length_294_cov_1.009217	3	293	-	105.6	74	https://www.orthodb.org/v10?query=81647at91347	Sulfurtransferase
+81712at91347	Missing
+81834at91347	Missing
+82202at91347	Fragmented	NODE_2007_length_257_cov_0.811111	3	257	+	112.8	72	https://www.orthodb.org/v10?query=82202at91347	Ribonuclease H
+82289at91347	Missing
+82522at91347	Missing
+82918at91347	Missing
+83088at91347	Missing
+83425at91347	Missing
+83959at91347	Missing
+84085at91347	Missing
+84147at91347	Complete	NODE_133_length_567_cov_0.930612	86	445	+	162.6	98	https://www.orthodb.org/v10?query=84147at91347	histidine triad nucleotide-binding protein
+84552at91347	Missing
+84827at91347	Missing
+84909at91347	Missing
+84924at91347	Missing
+84938at91347	Missing
+84972at91347	Missing
+85582at91347	Missing
+85777at91347	Missing
+85931at91347	Missing
+86613at91347	Missing
+86761at91347	Missing
+86762at91347	Missing
+87018at91347	Missing
+87137at91347	Missing
+87428at91347	Complete	NODE_257_length_489_cov_1.058252	40	387	-	150.2	83	https://www.orthodb.org/v10?query=87428at91347	50S ribosomal protein L19
+87550at91347	Missing
+87655at91347	Missing
+87813at91347	Missing
+87971at91347	Missing
+87977at91347	Missing
+88237at91347	Missing
+88329at91347	Missing
+88478at91347	Missing
+88640at91347	Missing
+88866at91347	Missing
+89583at91347	Missing
+89704at91347	Missing
+90110at91347	Missing
+90168at91347	Missing
+90346at91347	Complete	NODE_697_length_372_cov_0.742373	126	338	+	137.3	64	https://www.orthodb.org/v10?query=90346at91347	50S ribosomal protein L31
+90433at91347	Missing
+90666at91347	Fragmented	NODE_550_length_397_cov_1.103125	58	396	-	135.7	100	https://www.orthodb.org/v10?query=90666at91347	molecular chaperone
+90759at91347	Complete	NODE_340_length_450_cov_0.697051	52	351	+	175.6	90	https://www.orthodb.org/v10?query=90759at91347	integration host factor subunit alpha
+91012at91347	Missing
+91468at91347	Missing
+91936at91347	Missing
+91994at91347	Complete	NODE_601_length_386_cov_0.944984	67	384	-	119.4	82	https://www.orthodb.org/v10?query=91994at91347	ribonuclease P protein component
+92123at91347	Missing
+92226at91347	Missing
+92241at91347	Missing
+92685at91347	Missing
+92695at91347	Missing
+92896at91347	Missing
+92978at91347	Missing
+93271at91347	Missing
+93345at91347	Fragmented	NODE_236_length_499_cov_1.097156	148	498	+	168.2	104	https://www.orthodb.org/v10?query=93345at91347	NADH:ubiquinone oxidoreductase subunit J
+93508at91347	Missing
+93644at91347	Complete	NODE_374_length_439_cov_1.411602	208	438	+	126.5	67	https://www.orthodb.org/v10?query=93644at91347	acyl carrier protein
+93833at91347	Missing
+93912at91347	Missing
+94338at91347	Complete	NODE_181_length_535_cov_0.796943	326	535	-	102.2	56	https://www.orthodb.org/v10?query=94338at91347	30S ribosomal protein S16
+94367at91347	Missing
+94802at91347	Fragmented	NODE_707_length_369_cov_1.023973	219	368	-	65.6	44	https://www.orthodb.org/v10?query=94802at91347	Protein TusB
+94841at91347	Fragmented	NODE_2061_length_255_cov_0.820225	144	254	-	59.6	31	https://www.orthodb.org/v10?query=94841at91347	50S ribosomal protein L33
+95161at91347	Missing
+95313at91347	Missing
+95359at91347	Missing
+95497at91347	Missing
+95703at91347	Missing
+95873at91347	Missing
+96165at91347	Missing
+96177at91347	Missing
+96727at91347	Missing
+96867at91347	Missing

@@ -1,0 +1,1956 @@
+>Feature NODE_2_length_2078_cov_1.505747
+363	106	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00001
+			product	hypothetical protein
+852	989	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00002
+			product	hypothetical protein
+1503	1126	CDS
+			gene	insAB-1
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:MONOMER0-2755
+			locus_tag	ICGBINNC_00003
+			product	InsAB' transposase
+1823	1548	CDS
+			gene	insA-1
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6086-MONOMER
+			locus_tag	ICGBINNC_00004
+			product	IS1 protein InsA
+>Feature NODE_8_length_1088_cov_1.338279
+661	2	rRNA
+			locus_tag	ICGBINNC_00005
+			note	aligned only 41 percent of the 16S ribosomal RNA
+			product	16S ribosomal RNA (partial)
+			score	4e-147
+>Feature NODE_14_length_959_cov_1.056689
+748	14	CDS
+			gene	ypdB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7244-MONOMER
+			locus_tag	ICGBINNC_00006
+			product	putative response regulator in two-component system with YpdA
+951	763	CDS
+			gene	ypdA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7243-MONOMER
+			locus_tag	ICGBINNC_00007
+			product	putative sensory kinase in two-component system with YpdB
+>Feature NODE_15_length_940_cov_0.706837
+52	627	CDS
+			gene	lsrA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:YDEX-MONOMER
+			locus_tag	ICGBINNC_00008
+			product	AI-2 ABC transporter - ATP binding subunit
+>Feature NODE_18_length_895_cov_1.231051
+36	200	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00009
+			product	hypothetical protein
+>Feature NODE_19_length_874_cov_1.160602
+>Feature NODE_20_length_871_cov_1.158690
+>Feature NODE_23_length_814_cov_0.990502
+8	352	CDS
+			gene	envZ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:ENVZ-MONOMER
+			locus_tag	ICGBINNC_00010
+			product	EnvZ sensory histidine kinase
+>Feature NODE_26_length_791_cov_1.022409
+1	384	CDS
+			gene	chbC
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:CELB-MONOMER
+			locus_tag	ICGBINNC_00011
+			product	chitobiose / cellobiose PTS permease - ChbC subunit
+406	723	CDS
+			gene	chbA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:CELC-MONOMER
+			locus_tag	ICGBINNC_00012
+			product	chitobiose / cellobiose PTS permease - ChbA subunit
+>Feature NODE_27_length_786_cov_1.029619
+14	535	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00013
+			product	hypothetical protein
+>Feature NODE_29_length_778_cov_0.952924
+666	343	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00014
+			product	hypothetical protein
+>Feature NODE_30_length_769_cov_1.043353
+>Feature NODE_32_length_760_cov_1.196193
+753	262	CDS
+			gene	ygeG
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7471-MONOMER
+			locus_tag	ICGBINNC_00015
+			product	putative chaperone
+>Feature NODE_34_length_746_cov_0.949178
+>Feature NODE_35_length_744_cov_0.970015
+576	226	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00016
+			product	hypothetical protein
+>Feature NODE_37_length_725_cov_1.243827
+>Feature NODE_38_length_724_cov_0.879444
+678	475	CDS
+			EC_number	1.18.1.3
+			gene	hcaD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:HCAD-MONOMER
+			locus_tag	ICGBINNC_00017
+			product	3-phenylpropionate dioxygenase, predicted ferredoxin reductase subunit
+>Feature NODE_40_length_722_cov_0.750388
+>Feature NODE_42_length_718_cov_1.024961
+9	239	CDS
+			EC_number	1.1.5.3
+			gene	glpA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:ANGLYC3PDEHYDROGSUBUNITA-MONOMER
+			locus_tag	ICGBINNC_00018
+			product	glycerol-3-phosphate dehydrogenase (anaerobic), large subunit
+>Feature NODE_43_length_718_cov_0.945398
+>Feature NODE_45_length_715_cov_0.891850
+>Feature NODE_49_length_704_cov_1.122807
+572	291	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00019
+			product	hypothetical protein
+>Feature NODE_54_length_681_cov_1.107616
+>Feature NODE_62_length_660_cov_1.058319
+79	360	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00020
+			product	hypothetical protein
+367	537	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00021
+			product	hypothetical protein
+>Feature NODE_63_length_660_cov_0.965695
+427	110	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00022
+			product	hypothetical protein
+>Feature NODE_65_length_658_cov_0.753873
+>Feature NODE_67_length_650_cov_0.890052
+>Feature NODE_68_length_649_cov_1.136364
+62	409	CDS
+			gene	ycfZ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6578-MONOMER
+			locus_tag	ICGBINNC_00023
+			product	putative inner membrane protein
+528	289	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00024
+			product	hypothetical protein
+>Feature NODE_71_length_644_cov_0.772487
+600	229	CDS
+			gene	phnI
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10718-MONOMER
+			locus_tag	ICGBINNC_00025
+			product	PhnI subunit of methylphosphonate degradation complex
+>Feature NODE_72_length_638_cov_1.301248
+31	390	CDS
+			EC_number	2.7.13.3
+			gene	narX
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:UniProtKB:P0AFA2
+			locus_tag	ICGBINNC_00026
+			product	Nitrate/nitrite sensor protein NarX
+>Feature NODE_73_length_638_cov_1.035651
+255	118	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00027
+			product	hypothetical protein
+>Feature NODE_75_length_634_cov_1.048474
+628	110	CDS
+			gene	mdoH
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11886-MONOMER
+			locus_tag	ICGBINNC_00028
+			product	membrane glycosyltransferase; synthesis of membrane-derived oligosaccharide (MDO)
+>Feature NODE_76_length_631_cov_1.626354
+614	354	CDS
+			gene	hybA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:HYBA-MONOMER
+			locus_tag	ICGBINNC_00029
+			product	hydrogenase 2 4Fe-4S ferredoxin-type component
+>Feature NODE_77_length_631_cov_1.185921
+>Feature NODE_78_length_630_cov_0.685353
+605	210	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00030
+			product	hypothetical protein
+>Feature NODE_80_length_621_cov_1.610294
+378	488	rRNA
+			locus_tag	ICGBINNC_00031
+			product	5S ribosomal RNA
+			score	5.3e-13
+>Feature NODE_82_length_619_cov_1.125461
+181	387	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00032
+			product	hypothetical protein
+>Feature NODE_84_length_617_cov_1.081481
+3	473	CDS
+			gene	cueO
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG12318-MONOMER
+			locus_tag	ICGBINNC_00033
+			product	multicopper oxidase with role in copper homeostasis
+609	520	CDS
+			EC_number	1.1.5.2
+			gene	gcd
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:GLUCDEHYDROG-MONOMER
+			locus_tag	ICGBINNC_00034
+			product	glucose dehydrogenase
+>Feature NODE_88_length_612_cov_1.001869
+362	216	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00035
+			product	hypothetical protein
+>Feature NODE_90_length_609_cov_1.208647
+>Feature NODE_92_length_602_cov_0.695238
+513	1	CDS
+			gene	aslB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10090-MONOMER
+			locus_tag	ICGBINNC_00036
+			product	putative anaerobic sulfatase maturation enzyme
+>Feature NODE_98_length_599_cov_0.747126
+18	548	CDS
+			gene	cstA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10167-MONOMER
+			locus_tag	ICGBINNC_00037
+			product	peptide transporter induced by carbon starvation
+>Feature NODE_105_length_583_cov_1.203557
+>Feature NODE_106_length_583_cov_1.047431
+4	582	CDS
+			gene	nanM
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7920-MONOMER
+			locus_tag	ICGBINNC_00038
+			product	N-acetylneuraminate mutarotase
+>Feature NODE_107_length_583_cov_0.986166
+559	380	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00039
+			product	hypothetical protein
+>Feature NODE_109_length_580_cov_0.870775
+>Feature NODE_112_length_578_cov_0.826347
+398	204	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00040
+			product	hypothetical protein
+>Feature NODE_115_length_576_cov_0.733467
+52	366	CDS
+			gene	potD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:POTD-MONOMER
+			locus_tag	ICGBINNC_00041
+			product	putrescine / spermidine ABC transporter - periplasmic binding protein
+>Feature NODE_116_length_574_cov_1.203219
+>Feature NODE_117_length_574_cov_0.772636
+559	98	CDS
+			gene	nudJ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6580-MONOMER
+			locus_tag	ICGBINNC_00042
+			product	HMP-PP hydrolase /thiamin pyrophosphate hydrolase [multifunctional]
+>Feature NODE_118_length_573_cov_1.177419
+>Feature NODE_119_length_573_cov_0.883065
+>Feature NODE_122_length_569_cov_1.335366
+19	246	CDS
+			EC_number	3.6.3.12
+			gene	kdpB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:KDPB-MONOMER
+			locus_tag	ICGBINNC_00043
+			product	K+ transporting ATPase - ATP binding subunit
+>Feature NODE_125_length_564_cov_0.749487
+259	513	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00044
+			product	hypothetical protein
+>Feature NODE_127_length_562_cov_0.903093
+18	458	CDS
+			gene	ycfS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6571-MONOMER
+			locus_tag	ICGBINNC_00045
+			product	L,D-transpeptidase YcfS
+>Feature NODE_131_length_558_cov_0.950104
+544	167	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00046
+			product	hypothetical protein
+>Feature NODE_133_length_554_cov_1.224319
+33	209	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00047
+			product	hypothetical protein
+461	345	CDS
+			gene	yacC
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11089-MONOMER
+			locus_tag	ICGBINNC_00048
+			product	putative protein
+>Feature NODE_136_length_548_cov_1.859873
+53	316	CDS
+			EC_number	4.3.1.2
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:UniProtKB:O66145
+			locus_tag	ICGBINNC_00049
+			product	Methylaspartate ammonia-lyase
+>Feature NODE_137_length_548_cov_1.161359
+308	36	CDS
+			gene	yjdJ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7829-MONOMER
+			locus_tag	ICGBINNC_00050
+			product	putative acyltransferase with acyl-CoA N-acyltransferase domain protein
+>Feature NODE_139_length_547_cov_0.931915
+>Feature NODE_143_length_545_cov_1.247863
+507	82	CDS
+			gene	yqeK
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7469-MONOMER
+			locus_tag	ICGBINNC_00051
+			product	putative protein
+>Feature NODE_145_length_545_cov_0.700855
+219	43	CDS
+			gene	ybfQ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:MONOMER0-2662
+			locus_tag	ICGBINNC_00052
+			product	putative transposase
+457	341	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00053
+			product	hypothetical protein
+>Feature NODE_147_length_542_cov_1.034409
+26	187	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00054
+			product	hypothetical protein
+236	502	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00055
+			product	hypothetical protein
+>Feature NODE_148_length_542_cov_0.698925
+6	287	CDS
+			gene	ypfG
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7295-MONOMER
+			locus_tag	ICGBINNC_00056
+			product	putative protein
+531	388	CDS
+			gene	phnP
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10725-MONOMER
+			locus_tag	ICGBINNC_00057
+			product	5-phospho-alpha-D-ribosyl 1,2-cyclic phosphate phosphodiesterase
+>Feature NODE_152_length_541_cov_0.943966
+>Feature NODE_154_length_540_cov_1.470842
+252	440	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00058
+			product	hypothetical protein
+>Feature NODE_155_length_540_cov_1.259179
+>Feature NODE_157_length_537_cov_1.269565
+>Feature NODE_162_length_530_cov_1.028698
+91	222	CDS
+			gene	ompR
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:UniProtKB:P0AA16
+			locus_tag	ICGBINNC_00059
+			product	Transcriptional regulatory protein OmpR
+530	264	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00060
+			product	hypothetical protein
+>Feature NODE_163_length_530_cov_0.929360
+105	410	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00061
+			product	hypothetical protein
+>Feature NODE_167_length_528_cov_1.456763
+480	82	CDS
+			EC_number	3.1.2.12
+			gene	frmB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6208-MONOMER
+			locus_tag	ICGBINNC_00062
+			product	S-formylglutathione hydrolase
+>Feature NODE_168_length_528_cov_0.971175
+251	460	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00063
+			product	hypothetical protein
+>Feature NODE_172_length_527_cov_0.973333
+>Feature NODE_174_length_526_cov_1.020045
+>Feature NODE_176_length_526_cov_0.957684
+25	351	CDS
+			gene	yjjL
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:YJIZ-MONOMER
+			locus_tag	ICGBINNC_00064
+			product	galactonate:H+ symporter
+>Feature NODE_177_length_526_cov_0.944321
+>Feature NODE_179_length_524_cov_0.747204
+337	188	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00065
+			product	hypothetical protein
+>Feature NODE_181_length_522_cov_1.564045
+>Feature NODE_184_length_521_cov_1.150901
+>Feature NODE_186_length_519_cov_1.296380
+>Feature NODE_187_length_519_cov_0.990950
+>Feature NODE_190_length_515_cov_0.947489
+9	512	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00066
+			product	hypothetical protein
+>Feature NODE_192_length_514_cov_1.000000
+9	431	CDS
+			EC_number	2.3.1.47
+			gene	bioF
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:7KAPSYN-MONOMER
+			locus_tag	ICGBINNC_00067
+			product	8-amino-7-oxononanoate synthase monomer
+>Feature NODE_195_length_513_cov_1.339450
+>Feature NODE_196_length_512_cov_1.174713
+347	99	CDS
+			EC_number	2.1.2.11
+			gene	panB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:3-CH3-2-OXOBUTANOATE-OH-CH3-XFER-MONOMER
+			locus_tag	ICGBINNC_00068
+			product	3-methyl-2-oxobutanoate hydroxymethyltransferase monomer
+>Feature NODE_198_length_511_cov_0.695853
+>Feature NODE_199_length_510_cov_1.685912
+115	288	CDS
+			EC_number	2.3.1.9
+			gene	atoB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:ACETYL-COA-ACETYLTRANSFER-MONOMER
+			locus_tag	ICGBINNC_00069
+			product	acetyl-CoA acetyltransferase
+>Feature NODE_202_length_509_cov_1.013889
+23	184	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00070
+			product	hypothetical protein
+451	239	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00071
+			product	hypothetical protein
+>Feature NODE_206_length_506_cov_0.899767
+125	424	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00072
+			product	hypothetical protein
+>Feature NODE_214_length_502_cov_1.030588
+185	427	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00073
+			product	hypothetical protein
+>Feature NODE_219_length_501_cov_0.773585
+>Feature NODE_222_length_497_cov_1.257143
+424	56	CDS
+			EC_number	2.6.1.1
+			gene	aspC
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:ASPAMINOTRANS-MONOMER
+			locus_tag	ICGBINNC_00074
+			product	aspartate aminotransferase, PLP-dependent
+>Feature NODE_225_length_497_cov_0.695238
+>Feature NODE_227_length_496_cov_1.128878
+360	247	CDS
+			gene	ompC
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10670-MONOMER
+			locus_tag	ICGBINNC_00075
+			product	outer membrane porin C
+>Feature NODE_228_length_496_cov_1.045346
+>Feature NODE_229_length_495_cov_0.985646
+>Feature NODE_230_length_495_cov_0.873206
+>Feature NODE_231_length_494_cov_0.875300
+>Feature NODE_234_length_492_cov_1.089157
+23	214	CDS
+			EC_number	2.7.4.7
+			gene	thiD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:HMP-P-KIN-MONOMER
+			locus_tag	ICGBINNC_00076
+			product	hydroxymethylpyrimidine kinase / phosphohydroxymethylpyrimidine kinase
+346	143	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00077
+			product	hypothetical protein
+>Feature NODE_236_length_492_cov_0.879518
+>Feature NODE_240_length_490_cov_0.878935
+>Feature NODE_241_length_489_cov_1.941748
+>Feature NODE_242_length_489_cov_1.417476
+160	336	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00078
+			product	hypothetical protein
+>Feature NODE_252_length_485_cov_1.056373
+>Feature NODE_256_length_482_cov_1.637037
+>Feature NODE_258_length_481_cov_1.061881
+475	131	CDS
+			gene	aer
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7595-MONOMER
+			locus_tag	ICGBINNC_00079
+			product	aerotaxis sensor receptor, flavoprotein
+>Feature NODE_263_length_478_cov_1.274314
+>Feature NODE_264_length_478_cov_0.965087
+>Feature NODE_266_length_477_cov_1.115000
+129	281	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00080
+			product	hypothetical protein
+>Feature NODE_269_length_475_cov_0.733668
+138	227	CDS
+			gene	minE
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10598-MONOMER
+			locus_tag	ICGBINNC_00081
+			product	cell division topological specificity factor and inhibitory component of the MinC-MinD-MinE system that regulates septum placement
+>Feature NODE_273_length_473_cov_1.459596
+>Feature NODE_276_length_472_cov_1.192405
+>Feature NODE_277_length_472_cov_0.924051
+>Feature NODE_279_length_472_cov_0.739241
+186	446	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00082
+			product	hypothetical protein
+>Feature NODE_282_length_471_cov_0.850254
+39	344	CDS
+			gene	yhjJ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG12254-MONOMER
+			locus_tag	ICGBINNC_00083
+			product	putative zinc-dependent peptidase
+>Feature NODE_290_length_468_cov_1.074169
+>Feature NODE_291_length_467_cov_0.992308
+>Feature NODE_292_length_467_cov_0.835897
+32	172	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00084
+			product	hypothetical protein
+>Feature NODE_293_length_466_cov_1.650386
+>Feature NODE_294_length_466_cov_1.125964
+>Feature NODE_296_length_466_cov_0.899743
+11	319	CDS
+			EC_number	2.1.1.35
+			gene	trmA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11022-MONOMER
+			locus_tag	ICGBINNC_00085
+			product	tRNA m5U54 methyltransferase
+>Feature NODE_297_length_465_cov_1.064433
+>Feature NODE_302_length_463_cov_1.088083
+>Feature NODE_305_length_463_cov_0.756477
+>Feature NODE_320_length_459_cov_0.837696
+459	37	CDS
+			gene	ydcM
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6743-MONOMER
+			locus_tag	ICGBINNC_00086
+			product	putative transposase
+>Feature NODE_323_length_458_cov_1.149606
+>Feature NODE_325_length_458_cov_1.039370
+>Feature NODE_326_length_457_cov_1.005263
+>Feature NODE_327_length_457_cov_0.868421
+>Feature NODE_329_length_456_cov_1.155673
+>Feature NODE_330_length_455_cov_1.351852
+>Feature NODE_335_length_454_cov_0.968170
+>Feature NODE_338_length_453_cov_1.218085
+>Feature NODE_341_length_453_cov_0.867021
+>Feature NODE_342_length_452_cov_1.168000
+442	62	CDS
+			gene	glnH
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:GLNH-MONOMER
+			locus_tag	ICGBINNC_00087
+			product	glutamine ABC transporter - periplasmic binding protein
+>Feature NODE_348_length_452_cov_0.776000
+>Feature NODE_351_length_450_cov_1.227882
+>Feature NODE_352_length_450_cov_1.099196
+>Feature NODE_353_length_450_cov_0.967828
+>Feature NODE_359_length_447_cov_1.183784
+439	134	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00088
+			product	hypothetical protein
+>Feature NODE_362_length_446_cov_1.230352
+23	316	CDS
+			gene	nudK
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG12410-MONOMER
+			locus_tag	ICGBINNC_00089
+			product	GDP-mannose hydrolase
+>Feature NODE_363_length_446_cov_0.791328
+164	322	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00090
+			product	hypothetical protein
+>Feature NODE_364_length_445_cov_1.190217
+>Feature NODE_366_length_445_cov_0.991848
+>Feature NODE_373_length_443_cov_0.797814
+>Feature NODE_378_length_442_cov_1.200000
+>Feature NODE_379_length_442_cov_1.200000
+>Feature NODE_380_length_442_cov_1.156164
+429	301	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00091
+			product	hypothetical protein
+>Feature NODE_382_length_442_cov_0.920548
+234	419	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00092
+			product	hypothetical protein
+>Feature NODE_383_length_442_cov_0.882192
+18	332	CDS
+			gene	fepG
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:FEPG-MONOMER
+			locus_tag	ICGBINNC_00093
+			product	ferric enterobactin ABC transporter - membrane subunit
+>Feature NODE_392_length_438_cov_1.432133
+>Feature NODE_393_length_438_cov_1.213296
+>Feature NODE_397_length_437_cov_1.013889
+27	209	CDS
+			db_xref	COG:COG4565
+			gene	dpiA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:UniProtKB:P0AEF4
+			locus_tag	ICGBINNC_00094
+			product	Transcriptional regulatory protein DpiA
+>Feature NODE_400_length_436_cov_1.016713
+>Feature NODE_402_length_436_cov_0.947075
+>Feature NODE_406_length_434_cov_1.249300
+>Feature NODE_411_length_433_cov_0.733146
+23	214	CDS
+			gene	tusE
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG12876-MONOMER
+			locus_tag	ICGBINNC_00095
+			product	sulfur transfer protein
+360	211	CDS
+			EC_number	3.6.1.7
+			gene	yccX
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6502-MONOMER
+			locus_tag	ICGBINNC_00096
+			product	acylphosphatase
+>Feature NODE_414_length_432_cov_0.969014
+429	151	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00097
+			product	hypothetical protein
+>Feature NODE_416_length_432_cov_0.822535
+>Feature NODE_420_length_430_cov_1.240793
+31	120	CDS
+			EC_number	2.4.1.182
+			gene	lpxB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:LIPIDADISACCHARIDESYNTH-MONOMER
+			locus_tag	ICGBINNC_00098
+			product	lipid A disaccharide synthase
+>Feature NODE_422_length_430_cov_0.895184
+>Feature NODE_423_length_430_cov_0.827195
+>Feature NODE_428_length_429_cov_0.784091
+421	224	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00099
+			product	hypothetical protein
+>Feature NODE_439_length_426_cov_0.931232
+>Feature NODE_445_length_425_cov_1.048851
+>Feature NODE_451_length_422_cov_1.904348
+>Feature NODE_453_length_422_cov_1.257971
+>Feature NODE_457_length_421_cov_0.848837
+418	125	CDS
+			gene	trg
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:TRG-MONOMER
+			locus_tag	ICGBINNC_00100
+			product	methyl accepting chemotaxis protein - ribose/galactose/glucose sensing
+>Feature NODE_458_length_421_cov_0.712209
+287	72	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00101
+			product	hypothetical protein
+>Feature NODE_459_length_420_cov_1.413994
+206	108	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00102
+			product	hypothetical protein
+388	206	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00103
+			product	hypothetical protein
+>Feature NODE_463_length_420_cov_1.236152
+>Feature NODE_467_length_420_cov_0.851312
+>Feature NODE_469_length_419_cov_1.067251
+>Feature NODE_470_length_419_cov_1.067251
+>Feature NODE_471_length_419_cov_0.853801
+>Feature NODE_474_length_418_cov_1.187683
+371	261	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00104
+			product	hypothetical protein
+>Feature NODE_478_length_417_cov_1.126471
+112	363	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00105
+			product	hypothetical protein
+>Feature NODE_480_length_417_cov_0.858824
+>Feature NODE_482_length_417_cov_0.852941
+>Feature NODE_486_length_415_cov_1.005917
+409	83	CDS
+			gene	ytfI
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7870-MONOMER
+			locus_tag	ICGBINNC_00106
+			product	putative protein
+>Feature NODE_487_length_414_cov_1.299703
+>Feature NODE_488_length_414_cov_1.083086
+>Feature NODE_489_length_414_cov_0.991098
+>Feature NODE_494_length_413_cov_1.303571
+>Feature NODE_498_length_412_cov_0.970149
+>Feature NODE_500_length_412_cov_0.835821
+70	222	CDS
+			EC_number	2.3.1.54
+			gene	pflD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11910-MONOMER
+			locus_tag	ICGBINNC_00107
+			product	formate acetyltransferase 2
+>Feature NODE_501_length_412_cov_0.749254
+313	131	CDS
+			gene	pdhR
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11088-MONOMER
+			locus_tag	ICGBINNC_00108
+			product	PdhR DNA-binding transcriptional dual regulator
+>Feature NODE_512_length_409_cov_0.879518
+140	292	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00109
+			product	hypothetical protein
+>Feature NODE_514_length_408_cov_1.102719
+>Feature NODE_521_length_407_cov_0.884848
+44	262	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00110
+			product	hypothetical protein
+>Feature NODE_523_length_406_cov_1.133739
+>Feature NODE_525_length_406_cov_0.887538
+41	358	CDS
+			gene	ftsE
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:FTSE-MONOMER
+			locus_tag	ICGBINNC_00111
+			product	cell division protein FtsE
+>Feature NODE_528_length_405_cov_1.335366
+395	93	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00112
+			product	hypothetical protein
+>Feature NODE_529_length_404_cov_1.969419
+>Feature NODE_536_length_402_cov_1.683077
+269	9	CDS
+			gene	yfbM
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7179-MONOMER
+			locus_tag	ICGBINNC_00113
+			product	putative protein
+>Feature NODE_538_length_402_cov_1.113846
+91	195	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00114
+			product	hypothetical protein
+>Feature NODE_541_length_402_cov_0.898462
+69	341	CDS
+			gene	betI
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:PD00251
+			locus_tag	ICGBINNC_00115
+			product	BetI DNA-binding transcriptional repressor
+>Feature NODE_543_length_401_cov_1.351852
+>Feature NODE_547_length_401_cov_0.978395
+>Feature NODE_548_length_401_cov_0.796296
+>Feature NODE_549_length_401_cov_0.672840
+>Feature NODE_551_length_400_cov_1.235294
+>Feature NODE_553_length_400_cov_0.863777
+>Feature NODE_557_length_398_cov_0.875389
+12	359	CDS
+			EC_number	2.6.1.85
+			gene	pabA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:PABASYN-COMPII-MONOMER
+			locus_tag	ICGBINNC_00116
+			product	para-aminobenzoate synthase multi-enzyme complex
+>Feature NODE_561_length_397_cov_0.684375
+>Feature NODE_562_length_396_cov_1.601881
+>Feature NODE_565_length_396_cov_0.915361
+>Feature NODE_566_length_396_cov_0.902821
+83	289	CDS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG12110-MONOMER
+			locus_tag	ICGBINNC_00117
+			note	conserved protein
+			product	hypothetical protein
+>Feature NODE_574_length_394_cov_0.958991
+3	383	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00118
+			product	hypothetical protein
+>Feature NODE_575_length_394_cov_0.921136
+>Feature NODE_577_length_394_cov_0.690852
+57	173	CDS
+			gene	yiiD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11853-MONOMER
+			locus_tag	ICGBINNC_00119
+			product	putative acetyltransferase
+>Feature NODE_579_length_393_cov_1.357595
+91	234	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00120
+			product	hypothetical protein
+>Feature NODE_585_length_392_cov_1.158730
+>Feature NODE_586_length_392_cov_0.819048
+>Feature NODE_587_length_392_cov_0.695238
+52	372	CDS
+			gene	ecpC
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6162-MONOMER
+			locus_tag	ICGBINNC_00121
+			product	hypothetical protein
+>Feature NODE_588_length_392_cov_0.695238
+81	224	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00122
+			product	hypothetical protein
+>Feature NODE_591_length_391_cov_1.315287
+74	214	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00123
+			product	hypothetical protein
+>Feature NODE_592_length_391_cov_0.566879
+55	354	CDS
+			gene	dcuD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:YHCL-MONOMER
+			locus_tag	ICGBINNC_00124
+			product	YhcL DcuC transporter
+>Feature NODE_597_length_389_cov_1.169872
+8	304	CDS
+			gene	yieH
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11725-MONOMER
+			locus_tag	ICGBINNC_00125
+			product	6-phosphogluconate phosphatase
+>Feature NODE_598_length_389_cov_1.157051
+>Feature NODE_599_length_389_cov_1.019231
+366	166	CDS
+			db_xref	COG:COG0526
+			gene	dsbL
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:UniProtKB:P0A4L7
+			locus_tag	ICGBINNC_00126
+			product	Thiol:disulfide interchange protein DsbL
+>Feature NODE_604_length_389_cov_0.682692
+>Feature NODE_611_length_387_cov_1.883871
+>Feature NODE_617_length_386_cov_1.417476
+>Feature NODE_618_length_386_cov_1.074434
+173	373	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00127
+			product	hypothetical protein
+>Feature NODE_619_length_385_cov_1.321429
+>Feature NODE_621_length_385_cov_0.948052
+345	208	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00128
+			product	hypothetical protein
+>Feature NODE_622_length_385_cov_0.948052
+375	55	CDS
+			gene	abgR
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6671-MONOMER
+			locus_tag	ICGBINNC_00129
+			product	putative DNA-binding transcriptional regulator, LYSR-type
+>Feature NODE_629_length_384_cov_1.188925
+376	128	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00130
+			product	hypothetical protein
+>Feature NODE_630_length_384_cov_0.951140
+372	178	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00131
+			product	hypothetical protein
+>Feature NODE_631_length_384_cov_0.951140
+>Feature NODE_634_length_384_cov_0.713355
+>Feature NODE_636_length_384_cov_0.667752
+4	315	CDS
+			gene	tppB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:B1634-MONOMER
+			locus_tag	ICGBINNC_00132
+			product	tripeptide / dipeptide:H+ symporter
+>Feature NODE_638_length_383_cov_1.006536
+>Feature NODE_647_length_382_cov_0.862295
+34	255	CDS
+			gene	yfhL
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7346-MONOMER
+			locus_tag	ICGBINNC_00133
+			product	putative 4Fe-4S cluster-containing protein
+>Feature NODE_649_length_381_cov_1.200658
+>Feature NODE_657_length_380_cov_0.963696
+>Feature NODE_659_length_380_cov_0.963696
+>Feature NODE_663_length_378_cov_1.222591
+18	257	CDS
+			EC_number	2.5.1.7
+			gene	murA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:UDPNACETYLGLUCOSAMENOLPYRTRANS-MONOMER
+			locus_tag	ICGBINNC_00134
+			product	UDP-N-acetylglucosamine enolpyruvoyl transferase
+>Feature NODE_664_length_378_cov_1.196013
+>Feature NODE_670_length_378_cov_0.867110
+>Feature NODE_671_length_378_cov_0.727575
+>Feature NODE_675_length_377_cov_0.973333
+269	72	CDS
+			gene	glnL
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:PROTEIN-NRII
+			locus_tag	ICGBINNC_00135
+			product	NtrB
+>Feature NODE_678_length_376_cov_1.826087
+24	242	CDS
+			db_xref	COG:COG1977
+			gene	moaD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:UniProtKB:P30748
+			locus_tag	ICGBINNC_00136
+			product	Molybdopterin synthase sulfur carrier subunit
+>Feature NODE_679_length_376_cov_1.197324
+>Feature NODE_683_length_376_cov_0.732441
+96	308	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00137
+			product	hypothetical protein
+>Feature NODE_684_length_375_cov_1.224832
+>Feature NODE_691_length_374_cov_0.838384
+>Feature NODE_692_length_374_cov_0.737374
+61	321	CDS
+			gene	dicA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10226-MONOMER
+			locus_tag	ICGBINNC_00138
+			product	DicA DNA-binding transcriptional repressor
+>Feature NODE_695_length_373_cov_0.739865
+>Feature NODE_696_length_372_cov_1.532203
+>Feature NODE_699_length_372_cov_0.742373
+19	309	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00139
+			product	hypothetical protein
+>Feature NODE_703_length_371_cov_1.098639
+>Feature NODE_710_length_370_cov_0.996587
+>Feature NODE_712_length_370_cov_0.747440
+>Feature NODE_713_length_370_cov_0.655290
+>Feature NODE_722_length_368_cov_1.281787
+>Feature NODE_724_length_368_cov_0.962199
+>Feature NODE_727_length_367_cov_0.800000
+>Feature NODE_728_length_367_cov_0.755172
+>Feature NODE_730_length_367_cov_0.634483
+35	283	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00140
+			product	hypothetical protein
+>Feature NODE_731_length_366_cov_1.262976
+354	181	CDS
+			EC_number	2.8.1.1
+			gene	pspE
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10780-MONOMER
+			locus_tag	ICGBINNC_00141
+			product	thiosulfate sulfurtransferase
+>Feature NODE_736_length_366_cov_0.996540
+269	30	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00142
+			product	hypothetical protein
+>Feature NODE_745_length_365_cov_0.760417
+>Feature NODE_746_length_364_cov_1.526132
+>Feature NODE_749_length_364_cov_1.017422
+>Feature NODE_751_length_364_cov_0.930314
+84	362	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00143
+			product	hypothetical protein
+>Feature NODE_753_length_363_cov_1.531469
+354	109	CDS
+			gene	fepC
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:FEPC-MONOMER
+			locus_tag	ICGBINNC_00144
+			product	ferric enterobactin ABC transporter - ATP binding subunit
+>Feature NODE_754_length_363_cov_1.276224
+146	334	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00145
+			product	hypothetical protein
+>Feature NODE_756_length_363_cov_1.276224
+>Feature NODE_757_length_363_cov_1.244755
+>Feature NODE_758_length_363_cov_1.241259
+>Feature NODE_761_length_363_cov_0.968531
+>Feature NODE_763_length_363_cov_0.765734
+109	345	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00146
+			product	hypothetical protein
+>Feature NODE_764_length_363_cov_0.765734
+>Feature NODE_765_length_363_cov_0.765734
+128	328	CDS
+			gene	yheV
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:MONOMER0-2688
+			locus_tag	ICGBINNC_00147
+			product	putative protein
+>Feature NODE_766_length_363_cov_0.709790
+>Feature NODE_771_length_362_cov_0.764912
+>Feature NODE_772_length_361_cov_1.542254
+>Feature NODE_778_length_360_cov_1.031802
+>Feature NODE_784_length_359_cov_0.932624
+>Feature NODE_785_length_359_cov_0.836879
+>Feature NODE_786_length_359_cov_0.776596
+>Feature NODE_790_length_358_cov_1.039146
+>Feature NODE_793_length_357_cov_1.060714
+>Feature NODE_794_length_357_cov_0.914286
+>Feature NODE_798_length_356_cov_1.046595
+>Feature NODE_799_length_356_cov_1.046595
+308	90	CDS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7654-MONOMER
+			locus_tag	ICGBINNC_00148
+			note	conserved protein
+			product	hypothetical protein
+>Feature NODE_801_length_356_cov_0.985663
+334	176	CDS
+			gene	upaG
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:UniProtKB:A0A0H2VCA1
+			locus_tag	ICGBINNC_00149
+			product	Autotransporter adhesin UpaG
+>Feature NODE_805_length_356_cov_0.784946
+111	290	CDS
+			gene	mhpT
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:MHPT-MONOMER
+			locus_tag	ICGBINNC_00150
+			product	3-hydroxyphenylpropionate / 3-hydroxycinnamate:H+ symporter
+>Feature NODE_806_length_356_cov_0.756272
+>Feature NODE_809_length_355_cov_1.082734
+14	184	CDS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7060-MONOMER
+			locus_tag	ICGBINNC_00151
+			note	conserved inner membrane protein
+			product	hypothetical protein
+>Feature NODE_824_length_353_cov_1.057971
+>Feature NODE_826_length_353_cov_1.057971
+>Feature NODE_828_length_353_cov_0.793478
+>Feature NODE_833_length_352_cov_1.054545
+348	163	CDS
+			gene	syd
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7451-MONOMER
+			locus_tag	ICGBINNC_00152
+			product	SecY-interacting protein
+>Feature NODE_834_length_352_cov_0.898182
+>Feature NODE_838_length_352_cov_0.796364
+>Feature NODE_839_length_352_cov_0.781818
+>Feature NODE_841_length_351_cov_1.120438
+244	128	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00153
+			product	hypothetical protein
+>Feature NODE_843_length_351_cov_1.065693
+>Feature NODE_850_length_350_cov_0.794872
+>Feature NODE_858_length_349_cov_1.073529
+>Feature NODE_860_length_348_cov_1.586716
+4	258	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00154
+			product	hypothetical protein
+>Feature NODE_861_length_348_cov_1.099631
+>Feature NODE_863_length_348_cov_1.077491
+>Feature NODE_864_length_348_cov_1.007380
+>Feature NODE_865_length_348_cov_0.915129
+>Feature NODE_872_length_347_cov_1.081481
+>Feature NODE_873_length_347_cov_1.081481
+>Feature NODE_874_length_347_cov_0.811111
+46	321	CDS
+			EC_number	2.7.8.8
+			gene	pssA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:PHOSPHASERSYN-MONOMER
+			locus_tag	ICGBINNC_00155
+			product	phosphatidylserine synthase
+>Feature NODE_878_length_346_cov_1.189591
+>Feature NODE_883_length_346_cov_0.814126
+>Feature NODE_887_length_345_cov_1.089552
+>Feature NODE_889_length_345_cov_0.854478
+326	192	CDS
+			gene	adiC
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:YJDE-MONOMER
+			locus_tag	ICGBINNC_00156
+			product	AdiC arginine:agmatine antiporter
+>Feature NODE_891_length_345_cov_0.817164
+>Feature NODE_895_length_344_cov_1.033708
+4	315	CDS
+			db_xref	COG:COG2026
+			gene	higB-2
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:UniProtKB:Q9KMA6
+			locus_tag	ICGBINNC_00157
+			product	Toxin HigB-2
+>Feature NODE_897_length_344_cov_0.917603
+>Feature NODE_901_length_344_cov_0.820225
+>Feature NODE_905_length_343_cov_1.154135
+179	316	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00158
+			product	hypothetical protein
+>Feature NODE_906_length_343_cov_1.097744
+>Feature NODE_917_length_342_cov_0.826415
+>Feature NODE_921_length_341_cov_1.106061
+>Feature NODE_926_length_341_cov_0.719697
+>Feature NODE_930_length_339_cov_1.393130
+>Feature NODE_932_length_339_cov_1.114504
+>Feature NODE_940_length_338_cov_1.118774
+>Feature NODE_943_length_338_cov_1.118774
+>Feature NODE_947_length_338_cov_0.750958
+>Feature NODE_959_length_336_cov_1.127413
+>Feature NODE_961_length_336_cov_0.845560
+>Feature NODE_963_length_336_cov_0.845560
+>Feature NODE_969_length_335_cov_1.050388
+>Feature NODE_973_length_334_cov_1.256809
+>Feature NODE_975_length_334_cov_1.003891
+>Feature NODE_983_length_333_cov_1.140625
+>Feature NODE_996_length_332_cov_0.835294
+>Feature NODE_1001_length_331_cov_1.074803
+>Feature NODE_1002_length_331_cov_1.031496
+276	76	CDS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11100-MONOMER
+			locus_tag	ICGBINNC_00159
+			note	conserved DNA-binding protein
+			product	hypothetical protein
+>Feature NODE_1013_length_330_cov_0.865613
+>Feature NODE_1016_length_330_cov_0.798419
+>Feature NODE_1017_length_330_cov_0.687747
+>Feature NODE_1022_length_329_cov_0.869048
+>Feature NODE_1024_length_328_cov_1.745020
+>Feature NODE_1030_length_328_cov_0.872510
+>Feature NODE_1034_length_327_cov_1.428000
+>Feature NODE_1052_length_325_cov_1.177419
+5	187	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00160
+			product	hypothetical protein
+>Feature NODE_1058_length_325_cov_0.758065
+>Feature NODE_1059_length_325_cov_0.705645
+>Feature NODE_1060_length_324_cov_1.700405
+>Feature NODE_1061_length_324_cov_1.477733
+>Feature NODE_1064_length_324_cov_1.060729
+171	19	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00161
+			product	hypothetical protein
+>Feature NODE_1065_length_324_cov_0.886640
+21	203	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00162
+			product	hypothetical protein
+>Feature NODE_1066_length_324_cov_0.712551
+>Feature NODE_1067_length_323_cov_1.398374
+>Feature NODE_1071_length_323_cov_0.890244
+>Feature NODE_1072_length_323_cov_0.890244
+>Feature NODE_1073_length_323_cov_0.890244
+>Feature NODE_1074_length_322_cov_1.191837
+>Feature NODE_1075_length_322_cov_1.191837
+>Feature NODE_1080_length_321_cov_1.377049
+>Feature NODE_1082_length_321_cov_1.196721
+87	212	CDS
+			gene	rimL
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10853-MONOMER
+			locus_tag	ICGBINNC_00163
+			product	ribosomal-protein-L12-serine acetyltransferase
+>Feature NODE_1083_length_321_cov_1.196721
+>Feature NODE_1087_length_321_cov_0.897541
+15	158	CDS
+			gene	acrF
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:ACRF-MONOMER
+			locus_tag	ICGBINNC_00164
+			product	AcrEF-TolC multidrug efflux transport system - permease subunit
+>Feature NODE_1088_length_321_cov_0.864754
+>Feature NODE_1101_length_319_cov_1.190083
+>Feature NODE_1103_length_319_cov_0.904959
+>Feature NODE_1114_length_318_cov_1.211618
+>Feature NODE_1116_length_318_cov_1.190871
+303	118	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00165
+			product	hypothetical protein
+>Feature NODE_1122_length_318_cov_0.908714
+>Feature NODE_1124_length_318_cov_0.771784
+299	192	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00166
+			product	hypothetical protein
+>Feature NODE_1129_length_317_cov_0.787500
+252	106	CDS
+			EC_number	3.1.6.1
+			gene	aslA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:ARYLSULFAT-MONOMER
+			locus_tag	ICGBINNC_00167
+			product	arylsulfatase
+>Feature NODE_1130_length_317_cov_0.754167
+>Feature NODE_1131_length_317_cov_0.716667
+>Feature NODE_1136_length_316_cov_0.916318
+>Feature NODE_1138_length_316_cov_0.916318
+>Feature NODE_1142_length_316_cov_0.899582
+>Feature NODE_1145_length_315_cov_1.226891
+>Feature NODE_1148_length_315_cov_0.920168
+>Feature NODE_1149_length_315_cov_0.920168
+>Feature NODE_1152_length_315_cov_0.789916
+>Feature NODE_1162_length_314_cov_0.907173
+283	38	CDS
+			gene	rfaE
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7590-MONOMER
+			locus_tag	ICGBINNC_00168
+			product	fused heptose 7-phosphate kinase/heptose 1-phosphate adenyltransferase
+>Feature NODE_1165_length_313_cov_1.237288
+>Feature NODE_1170_length_312_cov_1.217021
+1	195	CDS
+			gene	pepQ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10698-MONOMER
+			locus_tag	ICGBINNC_00169
+			product	proline dipeptidase
+>Feature NODE_1173_length_312_cov_0.931915
+13	276	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00170
+			product	hypothetical protein
+>Feature NODE_1179_length_312_cov_0.774468
+>Feature NODE_1180_length_312_cov_0.774468
+>Feature NODE_1185_length_311_cov_1.012821
+>Feature NODE_1190_length_310_cov_1.253219
+>Feature NODE_1192_length_310_cov_1.253219
+>Feature NODE_1201_length_309_cov_1.767241
+>Feature NODE_1205_length_309_cov_0.943966
+>Feature NODE_1206_length_309_cov_0.918103
+>Feature NODE_1207_length_308_cov_1.575758
+>Feature NODE_1208_length_308_cov_1.160173
+>Feature NODE_1213_length_308_cov_0.948052
+>Feature NODE_1218_length_308_cov_0.796537
+>Feature NODE_1220_length_307_cov_1.269565
+>Feature NODE_1224_length_307_cov_0.900000
+>Feature NODE_1232_length_306_cov_0.956332
+223	44	CDS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11925-MONOMER
+			locus_tag	ICGBINNC_00171
+			note	conserved protein
+			product	hypothetical protein
+>Feature NODE_1233_length_305_cov_1.600877
+>Feature NODE_1237_length_305_cov_0.802632
+37	159	CDS
+			gene	malT
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:PD00237
+			locus_tag	ICGBINNC_00172
+			product	MalT transcriptional activator
+>Feature NODE_1238_length_305_cov_0.736842
+26	304	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00173
+			product	hypothetical protein
+>Feature NODE_1242_length_304_cov_0.964758
+2	301	CDS
+			gene	ydcU
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:YDCU-MONOMER
+			locus_tag	ICGBINNC_00174
+			product	YdcS/YdcT/YdcV/YdcU ABC transporter
+>Feature NODE_1243_length_304_cov_0.964758
+>Feature NODE_1250_length_303_cov_1.292035
+34	300	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00175
+			product	hypothetical protein
+>Feature NODE_1252_length_303_cov_0.969027
+>Feature NODE_1260_length_302_cov_1.297778
+>Feature NODE_1270_length_301_cov_0.977679
+1	300	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00176
+			product	hypothetical protein
+>Feature NODE_1275_length_301_cov_0.745536
+254	90	CDS
+			gene	ompW
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11124-MONOMER
+			locus_tag	ICGBINNC_00177
+			product	OmpW, outer membrane protein
+>Feature NODE_1278_length_300_cov_1.309417
+>Feature NODE_1279_length_300_cov_1.165919
+29	268	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00178
+			product	hypothetical protein
+>Feature NODE_1287_length_299_cov_1.346847
+>Feature NODE_1289_length_299_cov_1.315315
+>Feature NODE_1291_length_299_cov_1.234234
+266	72	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00179
+			product	hypothetical protein
+>Feature NODE_1293_length_299_cov_0.986486
+>Feature NODE_1295_length_299_cov_0.725225
+280	113	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00180
+			product	hypothetical protein
+>Feature NODE_1300_length_298_cov_0.990950
+>Feature NODE_1301_length_298_cov_0.990950
+>Feature NODE_1304_length_298_cov_0.651584
+264	43	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00181
+			product	hypothetical protein
+>Feature NODE_1305_length_297_cov_1.327273
+>Feature NODE_1307_length_297_cov_1.290909
+>Feature NODE_1313_length_297_cov_0.959091
+>Feature NODE_1314_length_297_cov_0.918182
+256	11	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00182
+			product	hypothetical protein
+>Feature NODE_1316_length_297_cov_0.890909
+>Feature NODE_1318_length_296_cov_1.187215
+>Feature NODE_1321_length_296_cov_1.000000
+265	86	CDS
+			gene	yadI
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:AGAX-MONOMER
+			locus_tag	ICGBINNC_00183
+			product	AgaX
+>Feature NODE_1322_length_296_cov_1.000000
+270	22	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00184
+			product	hypothetical protein
+>Feature NODE_1323_length_296_cov_0.963470
+103	240	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00185
+			product	hypothetical protein
+>Feature NODE_1324_length_295_cov_2.344037
+>Feature NODE_1329_length_295_cov_1.004587
+>Feature NODE_1331_length_295_cov_0.697248
+>Feature NODE_1332_length_295_cov_0.674312
+51	257	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00186
+			product	hypothetical protein
+>Feature NODE_1342_length_294_cov_0.953917
+>Feature NODE_1343_length_294_cov_0.926267
+>Feature NODE_1344_length_294_cov_0.824885
+>Feature NODE_1347_length_293_cov_1.013889
+283	20	CDS
+			gene	nudE
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7740-MONOMER
+			locus_tag	ICGBINNC_00187
+			product	ADP-sugar pyrophosphorylase
+>Feature NODE_1350_length_293_cov_0.675926
+>Feature NODE_1351_length_292_cov_1.730233
+>Feature NODE_1352_length_292_cov_1.558140
+>Feature NODE_1358_length_292_cov_0.688372
+>Feature NODE_1360_length_291_cov_1.364486
+>Feature NODE_1361_length_291_cov_1.364486
+>Feature NODE_1363_length_291_cov_1.023364
+>Feature NODE_1370_length_291_cov_0.775701
+>Feature NODE_1378_length_290_cov_1.000000
+>Feature NODE_1381_length_290_cov_0.708920
+>Feature NODE_1383_length_289_cov_1.377358
+22	210	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00188
+			product	hypothetical protein
+>Feature NODE_1384_length_289_cov_1.377358
+>Feature NODE_1385_length_289_cov_1.377358
+>Feature NODE_1390_length_289_cov_1.033019
+>Feature NODE_1392_length_289_cov_0.910377
+>Feature NODE_1395_length_288_cov_1.383886
+>Feature NODE_1403_length_287_cov_0.885714
+>Feature NODE_1404_length_287_cov_0.580952
+>Feature NODE_1409_length_286_cov_1.047847
+23	193	CDS
+			EC_number	1.1.1.157
+			gene	paaH
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6716-MONOMER
+			locus_tag	ICGBINNC_00189
+			product	3-hydroxyadipyl-CoA dehydrogenase (NAD+)
+>Feature NODE_1410_length_286_cov_1.047847
+1	174	CDS
+			gene	yadK
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG12325-MONOMER
+			locus_tag	ICGBINNC_00190
+			product	putative fimbrial-like adhesin protein
+>Feature NODE_1414_length_285_cov_1.052885
+242	129	CDS
+			gene	evgA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:UniProtKB:P0ACZ7
+			locus_tag	ICGBINNC_00191
+			product	DNA-binding transcriptional activator EvgA
+>Feature NODE_1419_length_284_cov_1.763285
+>Feature NODE_1423_length_284_cov_1.057971
+>Feature NODE_1424_length_284_cov_1.057971
+>Feature NODE_1425_length_284_cov_0.966184
+>Feature NODE_1431_length_283_cov_1.063107
+>Feature NODE_1432_length_283_cov_1.063107
+>Feature NODE_1447_length_282_cov_1.068293
+>Feature NODE_1449_length_282_cov_1.068293
+>Feature NODE_1455_length_281_cov_1.431373
+>Feature NODE_1456_length_281_cov_1.073529
+>Feature NODE_1457_length_281_cov_1.073529
+>Feature NODE_1460_length_281_cov_1.004902
+>Feature NODE_1470_length_279_cov_1.445545
+>Feature NODE_1478_length_279_cov_0.722772
+>Feature NODE_1482_length_279_cov_0.722772
+>Feature NODE_1486_length_279_cov_0.722772
+234	4	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00192
+			product	hypothetical protein
+>Feature NODE_1490_length_279_cov_0.722772
+>Feature NODE_1498_length_278_cov_1.029851
+>Feature NODE_1502_length_278_cov_0.726368
+>Feature NODE_1508_length_278_cov_0.726368
+>Feature NODE_1513_length_278_cov_0.726368
+>Feature NODE_1519_length_277_cov_1.085000
+>Feature NODE_1523_length_277_cov_0.935000
+>Feature NODE_1526_length_277_cov_0.730000
+>Feature NODE_1530_length_277_cov_0.730000
+>Feature NODE_1546_length_276_cov_0.879397
+275	93	CDS
+			gene	ycgI
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6613-MONOMER
+			locus_tag	ICGBINNC_00193
+			product	putative protein
+>Feature NODE_1557_length_276_cov_0.733668
+>Feature NODE_1576_length_275_cov_0.737374
+>Feature NODE_1586_length_274_cov_1.340102
+>Feature NODE_1588_length_274_cov_1.111675
+>Feature NODE_1591_length_274_cov_0.741117
+>Feature NODE_1592_length_274_cov_0.741117
+>Feature NODE_1594_length_274_cov_0.741117
+>Feature NODE_1597_length_274_cov_0.741117
+120	266	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00194
+			product	hypothetical protein
+>Feature NODE_1598_length_274_cov_0.741117
+>Feature NODE_1600_length_274_cov_0.741117
+264	100	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00195
+			product	hypothetical protein
+>Feature NODE_1609_length_273_cov_1.117347
+>Feature NODE_1613_length_273_cov_0.887755
+262	143	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00196
+			product	hypothetical protein
+>Feature NODE_1614_length_273_cov_0.821429
+>Feature NODE_1615_length_273_cov_0.744898
+>Feature NODE_1616_length_273_cov_0.744898
+>Feature NODE_1619_length_273_cov_0.744898
+>Feature NODE_1623_length_273_cov_0.744898
+>Feature NODE_1627_length_272_cov_1.497436
+>Feature NODE_1632_length_272_cov_1.410256
+>Feature NODE_1636_length_272_cov_0.958974
+257	75	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00197
+			product	hypothetical protein
+>Feature NODE_1638_length_272_cov_0.861538
+>Feature NODE_1639_length_272_cov_0.830769
+16	231	CDS
+			gene	abrB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6384-MONOMER
+			locus_tag	ICGBINNC_00198
+			product	putative regulator
+>Feature NODE_1644_length_272_cov_0.748718
+>Feature NODE_1646_length_272_cov_0.748718
+>Feature NODE_1647_length_272_cov_0.748718
+267	4	CDS
+			EC_number	5.4.99.1
+			gene	glmE
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:UniProtKB:Q05509
+			locus_tag	ICGBINNC_00199
+			product	Glutamate mutase epsilon subunit
+>Feature NODE_1650_length_272_cov_0.748718
+>Feature NODE_1653_length_272_cov_0.748718
+>Feature NODE_1658_length_271_cov_1.427835
+>Feature NODE_1673_length_271_cov_0.752577
+>Feature NODE_1677_length_271_cov_0.752577
+>Feature NODE_1679_length_271_cov_0.752577
+>Feature NODE_1680_length_271_cov_0.752577
+>Feature NODE_1683_length_271_cov_0.752577
+>Feature NODE_1685_length_270_cov_1.891192
+>Feature NODE_1689_length_270_cov_1.134715
+>Feature NODE_1690_length_270_cov_0.756477
+>Feature NODE_1694_length_270_cov_0.756477
+49	213	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00200
+			product	hypothetical protein
+>Feature NODE_1696_length_270_cov_0.756477
+>Feature NODE_1705_length_270_cov_0.756477
+>Feature NODE_1707_length_270_cov_0.756477
+247	35	CDS
+			gene	ycbZ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6493-MONOMER
+			locus_tag	ICGBINNC_00201
+			product	putative ATP-dependent protease
+>Feature NODE_1709_length_269_cov_1.520833
+>Feature NODE_1715_length_269_cov_1.140625
+>Feature NODE_1716_length_269_cov_0.968750
+>Feature NODE_1720_length_269_cov_0.760417
+>Feature NODE_1721_length_269_cov_0.760417
+>Feature NODE_1722_length_269_cov_0.760417
+>Feature NODE_1726_length_269_cov_0.760417
+>Feature NODE_1734_length_268_cov_1.528796
+>Feature NODE_1737_length_268_cov_1.397906
+>Feature NODE_1739_length_268_cov_1.146597
+>Feature NODE_1741_length_268_cov_1.057592
+>Feature NODE_1743_length_268_cov_0.942408
+>Feature NODE_1746_length_268_cov_0.764398
+>Feature NODE_1753_length_268_cov_0.764398
+>Feature NODE_1760_length_268_cov_0.764398
+>Feature NODE_1765_length_267_cov_1.347368
+>Feature NODE_1774_length_267_cov_1.042105
+>Feature NODE_1783_length_267_cov_0.768421
+>Feature NODE_1795_length_267_cov_0.742105
+>Feature NODE_1801_length_266_cov_1.158730
+>Feature NODE_1802_length_266_cov_1.158730
+>Feature NODE_1806_length_266_cov_0.772487
+>Feature NODE_1815_length_266_cov_0.772487
+>Feature NODE_1817_length_265_cov_1.553191
+>Feature NODE_1827_length_265_cov_0.776596
+247	71	CDS
+			gene	ydfU
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6831-MONOMER
+			locus_tag	ICGBINNC_00202
+			product	Qin prophage; predicted protein
+>Feature NODE_1828_length_265_cov_0.776596
+>Feature NODE_1829_length_265_cov_0.776596
+>Feature NODE_1834_length_265_cov_0.776596
+>Feature NODE_1835_length_265_cov_0.776596
+>Feature NODE_1843_length_265_cov_0.776596
+>Feature NODE_1844_length_265_cov_0.776596
+>Feature NODE_1846_length_265_cov_0.776596
+>Feature NODE_1852_length_264_cov_1.561497
+218	27	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00203
+			product	hypothetical protein
+>Feature NODE_1855_length_264_cov_1.561497
+117	245	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00204
+			product	hypothetical protein
+>Feature NODE_1857_length_264_cov_1.171123
+>Feature NODE_1859_length_264_cov_1.171123
+8	262	CDS
+			gene	flhD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10320-MONOMER
+			locus_tag	ICGBINNC_00205
+			product	FlhDC DNA-binding transcriptional dual regulator
+>Feature NODE_1861_length_264_cov_0.925134
+3	134	CDS
+			gene	thiQ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:SFUC-MONOMER
+			locus_tag	ICGBINNC_00206
+			product	thiamin ABC transporter - ATP binding subunit
+>Feature NODE_1863_length_264_cov_0.780749
+>Feature NODE_1868_length_264_cov_0.780749
+>Feature NODE_1869_length_264_cov_0.780749
+>Feature NODE_1878_length_264_cov_0.780749
+>Feature NODE_1880_length_264_cov_0.721925
+4	171	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00207
+			product	hypothetical protein
+>Feature NODE_1881_length_264_cov_0.716578
+67	192	CDS
+			gene	ygjV
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7608-MONOMER
+			locus_tag	ICGBINNC_00208
+			product	inner membrane protein
+>Feature NODE_1886_length_263_cov_1.086022
+>Feature NODE_1891_length_263_cov_0.784946
+>Feature NODE_1894_length_263_cov_0.784946
+>Feature NODE_1898_length_263_cov_0.784946
+>Feature NODE_1901_length_263_cov_0.784946
+245	90	CDS
+			gene	uvrB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11062-MONOMER
+			locus_tag	ICGBINNC_00209
+			product	DNA repair; excision nuclease subunit B
+>Feature NODE_1913_length_262_cov_1.578378
+>Feature NODE_1926_length_262_cov_0.789189
+>Feature NODE_1927_length_262_cov_0.789189
+>Feature NODE_1931_length_262_cov_0.789189
+>Feature NODE_1935_length_261_cov_1.369565
+>Feature NODE_1937_length_261_cov_1.331522
+>Feature NODE_1939_length_261_cov_0.967391
+>Feature NODE_1946_length_261_cov_0.793478
+>Feature NODE_1950_length_261_cov_0.793478
+>Feature NODE_1956_length_261_cov_0.793478
+>Feature NODE_1973_length_260_cov_1.043716
+>Feature NODE_1975_length_260_cov_0.797814
+27	191	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00210
+			product	hypothetical protein
+>Feature NODE_1981_length_260_cov_0.797814
+>Feature NODE_1982_length_260_cov_0.797814
+>Feature NODE_1987_length_260_cov_0.775956
+>Feature NODE_1988_length_260_cov_0.759563
+>Feature NODE_1994_length_259_cov_1.302198
+>Feature NODE_2010_length_259_cov_0.802198
+>Feature NODE_2020_length_258_cov_1.613260
+14	205	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00211
+			product	hypothetical protein
+>Feature NODE_2028_length_258_cov_0.806630
+93	245	CDS
+			gene	slyB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6881-MONOMER
+			locus_tag	ICGBINNC_00212
+			product	outer membrane lipoprotein
+>Feature NODE_2037_length_258_cov_0.806630
+>Feature NODE_2040_length_258_cov_0.806630
+12	218	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00213
+			product	hypothetical protein
+>Feature NODE_2042_length_258_cov_0.756906
+>Feature NODE_2044_length_257_cov_1.216667
+>Feature NODE_2056_length_257_cov_0.811111
+>Feature NODE_2061_length_257_cov_0.811111
+>Feature NODE_2076_length_256_cov_1.223464
+>Feature NODE_2077_length_256_cov_1.223464
+>Feature NODE_2078_length_256_cov_1.223464
+>Feature NODE_2083_length_256_cov_0.815642
+>Feature NODE_2084_length_256_cov_0.815642
+>Feature NODE_2085_length_256_cov_0.815642
+>Feature NODE_2093_length_256_cov_0.815642
+>Feature NODE_2101_length_255_cov_2.050562
+>Feature NODE_2105_length_255_cov_1.230337
+>Feature NODE_2110_length_255_cov_0.820225
+>Feature NODE_2116_length_255_cov_0.820225
+>Feature NODE_2130_length_254_cov_1.237288
+>Feature NODE_2131_length_254_cov_1.237288
+>Feature NODE_2132_length_254_cov_0.954802
+>Feature NODE_2133_length_254_cov_0.824859
+>Feature NODE_2149_length_253_cov_0.829545
+140	3	CDS
+			EC_number	1.2.1.39
+			gene	feaB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:PHENDEHYD-MONOMER
+			locus_tag	ICGBINNC_00214
+			product	phenylacetaldehyde dehydrogenase
+>Feature NODE_2150_length_253_cov_0.829545
+>Feature NODE_2161_length_252_cov_1.668571
+>Feature NODE_2168_length_252_cov_1.200000
+>Feature NODE_2174_length_252_cov_0.834286
+>Feature NODE_2184_length_252_cov_0.834286
+>Feature NODE_2187_length_252_cov_0.834286
+79	249	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00215
+			product	hypothetical protein
+>Feature NODE_2192_length_251_cov_1.678161
+>Feature NODE_2193_length_251_cov_1.258621
+>Feature NODE_2203_length_251_cov_0.839080
+>Feature NODE_2209_length_251_cov_0.839080
+>Feature NODE_2211_length_251_cov_0.839080
+>Feature NODE_2213_length_251_cov_0.827586
+>Feature NODE_2219_length_250_cov_1.687861
+>Feature NODE_2220_length_250_cov_1.439306
+>Feature NODE_2230_length_250_cov_0.843931
+>Feature NODE_2231_length_250_cov_0.843931
+>Feature NODE_2232_length_250_cov_0.843931
+235	77	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00216
+			product	hypothetical protein
+>Feature NODE_2241_length_250_cov_0.843931
+>Feature NODE_2243_length_250_cov_0.832370
+>Feature NODE_2248_length_249_cov_1.087209
+>Feature NODE_2252_length_249_cov_0.848837
+233	135	CDS
+			gene	hyfG
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:MONOMER0-150
+			locus_tag	ICGBINNC_00217
+			product	hydrogenase 4, large subunit
+>Feature NODE_2256_length_249_cov_0.848837
+>Feature NODE_2259_length_249_cov_0.848837
+>Feature NODE_2260_length_249_cov_0.848837
+>Feature NODE_2269_length_249_cov_0.773256
+>Feature NODE_2274_length_248_cov_1.280702
+>Feature NODE_2276_length_248_cov_1.163743
+>Feature NODE_2282_length_248_cov_0.853801
+>Feature NODE_2284_length_248_cov_0.853801
+>Feature NODE_2286_length_248_cov_0.853801
+>Feature NODE_2290_length_248_cov_0.853801
+>Feature NODE_2292_length_248_cov_0.853801
+>Feature NODE_2293_length_248_cov_0.853801
+>Feature NODE_2305_length_247_cov_0.858824
+>Feature NODE_2313_length_247_cov_0.858824
+27	203	CDS
+			gene	yhjV
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:YHJV-MONOMER
+			locus_tag	ICGBINNC_00218
+			product	YhjV STP transporter
+>Feature NODE_2318_length_247_cov_0.858824
+>Feature NODE_2320_length_247_cov_0.858824
+1	132	CDS
+			gene	yhhS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:YHHS-MONOMER
+			locus_tag	ICGBINNC_00219
+			product	putative transport protein YhhS
+240	136	CDS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7767-MONOMER
+			locus_tag	ICGBINNC_00220
+			note	conserved protein involved in bacteriophage adsorption
+			product	hypothetical protein
+>Feature NODE_2326_length_247_cov_0.847059
+>Feature NODE_2331_length_246_cov_1.727811
+>Feature NODE_2333_length_246_cov_1.295858
+>Feature NODE_2334_length_246_cov_0.863905
+>Feature NODE_2340_length_246_cov_0.863905
+>Feature NODE_2341_length_246_cov_0.863905
+>Feature NODE_2351_length_245_cov_1.303571
+>Feature NODE_2354_length_245_cov_0.869048
+>Feature NODE_2358_length_245_cov_0.869048
+>Feature NODE_2360_length_245_cov_0.869048
+>Feature NODE_2362_length_245_cov_0.869048
+>Feature NODE_2365_length_245_cov_0.869048
+>Feature NODE_2373_length_245_cov_0.761905
+>Feature NODE_2375_length_244_cov_1.748503
+>Feature NODE_2376_length_244_cov_1.562874
+>Feature NODE_2379_length_244_cov_1.311377
+>Feature NODE_2380_length_244_cov_1.311377
+>Feature NODE_2384_length_244_cov_1.035928
+>Feature NODE_2385_length_244_cov_0.874251
+>Feature NODE_2393_length_244_cov_0.874251
+>Feature NODE_2394_length_244_cov_0.874251
+>Feature NODE_2395_length_244_cov_0.874251
+>Feature NODE_2397_length_244_cov_0.874251
+>Feature NODE_2399_length_244_cov_0.832335
+>Feature NODE_2408_length_243_cov_0.879518
+>Feature NODE_2413_length_243_cov_0.879518
+>Feature NODE_2420_length_243_cov_0.879518
+>Feature NODE_2425_length_243_cov_0.879518
+>Feature NODE_2428_length_243_cov_0.879518
+>Feature NODE_2429_length_243_cov_0.879518
+>Feature NODE_2433_length_243_cov_0.753012
+>Feature NODE_2440_length_242_cov_0.884848
+>Feature NODE_2444_length_242_cov_0.884848
+>Feature NODE_2447_length_242_cov_0.884848
+>Feature NODE_2455_length_242_cov_0.860606
+>Feature NODE_2456_length_242_cov_0.818182
+13	237	CDS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7849-MONOMER
+			locus_tag	ICGBINNC_00221
+			note	conserved inner membrane protein
+			product	hypothetical protein
+>Feature NODE_2464_length_241_cov_1.335366
+>Feature NODE_2469_length_241_cov_0.890244
+>Feature NODE_2472_length_241_cov_0.890244
+>Feature NODE_2474_length_241_cov_0.890244
+>Feature NODE_2475_length_241_cov_0.890244
+42	221	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00222
+			product	hypothetical protein
+>Feature NODE_2482_length_241_cov_0.884146
+>Feature NODE_2484_length_241_cov_0.731707
+2	175	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00223
+			product	hypothetical protein
+>Feature NODE_2485_length_240_cov_1.754601
+>Feature NODE_2488_length_240_cov_1.343558
+>Feature NODE_2491_length_240_cov_1.343558
+>Feature NODE_2494_length_240_cov_0.895706
+>Feature NODE_2501_length_240_cov_0.895706
+>Feature NODE_2508_length_240_cov_0.895706
+>Feature NODE_2525_length_239_cov_0.901235
+>Feature NODE_2531_length_239_cov_0.901235
+>Feature NODE_2536_length_239_cov_0.901235
+>Feature NODE_2538_length_239_cov_0.901235
+>Feature NODE_2539_length_239_cov_0.901235
+>Feature NODE_2547_length_239_cov_0.827160
+>Feature NODE_2555_length_238_cov_1.062112
+>Feature NODE_2559_length_238_cov_0.906832
+>Feature NODE_2562_length_238_cov_0.906832
+>Feature NODE_2564_length_238_cov_0.906832
+>Feature NODE_2567_length_238_cov_0.906832
+>Feature NODE_2568_length_238_cov_0.906832
+>Feature NODE_2574_length_238_cov_0.900621
+>Feature NODE_2576_length_238_cov_0.776398
+9	221	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00224
+			product	hypothetical protein
+>Feature NODE_2577_length_237_cov_1.368750
+>Feature NODE_2588_length_237_cov_0.843750
+>Feature NODE_2592_length_236_cov_1.836478
+>Feature NODE_2597_length_236_cov_1.377358
+>Feature NODE_2602_length_236_cov_0.918239
+>Feature NODE_2604_length_236_cov_0.918239
+>Feature NODE_2612_length_236_cov_0.918239
+175	26	CDS
+			gene	wcaI
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11790-MONOMER
+			locus_tag	ICGBINNC_00225
+			product	putative colanic biosynthesis glycosyl transferase
+>Feature NODE_2621_length_236_cov_0.729560
+59	163	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00226
+			product	hypothetical protein
+>Feature NODE_2623_length_235_cov_1.386076
+>Feature NODE_2626_length_235_cov_1.031646
+>Feature NODE_2629_length_235_cov_0.924051
+225	133	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00227
+			product	hypothetical protein
+>Feature NODE_2638_length_235_cov_0.924051
+>Feature NODE_2643_length_235_cov_0.721519
+>Feature NODE_2648_length_234_cov_0.929936
+>Feature NODE_2654_length_234_cov_0.929936
+>Feature NODE_2655_length_234_cov_0.929936
+>Feature NODE_2656_length_234_cov_0.929936
+>Feature NODE_2664_length_233_cov_1.403846
+>Feature NODE_2668_length_233_cov_1.115385
+>Feature NODE_2675_length_233_cov_0.935897
+>Feature NODE_2679_length_233_cov_0.935897
+>Feature NODE_2688_length_233_cov_0.935897
+>Feature NODE_2690_length_233_cov_0.871795
+>Feature NODE_2696_length_232_cov_1.180645
+>Feature NODE_2699_length_232_cov_0.941935
+>Feature NODE_2702_length_232_cov_0.941935
+>Feature NODE_2721_length_231_cov_1.064935
+>Feature NODE_2727_length_231_cov_0.948052
+>Feature NODE_2730_length_231_cov_0.948052
+229	107	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00228
+			product	hypothetical protein
+>Feature NODE_2735_length_231_cov_0.824675
+>Feature NODE_2739_length_230_cov_1.869281
+>Feature NODE_2741_length_230_cov_1.431373
+>Feature NODE_2742_length_230_cov_1.431373
+>Feature NODE_2744_length_230_cov_0.954248
+>Feature NODE_2745_length_230_cov_0.954248
+>Feature NODE_2746_length_230_cov_0.954248
+>Feature NODE_2748_length_230_cov_0.954248
+>Feature NODE_2755_length_230_cov_0.954248
+>Feature NODE_2758_length_230_cov_0.954248
+>Feature NODE_2762_length_229_cov_1.921053
+>Feature NODE_2766_length_229_cov_1.440789
+>Feature NODE_2773_length_229_cov_0.960526
+>Feature NODE_2780_length_229_cov_0.960526
+>Feature NODE_2783_length_229_cov_0.934211
+210	55	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	ICGBINNC_00229
+			product	hypothetical protein
+>Feature NODE_2784_length_229_cov_0.855263
+>Feature NODE_2786_length_229_cov_0.848684
+>Feature NODE_2794_length_228_cov_0.966887
+33	221	CDS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11099-MONOMER
+			locus_tag	ICGBINNC_00230
+			note	conserved protein
+			product	hypothetical protein
+>Feature NODE_2799_length_228_cov_0.966887
+>Feature NODE_2803_length_228_cov_0.966887
+>Feature NODE_2805_length_228_cov_0.966887
+>Feature NODE_2807_length_228_cov_0.807947
+5	139	CDS
+			EC_number	1.1.1.284
+			gene	frmA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:ADHC-MONOMER
+			locus_tag	ICGBINNC_00231
+			product	formaldehyde dehydrogenase, glutathione-dependent

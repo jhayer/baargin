@@ -1,0 +1,17 @@
+# BUSCO version is: 5.3.2 
+# The lineage dataset is: enterobacterales_odb10 (Creation date: 2021-02-23, number of genomes: 212, number of BUSCOs: 440)
+# Summarized benchmarking in BUSCO notation for file /Users/2021jh002/Documents/github/baargin/work/3e/2895e7ddc89de6de7904f276299db3/E_coli_S92_L002_scaffolds.faa
+# BUSCO was run in mode: proteins
+
+	***** Results: *****
+
+	C:0.0%[S:0.0%,D:0.0%],F:0.0%,M:100.0%,n:440	   
+	0	Complete BUSCOs (C)			   
+	0	Complete and single-copy BUSCOs (S)	   
+	0	Complete and duplicated BUSCOs (D)	   
+	0	Fragmented BUSCOs (F)			   
+	440	Missing BUSCOs (M)			   
+	440	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1

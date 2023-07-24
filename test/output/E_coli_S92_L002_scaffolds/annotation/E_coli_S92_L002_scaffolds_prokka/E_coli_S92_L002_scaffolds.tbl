@@ -1,0 +1,269 @@
+>Feature NODE_3_length_1583_cov_4.579017
+939	436	CDS
+			gene	insB-1
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7762-MONOMER
+			locus_tag	JJDPMOCA_00001
+			product	IS1 protein InsB
+>Feature NODE_5_length_1055_cov_1.376278
+987	739	CDS
+			gene	insO-2
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7906-MONOMER
+			locus_tag	JJDPMOCA_00002
+			product	KpLE2 phage-like element; partial transposase
+>Feature NODE_28_length_759_cov_0.824047
+740	150	CDS
+			EC_number	1.7.99.4
+			gene	narG
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:NARG-MONOMER
+			locus_tag	JJDPMOCA_00003
+			product	nitrate reductase A, alpha subunit
+>Feature NODE_42_length_693_cov_1.235390
+683	438	CDS
+			EC_number	2.3.1.117
+			gene	dapD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:MONOMER0-2001
+			locus_tag	JJDPMOCA_00004
+			product	tetrahydrodipicolinate succinylase subunit
+>Feature NODE_46_length_688_cov_0.955810
+>Feature NODE_50_length_667_cov_0.915254
+205	579	CDS
+			gene	ybfL
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6377-MONOMER
+			locus_tag	JJDPMOCA_00005
+			product	putative transposase; receptor protein
+>Feature NODE_58_length_652_cov_0.869565
+626	405	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00006
+			product	hypothetical protein
+>Feature NODE_62_length_646_cov_1.203866
+605	270	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00007
+			product	hypothetical protein
+>Feature NODE_76_length_631_cov_0.857401
+15	284	CDS
+			gene	trmJ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7327-MONOMER
+			locus_tag	JJDPMOCA_00008
+			product	tRNA Cm32/Um32 methyltransferase
+>Feature NODE_91_length_611_cov_0.889513
+>Feature NODE_100_length_601_cov_0.975191
+>Feature NODE_126_length_576_cov_1.016032
+542	186	CDS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11147-MONOMER
+			locus_tag	JJDPMOCA_00009
+			note	conserved protein
+			product	hypothetical protein
+>Feature NODE_132_length_567_cov_1.197959
+>Feature NODE_151_length_551_cov_0.924051
+>Feature NODE_162_length_548_cov_0.774947
+>Feature NODE_218_length_508_cov_1.016241
+26	463	CDS
+			gene	htgA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG11509-MONOMER
+			locus_tag	JJDPMOCA_00010
+			product	putative DNA-binding transcriptional regulator
+>Feature NODE_224_length_505_cov_1.364486
+>Feature NODE_228_length_504_cov_0.850117
+>Feature NODE_299_length_468_cov_0.726343
+>Feature NODE_353_length_446_cov_0.989160
+>Feature NODE_397_length_434_cov_0.918768
+>Feature NODE_444_length_421_cov_1.034884
+>Feature NODE_458_length_417_cov_1.250000
+>Feature NODE_460_length_417_cov_1.188235
+133	282	CDS
+			gene	acrZ
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6396-MONOMER
+			locus_tag	JJDPMOCA_00011
+			product	small membrane protein involved in the cell envelope stress response
+>Feature NODE_520_length_402_cov_1.347692
+>Feature NODE_539_length_399_cov_0.680124
+298	29	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00012
+			product	hypothetical protein
+>Feature NODE_561_length_395_cov_0.877358
+>Feature NODE_564_length_395_cov_0.688679
+>Feature NODE_582_length_390_cov_1.386581
+373	41	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00013
+			product	hypothetical protein
+>Feature NODE_611_length_385_cov_0.711039
+61	330	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00014
+			product	hypothetical protein
+>Feature NODE_615_length_384_cov_0.768730
+>Feature NODE_637_length_381_cov_1.157895
+>Feature NODE_641_length_381_cov_0.700658
+>Feature NODE_642_length_381_cov_0.680921
+>Feature NODE_653_length_378_cov_1.212625
+>Feature NODE_662_length_376_cov_1.709030
+>Feature NODE_681_length_374_cov_0.737374
+>Feature NODE_707_length_369_cov_1.023973
+>Feature NODE_713_length_369_cov_0.760274
+336	151	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00015
+			product	hypothetical protein
+>Feature NODE_714_length_369_cov_0.753425
+36	311	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00016
+			product	hypothetical protein
+>Feature NODE_719_length_368_cov_0.752577
+>Feature NODE_736_length_364_cov_0.675958
+>Feature NODE_745_length_363_cov_0.765734
+>Feature NODE_766_length_359_cov_0.773050
+>Feature NODE_809_length_352_cov_1.138182
+>Feature NODE_838_length_348_cov_0.808118
+>Feature NODE_843_length_347_cov_1.159259
+>Feature NODE_878_length_343_cov_1.045113
+>Feature NODE_897_length_341_cov_0.909091
+253	56	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00017
+			product	hypothetical protein
+>Feature NODE_898_length_341_cov_0.909091
+>Feature NODE_901_length_341_cov_0.829545
+>Feature NODE_905_length_340_cov_1.368821
+>Feature NODE_954_length_334_cov_0.852140
+286	77	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00018
+			product	hypothetical protein
+>Feature NODE_958_length_334_cov_0.692607
+58	321	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00019
+			product	hypothetical protein
+>Feature NODE_970_length_333_cov_0.855469
+>Feature NODE_973_length_333_cov_0.855469
+1	300	CDS
+			gene	pbpC
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G7322-MONOMER
+			locus_tag	JJDPMOCA_00020
+			product	peptidoglycan glycosyltransferase
+>Feature NODE_983_length_332_cov_1.145098
+>Feature NODE_993_length_331_cov_1.149606
+>Feature NODE_996_length_331_cov_1.039370
+>Feature NODE_1011_length_329_cov_1.023810
+>Feature NODE_1012_length_329_cov_0.924603
+>Feature NODE_1015_length_329_cov_0.869048
+>Feature NODE_1028_length_328_cov_0.721116
+>Feature NODE_1067_length_322_cov_1.118367
+>Feature NODE_1074_length_321_cov_1.196721
+58	261	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00021
+			product	hypothetical protein
+>Feature NODE_1082_length_321_cov_0.819672
+>Feature NODE_1084_length_320_cov_1.674897
+>Feature NODE_1099_length_318_cov_1.427386
+>Feature NODE_1105_length_317_cov_1.216667
+>Feature NODE_1106_length_317_cov_1.216667
+>Feature NODE_1114_length_317_cov_0.695833
+>Feature NODE_1167_length_310_cov_0.721030
+>Feature NODE_1183_length_308_cov_0.948052
+>Feature NODE_1206_length_305_cov_1.280702
+37	210	CDS
+			EC_number	1.3.99.1
+			gene	sdhD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:SDH-MEMB2
+			locus_tag	JJDPMOCA_00022
+			product	succinate dehydrogenase membrane protein
+>Feature NODE_1214_length_305_cov_0.864035
+>Feature NODE_1242_length_301_cov_1.629464
+>Feature NODE_1247_length_301_cov_0.977679
+258	13	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00023
+			product	hypothetical protein
+>Feature NODE_1257_length_300_cov_0.982063
+>Feature NODE_1263_length_299_cov_0.986486
+>Feature NODE_1274_length_297_cov_1.327273
+>Feature NODE_1316_length_294_cov_0.880184
+>Feature NODE_1357_length_290_cov_1.028169
+>Feature NODE_1364_length_290_cov_0.816901
+>Feature NODE_1365_length_289_cov_1.377358
+>Feature NODE_1390_length_286_cov_1.397129
+85	186	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JJDPMOCA_00024
+			product	hypothetical protein
+>Feature NODE_1419_length_283_cov_1.271845
+>Feature NODE_1438_length_281_cov_1.073529
+>Feature NODE_1449_length_280_cov_1.078818
+>Feature NODE_1467_length_279_cov_0.722772
+>Feature NODE_1490_length_278_cov_0.726368
+>Feature NODE_1509_length_277_cov_0.730000
+>Feature NODE_1515_length_276_cov_1.100503
+>Feature NODE_1524_length_276_cov_0.733668
+>Feature NODE_1528_length_276_cov_0.733668
+>Feature NODE_1534_length_276_cov_0.733668
+>Feature NODE_1539_length_275_cov_1.106061
+>Feature NODE_1598_length_273_cov_0.744898
+>Feature NODE_1601_length_273_cov_0.744898
+>Feature NODE_1606_length_272_cov_1.123077
+>Feature NODE_1629_length_271_cov_1.505155
+>Feature NODE_1639_length_271_cov_0.752577
+>Feature NODE_1660_length_270_cov_1.134715
+>Feature NODE_1712_length_268_cov_0.764398
+>Feature NODE_1723_length_267_cov_1.152632
+>Feature NODE_1726_length_267_cov_1.152632
+>Feature NODE_1785_length_265_cov_0.776596
+>Feature NODE_1786_length_265_cov_0.776596
+>Feature NODE_1790_length_265_cov_0.712766
+>Feature NODE_1835_length_263_cov_1.172043
+>Feature NODE_1841_length_263_cov_0.784946
+>Feature NODE_1953_length_259_cov_0.802198
+>Feature NODE_1955_length_259_cov_0.802198
+>Feature NODE_1957_length_259_cov_0.802198
+>Feature NODE_1971_length_258_cov_0.823204
+>Feature NODE_1975_length_258_cov_0.806630
+>Feature NODE_1976_length_258_cov_0.806630
+>Feature NODE_1982_length_258_cov_0.806630
+>Feature NODE_1999_length_257_cov_0.950000
+>Feature NODE_2001_length_257_cov_0.811111
+>Feature NODE_2045_length_255_cov_1.640449
+>Feature NODE_2049_length_255_cov_1.230337
+>Feature NODE_2092_length_254_cov_0.824859
+>Feature NODE_2105_length_254_cov_0.700565
+>Feature NODE_2166_length_251_cov_1.258621
+>Feature NODE_2183_length_251_cov_0.839080
+>Feature NODE_2202_length_250_cov_0.843931
+>Feature NODE_2209_length_250_cov_0.809249
+>Feature NODE_2219_length_249_cov_0.848837
+>Feature NODE_2263_length_247_cov_0.858824
+>Feature NODE_2317_length_244_cov_1.179641
+>Feature NODE_2319_length_244_cov_0.874251
+>Feature NODE_2361_length_242_cov_1.157576
+>Feature NODE_2363_length_242_cov_0.884848
+>Feature NODE_2378_length_241_cov_1.262195
+>Feature NODE_2379_length_241_cov_1.146341
+>Feature NODE_2405_length_240_cov_0.895706
+>Feature NODE_2414_length_239_cov_1.802469
+>Feature NODE_2462_length_237_cov_1.118750
+>Feature NODE_2471_length_237_cov_0.912500
+>Feature NODE_2505_length_235_cov_1.645570
+>Feature NODE_2519_length_235_cov_0.924051
+>Feature NODE_2521_length_235_cov_0.924051
+>Feature NODE_2556_length_233_cov_0.935897
+>Feature NODE_2573_length_232_cov_0.941935
+>Feature NODE_2616_length_230_cov_0.954248
+>Feature NODE_2619_length_230_cov_0.954248
+>Feature NODE_2620_length_230_cov_0.954248
+>Feature NODE_2653_length_229_cov_0.960526

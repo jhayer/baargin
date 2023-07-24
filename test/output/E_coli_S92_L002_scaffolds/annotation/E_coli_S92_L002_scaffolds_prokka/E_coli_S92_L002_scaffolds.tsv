@@ -1,0 +1,25 @@
+locus_tag	ftype	length_bp	gene	EC_number	COG	product
+JJDPMOCA_00001	CDS	504	insB-1			IS1 protein InsB
+JJDPMOCA_00002	CDS	249	insO-2			KpLE2 phage-like element; partial transposase
+JJDPMOCA_00003	CDS	591	narG	1.7.99.4		nitrate reductase A, alpha subunit
+JJDPMOCA_00004	CDS	246	dapD	2.3.1.117		tetrahydrodipicolinate succinylase subunit
+JJDPMOCA_00005	CDS	375	ybfL			putative transposase; receptor protein
+JJDPMOCA_00006	CDS	222				hypothetical protein
+JJDPMOCA_00007	CDS	336				hypothetical protein
+JJDPMOCA_00008	CDS	270	trmJ			tRNA Cm32/Um32 methyltransferase
+JJDPMOCA_00009	CDS	357				hypothetical protein
+JJDPMOCA_00010	CDS	438	htgA			putative DNA-binding transcriptional regulator
+JJDPMOCA_00011	CDS	150	acrZ			small membrane protein involved in the cell envelope stress response
+JJDPMOCA_00012	CDS	270				hypothetical protein
+JJDPMOCA_00013	CDS	333				hypothetical protein
+JJDPMOCA_00014	CDS	270				hypothetical protein
+JJDPMOCA_00015	CDS	186				hypothetical protein
+JJDPMOCA_00016	CDS	276				hypothetical protein
+JJDPMOCA_00017	CDS	198				hypothetical protein
+JJDPMOCA_00018	CDS	210				hypothetical protein
+JJDPMOCA_00019	CDS	264				hypothetical protein
+JJDPMOCA_00020	CDS	300	pbpC			peptidoglycan glycosyltransferase
+JJDPMOCA_00021	CDS	204				hypothetical protein
+JJDPMOCA_00022	CDS	174	sdhD	1.3.99.1		succinate dehydrogenase membrane protein
+JJDPMOCA_00023	CDS	246				hypothetical protein
+JJDPMOCA_00024	CDS	102				hypothetical protein

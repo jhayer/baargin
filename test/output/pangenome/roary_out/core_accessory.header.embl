@@ -1,0 +1,25 @@
+ID   Genome standard; DNA; PRO; 1234 BP.
+XX
+FH   Key             Location/Qualifiers
+FH
+FT   feature         1
+FT                   /label=insA-1
+FT                   /locus_tag=insA-1
+FT                   /colour=3
+FT   misc_feature    4
+FT                   /label=group_2
+FT                   /locus_tag=group_2
+FT                   /colour=3
+FT   misc_feature    3
+FT                   /label=group_3
+FT                   /locus_tag=group_3
+FT                   /colour=3
+FT   feature         2
+FT                   /label=insAB-1
+FT                   /locus_tag=insAB-1
+FT                   /colour=3
+FT   feature         1..4
+FT                   /colour=3
+XX
+SQ   Sequence 1234 BP; 789 A; 1717 C; 1693 G; 691 T; 0 other;
+//

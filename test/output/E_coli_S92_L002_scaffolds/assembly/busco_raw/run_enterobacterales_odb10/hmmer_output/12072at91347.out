@@ -1,0 +1,19 @@
+#                                                                                           --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                       accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#               ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+NODE_158_length_549_cov_0.925847_1  -            182 12072at91347         -            455   1.8e-41  139.7   0.0   1   1   3.9e-44   1.9e-41  139.6   0.0    91   262     3   179     1   182 0.92 # 3 # 548 # 1 # ID=158_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.511
+NODE_823_length_349_cov_1.882353_1  -            115 12072at91347         -            455   6.2e-30  101.6   0.2   1   1   1.3e-32   6.5e-30  101.5   0.2    77   184     5   112     1   115 0.94 # 3 # 347 # -1 # ID=823_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.522
+NODE_505_length_405_cov_1.335366_1  -            121 12072at91347         -            455   3.2e-22   76.2   0.0   1   1   7.9e-25   3.9e-22   75.9   0.0     1    88    15   116    15   119 0.84 # 42 # 404 # 1 # ID=505_1;partial=01;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.590
+NODE_2269_length_247_cov_0.858824_1 -             82 12072at91347         -            455   5.3e-16   55.7   0.3   1   1   1.2e-18   5.6e-16   55.6   0.3    16    86     1    82     1    82 0.80 # 2 # 247 # -1 # ID=2269_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.561
+NODE_1173_length_309_cov_1.081897_1 -            103 12072at91347         -            455   3.7e-06   23.2   0.0   1   1   7.8e-09   3.8e-06   23.2   0.0   166   257     4   101     1   103 0.84 # 1 # 309 # -1 # ID=1173_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.476
+NODE_2246_length_248_cov_0.853801_1 -             82 12072at91347         -            455     0.011   11.7   0.0   1   1   2.3e-05     0.011   11.7   0.0    35    76     5    48     1    75 0.83 # 3 # 248 # 1 # ID=2246_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.606
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/2021jh002/Documents/github/baargin/work/fc/50edebbec4b75637be28d2afa87f5c/busco_downloads/lineages/enterobacterales_odb10/hmms/12072at91347.hmm
+# Target file:     /Users/2021jh002/Documents/github/baargin/work/fc/50edebbec4b75637be28d2afa87f5c/busco_raw/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout /Users/2021jh002/Documents/github/baargin/work/fc/50edebbec4b75637be28d2afa87f5c/busco_raw/run_enterobacterales_odb10/hmmer_output/12072at91347.out --cpu 1 /Users/2021jh002/Documents/github/baargin/work/fc/50edebbec4b75637be28d2afa87f5c/busco_downloads/lineages/enterobacterales_odb10/hmms/12072at91347.hmm /Users/2021jh002/Documents/github/baargin/work/fc/50edebbec4b75637be28d2afa87f5c/busco_raw/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /Users/2021jh002/Documents/github/baargin/work/fc/50edebbec4b75637be28d2afa87f5c
+# Date:            Wed Jul 19 14:03:26 2023
+# [ok]

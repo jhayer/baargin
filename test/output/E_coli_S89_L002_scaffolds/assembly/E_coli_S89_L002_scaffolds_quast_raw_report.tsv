@@ -1,0 +1,22 @@
+Assembly	E_coli_S89_L002_scaffolds
+# contigs (>= 0 bp)	2455
+# contigs (>= 1000 bp)	5
+# contigs (>= 5000 bp)	0
+# contigs (>= 10000 bp)	0
+# contigs (>= 25000 bp)	0
+# contigs (>= 50000 bp)	0
+Total length (>= 0 bp)	797925
+Total length (>= 1000 bp)	10013
+Total length (>= 5000 bp)	0
+Total length (>= 10000 bp)	0
+Total length (>= 25000 bp)	0
+Total length (>= 50000 bp)	0
+# contigs	172
+Largest contig	3935
+Total length	111441
+GC (%)	51.63
+N50	600
+N75	550
+L50	71
+L75	119
+# N's per 100 kbp	8.97

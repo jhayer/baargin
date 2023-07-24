@@ -1,0 +1,29 @@
+  5.16	145	145	0	0	U	0	unclassified
+ 94.84	2666	47	15570	15570	R	1	root
+ 93.17	2619	0	14931	14931	R1	131567	  cellular organisms
+ 93.17	2619	10	14925	14925	D	2	    Bacteria
+ 92.81	2609	5	14456	14456	P	1224	      Pseudomonadota
+ 92.64	2604	11	14307	14307	C	1236	        Gammaproteobacteria
+ 92.24	2593	49	14040	14040	O	91347	          Enterobacterales
+ 90.47	2543	1678	13163	13163	F	543	            Enterobacteriaceae
+ 30.59	860	92	1652	1643	G	561	              Escherichia
+ 27.21	765	765	1390	1387	S	562	                Escherichia coli
+  0.07	2	0	2	2	G1	2608889	                unclassified Escherichia
+  0.07	2	2	2	2	S	2044467	                  Escherichia sp. E4742
+  0.04	1	1	1	1	S	208962	                Escherichia albertii
+  0.07	2	0	2	2	G	544	              Citrobacter
+  0.04	1	0	1	1	S	35703	                Citrobacter amalonaticus
+  0.04	1	1	1	1	S1	1261127	                  Citrobacter amalonaticus Y19
+  0.04	1	0	1	1	G1	2644389	                unclassified Citrobacter
+  0.04	1	1	1	1	S	1573676	                  Citrobacter sp. R56
+  0.04	1	0	2	2	G	547	              Enterobacter
+  0.04	1	0	1	1	G1	2608935	                unclassified Enterobacter
+  0.04	1	1	1	1	S	2724468	                  Enterobacter sp. JUb54
+  0.04	1	0	1	1	F1	2890311	              Klebsiella/Raoultella group
+  0.04	1	0	1	1	G	570	                Klebsiella
+  0.04	1	1	1	1	S	573	                  Klebsiella pneumoniae
+  0.04	1	0	1	1	G	620	              Shigella
+  0.04	1	0	1	1	S	623	                Shigella flexneri
+  0.04	1	1	1	1	S1	1282357	                  Shigella flexneri 2003036
+  0.04	1	0	2	2	F	1903411	            Yersiniaceae
+  0.04	1	1	2	2	G	613	              Serratia

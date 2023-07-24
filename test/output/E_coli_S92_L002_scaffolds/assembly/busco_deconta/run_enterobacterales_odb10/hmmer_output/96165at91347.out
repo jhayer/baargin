@@ -1,0 +1,13 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/2021jh002/Documents/github/baargin/work/f8/53ef2a3ec5baf55694d14b487272f3/busco_downloads/lineages/enterobacterales_odb10/hmms/96165at91347.hmm
+# Target file:     /Users/2021jh002/Documents/github/baargin/work/f8/53ef2a3ec5baf55694d14b487272f3/busco_deconta/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout /Users/2021jh002/Documents/github/baargin/work/f8/53ef2a3ec5baf55694d14b487272f3/busco_deconta/run_enterobacterales_odb10/hmmer_output/96165at91347.out --cpu 1 /Users/2021jh002/Documents/github/baargin/work/f8/53ef2a3ec5baf55694d14b487272f3/busco_downloads/lineages/enterobacterales_odb10/hmms/96165at91347.hmm /Users/2021jh002/Documents/github/baargin/work/f8/53ef2a3ec5baf55694d14b487272f3/busco_deconta/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /Users/2021jh002/Documents/github/baargin/work/f8/53ef2a3ec5baf55694d14b487272f3
+# Date:            Wed Jul 19 14:29:28 2023
+# [ok]

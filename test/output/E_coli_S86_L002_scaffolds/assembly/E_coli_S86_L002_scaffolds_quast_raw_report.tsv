@@ -1,0 +1,22 @@
+Assembly	E_coli_S86_L002_scaffolds
+# contigs (>= 0 bp)	2811
+# contigs (>= 1000 bp)	11
+# contigs (>= 5000 bp)	0
+# contigs (>= 10000 bp)	0
+# contigs (>= 25000 bp)	0
+# contigs (>= 50000 bp)	0
+Total length (>= 0 bp)	934533
+Total length (>= 1000 bp)	15466
+Total length (>= 5000 bp)	0
+Total length (>= 10000 bp)	0
+Total length (>= 25000 bp)	0
+Total length (>= 50000 bp)	0
+# contigs	220
+Largest contig	2797
+Total length	142523
+GC (%)	51.77
+N50	611
+N75	541
+L50	89
+L75	152
+# N's per 100 kbp	28.07

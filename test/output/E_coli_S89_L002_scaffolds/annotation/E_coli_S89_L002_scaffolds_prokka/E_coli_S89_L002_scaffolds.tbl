@@ -1,0 +1,210 @@
+>Feature NODE_24_length_736_cov_0.886191
+472	266	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JACDIILA_00001
+			product	hypothetical protein
+>Feature NODE_25_length_729_cov_1.047546
+699	37	CDS
+			EC_number	4.99.1.4
+			gene	cysG
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:SIROHEMESYN-MONOMER
+			locus_tag	JACDIILA_00002
+			product	uroporphyrin III C-methyltransferase [multifunctional]
+>Feature NODE_26_length_720_cov_1.155521
+243	605	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JACDIILA_00003
+			product	hypothetical protein
+>Feature NODE_50_length_643_cov_0.985866
+>Feature NODE_57_length_617_cov_1.470370
+>Feature NODE_62_length_612_cov_1.500935
+>Feature NODE_63_length_612_cov_0.985047
+74	229	CDS
+			EC_number	1.1.1.17
+			gene	mtlD
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:MANNPDEHYDROG-MONOMER
+			locus_tag	JACDIILA_00004
+			product	mannitol-1-phosphate 5-dehydrogenase
+>Feature NODE_67_length_605_cov_1.373106
+142	510	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JACDIILA_00005
+			product	hypothetical protein
+>Feature NODE_74_length_591_cov_0.700389
+>Feature NODE_92_length_575_cov_1.172691
+>Feature NODE_111_length_557_cov_0.912500
+>Feature NODE_127_length_539_cov_0.961039
+83	373	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JACDIILA_00006
+			product	hypothetical protein
+>Feature NODE_132_length_533_cov_1.835526
+36	332	CDS
+			gene	copA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:G6260-MONOMER
+			locus_tag	JACDIILA_00007
+			product	Cu+ efflux ATPase
+>Feature NODE_181_length_495_cov_1.014354
+9	263	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JACDIILA_00008
+			product	hypothetical protein
+>Feature NODE_189_length_492_cov_0.985542
+>Feature NODE_191_length_491_cov_1.485507
+477	67	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JACDIILA_00009
+			product	hypothetical protein
+>Feature NODE_199_length_487_cov_1.424390
+19	312	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JACDIILA_00010
+			product	hypothetical protein
+>Feature NODE_249_length_462_cov_0.740260
+392	81	CDS
+			gene	fucP
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:FUCP-MONOMER
+			locus_tag	JACDIILA_00011
+			product	fucose:H+ symporter
+>Feature NODE_250_length_461_cov_1.328125
+>Feature NODE_256_length_459_cov_1.751309
+>Feature NODE_263_length_451_cov_0.975936
+>Feature NODE_267_length_449_cov_0.830645
+>Feature NODE_282_length_444_cov_0.994550
+130	408	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JACDIILA_00012
+			product	hypothetical protein
+>Feature NODE_298_length_437_cov_1.013889
+>Feature NODE_356_length_414_cov_0.866469
+>Feature NODE_360_length_413_cov_1.086310
+>Feature NODE_393_length_403_cov_1.119632
+>Feature NODE_406_length_400_cov_0.678019
+5	193	CDS
+			gene	ybbA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:YBBA-MONOMER
+			locus_tag	JACDIILA_00013
+			product	YbbA/YbbP ABC transporter
+>Feature NODE_407_length_399_cov_1.586957
+>Feature NODE_449_length_389_cov_1.403846
+357	175	CDS
+			gene	mrdA
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG10606-MONOMER
+			locus_tag	JACDIILA_00014
+			product	cell shape; peptidoglycan synthetase; penicillin-binding protein 2
+>Feature NODE_463_length_388_cov_0.938907
+>Feature NODE_491_length_380_cov_1.204620
+>Feature NODE_533_length_372_cov_0.738983
+346	215	CDS
+			EC_number	6.1.1.12
+			gene	aspS
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:ASPS-MONOMER
+			locus_tag	JACDIILA_00015
+			product	aspartyl-tRNA synthetase
+>Feature NODE_534_length_371_cov_1.489796
+>Feature NODE_559_length_368_cov_1.085911
+>Feature NODE_560_length_368_cov_1.003436
+262	71	CDS
+			gene	ybaE
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:EG13217-MONOMER
+			locus_tag	JACDIILA_00016
+			product	putative transporter subunit: periplasmic-binding component of ABC superfamily protein
+>Feature NODE_582_length_364_cov_1.017422
+>Feature NODE_587_length_363_cov_1.251748
+>Feature NODE_594_length_362_cov_1.024561
+15	326	CDS
+			EC_number	2.7.1.69
+			gene	chbB
+			inference	ab initio prediction:Prodigal:002006
+			inference	similar to AA sequence:RefSeq:CELA-MONOMER
+			locus_tag	JACDIILA_00017
+			product	chitobiose / cellobiose PTS permease - ChbB subunit
+>Feature NODE_604_length_359_cov_1.294326
+>Feature NODE_606_length_359_cov_1.035461
+>Feature NODE_635_length_354_cov_1.054152
+>Feature NODE_636_length_354_cov_0.873646
+>Feature NODE_698_length_344_cov_0.820225
+>Feature NODE_724_length_340_cov_0.832700
+>Feature NODE_745_length_337_cov_0.842308
+>Feature NODE_763_length_334_cov_1.136187
+>Feature NODE_773_length_333_cov_0.855469
+>Feature NODE_776_length_332_cov_1.145098
+>Feature NODE_779_length_332_cov_0.858824
+>Feature NODE_783_length_331_cov_1.149606
+>Feature NODE_827_length_324_cov_0.886640
+>Feature NODE_877_length_319_cov_0.904959
+>Feature NODE_879_length_319_cov_0.867769
+>Feature NODE_913_length_315_cov_0.726891
+>Feature NODE_939_length_311_cov_1.414530
+>Feature NODE_948_length_311_cov_0.752137
+>Feature NODE_968_length_308_cov_1.264069
+>Feature NODE_1039_length_300_cov_1.309417
+>Feature NODE_1055_length_298_cov_0.954751
+22	294	CDS
+			EC_number	3.1.1.-
+			gene	aes
+			inference	ab initio prediction:Prodigal:002006
+			inference	protein motif:HAMAP:MF_01958
+			locus_tag	JACDIILA_00018
+			product	Acetyl esterase
+>Feature NODE_1117_length_291_cov_0.742991
+>Feature NODE_1119_length_290_cov_1.370892
+>Feature NODE_1142_length_287_cov_1.042857
+>Feature NODE_1158_length_285_cov_1.375000
+>Feature NODE_1161_length_285_cov_1.052885
+>Feature NODE_1184_length_283_cov_1.033981
+>Feature NODE_1247_length_278_cov_0.726368
+>Feature NODE_1278_length_277_cov_0.730000
+>Feature NODE_1282_length_276_cov_1.693467
+>Feature NODE_1297_length_276_cov_0.733668
+>Feature NODE_1311_length_275_cov_1.106061
+>Feature NODE_1323_length_275_cov_0.737374
+>Feature NODE_1347_length_274_cov_0.741117
+>Feature NODE_1385_length_272_cov_1.123077
+>Feature NODE_1395_length_272_cov_0.748718
+>Feature NODE_1402_length_272_cov_0.748718
+>Feature NODE_1418_length_271_cov_0.752577
+>Feature NODE_1440_length_270_cov_1.119171
+>Feature NODE_1488_length_268_cov_1.146597
+>Feature NODE_1514_length_267_cov_0.768421
+>Feature NODE_1526_length_267_cov_0.768421
+>Feature NODE_1589_length_264_cov_1.139037
+>Feature NODE_1659_length_261_cov_0.793478
+>Feature NODE_1705_length_259_cov_1.027473
+>Feature NODE_1717_length_259_cov_0.802198
+>Feature NODE_1730_length_258_cov_1.209945
+>Feature NODE_1798_length_256_cov_0.815642
+>Feature NODE_1918_length_251_cov_1.678161
+>Feature NODE_1931_length_251_cov_0.839080
+>Feature NODE_1944_length_250_cov_0.843931
+159	40	CDS
+			inference	ab initio prediction:Prodigal:002006
+			locus_tag	JACDIILA_00019
+			product	hypothetical protein
+>Feature NODE_1950_length_250_cov_0.843931
+>Feature NODE_1957_length_249_cov_1.156977
+>Feature NODE_1989_length_247_cov_1.288235
+>Feature NODE_2005_length_247_cov_0.817647
+>Feature NODE_2019_length_246_cov_0.863905
+>Feature NODE_2027_length_246_cov_0.863905
+>Feature NODE_2041_length_245_cov_0.869048
+>Feature NODE_2048_length_245_cov_0.869048
+>Feature NODE_2126_length_242_cov_0.884848
+>Feature NODE_2145_length_241_cov_0.890244
+>Feature NODE_2180_length_239_cov_0.901235
+>Feature NODE_2186_length_239_cov_0.901235
+>Feature NODE_2228_length_237_cov_0.912500
+>Feature NODE_2232_length_237_cov_0.912500
+>Feature NODE_2253_length_236_cov_0.918239
+>Feature NODE_2277_length_235_cov_0.924051
+>Feature NODE_2320_length_233_cov_0.935897
+>Feature NODE_2369_length_231_cov_0.948052
+>Feature NODE_2370_length_231_cov_0.948052

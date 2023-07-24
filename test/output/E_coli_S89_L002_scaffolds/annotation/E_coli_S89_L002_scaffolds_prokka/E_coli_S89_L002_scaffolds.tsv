@@ -1,0 +1,20 @@
+locus_tag	ftype	length_bp	gene	EC_number	COG	product
+JACDIILA_00001	CDS	207				hypothetical protein
+JACDIILA_00002	CDS	663	cysG	4.99.1.4		uroporphyrin III C-methyltransferase [multifunctional]
+JACDIILA_00003	CDS	363				hypothetical protein
+JACDIILA_00004	CDS	156	mtlD	1.1.1.17		mannitol-1-phosphate 5-dehydrogenase
+JACDIILA_00005	CDS	369				hypothetical protein
+JACDIILA_00006	CDS	291				hypothetical protein
+JACDIILA_00007	CDS	297	copA			Cu+ efflux ATPase
+JACDIILA_00008	CDS	255				hypothetical protein
+JACDIILA_00009	CDS	411				hypothetical protein
+JACDIILA_00010	CDS	294				hypothetical protein
+JACDIILA_00011	CDS	312	fucP			fucose:H+ symporter
+JACDIILA_00012	CDS	279				hypothetical protein
+JACDIILA_00013	CDS	189	ybbA			YbbA/YbbP ABC transporter
+JACDIILA_00014	CDS	183	mrdA			cell shape; peptidoglycan synthetase; penicillin-binding protein 2
+JACDIILA_00015	CDS	132	aspS	6.1.1.12		aspartyl-tRNA synthetase
+JACDIILA_00016	CDS	192	ybaE			putative transporter subunit: periplasmic-binding component of ABC superfamily protein
+JACDIILA_00017	CDS	312	chbB	2.7.1.69		chitobiose / cellobiose PTS permease - ChbB subunit
+JACDIILA_00018	CDS	273	aes	3.1.1.-		Acetyl esterase
+JACDIILA_00019	CDS	120				hypothetical protein

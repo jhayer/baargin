@@ -1,0 +1,21 @@
+#                                                                                           --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                       accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#               ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+NODE_20_length_871_cov_1.158690_1   -            290 10523at91347         -            514   1.7e-12   42.2   0.0   1   1   2.1e-14   2.4e-12   41.6   0.0   309   497     2   201     1   211 0.75 # 1 # 870 # -1 # ID=7_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.566
+NODE_525_length_406_cov_0.887538_1  -            119 10523at91347         -            514   4.1e-09   31.0   0.0   1   1   3.7e-11   4.3e-09   30.9   0.0   419   497    31   111     9   117 0.85 # 2 # 358 # 1 # ID=192_1;partial=10;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.560
+NODE_15_length_940_cov_0.706837_1   -            209 10523at91347         -            514   6.8e-09   30.3   0.4   1   1   8.3e-11   9.7e-09   29.8   0.4   421   502   100   183    89   193 0.90 # 1 # 627 # 1 # ID=4_1;partial=10;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.522
+NODE_219_length_501_cov_0.773585_1  -            167 10523at91347         -            514   4.7e-08   27.5   0.0   1   1   5.2e-10   6.1e-08   27.1   0.0   422   500    37   118    34   126 0.91 # 1 # 501 # -1 # ID=91_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.527
+NODE_139_length_547_cov_0.931915_1  -            182 10523at91347         -            514   0.00052   14.2   0.1   1   1     5e-06   0.00058   14.0   0.1   162   306     3   147     1   154 0.88 # 1 # 546 # 1 # ID=60_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.540
+NODE_279_length_472_cov_0.739241_1  -            156 10523at91347         -            514    0.0032   11.6   1.6   1   2     0.036       4.2    1.3   0.2   239   301    15    77     9    95 0.78 # 3 # 470 # -1 # ID=114_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.560
+NODE_279_length_472_cov_0.739241_1  -            156 10523at91347         -            514    0.0032   11.6   1.6   2   2   8.6e-05      0.01    9.9   0.1   314   337   129   152    96   155 0.88 # 3 # 470 # -1 # ID=114_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.560
+NODE_2293_length_248_cov_0.853801_1 -             82 10523at91347         -            514    0.0069   10.5   0.0   1   1   6.6e-05    0.0078   10.3   0.0   441   502     6    69     3    74 0.87 # 1 # 246 # -1 # ID=647_1;partial=11;start_type=Edge;rbs_motif=None;rbs_spacer=None;gc_cont=0.533
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264/busco_downloads/lineages/enterobacterales_odb10/hmms/10523at91347.hmm
+# Target file:     /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264/busco_deconta/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264/busco_deconta/run_enterobacterales_odb10/hmmer_output/10523at91347.out --cpu 1 /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264/busco_downloads/lineages/enterobacterales_odb10/hmms/10523at91347.hmm /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264/busco_deconta/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /Users/2021jh002/Documents/github/baargin/work/ea/5e9a9729a61430caa06cd9def45264
+# Date:            Wed Jul 19 14:27:23 2023
+# [ok]

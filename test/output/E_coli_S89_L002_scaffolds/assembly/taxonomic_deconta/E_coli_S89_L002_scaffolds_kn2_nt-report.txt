@@ -1,0 +1,36 @@
+  5.78	142	142	0	0	U	0	unclassified
+ 94.22	2313	7	13322	13277	R	1	root
+ 93.93	2306	0	13123	13084	R1	131567	  cellular organisms
+ 93.93	2306	18	13116	13053	D	2	    Bacteria
+ 93.20	2288	5	12660	12609	P	1224	      Pseudomonadota
+ 92.87	2280	12	12519	12491	C	1236	        Gammaproteobacteria
+ 92.38	2268	29	12296	12227	O	91347	          Enterobacterales
+ 90.35	2218	2077	11455	11338	F	543	            Enterobacteriaceae
+  5.17	127	15	310	310	G	561	              Escherichia
+  4.44	109	108	222	222	S	562	                Escherichia coli
+  0.04	1	1	1	1	S1	1329907	                  Escherichia coli APEC IMT5155
+  0.08	2	2	2	2	S	208962	                Escherichia albertii
+  0.04	1	1	2	2	S	564	                Escherichia fergusonii
+  0.29	7	3	27	27	G	547	              Enterobacter
+  0.16	4	3	10	10	G1	354276	                Enterobacter cloacae complex
+  0.04	1	1	1	1	S	1812935	                  Enterobacter roggenkampii
+  0.12	3	0	32	32	F1	2890311	              Klebsiella/Raoultella group
+  0.12	3	0	32	32	G	570	                Klebsiella
+  0.12	3	2	32	32	S	573	                  Klebsiella pneumoniae
+  0.04	1	1	1	1	S1	72407	                    Klebsiella pneumoniae subsp. pneumoniae
+  0.08	2	0	5	5	G	620	              Shigella
+  0.08	2	2	2	2	S	622	                Shigella dysenteriae
+  0.04	1	1	2	2	G	590	              Salmonella
+  0.04	1	0	1	1	G	2726810	              Scandinavium
+  0.04	1	1	1	1	S	1851514	                Scandinavium goeteborgense
+  0.86	21	0	85	85	F	1903411	            Yersiniaceae
+  0.86	21	19	84	84	G	613	              Serratia
+  0.04	1	1	5	5	S	615	                Serratia marcescens
+  0.04	1	0	1	1	G1	2647522	                unclassified Serratia
+  0.04	1	1	1	1	S	1327989	                  Serratia sp. FS14
+  0.12	3	0	7	7	C	28216	        Betaproteobacteria
+  0.12	3	0	7	7	O	80840	          Burkholderiales
+  0.12	3	0	7	7	F	119060	            Burkholderiaceae
+  0.12	3	0	7	7	G	32008	              Burkholderia
+  0.12	3	1	7	7	G1	111527	                pseudomallei group
+  0.08	2	2	2	2	S	28450	                  Burkholderia pseudomallei

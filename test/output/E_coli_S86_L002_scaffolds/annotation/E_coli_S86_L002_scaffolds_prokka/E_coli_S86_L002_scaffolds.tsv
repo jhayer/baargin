@@ -1,0 +1,232 @@
+locus_tag	ftype	length_bp	gene	EC_number	COG	product
+ICGBINNC_00001	CDS	258				hypothetical protein
+ICGBINNC_00002	CDS	138				hypothetical protein
+ICGBINNC_00003	CDS	378	insAB-1			InsAB' transposase
+ICGBINNC_00004	CDS	276	insA-1			IS1 protein InsA
+ICGBINNC_00005	rRNA	660				16S ribosomal RNA (partial)
+ICGBINNC_00006	CDS	735	ypdB			putative response regulator in two-component system with YpdA
+ICGBINNC_00007	CDS	189	ypdA			putative sensory kinase in two-component system with YpdB
+ICGBINNC_00008	CDS	576	lsrA			AI-2 ABC transporter - ATP binding subunit
+ICGBINNC_00009	CDS	165				hypothetical protein
+ICGBINNC_00010	CDS	345	envZ			EnvZ sensory histidine kinase
+ICGBINNC_00011	CDS	384	chbC			chitobiose / cellobiose PTS permease - ChbC subunit
+ICGBINNC_00012	CDS	318	chbA			chitobiose / cellobiose PTS permease - ChbA subunit
+ICGBINNC_00013	CDS	522				hypothetical protein
+ICGBINNC_00014	CDS	324				hypothetical protein
+ICGBINNC_00015	CDS	492	ygeG			putative chaperone
+ICGBINNC_00016	CDS	351				hypothetical protein
+ICGBINNC_00017	CDS	204	hcaD	1.18.1.3		3-phenylpropionate dioxygenase, predicted ferredoxin reductase subunit
+ICGBINNC_00018	CDS	231	glpA	1.1.5.3		glycerol-3-phosphate dehydrogenase (anaerobic), large subunit
+ICGBINNC_00019	CDS	282				hypothetical protein
+ICGBINNC_00020	CDS	282				hypothetical protein
+ICGBINNC_00021	CDS	171				hypothetical protein
+ICGBINNC_00022	CDS	318				hypothetical protein
+ICGBINNC_00023	CDS	348	ycfZ			putative inner membrane protein
+ICGBINNC_00024	CDS	240				hypothetical protein
+ICGBINNC_00025	CDS	372	phnI			PhnI subunit of methylphosphonate degradation complex
+ICGBINNC_00026	CDS	360	narX	2.7.13.3		Nitrate/nitrite sensor protein NarX
+ICGBINNC_00027	CDS	138				hypothetical protein
+ICGBINNC_00028	CDS	519	mdoH			membrane glycosyltransferase; synthesis of membrane-derived oligosaccharide (MDO)
+ICGBINNC_00029	CDS	261	hybA			hydrogenase 2 4Fe-4S ferredoxin-type component
+ICGBINNC_00030	CDS	396				hypothetical protein
+ICGBINNC_00031	rRNA	111				5S ribosomal RNA
+ICGBINNC_00032	CDS	207				hypothetical protein
+ICGBINNC_00033	CDS	471	cueO			multicopper oxidase with role in copper homeostasis
+ICGBINNC_00034	CDS	90	gcd	1.1.5.2		glucose dehydrogenase
+ICGBINNC_00035	CDS	147				hypothetical protein
+ICGBINNC_00036	CDS	513	aslB			putative anaerobic sulfatase maturation enzyme
+ICGBINNC_00037	CDS	531	cstA			peptide transporter induced by carbon starvation
+ICGBINNC_00038	CDS	579	nanM			N-acetylneuraminate mutarotase
+ICGBINNC_00039	CDS	180				hypothetical protein
+ICGBINNC_00040	CDS	195				hypothetical protein
+ICGBINNC_00041	CDS	315	potD			putrescine / spermidine ABC transporter - periplasmic binding protein
+ICGBINNC_00042	CDS	462	nudJ			HMP-PP hydrolase /thiamin pyrophosphate hydrolase [multifunctional]
+ICGBINNC_00043	CDS	228	kdpB	3.6.3.12		K+ transporting ATPase - ATP binding subunit
+ICGBINNC_00044	CDS	255				hypothetical protein
+ICGBINNC_00045	CDS	441	ycfS			L,D-transpeptidase YcfS
+ICGBINNC_00046	CDS	378				hypothetical protein
+ICGBINNC_00047	CDS	177				hypothetical protein
+ICGBINNC_00048	CDS	117	yacC			putative protein
+ICGBINNC_00049	CDS	264		4.3.1.2		Methylaspartate ammonia-lyase
+ICGBINNC_00050	CDS	273	yjdJ			putative acyltransferase with acyl-CoA N-acyltransferase domain protein
+ICGBINNC_00051	CDS	426	yqeK			putative protein
+ICGBINNC_00052	CDS	177	ybfQ			putative transposase
+ICGBINNC_00053	CDS	117				hypothetical protein
+ICGBINNC_00054	CDS	162				hypothetical protein
+ICGBINNC_00055	CDS	267				hypothetical protein
+ICGBINNC_00056	CDS	282	ypfG			putative protein
+ICGBINNC_00057	CDS	144	phnP			5-phospho-alpha-D-ribosyl 1,2-cyclic phosphate phosphodiesterase
+ICGBINNC_00058	CDS	189				hypothetical protein
+ICGBINNC_00059	CDS	132	ompR			Transcriptional regulatory protein OmpR
+ICGBINNC_00060	CDS	267				hypothetical protein
+ICGBINNC_00061	CDS	306				hypothetical protein
+ICGBINNC_00062	CDS	399	frmB	3.1.2.12		S-formylglutathione hydrolase
+ICGBINNC_00063	CDS	210				hypothetical protein
+ICGBINNC_00064	CDS	327	yjjL			galactonate:H+ symporter
+ICGBINNC_00065	CDS	150				hypothetical protein
+ICGBINNC_00066	CDS	504				hypothetical protein
+ICGBINNC_00067	CDS	423	bioF	2.3.1.47		8-amino-7-oxononanoate synthase monomer
+ICGBINNC_00068	CDS	249	panB	2.1.2.11		3-methyl-2-oxobutanoate hydroxymethyltransferase monomer
+ICGBINNC_00069	CDS	174	atoB	2.3.1.9		acetyl-CoA acetyltransferase
+ICGBINNC_00070	CDS	162				hypothetical protein
+ICGBINNC_00071	CDS	213				hypothetical protein
+ICGBINNC_00072	CDS	300				hypothetical protein
+ICGBINNC_00073	CDS	243				hypothetical protein
+ICGBINNC_00074	CDS	369	aspC	2.6.1.1		aspartate aminotransferase, PLP-dependent
+ICGBINNC_00075	CDS	114	ompC			outer membrane porin C
+ICGBINNC_00076	CDS	192	thiD	2.7.4.7		hydroxymethylpyrimidine kinase / phosphohydroxymethylpyrimidine kinase
+ICGBINNC_00077	CDS	204				hypothetical protein
+ICGBINNC_00078	CDS	177				hypothetical protein
+ICGBINNC_00079	CDS	345	aer			aerotaxis sensor receptor, flavoprotein
+ICGBINNC_00080	CDS	153				hypothetical protein
+ICGBINNC_00081	CDS	90	minE			cell division topological specificity factor and inhibitory component of the MinC-MinD-MinE system that regulates septum placement
+ICGBINNC_00082	CDS	261				hypothetical protein
+ICGBINNC_00083	CDS	306	yhjJ			putative zinc-dependent peptidase
+ICGBINNC_00084	CDS	141				hypothetical protein
+ICGBINNC_00085	CDS	309	trmA	2.1.1.35		tRNA m5U54 methyltransferase
+ICGBINNC_00086	CDS	423	ydcM			putative transposase
+ICGBINNC_00087	CDS	381	glnH			glutamine ABC transporter - periplasmic binding protein
+ICGBINNC_00088	CDS	306				hypothetical protein
+ICGBINNC_00089	CDS	294	nudK			GDP-mannose hydrolase
+ICGBINNC_00090	CDS	159				hypothetical protein
+ICGBINNC_00091	CDS	129				hypothetical protein
+ICGBINNC_00092	CDS	186				hypothetical protein
+ICGBINNC_00093	CDS	315	fepG			ferric enterobactin ABC transporter - membrane subunit
+ICGBINNC_00094	CDS	183	dpiA		COG4565	Transcriptional regulatory protein DpiA
+ICGBINNC_00095	CDS	192	tusE			sulfur transfer protein
+ICGBINNC_00096	CDS	150	yccX	3.6.1.7		acylphosphatase
+ICGBINNC_00097	CDS	279				hypothetical protein
+ICGBINNC_00098	CDS	90	lpxB	2.4.1.182		lipid A disaccharide synthase
+ICGBINNC_00099	CDS	198				hypothetical protein
+ICGBINNC_00100	CDS	294	trg			methyl accepting chemotaxis protein - ribose/galactose/glucose sensing
+ICGBINNC_00101	CDS	216				hypothetical protein
+ICGBINNC_00102	CDS	99				hypothetical protein
+ICGBINNC_00103	CDS	183				hypothetical protein
+ICGBINNC_00104	CDS	111				hypothetical protein
+ICGBINNC_00105	CDS	252				hypothetical protein
+ICGBINNC_00106	CDS	327	ytfI			putative protein
+ICGBINNC_00107	CDS	153	pflD	2.3.1.54		formate acetyltransferase 2
+ICGBINNC_00108	CDS	183	pdhR			PdhR DNA-binding transcriptional dual regulator
+ICGBINNC_00109	CDS	153				hypothetical protein
+ICGBINNC_00110	CDS	219				hypothetical protein
+ICGBINNC_00111	CDS	318	ftsE			cell division protein FtsE
+ICGBINNC_00112	CDS	303				hypothetical protein
+ICGBINNC_00113	CDS	261	yfbM			putative protein
+ICGBINNC_00114	CDS	105				hypothetical protein
+ICGBINNC_00115	CDS	273	betI			BetI DNA-binding transcriptional repressor
+ICGBINNC_00116	CDS	348	pabA	2.6.1.85		para-aminobenzoate synthase multi-enzyme complex
+ICGBINNC_00117	CDS	207				hypothetical protein
+ICGBINNC_00118	CDS	381				hypothetical protein
+ICGBINNC_00119	CDS	117	yiiD			putative acetyltransferase
+ICGBINNC_00120	CDS	144				hypothetical protein
+ICGBINNC_00121	CDS	321	ecpC			hypothetical protein
+ICGBINNC_00122	CDS	144				hypothetical protein
+ICGBINNC_00123	CDS	141				hypothetical protein
+ICGBINNC_00124	CDS	300	dcuD			YhcL DcuC transporter
+ICGBINNC_00125	CDS	297	yieH			6-phosphogluconate phosphatase
+ICGBINNC_00126	CDS	201	dsbL		COG0526	Thiol:disulfide interchange protein DsbL
+ICGBINNC_00127	CDS	201				hypothetical protein
+ICGBINNC_00128	CDS	138				hypothetical protein
+ICGBINNC_00129	CDS	321	abgR			putative DNA-binding transcriptional regulator, LYSR-type
+ICGBINNC_00130	CDS	249				hypothetical protein
+ICGBINNC_00131	CDS	195				hypothetical protein
+ICGBINNC_00132	CDS	312	tppB			tripeptide / dipeptide:H+ symporter
+ICGBINNC_00133	CDS	222	yfhL			putative 4Fe-4S cluster-containing protein
+ICGBINNC_00134	CDS	240	murA	2.5.1.7		UDP-N-acetylglucosamine enolpyruvoyl transferase
+ICGBINNC_00135	CDS	198	glnL			NtrB
+ICGBINNC_00136	CDS	219	moaD		COG1977	Molybdopterin synthase sulfur carrier subunit
+ICGBINNC_00137	CDS	213				hypothetical protein
+ICGBINNC_00138	CDS	261	dicA			DicA DNA-binding transcriptional repressor
+ICGBINNC_00139	CDS	291				hypothetical protein
+ICGBINNC_00140	CDS	249				hypothetical protein
+ICGBINNC_00141	CDS	174	pspE	2.8.1.1		thiosulfate sulfurtransferase
+ICGBINNC_00142	CDS	240				hypothetical protein
+ICGBINNC_00143	CDS	279				hypothetical protein
+ICGBINNC_00144	CDS	246	fepC			ferric enterobactin ABC transporter - ATP binding subunit
+ICGBINNC_00145	CDS	189				hypothetical protein
+ICGBINNC_00146	CDS	237				hypothetical protein
+ICGBINNC_00147	CDS	201	yheV			putative protein
+ICGBINNC_00148	CDS	219				hypothetical protein
+ICGBINNC_00149	CDS	159	upaG			Autotransporter adhesin UpaG
+ICGBINNC_00150	CDS	180	mhpT			3-hydroxyphenylpropionate / 3-hydroxycinnamate:H+ symporter
+ICGBINNC_00151	CDS	171				hypothetical protein
+ICGBINNC_00152	CDS	186	syd			SecY-interacting protein
+ICGBINNC_00153	CDS	117				hypothetical protein
+ICGBINNC_00154	CDS	255				hypothetical protein
+ICGBINNC_00155	CDS	276	pssA	2.7.8.8		phosphatidylserine synthase
+ICGBINNC_00156	CDS	135	adiC			AdiC arginine:agmatine antiporter
+ICGBINNC_00157	CDS	312	higB-2		COG2026	Toxin HigB-2
+ICGBINNC_00158	CDS	138				hypothetical protein
+ICGBINNC_00159	CDS	201				hypothetical protein
+ICGBINNC_00160	CDS	183				hypothetical protein
+ICGBINNC_00161	CDS	153				hypothetical protein
+ICGBINNC_00162	CDS	183				hypothetical protein
+ICGBINNC_00163	CDS	126	rimL			ribosomal-protein-L12-serine acetyltransferase
+ICGBINNC_00164	CDS	144	acrF			AcrEF-TolC multidrug efflux transport system - permease subunit
+ICGBINNC_00165	CDS	186				hypothetical protein
+ICGBINNC_00166	CDS	108				hypothetical protein
+ICGBINNC_00167	CDS	147	aslA	3.1.6.1		arylsulfatase
+ICGBINNC_00168	CDS	246	rfaE			fused heptose 7-phosphate kinase/heptose 1-phosphate adenyltransferase
+ICGBINNC_00169	CDS	195	pepQ			proline dipeptidase
+ICGBINNC_00170	CDS	264				hypothetical protein
+ICGBINNC_00171	CDS	180				hypothetical protein
+ICGBINNC_00172	CDS	123	malT			MalT transcriptional activator
+ICGBINNC_00173	CDS	279				hypothetical protein
+ICGBINNC_00174	CDS	300	ydcU			YdcS/YdcT/YdcV/YdcU ABC transporter
+ICGBINNC_00175	CDS	267				hypothetical protein
+ICGBINNC_00176	CDS	300				hypothetical protein
+ICGBINNC_00177	CDS	165	ompW			OmpW, outer membrane protein
+ICGBINNC_00178	CDS	240				hypothetical protein
+ICGBINNC_00179	CDS	195				hypothetical protein
+ICGBINNC_00180	CDS	168				hypothetical protein
+ICGBINNC_00181	CDS	222				hypothetical protein
+ICGBINNC_00182	CDS	246				hypothetical protein
+ICGBINNC_00183	CDS	180	yadI			AgaX
+ICGBINNC_00184	CDS	249				hypothetical protein
+ICGBINNC_00185	CDS	138				hypothetical protein
+ICGBINNC_00186	CDS	207				hypothetical protein
+ICGBINNC_00187	CDS	264	nudE			ADP-sugar pyrophosphorylase
+ICGBINNC_00188	CDS	189				hypothetical protein
+ICGBINNC_00189	CDS	171	paaH	1.1.1.157		3-hydroxyadipyl-CoA dehydrogenase (NAD+)
+ICGBINNC_00190	CDS	174	yadK			putative fimbrial-like adhesin protein
+ICGBINNC_00191	CDS	114	evgA			DNA-binding transcriptional activator EvgA
+ICGBINNC_00192	CDS	231				hypothetical protein
+ICGBINNC_00193	CDS	183	ycgI			putative protein
+ICGBINNC_00194	CDS	147				hypothetical protein
+ICGBINNC_00195	CDS	165				hypothetical protein
+ICGBINNC_00196	CDS	120				hypothetical protein
+ICGBINNC_00197	CDS	183				hypothetical protein
+ICGBINNC_00198	CDS	216	abrB			putative regulator
+ICGBINNC_00199	CDS	264	glmE	5.4.99.1		Glutamate mutase epsilon subunit
+ICGBINNC_00200	CDS	165				hypothetical protein
+ICGBINNC_00201	CDS	213	ycbZ			putative ATP-dependent protease
+ICGBINNC_00202	CDS	177	ydfU			Qin prophage; predicted protein
+ICGBINNC_00203	CDS	192				hypothetical protein
+ICGBINNC_00204	CDS	129				hypothetical protein
+ICGBINNC_00205	CDS	255	flhD			FlhDC DNA-binding transcriptional dual regulator
+ICGBINNC_00206	CDS	132	thiQ			thiamin ABC transporter - ATP binding subunit
+ICGBINNC_00207	CDS	168				hypothetical protein
+ICGBINNC_00208	CDS	126	ygjV			inner membrane protein
+ICGBINNC_00209	CDS	156	uvrB			DNA repair; excision nuclease subunit B
+ICGBINNC_00210	CDS	165				hypothetical protein
+ICGBINNC_00211	CDS	192				hypothetical protein
+ICGBINNC_00212	CDS	153	slyB			outer membrane lipoprotein
+ICGBINNC_00213	CDS	207				hypothetical protein
+ICGBINNC_00214	CDS	138	feaB	1.2.1.39		phenylacetaldehyde dehydrogenase
+ICGBINNC_00215	CDS	171				hypothetical protein
+ICGBINNC_00216	CDS	159				hypothetical protein
+ICGBINNC_00217	CDS	99	hyfG			hydrogenase 4, large subunit
+ICGBINNC_00218	CDS	177	yhjV			YhjV STP transporter
+ICGBINNC_00219	CDS	132	yhhS			putative transport protein YhhS
+ICGBINNC_00220	CDS	105				hypothetical protein
+ICGBINNC_00221	CDS	225				hypothetical protein
+ICGBINNC_00222	CDS	180				hypothetical protein
+ICGBINNC_00223	CDS	174				hypothetical protein
+ICGBINNC_00224	CDS	213				hypothetical protein
+ICGBINNC_00225	CDS	150	wcaI			putative colanic biosynthesis glycosyl transferase
+ICGBINNC_00226	CDS	105				hypothetical protein
+ICGBINNC_00227	CDS	93				hypothetical protein
+ICGBINNC_00228	CDS	123				hypothetical protein
+ICGBINNC_00229	CDS	156				hypothetical protein
+ICGBINNC_00230	CDS	189				hypothetical protein
+ICGBINNC_00231	CDS	135	frmA	1.1.1.284		formaldehyde dehydrogenase, glutathione-dependent

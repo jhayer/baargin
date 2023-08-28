@@ -266,10 +266,16 @@ Feel free to add your own favourite config, in the `conf` folder.
 
 ## Test the workflow
 
-**On contigs**
+**On contigs - test profile**
 
 You can test the workflow using already assembled contigs from 3 *E. coli* datasets. Contigs are located in the `test/input/contigs` directory of *baargin* repository.
-You can run this, from the directory of your choice, as long as you give the path to the baargin directory (where the test `test/input` directory is located):
+You can run this from the *baargin* directory:
+
+```
+nextflow run main.nf -profile docker,test
+```
+You may replace docker by singularity depending on your system.
+The above command with the `test` profile actually runs this one:
 
 ```
 nextflow run main.nf -profile docker \
@@ -279,7 +285,21 @@ nextflow run main.nf -profile docker \
   --output './results_test' -resume
 ```
 
-**On short reads to test the assembly step**
+On success you should get a message looking like this:
+```
+Completed at: 28-Aug-2023 12:17:26
+Duration    : 12m 36s
+CPU hours   : 1.7
+Succeeded   : 54
+```
+
+This results are from a run on 8 cpus but it can take up to 1 hour and 30 minutes using a single cpu.
+
+Your output folder `results_test` and its sufolders and files should look the same as what is in the directory `test/output/`
+containing all the outputs of a successful test run.
+
+
+**Optional: on short reads to test the assembly step**
 
 We provide a test directory containing 3 illumina tests datasets, of *E. coli*, that have been downsampled to be lighter.
 

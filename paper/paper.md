@@ -160,7 +160,7 @@ easy to customise and extend, by adding new modules for new processes.
 
 # Figures
 
-![Flowchart of baargin workflow.\label{fig:Figure1}](baargin_flowchart.jpg)
+![Flowchart of baargin workflow.\label{fig:Figure1}](baargin_flowchart_v2.jpg)
 
 
 # Acknowledgements

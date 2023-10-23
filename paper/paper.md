@@ -69,10 +69,10 @@ it is possible to sequence the DNA from multiple bacterial strains at the same t
 The analysis of these sequencing data requires the use of a wide range of bioinformatics programs 
 to be able to identify the genes and their functions, and among those, the genes and 
 mutations conferring resistance to antimicrobial drugs. In order to make the results of 
-these analyses comparable, it is crucial to standardize, automate and parallelize all the steps. 
+these analyses comparable, it is crucial to standardise, automate and parallelise all the steps. 
 The *baargin* workflow allows the user to perform a complete *in silico* analysis of bacterial genomes, 
 from the quality control of the raw data, to the detection of AMR genes and mutations, on multiple datasets 
-of the same bacterial species in parallel. It compiles and summarize the results from all the analysis steps, 
+of the same bacterial species in parallel. It compiles and summarise the results from all the analysis steps, 
 allowing comparative studies. As a last step, *baargin* performs a pangenome analysis of all the strains provided, 
 producing the basis for the construction of a phylogenetic tree. The use of Nextflow and containers ensures 
 the reproducibility of the data analysis.
@@ -88,7 +88,7 @@ on the contigs belonging to the targeted species.
 
 ## Features
 
-Baargin is designed to automatically parallelize workflow steps. It does not require
+Baargin is designed to automatically parallelise workflow steps. It does not require
 manual intervention from the users between steps. Each workflow step, called process,
 uses containers, via Docker or Singularity, which also greatly improves
 traceability and reproducibility. Additional processes can be easily added in the future
@@ -118,7 +118,7 @@ For BUSCO, the users have the possibility to specify the taxonomic lineage datab
 to use for searching the housekeeping genes (at the class level of the strain to
 analyse for example: *enterobacterales_odb10*)
 6. The contigs (*raw* and *deconta*) are then screened to identify the sequence type of
-the strain using MLST tool (Multi-Locus Sequence Typing) [@Seemann:2022].
+the strain using the MLST tool (Multi-Locus Sequence Typing) [@Seemann:2022].
 7. The contigs are subsequently submitted to plasmid identification using PlasmidFinder [@Carattoli:2014]
 and additionally with Platon if the user provides a database for it [@Schwengers:2020].
 8. Antimicrobial Resistance Genes (ARGs) are then searched in the contigs using both CARD RGI [@Alcock:2023]

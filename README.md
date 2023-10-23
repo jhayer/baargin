@@ -558,7 +558,9 @@ Precisions on how to report issues are given in our [Contributing guidelines](ht
 
 ## Citation
 
-Coming soon...
+Hayer J., Dainat J., Marcy E. and Bañuls A. L., (2023). Baargin: a Nextflow workflow for the automatic analysis of bacterial genomics data with a focus on Antimicrobial Resistance. Journal of Open Source Software, 8(90), 5397, https://doi.org/10.21105/joss.05397
+
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.05397/status.svg)](https://doi.org/10.21105/joss.05397)
 
 ## Author and contributors
 

@@ -15,7 +15,7 @@ process bakta {
         """
         bakta --db ${bakta_db} --keep-contig-headers --genus ${genus} \
           --species ${species} --skip-trna --prefix ${id} --output ${id}_bakta \
-          --verbose --skip-rrna ${contigs} --skip-plot
+          --verbose --skip-rrna ${contigs} --skip-plot --force
 
         mv ${id}_bakta/${id}.gff3 ${id}_bakta.gff
         """
@@ -37,7 +37,7 @@ process bakta_genus {
         """
         bakta --db ${bakta_db} --keep-contig-headers --genus ${genus} \
           --skip-trna --prefix ${id} --output ${id}_bakta \
-          --verbose --skip-rrna ${contigs} --skip-plot
+          --verbose --skip-rrna ${contigs} --skip-plot --force
 
         mv ${id}_bakta/${id}.gff3 ${id}_bakta.gff
         """

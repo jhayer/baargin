@@ -428,7 +428,7 @@ workflow {
     // on the all contigs (raw)
     // AMRFinderPlus NCBI
 
-    if (params.amrfinder_db){
+    
       File amrdb = new File("${params.amrfinder_db}");
       if (amrdb.exists()){
         // if amrfinder_organism is given in the params directly
@@ -452,7 +452,7 @@ workflow {
           compile_amrfinder_no_species(amrfinderplus_no_species_no_db.out.amrfile.collect(), "raw")
         }
       }
-    }
+    
 
     // CARD Resistance Genes Identifier
     
@@ -542,7 +542,7 @@ workflow {
       // on the deconta_contigs_ch
       // AMRFinderPlus NCBI
 
-      if (params.amrfinder_db) {
+      
         File amrdb2 = new File("${params.amrfinder_db}");
         if (amrdb2.exists()) {
           // if amrfinder_organism is given in the params directly, run the mutation search
@@ -569,7 +569,7 @@ workflow {
             compile_amrfinder_no_species2(amrfinderplus_no_species_no_db2.out.amrfile.collect(), "deconta")
           }
         }
-      }
+      
 
       // CARD Resistance Genes Identifier
       if (params.card_db){

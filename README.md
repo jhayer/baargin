@@ -367,7 +367,7 @@ You can set the paths to the optional databases (for amrfinder, bakta and platon
 --platon_db "/path/to/local/databases/platon/db"
 ```
 
-*Note:* a database for amrfinder is included in its container.
+*Note:* a database for AMRFinder is included in its container, so this option `--amrfinder_db` is to be set only if you want Baargin to use your local database.
 
 If you want to avoid the download of Busco databases every time you run the pipeline, you can specify a local BUSCO database using:
 
@@ -375,7 +375,7 @@ If you want to avoid the download of Busco databases every time you run the pipe
 
 **B. The taxonomy parameters**
 
-Additionally to the mandatory `--species_taxid` parameter, you can add the following parameters:
+Additionally to the mandatory `--species_taxid` parameter, you can add the following parameters and those will be used for the annotation:
 
 ```
 --genus = "Escherichia"

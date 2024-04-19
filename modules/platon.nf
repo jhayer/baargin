@@ -10,6 +10,7 @@ process platon {
     output:
         path("platon_accu_${deconta}")
         path("platon_accu_${deconta}/*.json"), emit: platon_json optional true
+        tuple val(id), path("platon_accu_${deconta}/*.tsv"), emit: tp_platon_id_tsv optional true
         val(id), emit: platon_id
     script:
         """

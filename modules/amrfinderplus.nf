@@ -10,6 +10,8 @@ process amrfinderplus {
     output:
         path("${id}_${deconta}_AMRfinder.txt"), emit: amrfile
         path("${id}_${deconta}_AMRfinder_all_mut.txt"), emit: amrfile_allmut
+        tuple val(id), path("${id}_${deconta}_AMRfinder.txt"), path("${id}_${deconta}_AMRfinder_all_mut.txt"), emit: tp_id_amrf
+    //    val(id), emit: amrf_id
     script:
         """
         amrfinder --database ${local_amr_db} --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus \
@@ -28,6 +30,7 @@ process amrfinderplus_no_db {
     output:
         path("${id}_${deconta}_AMRfinder.txt"), emit: amrfile
         path("${id}_${deconta}_AMRfinder_all_mut.txt"), emit: amrfile_allmut
+        tuple val(id), path("${id}_${deconta}_AMRfinder.txt"), path("${id}_${deconta}_AMRfinder_all_mut.txt"), emit: tp_id_amrf
     script:
         """
         amrfinder --nucleotide ${contigs} -o ${id}_${deconta}_AMRfinder.txt --plus \

@@ -451,6 +451,24 @@ workflow {
           amrfinderplus_no_species_no_db(contigs_ch, "raw")
           compile_amrfinder_no_species(amrfinderplus_no_species_no_db.out.amrfile.collect(), "raw")
         }
+
+        // here we split the amrfinder output into chromosome and plasmid files
+        // if we have a platon tsv
+        if(platon.out.tp_platon_id_tsv){
+          
+          if (params.amrfinder_organism){
+       //     amrfinderplus.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
+            amrfinderplus_no_db.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
+            tp_id_amrf_platon.view()
+            log.info "The joint channel: ${tp_id_amrf_platon.view()}"
+       //     split_amr_plas_chrom_amrfinder_sp(tp_id_amrf_platon, "raw")
+            //split_amr_plas_chrom_amrfinder_sp(amrfinderplus.out.tp_id_amrf, amrfinderplus.out.amr_file_allmut, platon.out.platon_tsv , platon.out.platon_id, "raw")
+          }
+          else{
+           // split_amr_plas_chrom_amrfinder_no_sp()
+          }
+
+        }
       }
     
 

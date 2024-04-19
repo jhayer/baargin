@@ -174,6 +174,7 @@ include {mefinder as mefinder2; mefinder} from './modules/mefinder.nf'
 //split AMR into plasmids and chromosomes
 include {split_amr_plas_chrom_amrfinder_sp as split_amr_plas_chrom_amrfinder_sp2; split_amr_plas_chrom_amrfinder_sp} from './modules/split_amr_plas_chrom.nf'
 include {split_amr_plas_chrom_amrfinder_no_sp as split_amr_plas_chrom_amrfinder_no_sp2; split_amr_plas_chrom_amrfinder_no_sp} from './modules/split_amr_plas_chrom.nf'
+include {split_card_plas_chrom as split_card_plas_chrom2; split_card_plas_chrom} from './modules/split_amr_plas_chrom.nf'
 
 // MLST
 include {mlst as mlst2; mlst} from './modules/mlst.nf'
@@ -192,6 +193,7 @@ include {compile_amrfinder_no_sp_plasmid_split as compile_amrfinder_no_sp_plasmi
 
 include {compile_plasmidfinder as compile_plasmidfinder2; compile_plasmidfinder} from './modules/compile_plasmidfinder.nf'
 include {compile_card as compile_card2; compile_card} from './modules/card.nf'
+include {compile_card_split_plasmid as compile_card_split_plasmid2; compile_card_split_plasmid} from './modules/compile_card_tsv.nf'
 
 
 
@@ -519,9 +521,23 @@ workflow {
     // CARD Resistance Genes Identifier
     
     card_rgi(contigs_ch,params.card_db, "raw")
-    if (samples_number > 1) {
-      compile_card(card_rgi.out.card_json.collect(), "raw")
+    if(platon.out.tp_platon_id_tsv){
+      // split RGI_main.txt into plasmid and chromosome
+      card_rgi.out.tp_id_card.join(platon.out.tp_platon_id_tsv).set{tp_id_card_platon}
+      // split AMRFinder files
+      split_card_plas_chrom(tp_id_card_platon, "raw")
+      // compile with compile_card.py and not with rgi heatmap which is based on the json and not the tsv
+      compile_card_split_plasmid(split_card_plas_chrom.out.rgi_plasmid.collect(), split_card_plas_chrom.out.rgi_chrom.collect(), "raw")
     }
+    else{
+      //compile all in one
+      if (samples_number > 1) {
+        compile_card(card_rgi.out.card_json.collect(), "raw")
+      }
+    }
+ //   if (samples_number > 1) {
+ //     compile_card(card_rgi.out.card_json.collect(), "raw")
+ //   }
 
     //*************************************************
     // STEP 5 - decontamination with Kraken2

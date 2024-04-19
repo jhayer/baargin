@@ -33,3 +33,19 @@ process split_amr_plas_chrom_amrfinder_no_sp {
         split_AMR_out_by_plasmid.py -i ${platon_sum_tsv} -a ${amr_file} -t amrfinder -p ${id}_${deconta}_AMRfinder_plasmid.txt -c ${id}_${deconta}_AMRfinder_chrom.txt
         """
 }
+
+process split_card_plas_chrom {
+    label 'python3'
+    publishDir "${params.output}/${id}/AMR/card_rgi", mode: 'copy'
+
+    input:
+        tuple val(id), path(rgi_tsv_file), path(platon_sum_tsv)
+        val(deconta)
+    output:
+        path("${id}_${deconta}_RGI_main_plasmid.txt"), emit: rgi_plasmid
+        path("${id}_${deconta}_RGI_main_chrom.txt"), emit: rgi_chrom
+    script:
+        """
+        split_AMR_out_by_plasmid.py -i ${platon_sum_tsv} -a ${rgi_tsv_file} -t card -p ${id}_${deconta}_RGI_main_plasmid.txt -c ${id}_${deconta}_RGI_main_chrom.txt
+        """
+}

@@ -8,7 +8,8 @@ process card_rgi {
         val(deconta)
     output:
         path("${id}_${deconta}_RGI_main.json"), emit: card_json
-        path("${id}_${deconta}_RGI_main.txt")
+    //    path("${id}_${deconta}_RGI_main.txt")
+        tuple val(id), path("${id}_${deconta}_RGI_main.txt"), emit: tp_id_card
     script:
         """
         rgi load --card_json ${card_json_db} --local

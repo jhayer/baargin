@@ -171,6 +171,10 @@ include {platon_json2tsv as platon_json2tsv2; platon_json2tsv} from './modules/p
 include {compile_platon as compile_platon2; compile_platon} from './modules/platon.nf'
 include {mefinder as mefinder2; mefinder} from './modules/mefinder.nf'
 
+//split AMR into plasmids and chromosomes
+include {split_amr_plas_chrom_amrfinder_sp as split_amr_plas_chrom_amrfinder_sp2; split_amr_plas_chrom_amrfinder_sp} from './modules/split_amr_plas_chrom.nf'
+include {split_amr_plas_chrom_amrfinder_no_sp as split_amr_plas_chrom_amrfinder_no_sp2; split_amr_plas_chrom_amrfinder_no_sp} from './modules/split_amr_plas_chrom.nf'
+
 // MLST
 include {mlst as mlst2; mlst} from './modules/mlst.nf'
 include {compile_mlst as compile_mlst2; compile_mlst} from './modules/mlst.nf'
@@ -183,6 +187,9 @@ include {roary} from './modules/roary.nf' params(output: params.output)
 // compilation
 include {compile_amrfinder as compile_amrfinder2; compile_amrfinder} from './modules/compile_amrfinder.nf'
 include {compile_amrfinder_no_species as compile_amrfinder_no_species2; compile_amrfinder_no_species} from './modules/compile_amrfinder.nf'
+include {compile_amrfinder_plasmid_split as compile_amrfinder_plasmid_split2; compile_amrfinder_plasmid_split} from './modules/compile_amrfinder.nf'
+include {compile_amrfinder_no_sp_plasmid_split as compile_amrfinder_no_sp_plasmid_split2; compile_amrfinder_no_sp_plasmid_split} from './modules/compile_amrfinder.nf'
+
 include {compile_plasmidfinder as compile_plasmidfinder2; compile_plasmidfinder} from './modules/compile_plasmidfinder.nf'
 include {compile_card as compile_card2; compile_card} from './modules/card.nf'
 
@@ -434,41 +441,78 @@ workflow {
         // if amrfinder_organism is given in the params directly
         if (params.amrfinder_organism){
           amrfinderplus(contigs_ch,params.amrfinder_organism, params.amrfinder_db, "raw")
-          compile_amrfinder(amrfinderplus.out.amrfile.collect(), amrfinderplus.out.amrfile_allmut.collect(), "raw")
+
+          if(platon.out.tp_platon_id_tsv){
+            // split sp
+            amrfinderplus_no_db.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
+            split_amr_plas_chrom_amrfinder_sp(tp_id_amrf_platon, "raw")
+            // compile plas and chrom
+            compile_amrfinder_plasmid_split(split_amr_plas_chrom_amrfinder_sp.out.amrf_plasmid.collect(),
+                split_amr_plas_chrom_amrfinder_sp.out.amrf_allmut_plasmid.collect(),
+                split_amr_plas_chrom_amrfinder_sp.out.amrf_chrom.collect(),
+                split_amr_plas_chrom_amrfinder_sp.out.amrf_allmut_chrom.collect(), "raw")
+          }
+          else{
+            compile_amrfinder(amrfinderplus.out.amrfile.collect(), amrfinderplus.out.amrfile_allmut.collect(), "raw")
+          }
+
+      //    compile_amrfinder(amrfinderplus.out.amrfile.collect(), amrfinderplus.out.amrfile_allmut.collect(), "raw")
         }
         else{
           amrfinderplus_no_species(contigs_ch, params.amrfinder_db, "raw")
-          compile_amrfinder_no_species(amrfinderplus_no_species.out.amrfile.collect(), "raw")
+          // if platon results, split the amr file into plasmids and chrom
+          if(platon.out.tp_platon_id_tsv){
+            amrfinderplus_no_species.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
+            // split AMRFinder files
+            split_amr_plas_chrom_amrfinder_no_sp(tp_id_amrf_platon, "raw")
+            // compile plas and chrom
+            compile_amrfinder_no_sp_plasmid_split(split_amr_plas_chrom_amrfinder_no_sp.out.amrf_plasmid.collect(),
+                split_amr_plas_chrom_amrfinder_no_sp.out.amrf_chrom.collect(), "raw")
+          }
+          else{
+            compile_amrfinder_no_species(amrfinderplus_no_species.out.amrfile.collect(), "raw")
+          }
         }
       }
       else {
         // if amrfinder_organism is given in the params directly
         if (params.amrfinder_organism){
           amrfinderplus_no_db(contigs_ch,params.amrfinder_organism, "raw")
-          compile_amrfinder(amrfinderplus_no_db.out.amrfile.collect(), amrfinderplus_no_db.out.amrfile_allmut.collect(), "raw")
+          // if platon results, split the amr files into plasmids and chrom
+          if(platon.out.tp_platon_id_tsv){
+            // make joint channel platon file + amrfinder file
+            amrfinderplus_no_db.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
+            // split AMRFinder files
+            split_amr_plas_chrom_amrfinder_sp(tp_id_amrf_platon, "raw")
+            // compile plas and chrom separately
+            compile_amrfinder_plasmid_split(split_amr_plas_chrom_amrfinder_sp.out.amrf_plasmid.collect(),
+                split_amr_plas_chrom_amrfinder_sp.out.amrf_allmut_plasmid.collect(),
+                split_amr_plas_chrom_amrfinder_sp.out.amrf_chrom.collect(),
+                split_amr_plas_chrom_amrfinder_sp.out.amrf_allmut_chrom.collect(), "raw")
+          }
+          else{
+            compile_amrfinder(amrfinderplus_no_db.out.amrfile.collect(), amrfinderplus_no_db.out.amrfile_allmut.collect(), "raw")
+          }
         }
         else{
           amrfinderplus_no_species_no_db(contigs_ch, "raw")
-          compile_amrfinder_no_species(amrfinderplus_no_species_no_db.out.amrfile.collect(), "raw")
-        }
+          // if platon results, split the amr file into plasmids and chrom
+          if(platon.out.tp_platon_id_tsv){
+            // make joint channel platon file + amrfinder file
+            amrfinderplus_no_species_no_db.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
+            // split AMRFinder files
+            split_amr_plas_chrom_amrfinder_no_sp(tp_id_amrf_platon, "raw")
+            // compile plas and chrom
+            compile_amrfinder_no_sp_plasmid_split(split_amr_plas_chrom_amrfinder_no_sp.out.amrf_plasmid.collect(),
+                split_amr_plas_chrom_amrfinder_no_sp.out.amrf_chrom.collect(), "raw")
 
-        // here we split the amrfinder output into chromosome and plasmid files
-        // if we have a platon tsv
-        if(platon.out.tp_platon_id_tsv){
+          }
+          else {
+            compile_amrfinder_no_species(amrfinderplus_no_species_no_db.out.amrfile.collect(), "raw")
+          }
           
-          if (params.amrfinder_organism){
-       //     amrfinderplus.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
-            amrfinderplus_no_db.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
-            tp_id_amrf_platon.view()
-            log.info "The joint channel: ${tp_id_amrf_platon.view()}"
-       //     split_amr_plas_chrom_amrfinder_sp(tp_id_amrf_platon, "raw")
-            //split_amr_plas_chrom_amrfinder_sp(amrfinderplus.out.tp_id_amrf, amrfinderplus.out.amr_file_allmut, platon.out.platon_tsv , platon.out.platon_id, "raw")
-          }
-          else{
-           // split_amr_plas_chrom_amrfinder_no_sp()
-          }
-
         }
+
       }
     
 

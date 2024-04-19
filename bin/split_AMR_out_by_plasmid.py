@@ -44,7 +44,7 @@ def parse_platon_tsv(platon_tsv):
         plasmid_contigs_lst.append(lst_line[0])
 
     tsv_handle.close()
-    print(plasmid_contigs_lst)
+ #   print(plasmid_contigs_lst)
     return(plasmid_contigs_lst)
 
 def split_amr_file_by_plasmid(plas_cont_lst, amr_tsv_in, amr_tool, amr_tsv_out_plas, amr_tsv_out_chr):
@@ -66,7 +66,6 @@ def split_amr_file_by_plasmid(plas_cont_lst, amr_tsv_in, amr_tool, amr_tsv_out_p
             lst_line = line.split('\t')
             # check if the contig in is the plasmid contigs list from platon
             if(lst_line[1] in plas_cont_lst):
-                print("In the list")
                 p_csvfile.write(line)
             else:
                 # if not, write in the chromosome output file

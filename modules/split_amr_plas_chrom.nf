@@ -4,8 +4,6 @@ process split_amr_plas_chrom_amrfinder_sp {
 
     input:
         tuple val(id), path(amr_file), path(amr_file_allmut), path(platon_sum_tsv)
-      //  tuple val(id), path(amr_file_allmut)
-       // tuple val(id), path(platon_sum_tsv)
         val(deconta)
     output:
         path("${id}_${deconta}_AMRfinder_plasmid.txt"), emit: amrf_plasmid
@@ -16,8 +14,7 @@ process split_amr_plas_chrom_amrfinder_sp {
         """
         split_AMR_out_by_plasmid.py -i ${platon_sum_tsv} -a ${amr_file} -t amrfinder -p ${id}_${deconta}_AMRfinder_plasmid.txt -c ${id}_${deconta}_AMRfinder_chrom.txt
 
-        split_AMR_out_by_plasmid.py -i ${platon_sum_tsv} -a ${amr_file} -t amrfinder \ 
-            -p ${id}_${deconta}_AMRfinder_all_mut_plasmid.txt -c ${id}_${deconta}_AMRfinder_all_mut_chrom.txt
+        split_AMR_out_by_plasmid.py -i ${platon_sum_tsv} -a ${amr_file_allmut} -t amrfinder -p ${id}_${deconta}_AMRfinder_all_mut_plasmid.txt -c ${id}_${deconta}_AMRfinder_all_mut_chrom.txt
         """
 }
 
@@ -26,8 +23,7 @@ process split_amr_plas_chrom_amrfinder_no_sp {
     publishDir "${params.output}/${id}/AMR/amrfinderplus", mode: 'copy'
 
     input:
-        tuple val(id), path(amr_file)
-        tuple val(id), path(platon_sum_tsv)
+        tuple val(id), path(amr_file), path(platon_sum_tsv)
         val(deconta)
     output:
         path("${id}_${deconta}_AMRfinder_plasmid.txt"), emit: amrf_plasmid

@@ -9,9 +9,8 @@ process platon {
         val(deconta)
     output:
         path("platon_accu_${deconta}")
-        path("platon_accu_${deconta}/*.json"), emit: platon_json optional true
+        tuple val(id), path("platon_accu_${deconta}/*.json"), emit: platon_json optional true
         tuple val(id), path("platon_accu_${deconta}/*.tsv"), emit: tp_platon_id_tsv optional true
-        val(id), emit: platon_id
     script:
         """
         platon --db ${platon_db} -o platon_accu_${deconta} ${contigs}
@@ -23,9 +22,8 @@ process platon_json2tsv {
     publishDir "${params.output}/${id}/plasmids", mode: 'copy'
 
     input:
-        path(json_platon)
+        tuple val(id), path(json_platon)
         val(deconta)
-        val(id)
     output:
         path("${id}_platon_inctypes_${deconta}.tsv"), emit: platon_inc
         path("${id}_platon_plasmids_${deconta}.tsv"), emit: platon_plasmid

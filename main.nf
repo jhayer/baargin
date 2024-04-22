@@ -413,7 +413,7 @@ workflow {
       if(platondb.exists()){
         platon(contigs_ch, params.platon_db, "raw")
         if(platon.out.platon_json){
-          platon_json2tsv(platon.out.platon_json, "raw", platon.out.platon_id)
+          platon_json2tsv(platon.out.platon_json, "raw")
           compile_platon(platon_json2tsv.out.platon_inc.collect(), platon_json2tsv.out.platon_plasmid.collect(), platon_json2tsv.out.platon_amr.collect(), "raw" )
         }
         else {
@@ -602,7 +602,7 @@ workflow {
       if(params.platon_db){
           platon2(deconta_contigs_ch, params.platon_db, "deconta")
           if(platon2.out.platon_json){
-            platon_json2tsv2(platon2.out.platon_json, "deconta", platon2.out.platon_id)
+            platon_json2tsv2(platon2.out.platon_json, "deconta")
             compile_platon2(platon_json2tsv2.out.platon_inc.collect(), platon_json2tsv2.out.platon_plasmid.collect(), platon_json2tsv2.out.platon_amr.collect(), "deconta" )
           }
           else {

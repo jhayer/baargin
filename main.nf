@@ -184,7 +184,8 @@ include {compile_mlst as compile_mlst2; compile_mlst} from './modules/mlst.nf'
 
 // Annotation
 include {prokka; prokka_genus} from './modules/prokka.nf'
-include {bakta; bakta_genus} from './modules/bakta.nf' 
+include {bakta; bakta_genus; bakta_plasmids} from './modules/bakta.nf' 
+
 // pangenome
 include {roary} from './modules/roary.nf' params(output: params.output)
 // compilation
@@ -686,6 +687,11 @@ workflow {
             // pangenome analysis with Roary using all gff outputs from bakta
             gff_annot = bakta_genus.out.annot_gff
           }
+          // if we have plasmid contigs from platon, we annotate
+          if(platon.out.tp_platon_fasta_plasmid){
+            bakta_plasmids(platon.out.tp_platon_fasta_plasmid, params.bakta_db, params.genus)
+          }
+
         }
         else {
           exit 1, "${params.bakta_db} bakta_db path does not exists!"

@@ -11,6 +11,7 @@ process platon {
         path("platon_accu_${deconta}")
         tuple val(id), path("platon_accu_${deconta}/*.json"), emit: platon_json optional true
         tuple val(id), path("platon_accu_${deconta}/*.tsv"), emit: tp_platon_id_tsv optional true
+        tuple val(id), path("platon_accu_${deconta}/*.plasmid.fasta"), emit: tp_platon_fasta_plasmid optional true
     script:
         """
         platon --db ${platon_db} -o platon_accu_${deconta} ${contigs}

@@ -46,8 +46,8 @@ def helpMSG() {
 
         Species mandatory options:
     --genus                     Bacterial genus (Escherichia, Salmonella, Enterobacter, Klebsiella, Staphylococcus)  [default: $params.genus]
-    --species                   bacterial species to assemble (e.g. coli, pneumoniae, cloacae, aureus) [default: $params.species]
-    --species_taxid             NCBI TaxID of the bacterial species to assemble [default: $params.species_taxid]
+    --species                   bacterial species to assemble - used for annotation (e.g. coli, pneumoniae, cloacae, aureus) [default: $params.species]
+    --species_taxid             NCBI TaxID of the bacterial species to assemble - used for Kraken decontaminiation [default: $params.species_taxid]
 
         Databases path required (script provided for downloading them):
     --card_db                   path to the CARD json Database for Antimicrobial Resistance Genes prediction [default: $params.card_db]
@@ -65,6 +65,8 @@ def helpMSG() {
     --phred_type                phred score type. Specify if 33 (default and current) or 64 (ex. BGI, older...) [default: $params.phred_type]
     --busco_lineage             to specify according to the bacterial species. e.g. enterobacterales_odb10, bacillales_odb10... check BUSCO [default: $params.busco_lineage]
                                 If not provided, Busco will use prokaryotes database
+    --amr_id_min                Minimum identity percentage for positive match with CARD and/or AMRFinder. (ex: 0.90, 0.85...) [default: $params.amr_id_min]
+    --amr_cov_min               Minimum coverage of the reference protein for a positive match with CARD and/or AMRFinder. (ex: 0.60, 0.80...) [default: $params.amr_cov_min]
     --amrfinder_organism        To specify for PointMutation detection
                                 Can be among these: Acinetobacter_baumannii, Campylobacter,
                                 Clostridioides_difficile, Enterococcus_faecalis, Enterococcus_faecium,
@@ -442,11 +444,11 @@ workflow {
       if (amrdb.exists()){
         // if amrfinder_organism is given in the params directly
         if (params.amrfinder_organism){
-          amrfinderplus(contigs_ch,params.amrfinder_organism, params.amrfinder_db, "raw")
+          amrfinderplus(contigs_ch,params.amrfinder_organism, params.amrfinder_db, "raw", params.amr_id_min, params.amr_cov_min)
 
           if(platon.out.tp_platon_id_tsv){
             // split sp
-            amrfinderplus_no_db.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
+            amrfinderplus.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
             split_amr_plas_chrom_amrfinder_sp(tp_id_amrf_platon, "raw")
             // compile plas and chrom
             compile_amrfinder_plasmid_split(split_amr_plas_chrom_amrfinder_sp.out.amrf_plasmid.collect(),
@@ -461,7 +463,7 @@ workflow {
       //    compile_amrfinder(amrfinderplus.out.amrfile.collect(), amrfinderplus.out.amrfile_allmut.collect(), "raw")
         }
         else{
-          amrfinderplus_no_species(contigs_ch, params.amrfinder_db, "raw")
+          amrfinderplus_no_species(contigs_ch, params.amrfinder_db, "raw", params.amr_id_min, params.amr_cov_min)
           // if platon results, split the amr file into plasmids and chrom
           if(platon.out.tp_platon_id_tsv){
             amrfinderplus_no_species.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
@@ -479,7 +481,7 @@ workflow {
       else {
         // if amrfinder_organism is given in the params directly
         if (params.amrfinder_organism){
-          amrfinderplus_no_db(contigs_ch,params.amrfinder_organism, "raw")
+          amrfinderplus_no_db(contigs_ch,params.amrfinder_organism, "raw", params.amr_id_min, params.amr_cov_min)
           // if platon results, split the amr files into plasmids and chrom
           if(platon.out.tp_platon_id_tsv){
             // make joint channel platon file + amrfinder file
@@ -497,7 +499,7 @@ workflow {
           }
         }
         else{
-          amrfinderplus_no_species_no_db(contigs_ch, "raw")
+          amrfinderplus_no_species_no_db(contigs_ch, "raw", params.amr_id_min, params.amr_cov_min)
           // if platon results, split the amr file into plasmids and chrom
           if(platon.out.tp_platon_id_tsv){
             // make joint channel platon file + amrfinder file
@@ -625,12 +627,12 @@ workflow {
         if (amrdb2.exists()) {
           // if amrfinder_organism is given in the params directly, run the mutation search
           if (params.amrfinder_organism){
-            amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, params.amrfinder_db, "deconta")
+            amrfinderplus2(deconta_contigs_ch,params.amrfinder_organism, params.amrfinder_db, "deconta", params.amr_id_min, params.amr_cov_min)
             compile_amrfinder2(amrfinderplus2.out.amrfile.collect(), amrfinderplus2.out.amrfile_allmut.collect(), "deconta")
           }
           else {
             // no mutation search
-            amrfinderplus_no_species2(deconta_contigs_ch, params.amrfinder_db, "deconta")
+            amrfinderplus_no_species2(deconta_contigs_ch, params.amrfinder_db, "deconta", params.amr_id_min, params.amr_cov_min)
             compile_amrfinder_no_species2(amrfinderplus_no_species2.out.amrfile.collect(), "deconta")
           }
         }
@@ -638,12 +640,12 @@ workflow {
           //run AMRFinder with no localDB - will use the container DB
           // if amrfinder_organism is given in the params directly, run the mutation search
           if (params.amrfinder_organism){
-            amrfinderplus_no_db2(deconta_contigs_ch,params.amrfinder_organism, "deconta")
+            amrfinderplus_no_db2(deconta_contigs_ch,params.amrfinder_organism, "deconta", params.amr_id_min, params.amr_cov_min)
             compile_amrfinder2(amrfinderplus_no_db2.out.amrfile.collect(), amrfinderplus_no_db2.out.amrfile_allmut.collect(), "deconta")
           }
           else {
             // no mutation search
-            amrfinderplus_no_species_no_db2(deconta_contigs_ch, "deconta")
+            amrfinderplus_no_species_no_db2(deconta_contigs_ch, "deconta", params.amr_id_min, params.amr_cov_min)
             compile_amrfinder_no_species2(amrfinderplus_no_species_no_db2.out.amrfile.collect(), "deconta")
           }
         }

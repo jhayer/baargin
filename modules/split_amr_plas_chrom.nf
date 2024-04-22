@@ -42,10 +42,10 @@ process split_card_plas_chrom {
         tuple val(id), path(rgi_tsv_file), path(platon_sum_tsv)
         val(deconta)
     output:
-        path("${id}_${deconta}_RGI_main_plasmid.txt"), emit: rgi_plasmid
-        path("${id}_${deconta}_RGI_main_chrom.txt"), emit: rgi_chrom
+        path("${id}_${deconta}_th_RGI_main_plasmid.txt"), emit: rgi_plasmid
+        path("${id}_${deconta}_th_RGI_main_chrom.txt"), emit: rgi_chrom
     script:
         """
-        split_AMR_out_by_plasmid.py -i ${platon_sum_tsv} -a ${rgi_tsv_file} -t card -p ${id}_${deconta}_RGI_main_plasmid.txt -c ${id}_${deconta}_RGI_main_chrom.txt
+        split_AMR_out_by_plasmid.py -i ${platon_sum_tsv} -a ${rgi_tsv_file} -t card -p ${id}_${deconta}_th_RGI_main_plasmid.txt -c ${id}_${deconta}_th_RGI_main_chrom.txt
         """
 }

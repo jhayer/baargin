@@ -6,17 +6,23 @@ process card_rgi {
         tuple val(id), path(contigs)
         path(card_json_db)
         val(deconta)
+        val(id_min)
+        val(cov_min)
     output:
         path("${id}_${deconta}_RGI_main.json"), emit: card_json
-    //    path("${id}_${deconta}_RGI_main.txt")
-        tuple val(id), path("${id}_${deconta}_RGI_main.txt"), emit: tp_id_card
+     //   path("${id}_${deconta}_RGI_main.txt")
+        tuple val(id), path("${id}_${deconta}_threshold_RGI_main.txt"), emit: tp_id_card
     script:
         """
         rgi load --card_json ${card_json_db} --local
 
         rgi main -i ${contigs} -o ${id}_${deconta}_RGI_main --debug \
           --local -a BLAST -d wgs -n ${task.cpus} --include_nudge
+
         rgi tab -i ${id}_${deconta}_RGI_main.json
+        
+        
+        cat ${id}_${deconta}_RGI_main.txt | awk -F'\t' '{if ((\$21 >= ${cov_min}*100) && (\$10 >=${id_min}*100)) print \$0 }' > ${id}_${deconta}_threshold_RGI_main.txt
 
         rm ${contigs}.temp.*
         rm ${contigs}.temp

@@ -522,7 +522,7 @@ workflow {
 
     // CARD Resistance Genes Identifier
     
-    card_rgi(contigs_ch,params.card_db, "raw")
+    card_rgi(contigs_ch,params.card_db, "raw", params.amr_id_min, params.amr_cov_min)
     if(platon.out.tp_platon_id_tsv){
       // split RGI_main.txt into plasmid and chromosome
       card_rgi.out.tp_id_card.join(platon.out.tp_platon_id_tsv).set{tp_id_card_platon}
@@ -653,7 +653,7 @@ workflow {
 
       // CARD Resistance Genes Identifier
       if (params.card_db){
-        card_rgi2(deconta_contigs_ch,params.card_db, "deconta")
+        card_rgi2(deconta_contigs_ch,params.card_db, "deconta", params.amr_id_min, params.amr_cov_min)
         if (samples_number > 1){
           compile_card2(card_rgi2.out.card_json.collect(), "deconta")
         }

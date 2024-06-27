@@ -15,6 +15,11 @@ process platon {
     script:
         """
         platon --db ${platon_db} -o platon_accu_${deconta} ${contigs}
+
+        if [[ \$(tr -d "\r\n" < platon_accu_${deconta}/*.plasmid.fasta | wc -c) -eq 0 ]]; then
+            echo "File has no content"
+            rm platon_accu_${deconta}/*.plasmid.fasta
+        fi
         """
 }
 

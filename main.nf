@@ -187,7 +187,7 @@ include {prokka; prokka_genus} from './modules/prokka.nf'
 include {bakta; bakta_genus; bakta_plasmids} from './modules/bakta.nf' 
 
 // pangenome
-include {roary} from './modules/roary.nf' params(output: params.output)
+include {roary; roary_fasttree; roary_plots} from './modules/roary.nf' params(output: params.output)
 // compilation
 include {compile_amrfinder as compile_amrfinder2; compile_amrfinder} from './modules/compile_amrfinder.nf'
 include {compile_amrfinder_no_species as compile_amrfinder_no_species2; compile_amrfinder_no_species} from './modules/compile_amrfinder.nf'
@@ -448,7 +448,7 @@ workflow {
           amrfinderplus(contigs_ch,params.amrfinder_organism, params.amrfinder_db, "raw", params.amr_id_min, params.amr_cov_min)
 
           if(platon.out.tp_platon_id_tsv){
-            // split sp
+            // split amrfinder results by plasmid/chrom (process with species)
             amrfinderplus.out.tp_id_amrf.join(platon.out.tp_platon_id_tsv).set{tp_id_amrf_platon}
             split_amr_plas_chrom_amrfinder_sp(tp_id_amrf_platon, "raw")
             // compile plas and chrom
@@ -689,7 +689,11 @@ workflow {
           }
           // if we have plasmid contigs from platon, we annotate
           if(platon.out.tp_platon_fasta_plasmid){
+       //     platon.out.tp_platon_fasta_plasmid.view()
             bakta_plasmids(platon.out.tp_platon_fasta_plasmid, params.bakta_db, params.genus)
+          }
+          else{
+            log.info "No plasmid contigs found !"
           }
 
         }
@@ -744,6 +748,11 @@ workflow {
       // pangenome analysis with Roary using all gff outputs from Prokka or Bakta
       if (samples_number > 1){
         roary(gff_annot.collect())
+        // for dendrogram and other roary_plots
+        roary_fasttree(roary.out.core_aln)
+      //  roary_fasttree.out.fasttree_nwck.join(roary.out.gene_matrix).set{tree_matrix}
+
+        roary_plots(roary_fasttree.out.fasttree_nwck, roary.out.gene_matrix)
       }
 
     }

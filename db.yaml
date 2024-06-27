@@ -5,7 +5,7 @@
 plasmidfinder: https://bitbucket.org/genomicepidemiology/plasmidfinder_db/src/master/
 
 # CARD DB. For a latest version see https://card.mcmaster.ca/latest/data more information here https://card.mcmaster.ca/download
-card: https://card.mcmaster.ca/download/0/broadstreet-v3.2.6.tar.bz2
+card: https://card.mcmaster.ca/download/0/broadstreet-v3.2.9.tar.bz2
 
 # kraken2_mini_standard_db_202302 (4Gb) on zenodo
 kraken2_mini: https://zenodo.org/record/7648745/files/kraken2_mini_standard_db_202302.tar.gz

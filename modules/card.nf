@@ -30,7 +30,7 @@ process card_rgi {
 }
 
 process compile_card {
-    label 'card'
+    label 'card_hm'
     publishDir "${params.output}/compile_results", mode: 'copy'
 
     input:

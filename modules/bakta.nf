@@ -57,7 +57,7 @@ process bakta_plasmids {
         tuple val(id), path("${id}_bakta_plasmids/${id}.faa"), emit: annot_faa
     script:
         """
-        bakta --db ${bakta_db} --keep-contig-headers --genus ${genus} \
+        bakta --db ${bakta_db} --keep-contig-headers --plasmid unnamed \
           --skip-trna --prefix ${id} --output ${id}_bakta_plasmids \
           --verbose --skip-rrna --skip-plot --force ${plasmid_contigs}
 

@@ -1,3 +1,5 @@
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.05397/status.svg)](https://doi.org/10.21105/joss.05397)
+
 baargin: Bacterial Assembly and Antimicrobial Resistance Genes detection In NextFlow 
 =========================================  
 <img align="right" src="doc/img/IRD.png" width="200" height="66" /> <img align="right" src="doc/img/MIVEGEC.png" width="100" height="66" />
